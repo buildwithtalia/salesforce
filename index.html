@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salesforce Leads Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <h1>Salesforce Leads</h1>
+      </div>
+      <div class="status" id="status">Not connected</div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="create">Create Lead</button>
+      <button class="tab" data-tab="update">Update Lead</button>
+    </div>
+
+    <section class="tab-panel active" id="tab-create">
+      <h2>Create New Lead</h2>
+      <form id="createLeadForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="createFirstName">First Name</label>
+            <input type="text" id="createFirstName" name="FirstName" placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label for="createLastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="createLastName" name="LastName" placeholder="Doe" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="createCompany">Company <span class="req">*</span></label>
+            <input type="text" id="createCompany" name="Company" placeholder="Acme Inc." required />
+          </div>
+          <div class="form-group">
+            <label for="createEmail">Email</label>
+            <input type="email" id="createEmail" name="Email" placeholder="jane@acme.com" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="createPhone">Phone</label>
+            <input type="tel" id="createPhone" name="Phone" placeholder="+1 555 123 4567" />
+          </div>
+          <div class="form-group">
+            <label for="createTitle">Title</label>
+            <input type="text" id="createTitle" name="Title" placeholder="Head of Growth" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Create Lead</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tab-panel" id="tab-update">
+      <h2>Update Existing Lead</h2>
+      <form id="updateLeadForm">
+        <div class="form-row">
+          <div class="form-group grow">
+            <label for="updateLeadId">Lead ID <span class="req">*</span></label>
+            <input type="text" id="updateLeadId" name="Id" placeholder="00Q..." required />
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn secondary full" id="fetchLeadBtn" style="margin-top: 22px;">Load Lead</button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="updateFirstName">First Name</label>
+            <input type="text" id="updateFirstName" name="FirstName" />
+          </div>
+          <div class="form-group">
+            <label for="updateLastName">Last Name</label>
+            <input type="text" id="updateLastName" name="LastName" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="updateCompany">Company</label>
+            <input type="text" id="updateCompany" name="Company" />
+          </div>
+          <div class="form-group">
+            <label for="updateEmail">Email</label>
+            <input type="email" id="updateEmail" name="Email" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="updatePhone">Phone</label>
+            <input type="tel" id="updatePhone" name="Phone" />
+          </div>
+          <div class="form-group">
+            <label for="updateTitle">Title</label>
+            <input type="text" id="updateTitle" name="Title" />
+          </div>
+        </div>
+        <p class="hint">Only fields with values will be sent. Leave blank to keep unchanged.</p>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Update Lead</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="output-panel" id="outputPanel" hidden>
+      <div class="output-header">
+        <h3 id="outputTitle">Response</h3>
+        <button class="btn ghost small" id="closeOutput">Dismiss</button>
+      </div>
+      <pre id="outputBody"></pre>
+    </section>
+  </div>
+
+  <footer class="config-bar">
+    <span class="config-bar-label">Connection</span>
+    <div class="config-bar-field">
+      <label for="instanceUrl">Instance</label>
+      <input type="url" id="instanceUrl" placeholder="https://your-instance.my.salesforce.com"
+             value="https://efficiency-fun-1090.my.salesforce.com" />
+    </div>
+    <div class="config-bar-field grow">
+      <label for="accessToken">Token</label>
+      <input type="password" id="accessToken" placeholder="Bearer token" />
+    </div>
+    <div class="config-bar-field narrow">
+      <label for="apiVersion">API</label>
+      <input type="text" id="apiVersion" value="v66.0" />
+    </div>
+    <button class="btn secondary small" id="testConnection">Test</button>
+    <button class="btn ghost small" id="saveConfig">Save</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

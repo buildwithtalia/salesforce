@@ -1,0 +1,12 @@
+{
+  "name": "salesforce-leads-frontend",
+  "version": "1.0.0",
+  "description": "Frontend to create and update Salesforce Leads via the REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
