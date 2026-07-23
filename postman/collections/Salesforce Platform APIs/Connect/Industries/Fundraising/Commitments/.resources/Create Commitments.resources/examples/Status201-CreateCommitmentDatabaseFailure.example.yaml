@@ -1,0 +1,124 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "processingOptions": {
+          "donorOptions": {
+            "defaultUpdateLogic": "update_all"
+          }
+        },
+        "commitments": [
+          {
+            "amount": 5.00,
+            "currencyIsoCode": "USD",
+            "transactionPeriod": "monthly",
+            "transactionInterval": 3,
+            "transactionDay": "5",
+            "startDate": "2024-07-06",
+            "endDate": "2024-08-06",
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>"
+            },
+            "donor": {
+              "donorType": "individual",
+              "id": "<SFDC_ACCOUNT_ID>",
+              "firstName": "Test",
+              "lastName": "Donor",
+              "phone": "510-434-8920",
+              "email": "test.donor@salesforce.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+                "percent": 10
+              }
+            ],
+            "firstTransaction": {
+              "amount": 150.25,
+              "receivedDate": "2024-07-06",
+              "donorCoverAmount": 0.25,
+              "transactionStatus": "Unpaid",
+              "gatewayTransactionFee": 0.75,
+              "processorTransactionFee": 0.45,
+              "processorReference": "cls-1247586928747",
+              "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+              "lastGatewayResponseCode": "invalid_cvc",
+              "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+              "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z"
+            },
+            "giftCommitmentCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ],
+            "giftCommitmentScheduleCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      // This is a scenario where there is a validation rule on the Gift Commitment Schedule object requiring the amount to be greater than 10.00. One database error occurs for the 5.00 commitment, causing the other two to be rolled back with success of false and no record links.
+      {
+          "successes": 0,
+          "failures": 2,
+          "notProcessed": 1,
+          "details": [
+              {
+                  "success": false,
+                  "errors": {
+                      "message": "Amount must be greater than 10.00"
+                  }
+              }
+          ]
+      }
+order: 3000

@@ -1,0 +1,3 @@
+$kind: collection
+description: This folder is a collection of API requests for managing platform events, change data capture events, and event relays.
+order: 7000

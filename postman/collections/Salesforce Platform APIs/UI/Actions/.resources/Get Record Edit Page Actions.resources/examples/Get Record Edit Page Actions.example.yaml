@@ -1,0 +1,104 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/record/:RECORD_ID/record-edit"
+  method: GET
+  pathVariables:
+    - key: RECORD_ID
+      value: 0014H00002LbR7QQAV
+      description: Record ID
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 10:17:45 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"550367168889732c414e90f1a22d15af--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "actions": {
+              "0014H00002LbR7QQAV": {
+                  "actions": [
+                      {
+                          "actionListContext": "RecordEdit",
+                          "actionTarget": null,
+                          "actionTargetType": "Invoke",
+                          "apiName": "SaveEdit",
+                          "externalId": "00D58000000arpq:0014H00002LbR7QQAV::RecordEdit:Desktop:StandardButton:SaveEdit",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/new_custom19_120.png",
+                          "id": "0JV4H0000350887WAA",
+                          "isMassAction": "false",
+                          "label": "Save",
+                          "lwcComponent": null,
+                          "primaryColor": null,
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "0014H00002LbR7QQAV",
+                          "subtype": "LightningWebComponent_Action",
+                          "targetObject": "Account",
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      },
+                      {
+                          "actionListContext": "RecordEdit",
+                          "actionTarget": null,
+                          "actionTargetType": "Invoke",
+                          "apiName": "SaveAndNew",
+                          "externalId": "00D58000000arpq:0014H00002LbR7QQAV::RecordEdit:Desktop:StandardButton:SaveAndNew",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/new_custom19_120.png",
+                          "id": "0JV4H0000350888WAA",
+                          "isMassAction": "false",
+                          "label": "Save &amp; New",
+                          "lwcComponent": null,
+                          "primaryColor": null,
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "0014H00002LbR7QQAV",
+                          "subtype": "LightningWebComponent_Action",
+                          "targetObject": "Account",
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      },
+                      {
+                          "actionListContext": "RecordEdit",
+                          "actionTarget": null,
+                          "actionTargetType": "Invoke",
+                          "apiName": "CancelEdit",
+                          "externalId": "00D58000000arpq:0014H00002LbR7QQAV::RecordEdit:Desktop:StandardButton:CancelEdit",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/new_custom19_120.png",
+                          "id": "0JV4H0000350889WAA",
+                          "isMassAction": "false",
+                          "label": "Cancel",
+                          "lwcComponent": null,
+                          "primaryColor": null,
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "0014H00002LbR7QQAV",
+                          "subtype": "LightningWebComponent_Action",
+                          "targetObject": "Account",
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      }
+                  ],
+                  "links": [],
+                  "url": "/services/data/v58.0/ui-api/actions/record/0014H00002LbR7QQAV/record-edit"
+              }
+          },
+          "eTag": "550367168889732c414e90f1a22d15af",
+          "url": "/services/data/v58.0/ui-api/actions/record/0014H00002LbR7QQAV/record-edit"
+      }
+order: 1000

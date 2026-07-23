@@ -1,0 +1,222 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query opportunitiesNotClosed {
+          uiapi {
+            query {
+              Opportunity(
+                where: {
+                  not: {
+                    or: [
+                      { StageName: { eq: "Closed Won" } }
+                      { StageName: { eq: "Closed Lost" } }
+                    ]
+                  }
+                }
+              ) {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                    CloseDate {
+                      value
+                      displayValue
+                    }
+                    StageName {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:23:12 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Opportunity": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegYAAQ",
+                                      "Name": {
+                                          "value": "Edge Emergency Generator"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Id. Decision Makers"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegEAAQ",
+                                      "Name": {
+                                          "value": "Pyramid Emergency Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Prospecting"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003ceg4AAA",
+                                      "Name": {
+                                          "value": "Dickenson Mobile Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Qualification"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003ceg8AAA",
+                                      "Name": {
+                                          "value": "Grand Hotels Kitchen Generator"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Id. Decision Makers"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegBAAQ",
+                                      "Name": {
+                                          "value": "Grand Hotels Guest Portable Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Value Proposition"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003ceg5AAA",
+                                      "Name": {
+                                          "value": "United Oil Office Portable Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Negotiation/Review"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003ceg9AAA",
+                                      "Name": {
+                                          "value": "United Oil Refinery Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2023-10-25",
+                                          "displayValue": "25/10/2023"
+                                      },
+                                      "StageName": {
+                                          "value": "Negotiation/Review"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegIAAQ",
+                                      "Name": {
+                                          "value": "United Oil Installations"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Negotiation/Review"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegXAAQ",
+                                      "Name": {
+                                          "value": "United Oil Plant Standby Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Needs Analysis"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegFAAQ",
+                                      "Name": {
+                                          "value": "Express Logistics Portable Truck Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "StageName": {
+                                          "value": "Value Proposition"
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

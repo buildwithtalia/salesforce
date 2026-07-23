@@ -1,0 +1,104 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/photo/:RECORD_IDS"
+  method: GET
+  pathVariables:
+    - key: RECORD_IDS
+      value: 0F94H000000UF2xSAG
+      description: A single record ID, or a comma-delimited list of record IDs.
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 11:50:11 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"802f98780c61a3109be0a574d2915772--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "actions": {
+              "0F94H000000UF2xSAG": {
+                  "actions": [
+                      {
+                          "actionListContext": "Photo",
+                          "actionTarget": null,
+                          "actionTargetType": "Invoke",
+                          "apiName": "ViewPhotoAction",
+                          "externalId": "00D58000000arpq:0F94H000000UF2xSAG::Photo:Desktop:StandardButton:ViewPhotoAction",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/email_120.png",
+                          "id": "0JV4H0000301820WAA",
+                          "isMassAction": "false",
+                          "label": "View Photo",
+                          "lwcComponent": null,
+                          "primaryColor": "939393",
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "0F94H000000UF2xSAG",
+                          "subtype": null,
+                          "targetObject": null,
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      },
+                      {
+                          "actionListContext": "Photo",
+                          "actionTarget": null,
+                          "actionTargetType": "Invoke",
+                          "apiName": "UpdatePhotoAction",
+                          "externalId": "00D58000000arpq:0F94H000000UF2xSAG::Photo:Desktop:StandardButton:UpdatePhotoAction",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/email_120.png",
+                          "id": "0JV4H0000301821WAA",
+                          "isMassAction": "false",
+                          "label": "Update Photo",
+                          "lwcComponent": null,
+                          "primaryColor": "939393",
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "0F94H000000UF2xSAG",
+                          "subtype": null,
+                          "targetObject": null,
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      },
+                      {
+                          "actionListContext": "Photo",
+                          "actionTarget": null,
+                          "actionTargetType": "Invoke",
+                          "apiName": "DeletePhotoAction",
+                          "externalId": "00D58000000arpq:0F94H000000UF2xSAG::Photo:Desktop:StandardButton:DeletePhotoAction",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/email_120.png",
+                          "id": "0JV4H0000301822WAA",
+                          "isMassAction": "false",
+                          "label": "Delete Photo",
+                          "lwcComponent": null,
+                          "primaryColor": "939393",
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "0F94H000000UF2xSAG",
+                          "subtype": null,
+                          "targetObject": null,
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      }
+                  ],
+                  "links": [],
+                  "url": "/services/data/v58.0/ui-api/actions/photo/0F94H000000UF2xSAG"
+              }
+          },
+          "eTag": "802f98780c61a3109be0a574d2915772",
+          "url": "/services/data/v58.0/ui-api/actions/photo/0F94H000000UF2xSAG"
+      }
+order: 1000

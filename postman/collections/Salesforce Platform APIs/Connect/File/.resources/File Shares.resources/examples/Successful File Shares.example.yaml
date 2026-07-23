@@ -1,0 +1,72 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/files/:FILE_ID/file-shares"
+  method: GET
+  pathVariables:
+    FILE_ID: 0692o00000woaRkAAI
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 16:37:07 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageUrl": "/services/data/v58.0/connect/files/069.../file-shares",
+          "linkShare": null,
+          "nextPageUrl": null,
+          "previousPageUrl": null,
+          "shares": [
+              {
+                  "entity": {
+                      "additionalLabel": null,
+                      "communityNickname": "User1696423780773910041",
+                      "companyName": "Salesforce",
+                      "displayName": "Name",
+                      "firstName": "firstName",
+                      "id": "005...",
+                      "isActive": true,
+                      "isInThisCommunity": true,
+                      "lastName": "Name",
+                      "motif": {
+                          "color": "1B96FF",
+                          "largeIconUrl": "/img/icon/profile64.png",
+                          "mediumIconUrl": "/img/icon/profile32.png",
+                          "smallIconUrl": "/img/icon/profile16.png",
+                          "svgIconUrl": null
+                      },
+                      "mySubscription": null,
+                      "name": "Name",
+                      "outOfOffice": {
+                          "message": ""
+                      },
+                      "photo": {
+                          "fullEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0IogXzXAXaYKJnuWCNQmXymRq?fromEmail=1",
+                          "largePhotoUrl": "https://<my_domain>/profilephoto/7292o000000oAgZ/F",
+                          "mediumPhotoUrl": "https://<my_domain>/profilephoto/7292o000000oAgZ/M",
+                          "photoVersionId": "729...",
+                          "smallPhotoUrl": "https://<my_domain>/profilephoto/7292o000000oAgZ/T",
+                          "standardEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0Ioi-dtynkoFWsl46as__TDFU?fromEmail=1",
+                          "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+                      },
+                      "reputation": null,
+                      "title": null,
+                      "type": "User",
+                      "url": "/services/data/v58.0/chatter/users/005...",
+                      "userType": "Internal"
+                  },
+                  "sharingType": "I"
+              }
+          ]
+      }
+order: 1000

@@ -1,0 +1,97 @@
+$kind: http-example
+request:
+  url: |
+    {{_endpoint}}/services/data/v{{version}}/ui-api/records/:RECORD_ID/child-relationships/:RELATIONSHIP_NAME
+  method: GET
+  queryParams:
+    - key: fields
+      value: ""
+      disabled: true
+      description: |-
+        Specifies the fields to return. If this property is specified, the response is a union of fields and optionalFields.
+        If the context user doesn’t have access to a field, an error is returned.
+
+        If you’re not sure whether the context user has access to a field and you don’t want the request to fail if they don’t, use the optionalFields parameter.
+
+        Specify names in the format ObjectApiName.FieldName. You can get any field that has a named relationship to this record. There is no limit to the number of fields you can specify.
+    - key: optionalFields
+      value: ""
+      disabled: true
+      description: |-
+        A collection of optional field names. If a field is accessible to the context user, it’s included in the response. If a field isn’t accessible to the context user, it isn’t included in the response, but it doesn’t cause an error.
+        Specify names in the format ObjectApiName.FieldName. You can get any field that has a named relationship to this record. There is no limit to the number of fields you can specify.
+    - key: page
+      value: ""
+      disabled: true
+      description: The page offset from which to begin returning records. The default value is 0, which returns records from the first page. For example, for page=2 and pageSize=10, the first record returned is the 21st record in the list.
+    - key: pageSize
+      value: ""
+      disabled: true
+      description: The maximum number of child records to return on a page. The default value is 5.
+    - key: pageToken
+      value: ""
+      disabled: true
+      description: A token that represents the page offset.
+  pathVariables:
+    - key: RECORD_ID
+      value: 001B000000UnQ2wIAF
+      description: Record ID
+    - key: |
+        RELATIONSHIP_NAME
+      value: Contacts
+      description: API name of the relationship
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 27 Sep 2023 15:57:35 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "count": 1,
+          "currentPageToken": "1;5;001B000000UnQ2wIAF;Contacts;Contact.Id,Contact.Name;",
+          "currentPageUrl": "/services/data/v58.0/ui-api/records/001B000000UnQ2wIAF/child-relationships/Contacts?fields=Contact.Id%2CContact.Name&page=1&pageSize=5",
+          "nextPageToken": null,
+          "nextPageUrl": null,
+          "previousPageToken": null,
+          "previousPageUrl": null,
+          "records": [
+              {
+                  "apiName": "Contact",
+                  "childRelationships": {},
+                  "eTag": "c3d33add9008aed557a1efa68173aa9b",
+                  "fields": {
+                      "AccountId": {
+                          "displayValue": null,
+                          "value": "001B000000UnQ2wIAF"
+                      },
+                      "Id": {
+                          "displayValue": null,
+                          "value": "003B00000097MToIAM"
+                      },
+                      "Name": {
+                          "displayValue": null,
+                          "value": "Jack Rogers"
+                      }
+                  },
+                  "id": "003B00000097MToIAM",
+                  "lastModifiedById": "005B0000003TOI6IAO",
+                  "lastModifiedDate": "2017-08-18T14:46:22.000Z",
+                  "recordTypeId": "012000000000000AAA",
+                  "recordTypeInfo": null,
+                  "systemModstamp": "2017-08-18T14:46:22.000Z",
+                  "weakEtag": 1503067582000
+              }
+          ]
+      }
+order: 1000

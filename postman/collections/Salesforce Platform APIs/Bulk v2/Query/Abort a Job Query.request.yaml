@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/query/{{_jobId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+    	"state":"Aborted"
+    }
+settings: {}
+examples: ./.resources/Abort a Job Query.resources/examples
+order: 2000

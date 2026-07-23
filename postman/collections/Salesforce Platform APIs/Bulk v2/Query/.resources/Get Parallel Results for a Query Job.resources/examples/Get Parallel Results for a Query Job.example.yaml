@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/jobs/query/{{_jobId}}/resultPages"
+  method: GET
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+          "resultPages": [
+              {
+                  "resultLink": "/jobs/query/750R0000000zxr8IAA/results?locator=aBcDeFg4N"
+              },
+              {
+                  "resultLink": "/jobs/query/750R0000000zxr8IAA/results?locator=HiJkLmN4N"
+              },
+              {
+                  "resultLink": "/jobs/query/750R0000000zxr8IAA/results?locator=oPQrStU4N"
+              },
+              {
+                  "resultLink": "/jobs/query/750R0000000zxr8IAA/results?locator=vWxYzz4N"
+              },
+              {
+                  "resultLink": "/jobs/query/750R0000000zxr8IAA/results?locator=NiKmABC4N"
+              }
+          ],
+          "nextRecordsUrl": "/jobs/query/750R0000000zxr8IAA/resultpages?locator=YcApWm4N",
+          "done": false
+      }
+order: 1000

@@ -1,0 +1,18 @@
+$kind: http-request
+description: Returns metadata for an app, and saves an app as the last selected for a user.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/apps/:APP_ID?formFactor=Large"
+method: PATCH
+queryParams:
+  - key: formFactor
+    value: Large
+    description: The form factor for each app that the user has access to (`Large`, `Medium` or `Small`)
+pathVariables:
+  - key: APP_ID
+    value: ""
+    description: Application ID
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Update Last Selected App.resources/examples
+order: 3000

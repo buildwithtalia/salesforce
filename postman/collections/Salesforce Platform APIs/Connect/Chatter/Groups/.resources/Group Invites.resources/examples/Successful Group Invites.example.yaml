@@ -1,0 +1,48 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups/group/:GROUP_ID/invite"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    GROUP_ID: 0F9...
+  body:
+    type: json
+    content: |-
+      {
+         "invitees" : {
+            "emails": [
+               "testemail1@sfdcpostman.com",
+               "testemail2@sfdcpostman.com"
+            ]
+         },
+         "message" : "Join this group to participate in the discussion about your favorite feature."
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Wed, 22 Nov 2023 11:49:28 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "invitations": [
+              {
+                  "email": "testemail1@sfdcpostman.com",
+                  "status": "Invited",
+                  "userId": ""
+              },
+              ...
+          ]
+      }
+order: 1000

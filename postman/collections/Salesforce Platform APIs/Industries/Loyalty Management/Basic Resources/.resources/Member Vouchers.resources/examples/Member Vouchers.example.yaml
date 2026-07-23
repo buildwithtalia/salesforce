@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/loyalty/programs/:loyaltyProgramName/members/:membershipNumber/vouchers"
+  method: GET
+  headers:
+    Authorization: Bearer {{accessToken}}
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+    membershipNumber: member1
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 May 2024 16:34:18 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "voucherCount": 0,
+          "vouchers": []
+      }
+order: 1000

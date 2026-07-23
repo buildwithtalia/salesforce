@@ -1,0 +1,29 @@
+$kind: http-request
+description: |-
+  Executes up to 25 subrequests in a single request. The response bodies and HTTP statuses of the subrequests in the batch are returned in a single response body. Each subrequest counts against rate limits.
+  The requests in a batch are called subrequests. All subrequests are executed in the context of the same user. Subrequests are independent, and you can’t pass information between them. Subrequests execute serially in their order in the request body. When a subrequest executes successfully, it commits its data. Commits are reflected in the output of later subrequests. If a subrequest fails, commits made by previous subrequests are not rolled back. If a batch request doesn’t complete within 10 minutes, the batch times out and the remaining subrequests aren’t executed.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_batch.htm
+url: "{{_endpoint}}/services/data/v{{version}}/composite/batch"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "haltOnError": true,
+        "batchRequests": [
+            {
+                "method": "GET",
+                "url": "v{{version}}/query/?q=SELECT+Id,+Name+FROM+Account LIMIT 2"
+            },
+            {
+                "method": "GET",
+                "url": "v{{version}}/query/?q=SELECT+Id,+Name+FROM+Opportunity LIMIT 2"
+            }
+        ]
+    }
+settings: {}
+examples: ./.resources/Composite Batch.resources/examples
+order: 3000

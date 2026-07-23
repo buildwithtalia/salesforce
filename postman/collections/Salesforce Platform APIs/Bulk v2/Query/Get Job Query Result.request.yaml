@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/query/{{_jobId}}/results"
+method: GET
+headers:
+  Content-Type: application/json
+  Accept: test/csv
+queryParams:
+  - key: locator
+    value: ""
+    disabled: true
+  - key: maxRecords
+    value: ""
+    disabled: true
+settings: {}
+examples: ./.resources/Get Job Query Result.resources/examples
+order: 5000

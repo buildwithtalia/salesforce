@@ -1,0 +1,61 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/transactions/payment-updates"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "updates": [
+          {
+            "giftTransactionId": "<SFDC_GIFT_TRANSACTION_ID>",
+            "transactionStatus": "Invalid Transaction Status",
+            "processorReference": "string",
+            "gatewayReference": "string",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "processorTransactionFee": 0.5,
+            "gatewayTransactionFee": 0.25,
+            "donorCoverAmount": 10.5
+          },
+          {
+            "giftTransactionId": "<SFDC_GIFT_TRANSACTION_ID>",
+            "transactionStatus": "Paid",
+            "processorReference": "string",
+            "gatewayReference": "string",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "processorTransactionFee": 1.00,
+            "gatewayTransactionFee": 0.45,
+            "donorCoverAmount": 20.00
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      // This is a scenario where there is a validation rule on the Gift Transaction object requiring the donor cover amount to be less than 10.00. One database error occurs for the 10.50 cover amount, causing the other two to be rolled back with success of false and no record links.
+      {
+          "successes": 0,
+          "failures": 1,
+          "notProcessed": 1,
+          "details": [
+              {
+                  "success": false,
+                  "errors": {
+                      "message": "Donor cover amount must be less than 10.00"
+                  }
+              },
+              {
+                  "success": false
+              }
+          ]
+      }
+order: 3000

@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/expression-set/:expressionSetId"
+  method: GET
+  pathVariables:
+    - key: expressionSetId
+      value: 9QMHo000000LBjOOAW
+      description: "Expression Set Id: For Example 9QLHo000000LBjEOAW"
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Wed, 06 Sep 2023 10:37:51 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "errorCode": "INVALID_ID_FIELD",
+              "message": "Invalid identifier: 9QMHo000000LBjOOAW"
+          }
+      ]
+order: 4000

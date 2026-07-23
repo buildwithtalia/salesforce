@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the header actions on the most recently used (MRU) list view for objects.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/mru-list/:SOBJECT_API_NAMES"
+method: GET
+pathVariables:
+  - key: SOBJECT_API_NAMES
+    value: ""
+    description: An object name, or a comma-delimited list of object names.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get MRU List View Actions.resources/examples
+order: 11000

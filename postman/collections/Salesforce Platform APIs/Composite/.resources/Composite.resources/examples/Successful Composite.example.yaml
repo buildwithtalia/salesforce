@@ -1,0 +1,77 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/composite/"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "compositeRequest": [
+              {
+                  "method": "POST",
+                  "url": "/services/data/v53.0/sobjects/Account",
+                  "referenceId": "refAccount",
+                  "body": {
+                      "Name": "Sample Account"
+                  }
+              },
+              {
+                  "method": "POST",
+                  "url": "/services/data/v53.0/sobjects/Contact",
+                  "referenceId": "refContact",
+                  "body": {
+                      "LastName": "Sample Contact",
+                      "AccountId": "@{refAccount.id}"
+                  }
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 15:18:26 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=33/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "compositeResponse": [
+              {
+                  "body": {
+                      "id": "001...",
+                      "success": true,
+                      "errors": []
+                  },
+                  "httpHeaders": {
+                      "Location": "/services/data/v53.0/sobjects/Account/001..."
+                  },
+                  "httpStatusCode": 201,
+                  "referenceId": "refAccount"
+              },
+              {
+                  "body": {
+                      "id": "0032o00003WauzJAAR",
+                      "success": true,
+                      "errors": []
+                  },
+                  "httpHeaders": {
+                      "Location": "/services/data/v53.0/sobjects/Contact/003..."
+                  },
+                  "httpStatusCode": 201,
+                  "referenceId": "refContact"
+              }
+          ]
+      }
+order: 1000

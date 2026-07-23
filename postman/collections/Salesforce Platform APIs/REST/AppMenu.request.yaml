@@ -1,0 +1,9 @@
+$kind: http-request
+description: Returns a list of items in either the Salesforce app drop-down menu or the Salesforce for Android, iOS, and mobile web navigation menu.
+url: "{{_endpoint}}/services/data/v{{version}}/appMenu/"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+examples: ./.resources/AppMenu.resources/examples
+order: 15000

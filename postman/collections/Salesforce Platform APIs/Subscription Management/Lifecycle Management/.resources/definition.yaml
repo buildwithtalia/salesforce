@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  **NOTE:** You must manually populate the IDs of your order and assets. This colleciton won't collect or store order and asset IDs.
+
+  An asset represents a product or service that a customer has purchased. Lifecycle-managed assets show information from the initial sale of a subscription through its end date, including any cancellations, quantity changes, or renewals. Use lifecycle-managed assets for an up-to-date view of your customer's purchases and your monthly recurring revenue.
+
+  For more information, see [Assets](https://developer.salesforce.com/docs/revenue/subscription-management/references/assets?meta=Summary) in Salesforce Developers.
+order: 6000

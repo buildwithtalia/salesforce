@@ -1,0 +1,129 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/:SOBJECT_API_NAME/:RECORD_ID"
+  method: GET
+  pathVariables:
+    SOBJECT_API_NAME: ApexClass
+    RECORD_ID: 01p4H00000A4kfqQAB
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 11 Dec 2023 10:38:26 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=308/15000
+    Last-Modified: Sun, 26 Nov 2023 14:10:11 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "attributes": {
+              "type": "ApexClass",
+              "url": "/services/data/v59.0/tooling/sobjects/ApexClass/01p4H00000A4kfqQAB"
+          },
+          "Id": "01p4H00000A4kfqQAB",
+          "NamespacePrefix": "smon",
+          "Name": "GenericEventPostMock",
+          "ApiVersion": 59,
+          "Status": "Active",
+          "IsValid": false,
+          "BodyCrc": -1,
+          "Body": "/*\nThis file is generated and isn't the actual source code for this\nmanaged global class.\nThis read-only file shows the class's global constructors,\nmethods, variables, and properties.\nTo enable code to compile, all methods return null.\n*/\nglobal class GenericEventPostMock implements System.HttpCalloutMock {\n    global GenericEventPostMock(Integer statusCode) {\n\n    }\n    global System.HttpResponse respond(System.HttpRequest req) {\n        return null;\n    }\n}\n",
+          "LengthWithoutComments": -1,
+          "CreatedDate": "2023-11-20T08:03:40.000+0000",
+          "CreatedById": "00558000000yFyDAAU",
+          "LastModifiedDate": "2023-11-20T08:03:40.000+0000",
+          "LastModifiedById": "00558000000yFyDAAU",
+          "SystemModstamp": "2023-11-26T14:10:11.000+0000",
+          "ManageableState": "installed",
+          "SymbolTable": {
+              "constructors": [
+                  {
+                      "annotations": [],
+                      "location": {
+                          "column": 12,
+                          "line": 5
+                      },
+                      "modifiers": [
+                          "global"
+                      ],
+                      "name": "GenericEventPostMock",
+                      "parameters": [
+                          {
+                              "name": "statusCode",
+                              "type": "Integer"
+                          }
+                      ],
+                      "references": [],
+                      "type": null
+                  }
+              ],
+              "externalReferences": [],
+              "id": "smon.GenericEventPostMock",
+              "innerClasses": [],
+              "interfaces": [
+                  "System.HttpCalloutMock"
+              ],
+              "key": "smon.GenericEventPostMock",
+              "methods": [
+                  {
+                      "annotations": [],
+                      "location": {
+                          "column": 25,
+                          "line": 9
+                      },
+                      "modifiers": [
+                          "global"
+                      ],
+                      "name": "respond",
+                      "parameters": [
+                          {
+                              "name": "req",
+                              "type": "System.HttpRequest"
+                          }
+                      ],
+                      "references": [],
+                      "returnType": "System.HttpResponse",
+                      "type": null
+                  }
+              ],
+              "name": "GenericEventPostMock",
+              "namespace": "smon",
+              "parentClass": "",
+              "properties": [],
+              "tableDeclaration": {
+                  "annotations": [
+                      {
+                          "name": "IsTest"
+                      }
+                  ],
+                  "location": {
+                      "column": 14,
+                      "line": 2
+                  },
+                  "modifiers": [
+                      "testMethod",
+                      "global"
+                  ],
+                  "name": "GenericEventPostMock",
+                  "references": [],
+                  "type": "smon.GenericEventPostMock"
+              },
+              "variables": []
+          },
+          "Metadata": {
+              "apiVersion": 59,
+              "packageVersions": [],
+              "status": "Active",
+              "urls": null
+          },
+          "FullName": "smon__GenericEventPostMock"
+      }
+order: 1000

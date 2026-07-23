@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_member_benefits.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_member_benefits.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/member/:memberId/memberbenefits"
+method: GET
+pathVariables:
+  memberId: ""
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Member Benefits.resources/examples
+order: 3000

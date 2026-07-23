@@ -1,0 +1,21 @@
+$kind: http-request
+description: |-
+  Lists information about object record counts in your organization.
+  This resource is available in REST API version 40.0 and later for API users with the “View Setup and Configuration” permission. The returned record count is approximate, and does not include the following types of records:
+
+  Deleted records in the recycle bin.
+  Archived records.
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_record_count.htm
+url: "{{_endpoint}}/services/data/v{{version}}/limits/recordCount?sObjects=Account,Contact,Lead"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: sObjects
+    value: Account,Contact,Lead
+    description: |-
+      A comma-delimited list of object names. If a listed object is not found in the org, it is ignored and not returned in the response.
+      This parameter is optional. If this parameter is not provided, the resource returns record counts for all objects in the org.
+settings: {}
+examples: ./.resources/Record Count.resources/examples
+order: 20000

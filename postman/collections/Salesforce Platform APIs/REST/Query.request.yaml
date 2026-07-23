@@ -1,0 +1,21 @@
+$kind: http-request
+description: |-
+  Executes the specified SOQL query.
+
+  If the query results are too large, the response contains the first batch of results and a query identifier in the nextRecordsUrl field of the response. The identifier can be used in an additional request to retrieve the next batch.
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_query.htm
+url: "{{_endpoint}}/services/data/v{{version}}/query/?q=SELECT FIELDS(All) FROM ACCOUNT ORDER BY Name LIMIT 5"
+method: GET
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Authorization
+    value: "{{_accessToken}}"
+    description: Only used for Postman Notebooks. Auth is defined at collection-level and inherited down.
+queryParams:
+  - key: q
+    value: SELECT FIELDS(All) FROM ACCOUNT ORDER BY Name LIMIT 5
+    description: "A SOQL query. Note that you will need to replace spaces with “+” characters in your query string to create a valid URI. An example query parameter string might look like: “SELECT+Name+FROM+MyObject”. If the SOQL query string is invalid, a MALFORMED_QUERY response is returned."
+settings: {}
+examples: ./.resources/Query.resources/examples
+order: 18000

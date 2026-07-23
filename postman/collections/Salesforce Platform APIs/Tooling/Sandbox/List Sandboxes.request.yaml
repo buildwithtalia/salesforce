@@ -1,0 +1,18 @@
+$kind: http-request
+description: Lists all sandboxes.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT Id, SandboxName, LicenseType, AutoActivate FROM SandboxInfo"
+method: GET
+headers:
+  - key: Content-Type
+    value: application/json
+    disabled: true
+queryParams:
+  - key: q
+    value: SELECT Id, SandboxName, LicenseType, AutoActivate FROM SandboxInfo
+    description: SOQL Query
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/List Sandboxes.resources/examples
+order: 1000

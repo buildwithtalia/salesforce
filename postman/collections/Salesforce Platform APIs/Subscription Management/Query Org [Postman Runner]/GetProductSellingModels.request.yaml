@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/query?q=Select Id, name from ProductSellingModel Where NAME IN ('Evergreen Monthly', 'One-Time', 'Term Monthly') order by Name ASC"
+method: GET
+queryParams:
+  q: Select Id, name from ProductSellingModel Where NAME IN ('Evergreen Monthly', 'One-Time', 'Term Monthly') order by Name ASC
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: |
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      const jsonData = JSON.parse(responseBody);
+
+      context.set("EvergreenMonthlyPSM", jsonData.records[0].Id);
+      context.set("OneTimePSM", jsonData.records[1].Id);
+      context.set("TermMonthlyPSM", jsonData.records[2].Id);
+    language: text/javascript
+settings: {}
+order: 8000

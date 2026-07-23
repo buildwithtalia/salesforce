@@ -1,0 +1,49 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/token"
+  method: POST
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: grant_type
+        value: device
+      - type: text
+        key: client_id
+        value: "{{clientId}}"
+      - type: text
+        key: format
+        value: json
+      - type: text
+        key: code
+        value: M01WRzlWZS4yd3FVVnhfYWxmS2xQUmdzMHlZM3ozUnZHelJIQXVFZzl5dlpubWRfR05LcGtybVNEODBTTDg1Z0lsWG1hR29WUFZ5ZWtkaFZWZnJVdzs4NS4yMjIuMTM0LjQ7MTcwMDE0ODU3OTk1NjsxMlpIR01aSA
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:32:28 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "access_token": "<access_token>",
+          "refresh_token": "<refresh_token>",
+          "signature": "DD9WZJyeKtTaY9QumwdCdGoSSTsCVpWegA0Rahzf5e8=",
+          "scope": "<scope_list>",
+          "id_token": "<id_token>",
+          "instance_url": "https://<my_domain>",
+          "id": "https://login.salesforce.com/id/00D.../005...",
+          "token_type": "Bearer",
+          "issued_at": "<timestamp>"
+      }
+order: 1000

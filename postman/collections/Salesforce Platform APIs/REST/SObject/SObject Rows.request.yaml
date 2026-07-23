@@ -1,0 +1,11 @@
+$kind: http-request
+description: Accesses records based on the specified object ID. Retrieves, updates, or deletes records. This resource can also be used to retrieve field values. Use the GET method to retrieve records or fields, the DELETE method to delete records, and the PATCH method to update records.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/:RECORD_ID"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+  RECORD_ID: ""
+settings: {}
+order: 9000

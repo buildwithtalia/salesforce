@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest/{{_jobId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+    	"state":"UploadComplete"
+    }
+settings: {}
+examples: ./.resources/Close or Abort a Job.resources/examples
+order: 4000

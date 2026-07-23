@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Accesses records by traversing object relationships via friendly URLs. You can retrieve, update, or delete the record associated with the traversed relationship field. If there are multiple related records, you can retrieve the complete set of associated records. This resource is available in REST API version 36.0 and later.
+
+  GET, PATCH, DELETE
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/:RECORD_ID/:RELATIONSHIP_FIELD_NAME"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+  RECORD_ID: ""
+  RELATIONSHIP_FIELD_NAME: ""
+settings: {}
+order: 22000

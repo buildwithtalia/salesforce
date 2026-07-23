@@ -1,0 +1,28 @@
+$kind: http-request
+description: |-
+  Invite internal and external users to join a group.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_groups_invites.htm#connect_resources_groups_invites
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups/group/:GROUP_ID/invite"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  GROUP_ID: ""
+body:
+  type: json
+  content: |-
+    {
+       "invitees" : {
+          "emails": [
+             "testemail1@sfdcpostman.com",
+             "testemail2@sfdcpostman.com"
+          ]
+       },
+       "message" : "Join this group to participate in the discussion about your favorite feature."
+    }
+settings:
+  disabledSystemHeaders:
+    - content-type
+examples: ./.resources/Group Invites.resources/examples
+order: 4000

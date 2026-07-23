@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Retrieves the specified image data from a specific rich text area field in a given record.
+  contentReferenceId	The reference ID that uniquely identifies an image within a rich text area field.
+  You can obtain the reference by retrieving information for the object. The description will show the contents of the rich text area field
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/:RECORD_ID/richTextImageFields/:FIELD_NAME/:CONTENT_REFERENCE_ID"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+  RECORD_ID: ""
+  FIELD_NAME: ""
+  CONTENT_REFERENCE_ID: ""
+settings: {}
+order: 21000

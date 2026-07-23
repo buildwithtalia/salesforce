@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/token"
+method: POST
+headers:
+  Content-Type: application/x-www-form-urlencoded
+body:
+  type: urlencoded
+  content:
+    grant_type: urn:ietf:params:oauth:grant-type:token-exchange
+    subject_token_type: urn:ietf:params:oauth:token-type:access_token
+    subject_token: "{{_accessToken}}"
+    actor_token_type: urn:ietf:params:oauth:token-type:jwt
+    actor_token: ""
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/Asset Token Flow.resources/examples
+order: 12000

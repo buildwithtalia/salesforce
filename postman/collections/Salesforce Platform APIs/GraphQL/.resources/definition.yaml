@@ -1,0 +1,16 @@
+$kind: collection
+description: |-
+  Aggregate records, request explicit fields, version at field-level, and more with the GraphQL API for Salesforce.
+
+  GraphQL is an open-source data query and manipulation platform for APIs.
+
+  **Integration Made Easy**
+
+  A well-defined type system that makes it easy for clients to integrate any resource from the server into their request and caching logic.
+
+  **Secure Information at Scale**
+
+  A schema that reflects the user's Field Level Security, so they only see the types and fields permitted at their level.
+
+  📚 [Salesforce GraphQL API documentation](https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html)
+order: 9000

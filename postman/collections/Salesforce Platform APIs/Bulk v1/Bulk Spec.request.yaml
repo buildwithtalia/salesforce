@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/spec"
+method: POST
+headers:
+  X-SFDC-Session: "{{_accessToken}}"
+  Content-Type: text/csv
+  charset: UTF-8
+  Accept-Encoding: gzip
+  Content-Encoding: gzip
+body:
+  type: text
+  content: |-
+    Salesforce Field,Csv Header,Value,Hint
+    Name,Full Name,,
+settings: {}
+examples: ./.resources/Bulk Spec.resources/examples
+order: 3000

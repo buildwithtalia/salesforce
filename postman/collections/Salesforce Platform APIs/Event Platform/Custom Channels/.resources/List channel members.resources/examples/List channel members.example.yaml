@@ -1,0 +1,80 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT Id, DeveloperName, EventChannel, FilterExpression, SelectedEntity FROM PlatformEventChannelMember"
+  method: GET
+  queryParams:
+    q: SELECT Id, DeveloperName, EventChannel, FilterExpression, SelectedEntity FROM PlatformEventChannelMember
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 03 Jul 2023 13:16:35 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=9/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "size": 4,
+          "totalSize": 4,
+          "done": true,
+          "queryLocator": null,
+          "entityTypeName": "PlatformEventChannelMember",
+          "records": [
+              {
+                  "attributes": {
+                      "type": "PlatformEventChannelMember",
+                      "url": "/services/data/v58.0/tooling/sobjects/PlatformEventChannelMember/0v84H000000PAvIQAW"
+                  },
+                  "Id": "0v84H000000PAvIQAW",
+                  "DeveloperName": "ChangeEvents_ContactChangeEvent",
+                  "EventChannel": "ChangeEvents",
+                  "FilterExpression": null,
+                  "SelectedEntity": "ContactChangeEvent"
+              },
+              {
+                  "attributes": {
+                      "type": "PlatformEventChannelMember",
+                      "url": "/services/data/v58.0/tooling/sobjects/PlatformEventChannelMember/0v84H000000XZCjQAO"
+                  },
+                  "Id": "0v84H000000XZCjQAO",
+                  "DeveloperName": "ChangeEvents_AccountChangeEvent",
+                  "EventChannel": "ChangeEvents",
+                  "FilterExpression": null,
+                  "SelectedEntity": "AccountChangeEvent"
+              },
+              {
+                  "attributes": {
+                      "type": "PlatformEventChannelMember",
+                      "url": "/services/data/v58.0/tooling/sobjects/PlatformEventChannelMember/0v84H000000fxSfQAI"
+                  },
+                  "Id": "0v84H000000fxSfQAI",
+                  "DeveloperName": "HREvents_Employee_ChangeEvent",
+                  "EventChannel": "0YL4H0000004C93WAE",
+                  "FilterExpression": null,
+                  "SelectedEntity": "Meeting_Note__ChangeEvent"
+              },
+              {
+                  "attributes": {
+                      "type": "PlatformEventChannelMember",
+                      "url": "/services/data/v58.0/tooling/sobjects/PlatformEventChannelMember/0v84H000000fxSkQAI"
+                  },
+                  "Id": "0v84H000000fxSkQAI",
+                  "DeveloperName": "AdvocateEvents_Employee_ChangeEvent",
+                  "EventChannel": "0YL4H0000004C98WAE",
+                  "FilterExpression": null,
+                  "SelectedEntity": "Meeting_Note__ChangeEvent"
+              }
+          ]
+      }
+order: 1000

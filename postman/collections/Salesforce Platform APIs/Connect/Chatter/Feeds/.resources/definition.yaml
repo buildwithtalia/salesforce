@@ -1,0 +1,3 @@
+$kind: collection
+description: Feeds are made up of feed items. There are many feed types. Each feed type has an algorithm that determines which feed items it contains.
+order: 1000

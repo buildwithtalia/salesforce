@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-models/export"
+  method: POST
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 500
+  statusText: Server Error
+  headers:
+    Date: Tue, 19 Sep 2023 12:02:44 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "message": "An unexpected error occurred. Please include this ErrorId if you contact support: 1291449758-100210 (-239130079)",
+              "errorCode": "UNKNOWN_EXCEPTION"
+          }
+      ]
+order: 2000

@@ -1,0 +1,38 @@
+$kind: http-request
+description: |-
+  [Issue a Voucher](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_issue_voucher.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+  processName: ""
+body:
+  type: json
+  content: |-
+    {
+       "processParameters":[
+          {
+             "MemberId":"0lMxx00000000BJEAY",
+             "VoucherCode":"15OFF",
+             "VoucherFaceValue":15,
+             "VoucherExpirationDate":"2022-07-13"
+          }
+       ]
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','IssueVoucher');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Issue a Voucher.resources/examples
+order: 6000

@@ -1,0 +1,231 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/object-info/:SOBJECT_API_NAME/picklist-values/:RECORD_TYPE_ID/:FIELD_API_NAME"
+  method: GET
+  pathVariables:
+    - key: SOBJECT_API_NAME
+      value: Account
+      description: Object API Name
+    - key: RECORD_TYPE_ID
+      value: 012000000000000AAA
+      description: Record type Id. Use `012000000000000AAA` as default when there are no custom record types.
+    - key: FIELD_API_NAME
+      value: Industry
+      description: Field API Name
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 04 May 2021 09:32:34 GMT
+    Strict-Transport-Security: max-age=31536002; includeSubDomains
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"bee3e6401e143e18332a17639061c5ff--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "controllerValues": {},
+          "defaultValue": null,
+          "eTag": "bee3e6401e143e18332a17639061c5ff",
+          "url": "/services/data/v51.0/ui-api/object-info/Account/picklist-values/012000000000000AAA/Industry",
+          "values": [
+              {
+                  "attributes": null,
+                  "label": "Agriculture",
+                  "validFor": [],
+                  "value": "Agriculture"
+              },
+              {
+                  "attributes": null,
+                  "label": "Apparel",
+                  "validFor": [],
+                  "value": "Apparel"
+              },
+              {
+                  "attributes": null,
+                  "label": "Banking",
+                  "validFor": [],
+                  "value": "Banking"
+              },
+              {
+                  "attributes": null,
+                  "label": "Biotechnology",
+                  "validFor": [],
+                  "value": "Biotechnology"
+              },
+              {
+                  "attributes": null,
+                  "label": "Chemicals",
+                  "validFor": [],
+                  "value": "Chemicals"
+              },
+              {
+                  "attributes": null,
+                  "label": "Communications",
+                  "validFor": [],
+                  "value": "Communications"
+              },
+              {
+                  "attributes": null,
+                  "label": "Construction",
+                  "validFor": [],
+                  "value": "Construction"
+              },
+              {
+                  "attributes": null,
+                  "label": "Consulting",
+                  "validFor": [],
+                  "value": "Consulting"
+              },
+              {
+                  "attributes": null,
+                  "label": "Education",
+                  "validFor": [],
+                  "value": "Education"
+              },
+              {
+                  "attributes": null,
+                  "label": "Electronics",
+                  "validFor": [],
+                  "value": "Electronics"
+              },
+              {
+                  "attributes": null,
+                  "label": "Energy",
+                  "validFor": [],
+                  "value": "Energy"
+              },
+              {
+                  "attributes": null,
+                  "label": "Engineering",
+                  "validFor": [],
+                  "value": "Engineering"
+              },
+              {
+                  "attributes": null,
+                  "label": "Entertainment",
+                  "validFor": [],
+                  "value": "Entertainment"
+              },
+              {
+                  "attributes": null,
+                  "label": "Environmental",
+                  "validFor": [],
+                  "value": "Environmental"
+              },
+              {
+                  "attributes": null,
+                  "label": "Finance",
+                  "validFor": [],
+                  "value": "Finance"
+              },
+              {
+                  "attributes": null,
+                  "label": "Food &amp; Beverage",
+                  "validFor": [],
+                  "value": "Food &amp; Beverage"
+              },
+              {
+                  "attributes": null,
+                  "label": "Government",
+                  "validFor": [],
+                  "value": "Government"
+              },
+              {
+                  "attributes": null,
+                  "label": "Healthcare",
+                  "validFor": [],
+                  "value": "Healthcare"
+              },
+              {
+                  "attributes": null,
+                  "label": "Hospitality",
+                  "validFor": [],
+                  "value": "Hospitality"
+              },
+              {
+                  "attributes": null,
+                  "label": "Insurance",
+                  "validFor": [],
+                  "value": "Insurance"
+              },
+              {
+                  "attributes": null,
+                  "label": "Machinery",
+                  "validFor": [],
+                  "value": "Machinery"
+              },
+              {
+                  "attributes": null,
+                  "label": "Manufacturing",
+                  "validFor": [],
+                  "value": "Manufacturing"
+              },
+              {
+                  "attributes": null,
+                  "label": "Media",
+                  "validFor": [],
+                  "value": "Media"
+              },
+              {
+                  "attributes": null,
+                  "label": "Not For Profit",
+                  "validFor": [],
+                  "value": "Not For Profit"
+              },
+              {
+                  "attributes": null,
+                  "label": "Recreation",
+                  "validFor": [],
+                  "value": "Recreation"
+              },
+              {
+                  "attributes": null,
+                  "label": "Retail",
+                  "validFor": [],
+                  "value": "Retail"
+              },
+              {
+                  "attributes": null,
+                  "label": "Shipping",
+                  "validFor": [],
+                  "value": "Shipping"
+              },
+              {
+                  "attributes": null,
+                  "label": "Technology",
+                  "validFor": [],
+                  "value": "Technology"
+              },
+              {
+                  "attributes": null,
+                  "label": "Telecommunications",
+                  "validFor": [],
+                  "value": "Telecommunications"
+              },
+              {
+                  "attributes": null,
+                  "label": "Transportation",
+                  "validFor": [],
+                  "value": "Transportation"
+              },
+              {
+                  "attributes": null,
+                  "label": "Utilities",
+                  "validFor": [],
+                  "value": "Utilities"
+              },
+              {
+                  "attributes": null,
+                  "label": "Other",
+                  "validFor": [],
+                  "value": "Other"
+              }
+          ]
+      }
+order: 1000

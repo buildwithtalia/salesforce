@@ -1,0 +1,62 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        mutation AccountExample{
+          uiapi {
+            AccountCreate(input: {
+              Account: {
+                Name: "Trailblazer Express"
+              }
+            }) {
+              Record {
+                Id
+                Name {
+                  value
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 25 Sep 2024 10:17:20 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Sforce-Limit-Info: api-usage=19/15000
+    X-Content-Type-Options: nosniff
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Robots-Tag: none
+    Server: sfdcedge
+    X-SFDC-Request-Id: 7544180f23a92250a9d97e61d60fbaa6
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "AccountCreate": {
+                      "Record": {
+                          "Id": "<Id>",
+                          "Name": {
+                              "value": "Trailblazer Express"
+                          }
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

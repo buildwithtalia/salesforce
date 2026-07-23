@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/feed-elements/:FEED_ELEMENT_ID"
+  method: DELETE
+  pathVariables:
+    FEED_ELEMENT_ID: ""
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Wed, 22 Nov 2023 11:13:51 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+  body:
+    type: text
+    content: ""
+order: 1000

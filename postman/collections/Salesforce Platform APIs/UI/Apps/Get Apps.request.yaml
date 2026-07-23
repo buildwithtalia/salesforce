@@ -1,0 +1,18 @@
+$kind: http-request
+description: Get metadata for all the apps a user has access to. Metadata for the selected app includes tabs on the app’s navigation bar. Metadata for other apps doesn’t include tabs on the navigation bar.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/apps?formFactor=Large"
+method: GET
+queryParams:
+  - key: formFactor
+    value: Large
+    description: The form factor for each app that the user has access to (`Large`, `Medium` or `Small`)
+  - key: userCustomizations
+    value: "true"
+    disabled: true
+    description: If true, gets custom and standard navigation tabs. If false, gets only standard navigation tabs.
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get Apps.resources/examples
+order: 1000

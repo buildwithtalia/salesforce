@@ -1,0 +1,103 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/{fieldValue}?externalIdField={fieldName}"
+  method: POST
+  queryParams:
+    externalIdField: "{fieldName}"
+  body:
+    type: json
+    content: |-
+      {
+      "amount": 150.25,
+        "transactionPeriod": "monthly",
+        "transactionInterval": 3,
+        "transactionDay": "5",
+        "startDate": "2024-07-06",
+        "endDate": "2024-07-06",
+        "campaign": {
+          "externalId": {
+              "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+              "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+          }
+        },
+        "outreachSourceCode": {
+          "id": "<SOURCE_CODE_ID>",
+          "sourceCode": "AnimalEmailCampaign2023"
+        },
+        "donor": {
+          "donorType": "individual",
+          "organizationName": "ABC Inc.",
+          "firstName": "David",
+          "lastName": "Chavez",
+          "phone": "510-434-8920",
+          "email": "d.chavez@salesforce.com",
+          "address": [
+            {
+              "addressType": "mailing",
+              "street": "123 Main Street",
+              "city": "Oakland",
+              "state": "CA",
+              "postalCode": "94610",
+              "country": "US"
+            }
+          ],
+          "accountCustomFields": [
+            {
+              "fieldName": "string",
+              "fieldValue": "string"
+            }
+          ]
+        },
+        "paymentInstrument": {
+          "type": "credit card",
+          "accountHolderName": "david chavez",
+          "expiryMonth": "10",
+          "expiryYear": "2026",
+          "last4": "4585",
+          "cardBrand": "visa",
+          "bankName": "chase",
+          "digitalWalletProvider": "apple pay",
+          "bankAccountHolderType": "primary",
+          "bankAccountType": "checking",
+          "bankAccountNumber": "123456",
+          "bankCode": "HBUK",
+          "gatewayName": "stripe",
+          "processorName": "classy",
+          "processorPaymentReference": "string",
+          "gatewayReference": "string"
+        },
+        "giftCommitmentCustomFields": [
+          {
+            "fieldName": "string",
+            "fieldValue": "string"
+          }
+        ],
+        "giftCommitmentScheduleCustomFields": [
+          {
+            "fieldName": "string",
+            "fieldValue": "string"
+          }
+        ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "links": {
+          "giftcommitment": {
+            "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+            "id": "<SFDC_GIFT_COMMITMENT_ID>"
+          },
+          "giftcommitmentschedule": {
+            "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_SCHEDULE_ID>",
+            "id": "<SFDC_GIFT_COMMITMENT_SCHEDULE_ID>"
+          }
+        }
+      }
+order: 4000

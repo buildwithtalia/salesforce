@@ -1,0 +1,71 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/loyalty/programs/:loyaltyProgramName/members/:membershipNumber/transaction-ledger-summary"
+  method: GET
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalSubTypeName
+      value: ""
+      disabled: true
+      description: Returns the transaction journals filtered by the specified journal subtype.
+    - key: additionalTransactionJournalAttributes
+      value: ""
+      disabled: true
+      description: Returns the list of transaction journal fields.
+    - key: journalTypeName
+      value: ""
+      disabled: true
+      description: Returns the transaction journals filtered by the specified journal type.
+    - key: pageNumber
+      value: ""
+      disabled: true
+      description: |
+        Returns the transaction journals for the specified page number.
+    - key: periodEndDate
+      value: ""
+      disabled: true
+      description: Returns the transaction journals filtered by the specified end date.
+    - key: periodStartDate
+      value: ""
+      disabled: true
+      description: Returns the transaction journals filtered by the specified start date.
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+    membershipNumber: Member123
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 27 May 2024 19:37:52 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "message": null,
+          "status": true,
+          "transactionJournalCount": 1,
+          "transactionJournals": [
+              {
+                  "activityDate": "2021-01-01T04:05:05.000Z",
+                  "additionalTransactionJournalAttributes": [],
+                  "journalSubTypeName": "Member Enrollment",
+                  "journalTypeName": "Accrual",
+                  "pointsChange": [],
+                  "transactionJournalId": "0lVJ8000000GmaEMAS",
+                  "transactionJournalNumber": "00000008"
+              }
+          ]
+      }
+order: 1000

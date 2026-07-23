@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  All feed elements from all groups the context user either owns or is a member of, as well as all files, records, and users the context user follows. Use this resource to get information about feed elements and to post feed elements.
+
+  For information about posting a feed element, see Feed Elements, Post and Search.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resource_feeds_news.htm#cc_news_feed_elements
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/feeds/news/me/feed-elements"
+method: GET
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/News Feed Elements.resources/examples
+order: 1000

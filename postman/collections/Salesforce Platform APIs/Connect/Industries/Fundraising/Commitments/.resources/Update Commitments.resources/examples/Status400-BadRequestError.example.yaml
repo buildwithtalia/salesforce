@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/:commitmentId"
+  method: POST
+  pathVariables:
+    commitmentId: ""
+  body:
+    type: json
+    content: |-
+      {
+        "amount": 150.25,
+        "transactionPeriod": "monthly",
+        "transactionInterval": 3,
+        "transactionDay": "5",
+        "startDate": "2024-07-06",
+        "endDate": "2024-07-06",
+        "outreachSourceCode": {
+          "sourceCode": "AnimalEmailCampaign2023"
+        },
+        "paymentInstrument": {
+          "type": "credit card",
+          "accountHolderName": "test donor",
+          "expiryMonth": "10",
+          "expiryYear": "2026",
+          "last4": "4585",
+          "cardBrand": "visa",
+          "bankName": "chase",
+          "digitalWalletProvider": "apple pay",
+          "bankAccountHolderType": "primary",
+          "bankAccountType": "checking",
+          "bankAccountNumber": "123456",
+          "bankCode": "HBUK",
+          "gatewayName": "stripe",
+          "processorName": "test processor",
+          "processorPaymentReference": "string",
+          "gatewayReference": "string"
+        }
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |2-
+          // Even if the JSON request is valid, this is an example of a 400 error code that will be returned if duplicate matching rules are not active. Any non 200 error code would have a similar response structure.
+          {
+              "errorCode": "UNKNOWN_EXCEPTION",
+              "message": "Provide active duplicate matching rules on Account and Person Account for donor matching. -- industries.fundraisingops.connect.impl.validator.ValidatorUtil.validateMatchingMethod(ValidatorUtil.java:103)"
+          }
+order: 5000

@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/transactions/payment-updates"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "updates": [
+          {
+            "giftTransactionId": "<SFDC_GIFT_TRANSACTION_ID>",
+            "transactionStatus": "Paid",
+            "processorReference": "string",
+            "gatewayReference": "string",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "processorTransactionFee": 0.5,
+            "gatewayTransactionFee": 0.25,
+            "donorCoverAmount": 10.5
+          }
+        ]
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      // Even if the JSON request is valid, this is an example of a 400 error code that will be returned if duplicate matching rules are not active. Any non 200 error code would have a similar response structure.
+      {
+          "errorCode": "UNKNOWN_EXCEPTION",
+          "message": "Provide active duplicate matching rules on Account and Person Account for donor matching. -- industries.fundraisingops.connect.impl.validator.ValidatorUtil.validateMatchingMethod(ValidatorUtil.java:103)"
+      }
+order: 5000

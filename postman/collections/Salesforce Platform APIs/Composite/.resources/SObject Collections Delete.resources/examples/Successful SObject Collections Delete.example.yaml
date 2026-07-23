@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/composite/sobjects?ids=0012o00003OBzVSAA1&allOrNone=true"
+  method: DELETE
+  headers:
+    Content-Type: application/json
+  queryParams:
+    ids: 0012o00003OBzVSAA1
+    allOrNone: "true"
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 15:31:21 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=49/15000
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "id": "001...",
+              "success": true,
+              "errors": []
+          }
+      ]
+order: 1000

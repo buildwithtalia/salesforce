@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT Id, DeveloperName, MasterLabel, ChannelType FROM PlatformEventChannel"
+method: GET
+queryParams:
+  q: SELECT Id, DeveloperName, MasterLabel, ChannelType FROM PlatformEventChannel
+settings: {}
+examples: ./.resources/List event channels.resources/examples
+order: 3000

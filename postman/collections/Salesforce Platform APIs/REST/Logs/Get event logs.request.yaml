@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Executes the specified SOQL query.
+
+  If the query results are too large, the response contains the first batch of results and a query identifier in the nextRecordsUrl field of the response. The identifier can be used in an additional request to retrieve the next batch.
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_query.htm
+url: "{{_endpoint}}/services/data/v{{version}}/query/?q=SELECT+FIELDS(ALL)+from+EventLogFile+ORDER+BY+LastModifiedDate+DESC+LIMIT+200"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: SELECT+FIELDS(ALL)+from+EventLogFile+ORDER+BY+LastModifiedDate+DESC+LIMIT+200
+    description: Gets the first 200 EventLogFile records ordered by most recently updated first.
+settings: {}
+order: 1000

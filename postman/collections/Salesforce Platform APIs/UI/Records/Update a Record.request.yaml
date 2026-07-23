@@ -1,0 +1,28 @@
+$kind: http-request
+description: |-
+  Update a record's data.
+  User Interface API enforces Salesforce validation rules. If a validation rule fails, the response is an Error with Output.
+
+  When you make a PATCH request to update a record, make sure that the record hasn’t changed since the user started editing it. To find out whether it’s safe to save a record, pass the If-Modified-Since HTTP header in the request.
+
+  As of API version 43.0, if you pass read-only fields in a request body, the response is an Error with Output.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/records/:RECORD_ID"
+method: PATCH
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: RECORD_ID
+    value: ""
+    description: Record ID
+body:
+  type: text
+  content: |-
+    {
+        "allowSaveOnDuplicate": false,
+        "fields": {
+            "FieldAPIName": "FieldValue"
+        }
+    }
+settings: {}
+examples: ./.resources/Update a Record.resources/examples
+order: 13000

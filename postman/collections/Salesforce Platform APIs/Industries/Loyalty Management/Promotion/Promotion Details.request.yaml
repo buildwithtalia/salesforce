@@ -1,0 +1,24 @@
+$kind: http-request
+description: |-
+  [Promotions Creation](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_unified_promotions.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/global-promotions-management/promotions/:promotionId"
+method: GET
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  promotionId: ""
+body:
+  type: json
+  content: ""
+scripts:
+  - type: beforeRequest
+    code: //pm.variables.set('promotionId','abcd');
+    language: text/javascript
+settings: {}
+order: 3000

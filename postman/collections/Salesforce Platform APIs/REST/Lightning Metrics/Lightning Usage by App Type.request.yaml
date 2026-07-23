@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Return the total number of Lightning Experience and Salesforce Mobile users.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_lightning_usagebyapptypemetrics.htm
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/LightningUsageByAppTypeMetrics"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 4000

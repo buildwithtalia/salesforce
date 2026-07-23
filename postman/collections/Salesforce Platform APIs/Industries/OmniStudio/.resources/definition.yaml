@@ -1,0 +1,3 @@
+$kind: collection
+description: You can invoke [Integration Procedures](https://help.salesforce.com/s/articleView?id=sf.os_integration_procedure_invocation_55721.htm&type=5) from other OmniStudio tools such as OmniScripts and Cards. You can also invoke Integration Procedures from Apex classes, batch jobs, REST APIs, or Salesforce flows.
+order: 3000

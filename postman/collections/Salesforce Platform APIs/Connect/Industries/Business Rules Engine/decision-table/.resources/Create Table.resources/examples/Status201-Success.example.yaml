@@ -1,0 +1,68 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-table/definitions"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+         "setupName":"Product Qualificiation eligibility",
+         "fullName":"ProductQualificationEligibility",
+         "description":"Eligiblity of Products using Qualification Rules",
+         "sourceObject":"AccountFeed",
+         "status":"Draft",
+         "conditionType":"Any",
+         "conditionCriteria":"1 OR 2 OR 3",
+         "parameters":[
+            {
+               "fieldName":"IsDeleted",
+               "usage":"INPUT",
+               "operator":"Equals",
+               "sequence":"1"
+            },
+            {
+               "fieldName":"Id",
+               "usage":"INPUT",
+               "operator":"Equals",
+               "sequence":"2"
+            },
+            {
+               "fieldName":"Title",
+               "usage":"INPUT",
+               "operator":"Equals",
+               "sequence":"3"
+            },
+            {
+               "fieldName":"CreatedById",
+               "usage":"OUTPUT"
+            }
+         ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Tue, 19 Sep 2023 12:41:36 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "code": "200",
+          "decisionTable": {
+              "id": "0lDHo0000008Pnt",
+              "parameters": [],
+              "sourceCriteria": []
+          },
+          "isSuccess": true,
+          "message": ""
+      }
+order: 1000

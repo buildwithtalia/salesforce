@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/.well-known/auth-configuration"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:54:15 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Access-Control-Allow-Credentials: "false"
+    Access-Control-Allow-Methods: GET, POST, OPTIONS
+    Access-Control-Allow-Origin: "*"
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "OrgId": "00D2o000000i6mB",
+          "Url": "https://<my_domain>",
+          "MobileSDK": {
+              "UseiOSNativeBrowserForAuthentication": false,
+              "UseAndroidNativeBrowserForAuthentication": false,
+              "shareBrowserSessionIOS": false,
+              "shareBrowserSessionAndroid": false
+          },
+          "LoginPage": null,
+          "SamlProviders": [],
+          "AuthProviders": [],
+          "CertificateLogin": null,
+          "LoginPageType": "standard",
+          "LoginPageTypeConfigs": {}
+      }
+order: 1000

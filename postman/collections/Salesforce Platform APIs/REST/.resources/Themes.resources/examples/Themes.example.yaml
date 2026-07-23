@@ -1,0 +1,138 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/theme"
+  method: GET
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 27 Sep 2023 15:30:15 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=8/15000
+    ETag: '"81846348--gzip"'
+    Last-Modified: Tue, 19 Sep 2023 22:01:04 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "themeItems": [
+              {
+                  "colors": [
+                      {
+                          "color": "5867E8",
+                          "context": "primary",
+                          "theme": "theme4"
+                      },
+                      {
+                          "color": "236FBD",
+                          "context": "primary",
+                          "theme": "theme3"
+                      }
+                  ],
+                  "icons": [
+                      {
+                          "contentType": "image/png",
+                          "height": 32,
+                          "theme": "theme3",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/accounts32.png",
+                          "width": 32
+                      },
+                      {
+                          "contentType": "image/png",
+                          "height": 16,
+                          "theme": "theme3",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/accounts16.png",
+                          "width": 16
+                      },
+                      {
+                          "contentType": "image/svg+xml",
+                          "height": 0,
+                          "theme": "theme4",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/account.svg",
+                          "width": 0
+                      },
+                      {
+                          "contentType": "image/png",
+                          "height": 60,
+                          "theme": "theme4",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/account_60.png",
+                          "width": 60
+                      },
+                      {
+                          "contentType": "image/png",
+                          "height": 120,
+                          "theme": "theme4",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/account_120.png",
+                          "width": 120
+                      }
+                  ],
+                  "name": "Account"
+              },
+              {
+                  "colors": [
+                      {
+                          "color": "5867E8",
+                          "context": "primary",
+                          "theme": "theme4"
+                      },
+                      {
+                          "color": "5867E8",
+                          "context": "primary",
+                          "theme": "theme3"
+                      }
+                  ],
+                  "icons": [
+                      {
+                          "contentType": "image/png",
+                          "height": 32,
+                          "theme": "theme3",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/account_brand32.png",
+                          "width": 32
+                      },
+                      {
+                          "contentType": "image/png",
+                          "height": 16,
+                          "theme": "theme3",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/account_brand16.png",
+                          "width": 16
+                      },
+                      {
+                          "contentType": "image/svg+xml",
+                          "height": 0,
+                          "theme": "theme4",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/account_brand.svg",
+                          "width": 0
+                      },
+                      {
+                          "contentType": "image/png",
+                          "height": 60,
+                          "theme": "theme4",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/account_brand_60.png",
+                          "width": 60
+                      },
+                      {
+                          "contentType": "image/png",
+                          "height": 120,
+                          "theme": "theme4",
+                          "url": "https://nto-df17-demo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/brand_120.png",
+                          "width": 120
+                      }
+                  ],
+                  "name": "AccountBrand"
+              }
+          ]
+      }
+order: 1000

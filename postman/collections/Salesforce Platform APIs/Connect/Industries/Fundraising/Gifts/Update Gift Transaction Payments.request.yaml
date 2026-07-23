@@ -1,0 +1,45 @@
+$kind: http-request
+description: |-
+  Update the gateway and processor metadata for gift transactions.
+
+  ## Required Attributes:
+
+  - giftTransactionId
+      
+  - transactionStatus
+url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/transactions/payment-updates"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "updates": [
+        {
+          "giftTransactionId": "<SFDC_GIFT_TRANSACTION_ID>",
+          "transactionStatus": "Paid",
+          "processorReference": "string",
+          "gatewayReference": "string",
+          "lastGatewayResponseCode": "invalid_cvc",
+          "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+          "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+          "processorTransactionFee": 0.5,
+          "gatewayTransactionFee": 0.25,
+          "donorCoverAmount": 10.5
+        },
+        {
+          "giftTransactionId": "<SFDC_GIFT_TRANSACTION_ID>",
+          "transactionStatus": "Paid",
+          "processorReference": "string",
+          "gatewayReference": "string",
+          "lastGatewayResponseCode": "invalid_cvc",
+          "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+          "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+          "processorTransactionFee": 1.00,
+          "gatewayTransactionFee": 0.45,
+          "donorCoverAmount": 20.00
+        }
+      ]
+    }
+settings: {}
+examples: ./.resources/Update Gift Transaction Payments.resources/examples
+order: 2000

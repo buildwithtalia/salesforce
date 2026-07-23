@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/EventRelayConfig/:EVENT_RELAY_CONFIG_ID"
+method: PATCH
+headers:
+  Content-Type: application/json
+  SOAPAction: '""'
+  Authorization: Bearer {{_accessToken}}
+pathVariables:
+  EVENT_RELAY_CONFIG_ID: 7k2RM000000008ZYAQ
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "MyEventRelay",
+        "Metadata": {
+            "label": "My Event Relay",
+            "relayOption": "{\"ReplayRecovery\":\"LATEST\"}"
+        }
+    }
+settings:
+  strictSSL: false
+order: 7000

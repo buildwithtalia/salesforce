@@ -1,0 +1,18 @@
+$kind: http-request
+description: Set, reset, or get information about a user password. This resource is available in REST API version 24.0 and later.
+url: "{{_endpoint}}/services/data/v{{version}}/event/eventSchema/:SCHEMA_ID"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: payloadFormat
+    value: ""
+    disabled: true
+    description: |-
+      (Optional query parameter. Available in API version 43.0 and later.) The format of the returned event schema. This parameter can take one of the following values.
+      EXPANDED—The JSON representation of the event schema, which is the default format when payloadFormat is not specified in API version 43.0 and later.
+      COMPACT—A format that adheres to the open-source Apache Avro specification for the record complex type (see Apache Avro Format). Subscribers use the compact schema format to deserialize compact events received in binary form.
+pathVariables:
+  SCHEMA_ID: ""
+settings: {}
+order: 1000

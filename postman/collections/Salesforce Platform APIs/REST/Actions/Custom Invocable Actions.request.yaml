@@ -1,0 +1,10 @@
+$kind: http-request
+description: |-
+  Returns the list of all custom actions. You can also get basic information for each type of action.
+  This resource is available in REST API version 32.0 and later.
+url: "{{_endpoint}}/services/data/v{{version}}/actions/custom"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 3000

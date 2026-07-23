@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Returns search result layout information for the objects in the query string. For each object, this call returns the list of fields displayed on the search results page as columns, the number of rows displayed on the first page, and the label used on the search results page.
+  This call supports bulk fetch for up to 100 objects in a query.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_layouts.htm
+url: "{{_endpoint}}/services/data/v{{version}}/search/layout/?q="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: ""
+    description: Comma delimited object list
+settings: {}
+order: 3000

@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  After deploying models with Einstein Discovery, use the Einstein Prediction Service API to embed your predictions into any website or application.
+
+  ⚠️ Einstein Discovery requires either the Einstein Analytics Plus license or the Einstein Predictions license, both of which are available for an extra cost.
+
+  📚 [Einstein Prediction Service documentation](https://help.salesforce.com/articleView?id=sf.bi_edd_prediction_service.htm&type=5).
+order: 6000

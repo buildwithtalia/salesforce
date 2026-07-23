@@ -1,0 +1,191 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query contactsByTheirAccountName {
+          uiapi {
+            query {
+              Contact(orderBy: { Account: { Name: { order: DESC } } }) {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                    Account {
+                      Name {
+                        value
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:12:09 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Contact": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0mzAAA",
+                                      "Name": {
+                                          "value": "Julia Wilds"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "University of Arizona"
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy5AAA",
+                                      "Name": {
+                                          "value": "Jane Grey"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "University of Arizona"
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0n6AAA",
+                                      "Name": {
+                                          "value": "Basil Wenceslas"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "University of Arizona"
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0kdAAA",
+                                      "Name": {
+                                          "value": "John Dodge"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas, Singapore"
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy9AAA",
+                                      "Name": {
+                                          "value": "Liz D'Cruz"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas, Singapore"
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy8AAA",
+                                      "Name": {
+                                          "value": "Tom Ripley"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas, Singapore"
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0kfAAA",
+                                      "Name": {
+                                          "value": "George Dapper"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas Corp."
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy1AAA",
+                                      "Name": {
+                                          "value": "Stella Pavlova"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas Corp."
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woyBAAQ",
+                                      "Name": {
+                                          "value": "Avi Green"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas Corp."
+                                          }
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0mxAAA",
+                                      "Name": {
+                                          "value": "Winter Drake"
+                                      },
+                                      "Account": {
+                                          "Name": {
+                                              "value": "United Oil & Gas Corp."
+                                          }
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

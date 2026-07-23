@@ -1,0 +1,12 @@
+$kind: http-request
+description: Lists summary information about each Salesforce version currently available, including the version, label, and a link to each version's root.
+url: "{{_endpoint}}/services/data"
+method: GET
+headers:
+  Content-Type: application/json
+  Sforce-Call-Options: client=postman
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/Versions.resources/examples
+order: 12000

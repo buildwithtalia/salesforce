@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/EventRelayConfig/"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "MyEventRelay",
+        "Metadata": {
+            "eventChannel": "Carbon_Comparison_Channel__chn",
+            "destinationResourceName": "callout:MyNamedCredential",
+            "label": "My Event Relay",
+            "relayOption": "{\"ReplayRecovery\":\"LATEST\"}"
+        }
+    }
+settings:
+  strictSSL: false
+order: 3000

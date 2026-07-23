@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: https://itab2c--devloyalty.sandbox.my.salesforce.com/services/data/v60.0/connect/loyalty/programs/Volare/program-processes/processName
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalTypeId
+      value: null
+      disabled: true
+  body:
+    type: json
+    content: |-
+      {
+         "processParameters":[
+            {
+               "MemberId":"0lMRM0000004G5h2AE"
+            }
+         ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

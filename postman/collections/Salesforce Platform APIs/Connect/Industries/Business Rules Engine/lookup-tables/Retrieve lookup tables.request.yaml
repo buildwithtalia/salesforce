@@ -1,0 +1,45 @@
+$kind: http-request
+description: |-
+  # Lookup Tables (GET)
+
+  Retrieve lookup tables.Resource
+
+  ```
+  /connect/business-rules/lookup-tables
+
+   ```
+
+  Resource example
+
+  ```
+  https://yourInstance.salesforce.com/services/data/v59.0/connect/business-rules/lookup-tables?searchKey=D&usageType=Bre&lookupTypes=DecisionTable,DecisionMatrix
+
+   ```
+
+  ```
+  https://yourInstance.salesforce.com/services/data/v59.0/connect/business-rules/lookup-tables?searchKey=D&usageType=Bre
+
+   ```
+
+  Available version59.0Requires ChatterNoHTTP methodsGETRequest parameters for GET
+
+  | Parameter Name | Type | Description | Required or Optional | Available Version |
+  | --- | --- | --- | --- | --- |
+  | lookupTypes | String | Type of lookup table. Valid values are:<br><br>- DecisionMatrix<br>    <br>- DecisionTable | Optional | 59.0 |
+  | searchKey | String | The search text entered by the user to retrieve a list of lookup tables. | Required | 59.0 |
+  | usageType | String | Usage type of the lookup table. Valid values are:<br><br>- AiAccelerator​SubscriberChurn​Prediction—Used for Industries Einstein<br>    <br>- Bre—Used for Business Rules Engine<br>    <br>- CustomLoyalty—Used for Loyalty Management<br>    <br>- DefaultPricing—Used for Pricing Plans in Enterprise Product Catalog (EPC) by Communications Cloud<br>    <br>- Qualification—Used for Industries Communications, Media, and Energy (CME)<br>    <br>- RecordAlert—Used for Financial Services Cloud<br>    <br>- ShipAndDebit—Used for Manufacturing Cloud<br>    <br>- TierProcessing—Used for Loyalty Management<br>    <br>- TransactionJournal—Used for Loyalty Management<br>    <br>- WarrantyClaim—Used for Manufacturing Cloud | Required | 59.0 |
+
+  Response body for GET[Lookup Tables Result List](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_responses_lookup_tables_result_list.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/lookup-tables?searchKey=my&usageType=Bre&lookupTypes=DecisionTable"
+method: GET
+queryParams:
+  - key: searchKey
+    value: my
+  - key: usageType
+    value: Bre
+  - key: lookupTypes
+    value: DecisionTable
+    description: "Optional: Type of lookup table. Valid values are: DecisionMatrix, DecisionTable"
+settings: {}
+examples: ./.resources/Retrieve lookup tables.resources/examples
+order: 1000

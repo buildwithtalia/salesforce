@@ -1,0 +1,38 @@
+$kind: http-request
+description: Get the actions on record detail pages.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/record/:RECORD_ID/related-list/:RELATED_LIST_IDS"
+method: GET
+queryParams:
+  - key: actionTypes
+    value: ""
+    disabled: true
+    description: The action type (`CustomButton`, `ProductivityAction`, `QuickAction` or `StandardButton`)
+  - key: apiNames
+    value: ""
+    disabled: true
+    description: The API names of one or more actions to be retrieved. Use this parameter only when passing `retrievalMode=All`.
+  - key: formFactor
+    value: ""
+    disabled: true
+    description: The layout display size (`Large` (default), `Medium` or `Small`).
+  - key: retrievalMode
+    value: ""
+    disabled: true
+    description: When the action context is Record, this parameter indicates which actions to retrieve from the record page. Either `All` or `PageLayout` (default).
+  - key: sections
+    value: ""
+    disabled: true
+    description: The section of the user interface that the actions reside in (`ActivityComposer`, `CollaborateComposer`, `Page` or `SingleActionLinks`).
+pathVariables:
+  - key: RECORD_ID
+    value: ""
+    description: Record ID
+  - key: RELATED_LIST_IDS
+    value: ""
+    description: Optional. A related list name, or a comma-delimited list of related list names.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Related List Actions.resources/examples
+order: 4000

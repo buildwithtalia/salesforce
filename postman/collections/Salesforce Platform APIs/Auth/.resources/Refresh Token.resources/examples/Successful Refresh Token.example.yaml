@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/token"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      grant_type: refresh_token
+      client_id: "{{clientId}}"
+      client_secret: "{{clientSecret}}"
+      refresh_token: "{{_refreshToken}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:34:45 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "access_token": "<access_token>",
+          "signature": "<signature>",
+          "scope": "<scope list>",
+          "id_token": "<id_token",
+          "instance_url": "https://<my_domain>",
+          "id": "https://login.salesforce.com/id/00D.../005...",
+          "token_type": "Bearer",
+          "issued_at": "<timestamp>"
+      }
+order: 1000

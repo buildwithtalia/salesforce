@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  [<b>Lookup Tables (GET)</b>](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_search_lookup_tables.htm)
+
+  <img src="https://content.pstmn.io/9d1da0f6-7e11-43d0-ba2d-8de51f92a994/U2NyZWVuc2hvdCAyMDIzLTA5LTA1IGF0IDEzLjI3LjIzLnBuZw==" alt="">
+
+  [Response Message](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_responses_lookup_tables_result_list.htm)
+order: 6000

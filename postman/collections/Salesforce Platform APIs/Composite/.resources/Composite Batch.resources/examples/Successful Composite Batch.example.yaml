@@ -1,0 +1,82 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/composite/batch"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: |-
+      {
+          "haltOnError": true,
+          "batchRequests": [
+              {
+                  "method": "GET",
+                  "url": "v{{version}}/query/?q=SELECT+Id,+Name+FROM+Account LIMIT 2"
+              },
+              {
+                  "method": "GET",
+                  "url": "v{{version}}/query/?q=SELECT+Id,+Name+FROM+Opportunity LIMIT 2"
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 15:19:46 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=34/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "hasErrors": false,
+          "results": [
+              {
+                  "statusCode": 200,
+                  "result": {
+                      "totalSize": 2,
+                      "done": true,
+                      "records": [
+                          {
+                              "attributes": {
+                                  "type": "Account",
+                                  "url": "/services/data/v58.0/sobjects/Account/001..."
+                              },
+                              "Id": "001...",
+                              "Name": "Sample Account"
+                          },
+                          ...
+                      ]
+                  }
+              },
+              {
+                  "statusCode": 200,
+                  "result": {
+                      "totalSize": 2,
+                      "done": true,
+                      "records": [
+                          {
+                              "attributes": {
+                                  "type": "Opportunity",
+                                  "url": "/services/data/v58.0/sobjects/Opportunity/006..."
+                              },
+                              "Id": "006...",
+                              "Name": "Edge Emergency Generator"
+                          },
+                          ...
+                      ]
+                  }
+              }
+          ]
+      }
+order: 1000

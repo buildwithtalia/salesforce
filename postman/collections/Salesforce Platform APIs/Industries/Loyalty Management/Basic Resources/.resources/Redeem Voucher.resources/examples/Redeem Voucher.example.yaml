@@ -1,0 +1,46 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/loyalty/programs/:loyaltyProgramName/members/:membershipNumber/vouchers/:voucherCode/redeem?voucherNumber=00000018"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    voucherNumber: "00000018"
+  pathVariables:
+    - key: loyaltyProgramName
+      value: NTO Insider
+      description: The loyalty program name.
+    - key: membershipNumber
+      value: Member123
+      description: The loyalty program membership number.
+    - key: voucherCode
+      value: 44KYEWZ5
+      description: The voucher code to be redeemed.
+  body:
+    type: json
+    content: |-
+      {
+         "currencyIsoCode" : "EUR",
+         "redeemAmount" : 1.5
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 27 May 2024 19:35:17 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currencyIsoCode": "EUR",
+          "remainingAmount": 3.5
+      }
+order: 1000

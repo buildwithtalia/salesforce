@@ -1,0 +1,9 @@
+$kind: http-request
+description: Retrieves a sandbox record.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/SandboxInfo/:SANDBOX_INFO_ID"
+method: GET
+pathVariables:
+  SANDBOX_INFO_ID: ""
+settings: {}
+examples: ./.resources/Get Sandbox.resources/examples
+order: 3000

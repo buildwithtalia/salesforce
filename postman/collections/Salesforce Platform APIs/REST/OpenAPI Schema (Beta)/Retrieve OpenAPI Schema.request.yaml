@@ -1,0 +1,11 @@
+$kind: http-request
+description: Generate an OpenAPI 3.0 document for the sObjects REST API. This is a [Beta feature](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/openapi_beta.htm) that requires an activation step before it can be used.
+url: "{{_endpoint}}/services/data/v{{version}}/async/specifications/oas3/:schemaId"
+method: GET
+pathVariables:
+  - key: schemaId
+    value: ""
+    description: Identifier that was returned in the original request to generate the Schema.
+settings: {}
+examples: ./.resources/Retrieve OpenAPI Schema.resources/examples
+order: 2000

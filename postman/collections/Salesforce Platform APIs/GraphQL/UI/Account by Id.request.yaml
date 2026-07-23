@@ -1,0 +1,32 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+method: POST
+headers:
+  X-Chatter-Entity-Encoding: "false"
+body:
+  type: graphql
+  content:
+    query: |
+      query accountById($id: ID) {
+        uiapi {
+          query {
+            Account(where: { Id: { eq: $id } }) {
+              edges {
+                node {
+                  Id
+                  Name {
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    variables: |-
+      {
+          "id": "0014H00002LbR7QQAV"
+      }
+settings: {}
+examples: ./.resources/Account by Id.resources/examples
+order: 2000

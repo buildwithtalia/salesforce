@@ -1,0 +1,270 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/gifts"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "processingOptions": {
+          "donorOptions": {
+            "defaultUpdateLogic": "update_all"
+          }
+        },
+        "gifts": [
+          {
+            "amount": 150.25,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Unpaid",
+            "commitment": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "campaign": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              },
+              "organizationName": "<Organization_Name>", // If donor type is "organizational"
+              "firstName": "David", // if donor type is "individual"
+              "lastName": "Chavez", // if donor type is "individual"
+              "phone": "510-434-8920",
+              "email": "d.chavez@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "string",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+                },
+                "percent": 10,
+                "amount": 150.25
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "string",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          {
+            "amount": 250.00,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Unpaid",
+            "commitment": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "campaign": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              },
+              "organizationName": "<Organization_Name>",
+              "firstName": "Luke",
+              "lastName": "Smith",
+              "phone": "510-434-8920",
+              "email": "l.smith@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "string",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                  "externalId": {
+                      "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                      "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+                },
+                "percent": 10,
+                "amount": 150.25
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "string",
+                "fieldValue": "string"
+              }
+            ]
+          }
+        ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+          "successes": 2,
+          "failures": 0,
+          "notProcessed": 0,
+          "details": [
+              {
+                  "success": true,
+                  "links": {
+                      "account": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_ACCOUNT_ID>",
+                          "id": "<SFDC_ACCOUNT_ID>"
+                      },
+                      "gifttransaction": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_TRANSACTION_ID>",
+                          "id": "<SFDC_GIFT_TRANSACTION_ID>"
+                      },
+                      "giftcommitment": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                          "id": "<SFDC_GIFT_COMMITMENT_ID>"
+                      },
+                      "paymentinstrument": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_PAYMENT_INSTRUMENT_ID>",
+                          "id": "<SFDC_PAYMENT_INSTRUMENT_ID>"
+                      },
+                      "gifttransactiondesignation": [
+                          {
+                              "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_TRANSACTION_DESIGNATION_ID>",
+                              "id": "<SFDC_GIFT_TRANSACTION_DESIGNATION_ID>"
+                          }
+                      ]
+                  }
+              },
+              {
+                  "success": true,
+                  "links": {
+                      "account": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_ACCOUNT_ID>",
+                          "id": "<SFDC_ACCOUNT_ID>"
+                      },
+                      "gifttransaction": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_TRANSACTION_ID>",
+                          "id": "<SFDC_GIFT_TRANSACTION_ID>"
+                      },
+                      "giftcommitment": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                          "id": "<SFDC_GIFT_COMMITMENT_ID>"
+                      },
+                      "paymentinstrument": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_PAYMENT_INSTRUMENT_ID>",
+                          "id": "<SFDC_PAYMENT_INSTRUMENT_ID>"
+                      },
+                      "gifttransactiondesignation": [
+                          {
+                              "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_TRANSACTION_DESIGNATION_ID>",
+                              "id": "<SFDC_GIFT_TRANSACTION_DESIGNATION_ID>"
+                          }
+                      ]
+                  }
+              }
+          ]
+      }
+order: 4000

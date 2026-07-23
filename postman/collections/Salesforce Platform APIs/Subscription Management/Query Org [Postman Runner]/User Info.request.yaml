@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/oauth2/userinfo"
+method: GET
+headers:
+  Content-Type: application/json
+scripts:
+  - type: afterResponse
+    code: |-
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      const jsonData = JSON.parse(responseBody);
+
+      context.set("_userId", jsonData.user_id);
+      context.set("_orgId", jsonData.organization_id);
+      context.set("_userFullName", jsonData.name);
+    language: text/javascript
+settings: {}
+order: 1000

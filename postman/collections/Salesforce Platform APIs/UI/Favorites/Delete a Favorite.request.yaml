@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get a favorite.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/favorites/:FAVORITE_ID"
+method: DELETE
+pathVariables:
+  - key: FAVORITE_ID
+    value: ""
+    description: The ID of a favorite
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Delete a Favorite.resources/examples
+order: 6000

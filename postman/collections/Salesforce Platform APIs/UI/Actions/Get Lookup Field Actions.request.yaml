@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the actions on Lightning pages (FlexiPages).
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/lookup/:SOBJECT_API_NAMES"
+method: GET
+pathVariables:
+  - key: SOBJECT_API_NAMES
+    value: ""
+    description: A lookup field name, or a comma-delimited list of lookup field names.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Lookup Field Actions.resources/examples
+order: 10000

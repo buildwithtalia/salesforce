@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+method: POST
+headers:
+  X-Chatter-Entity-Encoding: "false"
+body:
+  type: graphql
+  content:
+    query: |-
+      mutation AccountExample{
+        uiapi {
+          AccountCreate(input: {
+            Account: {
+              Name: "Trailblazer Express"
+            }
+          }) {
+            Record {
+              Id
+              Name {
+                value
+              }
+            }
+          }
+        }
+      }
+settings: {}
+examples: ./.resources/Create Account.resources/examples
+order: 1000

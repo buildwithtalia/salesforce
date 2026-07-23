@@ -1,0 +1,52 @@
+$kind: http-request
+description: When a user edits a lookup field, use this resource to search for and display suggestions. You can search for most recently used matches, for matching names, or for any match in a searchable field. You can also specify lookup filter bindings for dependent lookups.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/lookups/:SOBJECT_API_NAME/:FIELD_API_NAME"
+method: GET
+queryParams:
+  - key: dependentFieldBindings
+    value: ""
+    disabled: true
+    description: |-
+      The dependent field bindings for dependent lookups. These field bindings represent the lookup filter that restricts the valid values for the field.
+      Specify field bindings in a comma-separated list in the format dependentFieldBindings=<FIELD_API_NAME1>=<FIELD_VALUE1>,<FIELD_API_NAME2>=<FIELD_VALUE2>.
+
+      To know whether a field is a dependent lookup, check the Object Info response body for a non-null filteredLookupInfo property. Specify the name and a value for each field in the controllingFields property. Get the field values from the Record response body. Both responses are returned from the /ui-api/record-ui/<RECORD_IDS> resource.
+  - key: page
+    value: ""
+    disabled: true
+    description: The page number. The default value is 1.
+  - key: pageSize
+    value: ""
+    disabled: true
+    description: |
+      The number of items per page. The default value is 25.
+  - key: q
+    value: ""
+    disabled: true
+    description: |-
+      The term the user is searching for.
+      When searchType=Search, specify at least 2 characters. A wildcard at the end of the search term is implied. For example, q=ca returns Cat and Cats.
+
+      When searchType=TypeAhead, specify at least 3 characters. A wildcard at the end of the search term is implied. You can’t use a ?.
+  - key: searchType
+    value: ""
+    disabled: true
+    description: |-
+      The type of search to perform. One of these values:
+      Recent—Return most recently used matches.
+      Search—Search for records with searchable fields that match the query term.
+      TypeAhead—Search for records whose names start with the query term.
+      The default value is Recent.
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: ""
+    description: sObject API name
+  - key: FIELD_API_NAME
+    value: ""
+    description: Field API name
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Lookup Field Suggestions.resources/examples
+order: 15000

@@ -1,0 +1,46 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_loyalty_program_process_simulation.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_loyalty_program_process_simulation.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/realtime/loyalty/programs/:loyaltyProgramName"
+method: POST
+pathVariables:
+  loyaltyProgramName: ""
+body:
+  type: json
+  content: |-
+    {
+      "transactionJournals": [
+        {
+          "CurrencyIsoCode": "EUR",
+          "ActivityDate": "2022-01-04T12:45:19Z",
+          "JournalDate": "2022-01-04T00:45:19Z",
+          "Brand": "",
+          "Establishment": "Apple",
+          "ExternalTransactionNumber": "P1-981950",
+          "JournalTypeId": "0lET10000004CQp",
+          "LoyaltyProgramId": "0lpT10000004CdN",
+          "MemberId": "0lMT10000004CfA",
+          "TransactionAmount": "117",
+          "TransactionLocation": "HitechCity",
+          "VoucherCode": "",
+          "Origin": "asdf",
+          "Distance": "5",
+          "Destination": "Hyderabad",
+          "FlightNumber": "SF-Ran-001",
+          "Status": "Pending"
+        }
+      ],
+      "runSetting": {
+        "isSimulation": true
+      }
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      var moment = require('moment');
+      pm.globals.set('currentDatetime', moment().format(("YYYY-MM-DDTHH:MM:SS")));
+    language: text/javascript
+settings: {}
+order: 9000

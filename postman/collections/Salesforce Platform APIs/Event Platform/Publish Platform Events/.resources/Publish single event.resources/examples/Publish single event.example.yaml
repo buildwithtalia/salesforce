@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:EventApiName/"
+  method: POST
+  pathVariables:
+    EventApiName: Sample__e
+  body:
+    type: json
+    content: |-
+      {
+          "Message__c": "Hello World!"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 03 Jul 2023 13:18:20 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=16/15000
+    Location: /services/data/v58.0/sobjects/Sample__e/e00xx0000000001AAA
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "id": "e00xx0000000001AAA",
+          "success": true,
+          "errors": [
+              {
+                  "statusCode": "OPERATION_ENQUEUED",
+                  "message": "234995b6-53b6-4887-93fc-ecd0fac8b36c",
+                  "fields": []
+              }
+          ]
+      }
+order: 1000

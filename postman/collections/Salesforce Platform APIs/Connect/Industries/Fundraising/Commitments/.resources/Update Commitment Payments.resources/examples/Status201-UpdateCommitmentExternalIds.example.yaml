@@ -1,0 +1,105 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/payment-updates"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "updates": [
+          {
+            "giftCommitment": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "david chavez",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "classy",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            }
+          },
+          {
+          "giftCommitment": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "luke smith",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            }
+          }
+        ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "successes": 2,
+        "failures": 0,
+        "notProcessed": 0,
+        "details": [
+          {
+            "success": true,
+            "links": {
+              "giftcommitment": {
+                "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                "id": "<SFDC_GIFT_COMMITMENT_ID>"
+              },
+              "paymentinstrument": {
+                "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_PAYMENT_INSTRUMENT_ID>",
+                "id": "<SFDC_PAYMENT_INSTRUMENT_ID>"
+              }
+            }
+          },
+              {
+            "success": true,
+            "links": {
+              "giftcommitment": {
+                "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                "id": "<SFDC_GIFT_COMMITMENT_ID>"
+              },
+              "paymentinstrument": {
+                "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_PAYMENT_INSTRUMENT_ID>",
+                "id": "<SFDC_PAYMENT_INSTRUMENT_ID>"
+              }
+            }
+          }
+        ]
+      }
+order: 4000

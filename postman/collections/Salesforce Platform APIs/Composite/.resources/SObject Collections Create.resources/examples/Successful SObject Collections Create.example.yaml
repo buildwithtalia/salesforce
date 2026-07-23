@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/composite/sobjects"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: |-
+      {
+         "allOrNone" : false,
+         "records" : [{
+            "attributes" : {"type" : "Account"},
+            "Name" : "example.com",
+            "BillingCity" : "San Francisco"
+         }, {
+            "attributes" : {"type" : "Contact"},
+            "LastName" : "Johnson",
+            "FirstName" : "Erica"
+         }]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 15:25:46 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=44/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "id": "001...",
+              "success": true,
+              "errors": []
+          },
+          {
+              "id": "003...",
+              "success": true,
+              "errors": []
+          }
+      ]
+order: 1000

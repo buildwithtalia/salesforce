@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: SOBJECT_API_NAME
+      value: Contact
+      description: SObject API name
+  body:
+    type: text
+    content: |-
+      {
+          "FirstName": "John",
+          "LastName": "Doe"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 21 Jul 2025 14:34:26 GMT
+    X-Content-Type-Options: nosniff
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=2/15000
+    Location: /services/data/v64.0/sobjects/Contact/003J800000DeOXjIAN
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "id": "003J800000DeOXjIAN",
+          "success": true,
+          "errors": []
+      }
+order: 1000

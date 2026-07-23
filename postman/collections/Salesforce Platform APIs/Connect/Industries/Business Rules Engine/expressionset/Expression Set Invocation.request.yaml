@@ -1,0 +1,107 @@
+$kind: http-request
+description: |-
+  [https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_expression_set.htm](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_expression_set.htm)
+
+  **WATCH OUT**: path **expressionSet** has no dash [gjeffcock@salesforce.com](https://gjeffcock@salesforce.com)
+
+  # Expression Set Invocation (POST)
+
+  Invokes expression sets in Business Rule Engine.Resource
+
+  ```
+  /connect/business-rules/expressionSet/${expressionSetName}
+
+   ```
+
+  Resource Example
+
+  ```
+  https://yourInstance.salesforce.com/services/data/vXX.X/connect
+  /business-rules/expressionSet/${expressionSetName}
+
+   ```
+
+  Available version
+
+  55.0
+
+  Requires Chatter
+
+  No
+
+  HTTP methods
+
+  POST
+
+  Request body for POST
+
+  JSON example 1
+
+  ```
+  {
+    "inputs": [
+      {
+        "age": "25",
+        "state": "CA"
+        "PatientId":"001xx000003GYjnAAG"
+      }
+     
+    ],
+    "options": {
+      "effectiveDate": "2022-12-03T10:15:30Z",
+      "useDatesOnly": "true"
+    }
+  }
+
+   ```
+
+  JSON example 2
+
+  ```
+  {
+    "inputs": [
+      {
+        "age": "25",
+        "state": "CA"
+        "PatientId":"001xx000003GYjnAAG"
+        "__actionContextCode":"001xx000003GYjnAAG"    }
+     
+    ],
+    "options": {
+      "effectiveDate": "2022-12-03T10:15:30Z",
+      "useDatesOnly": "true"
+    }
+  }
+
+   ```
+
+  Note
+
+  You can use more than one actionContextCode for multiple sets of inputs, passed in a single API call.
+
+  Properties
+
+  | Name | Type | Description | Required or Optional | Available Version |
+  | --- | --- | --- | --- | --- |
+  | inputs | Map\[\] | List of inputs passed to an expression set. An input may contain multiple variables.<br><br>Note<br><br>If the expression set uses a field alias as a variable, append Id to the object alias to which the field alias belongs, and pass the ID of the source object linked to the object alias. | Required | 55.0 |
+  | options | [Expression Set Options Input](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_requests_options.htm) | The options for executing an expression set. | Optional | 55.0 |
+
+  Response body for POST
+
+  [Business Rules Result](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_responses_business_rules_result.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/expressionset/:expressionSetAPIName"
+method: POST
+pathVariables:
+  - key: expressionSetAPIName
+    value: ""
+    description: The API name of an expression set is unique within your Salesforce instance.
+body:
+  type: json
+  content: |-
+    {
+      "inputs": [{}],
+      "options": {}
+    }
+settings: {}
+examples: ./.resources/Expression Set Invocation.resources/examples
+order: 1000

@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Members of a specified group. Get the members and add a member to a group. To add a member, the context user must be the group owner or moderator.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_groups_GroupMembers.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups/:GROUP_ID/members?userId=<USER1_ID>"
+method: POST
+queryParams:
+  userId: <USER1_ID>
+pathVariables:
+  GROUP_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Group Members.resources/examples
+order: 5000

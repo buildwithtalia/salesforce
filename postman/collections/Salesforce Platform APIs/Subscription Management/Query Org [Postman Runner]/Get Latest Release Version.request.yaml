@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+
+      const statusCode = responseCode.code;
+      tests["Response code - Expected: 200 & Actual: " + statusCode] = statusCode == 200;
+      if(statusCode == 200){
+          const jsonData = JSON.parse(responseBody);
+          context.set("version", jsonData[jsonData.length-1].version);
+      }
+    language: text/javascript
+settings: {}
+order: 2000

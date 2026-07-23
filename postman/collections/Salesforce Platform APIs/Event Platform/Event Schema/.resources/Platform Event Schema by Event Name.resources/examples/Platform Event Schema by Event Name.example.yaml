@@ -1,0 +1,103 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:EVENT_NAME/eventSchema"
+  method: GET
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: payloadFormat
+      value: ""
+      disabled: true
+      description: |-
+        (Optional query parameter. Available in API version 43.0 and later.) The format of the returned event schema. This parameter can take one of the following values.
+        EXPANDED—The JSON representation of the event schema, which is the default format when payloadFormat is not specified in API version 43.0 and later.
+        COMPACT—A format that adheres to the open-source Apache Avro specification for the record complex type (see Apache Avro Format). Subscribers use the compact schema format to deserialize compact events received in binary form.
+  pathVariables:
+    - key: EVENT_NAME
+      value: Sample__e
+      description: API Name of the event
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 03 Jul 2023 13:06:08 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=2/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Sample__e",
+          "namespace": "com.sforce.eventbus",
+          "type": "expanded-record",
+          "fields": [
+              {
+                  "name": "data",
+                  "type": {
+                      "type": "record",
+                      "name": "Data",
+                      "namespace": "",
+                      "fields": [
+                          {
+                              "name": "schema",
+                              "type": "string"
+                          },
+                          {
+                              "name": "payload",
+                              "type": {
+                                  "type": "record",
+                                  "name": "Payload",
+                                  "doc": "",
+                                  "fields": [
+                                      {
+                                          "name": "CreatedDate",
+                                          "type": "string",
+                                          "doc": "CreatedDate:DateTime"
+                                      },
+                                      {
+                                          "name": "CreatedById",
+                                          "type": "string",
+                                          "doc": "CreatedBy:EntityId"
+                                      },
+                                      {
+                                          "name": "Message__c",
+                                          "type": [
+                                              "null",
+                                              "string"
+                                          ],
+                                          "doc": "Data:Text:00N4H00000Ecs0G",
+                                          "default": null
+                                      }
+                                  ]
+                              }
+                          },
+                          {
+                              "name": "event",
+                              "type": {
+                                  "type": "record",
+                                  "name": "Event",
+                                  "fields": [
+                                      {
+                                          "name": "replayId",
+                                          "type": "long"
+                                      }
+                                  ]
+                              }
+                          }
+                      ]
+                  }
+              },
+              {
+                  "name": "channel",
+                  "type": "string"
+              }
+          ]
+      }
+order: 1000

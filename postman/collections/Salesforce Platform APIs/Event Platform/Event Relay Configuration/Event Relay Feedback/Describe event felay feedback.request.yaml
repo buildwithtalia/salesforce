@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/EventRelayFeedback/describe"
+method: GET
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+order: 3000

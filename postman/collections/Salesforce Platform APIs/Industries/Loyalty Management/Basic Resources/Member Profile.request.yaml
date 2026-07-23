@@ -1,0 +1,27 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_member_profile.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_member_profile.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/loyalty-programs/:loyaltyProgramName/members?memberId=&membershipNumber=&programCurrencyName="
+method: GET
+queryParams:
+  - key: memberId
+    value: ""
+    description: The ID of the loyalty program member.
+  - key: membershipNumber
+    value: ""
+    description: The membership number of the loyalty program member.
+  - key: programCurrencyName
+    value: ""
+    description: |-
+      The name of the loyalty program currency associated with the member.
+      Use this parameter to get the details of the member’s points-related information for a specific currency.
+pathVariables:
+  loyaltyProgramName: ""
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Member Profile.resources/examples
+order: 4000

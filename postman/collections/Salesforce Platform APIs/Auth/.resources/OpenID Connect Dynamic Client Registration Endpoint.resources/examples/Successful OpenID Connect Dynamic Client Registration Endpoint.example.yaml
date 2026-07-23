@@ -1,0 +1,84 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/register"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+    Authorization: Bearer {{init_access_token}}
+  body:
+    type: text
+    content: |-
+      {
+          "redirect_uris": [
+              "http://localhost"
+          ],
+          "response_types": [
+              "code",
+              "token",
+              "id_token"
+          ],
+          "grant_types": [
+              "authorization_code",
+              "implicit",
+              "refresh_token"
+          ],
+          "application_type": "web",
+          "contacts": [
+              "abc@sf.com",
+              "ve7jtb@example.org"
+          ],
+          "client_name": "Sample Customer"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Thu, 16 Nov 2023 16:04:08 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "client_id": "<client_id>",
+          "client_secret": "<client_secret>",
+          "registration_access_token": "<token>",
+          "registration_client_uri": "https://login.salesforce.com/services/oauth2/register/<client_id>",
+          "client_id_issued_at": <timestamp>,
+          "client_secret_expires_at": 0,
+          "token_endpoint_auth_method": "client_secret_post",
+          "redirect_uris": [
+              "http://localhost"
+          ],
+          "response_types": [
+              "code",
+              "token",
+              "id_token"
+          ],
+          "grant_types": [
+              "authorization_code",
+              "hybrid_auth_code",
+              "implicit",
+              "refresh_token"
+          ],
+          "contacts": [
+              "abc@sf.com"
+          ],
+          "client_name": "Sample Customer",
+          "scopes": [
+              "openid",
+              "refresh_token",
+              "id",
+              "api"
+          ]
+      }
+order: 1000

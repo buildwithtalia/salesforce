@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/favorites/batch"
+  method: PUT
+  body:
+    type: json
+    content: |-
+      {
+          "favorites": [
+              {
+                  "id": "0MV4H0000004qIeWAI",
+                  "name": "RenamedAllAcountsListView"
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 10:07:35 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "favorites": [
+              {
+                  "accessCount": 1,
+                  "iconColor": "5867E8",
+                  "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/standard/account_120.png",
+                  "id": "0MV4H0000004qIeWAI",
+                  "lastAccessDate": "2023-10-06T10:03:32.000Z",
+                  "name": "RenamedAllAcountsListView",
+                  "objectType": "Account",
+                  "sortOrder": 1,
+                  "subtitle": "Accounts",
+                  "target": "00B58000002ssinEAA",
+                  "targetType": "ListView"
+              }
+          ]
+      }
+order: 1000

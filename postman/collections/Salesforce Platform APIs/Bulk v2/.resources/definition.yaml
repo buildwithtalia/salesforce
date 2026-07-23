@@ -1,0 +1,10 @@
+$kind: collection
+description: |-
+  Bulk API 2.0 provides a simple interface to quickly load large amounts of data into your Salesforce org and to perform bulk queries on your org data.
+
+  Bulk API 2.0 is available in API version 41.0 and later. Query jobs in Bulk API 2.0 are available in API version 47.0 and later.
+
+  📚 [Bulk API 2.0 Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/introduction_bulk_api_2.htm)
+
+  **Note:** All Bulk API requests except "Create Job" require a `_jobId` variable. This variable is automatically set by the "Create Job" request.
+order: 3000

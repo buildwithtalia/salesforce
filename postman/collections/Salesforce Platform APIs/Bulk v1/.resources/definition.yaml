@@ -1,0 +1,10 @@
+$kind: collection
+description: |-
+  The Bulk API provides a programmatic option to quickly load your org’s data into Salesforce. To use the API requires basic familiarity with software development, web services, and the Salesforce user interface.
+
+  The functionality described is available only if your org has the Bulk API feature enabled. This feature is enabled by default for Performance, Unlimited, Enterprise, and Developer Editions.
+
+  📚 [Bulk API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_intro.htm)
+
+  **Note:** All Bulk API requests except "Create Job" require a `_jobId` variable. This variable is automatically set by the "Create Job" request.
+order: 2000

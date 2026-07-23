@@ -1,0 +1,104 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/list-view-chart/:SOBJECT_API_NAME"
+  method: GET
+  pathVariables:
+    - key: SOBJECT_API_NAME
+      value: ListViewChartInstance
+      description: Currently, only `ListViewChartInstance` is valid.
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 11:41:26 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"60c273c4ba34efcc645bd0ce249c8cd4--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "actions": {
+              "ListViewChartInstance": {
+                  "actions": [
+                      {
+                          "actionListContext": "ObjectHomeChart",
+                          "actionTarget": null,
+                          "actionTargetType": null,
+                          "apiName": "NewObjectHomeChartAction",
+                          "externalId": "00D58000000arpq:ListViewChartInstance::ObjectHomeChart:Desktop:StandardButton:NewObjectHomeChartAction",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/new_custom19_120.png",
+                          "id": "0JV4H0000138090WAA",
+                          "isMassAction": "false",
+                          "label": "New Chart",
+                          "lwcComponent": null,
+                          "primaryColor": null,
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "ListViewChartInstance",
+                          "subtype": null,
+                          "targetObject": "ListViewChart",
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      },
+                      {
+                          "actionListContext": "ObjectHomeChart",
+                          "actionTarget": null,
+                          "actionTargetType": null,
+                          "apiName": "EditObjectHomeChartAction",
+                          "externalId": "00D58000000arpq:ListViewChartInstance::ObjectHomeChart:Desktop:StandardButton:EditObjectHomeChartAction",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/new_custom19_120.png",
+                          "id": "0JV4H0000138091WAA",
+                          "isMassAction": "false",
+                          "label": "Edit Chart",
+                          "lwcComponent": null,
+                          "primaryColor": null,
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "ListViewChartInstance",
+                          "subtype": null,
+                          "targetObject": "ListViewChart",
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      },
+                      {
+                          "actionListContext": "ObjectHomeChart",
+                          "actionTarget": null,
+                          "actionTargetType": null,
+                          "apiName": "DeleteObjectHomeChartAction",
+                          "externalId": "00D58000000arpq:ListViewChartInstance::ObjectHomeChart:Desktop:StandardButton:DeleteObjectHomeChartAction",
+                          "iconUrl": "https://pozil-dev-ed.my.salesforce.com/img/icon/t4v35/action/new_custom19_120.png",
+                          "id": "0JV4H0000138092WAA",
+                          "isMassAction": "false",
+                          "label": "Delete Chart",
+                          "lwcComponent": null,
+                          "primaryColor": null,
+                          "relatedListRecordId": null,
+                          "relatedSourceObject": null,
+                          "section": "Page",
+                          "sourceObject": "ListViewChartInstance",
+                          "subtype": null,
+                          "targetObject": "ListViewChart",
+                          "targetUrl": null,
+                          "type": "StandardButton"
+                      }
+                  ],
+                  "links": [],
+                  "url": "/services/data/v58.0/ui-api/actions/list-view-chart/ListViewChartInstance"
+              }
+          },
+          "eTag": "60c273c4ba34efcc645bd0ce249c8cd4",
+          "url": "/services/data/v58.0/ui-api/actions/list-view-chart/ListViewChartInstance"
+      }
+order: 1000

@@ -1,0 +1,12 @@
+$kind: http-request
+description: Lists available resources for the specified API version, including resource name and URI.
+url: "{{_endpoint}}/services/data/v{{version}}/"
+method: GET
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Resources by Version.resources/examples
+order: 13000

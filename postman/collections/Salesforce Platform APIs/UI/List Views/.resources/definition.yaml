@@ -1,0 +1,3 @@
+$kind: collection
+description: Use these resources to get data and metadata about list views that are displayed in the Salesforce UI.
+order: 4000

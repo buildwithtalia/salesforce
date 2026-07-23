@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/user-profiles/me/photo"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: multipart/form-data
+      disabled: true
+    - key: Content-Disposition
+      value: form-data; name="photo"
+      disabled: true
+    - key: Content-Type
+      value: application/json; charset=UTF-8
+      disabled: true
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: json
+        value: '{"cropY":"0","cropX":"0","cropSize":"200"}'
+      - type: file
+        key: fileUpload
+        src: /Users/scolladon/Downloads/1x1.png
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 20 Nov 2023 16:15:44 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "fullEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_200_v2.png?fromEmail=1",
+          "largePhotoUrl": "https://<my_domain>/profilephoto/729.../F",
+          "mediumPhotoUrl": "https://<my_domain>/profilephoto/729.../M",
+          "photoVersionId": "729...",
+          "smallPhotoUrl": "https://<my_domain>/profilephoto/729.../T",
+          "standardEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_45_v2.png?fromEmail=1",
+          "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+      }
+order: 1000

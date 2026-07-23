@@ -1,0 +1,39 @@
+$kind: http-request
+description: |-
+  [Update Member Details](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_update_member_details.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+  processName: ""
+body:
+  type: json
+  content: |-
+    {
+       "processParameters":[
+          {
+             "MemberId":"0lMRM0000004G5h2AE",
+             "MembershipNumber":"M1234",
+             "Email":"adam.smith@nto.com",
+             "EnrollmentDate":"2023-05-28",
+             "LastName":"Smith"
+          }
+       ]
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','UpdateMemberDetails');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Update Member Details.resources/examples
+order: 9000

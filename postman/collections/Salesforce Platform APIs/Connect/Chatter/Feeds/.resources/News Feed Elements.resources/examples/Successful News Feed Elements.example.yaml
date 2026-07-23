@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/feeds/news/me/feed-elements"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 Nov 2023 11:04:02 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageToken": null,
+          "currentPageUrl": "/services/data/v58.0/chatter/feeds/news/005.../feed-elements",
+          "elements": [],
+          "isModifiedToken": null,
+          "isModifiedUrl": null,
+          "nextPageToken": null,
+          "nextPageUrl": null,
+          "updatesToken": "2:1700651042000",
+          "updatesUrl": "/services/data/v58.0/chatter/feeds/news/005.../feed-elements?updatedSince=2%3A1700651042000"
+      }
+order: 1000

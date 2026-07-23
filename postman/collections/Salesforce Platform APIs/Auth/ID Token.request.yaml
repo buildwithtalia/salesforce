@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{_endpoint}}/id/{{_orgId}}/{{_userId}}"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+examples: ./.resources/ID Token.resources/examples
+order: 21000

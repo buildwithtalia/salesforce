@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Returns the feed elements for all the records the context user is following, or all the feed elements of the specified recordId. Use this resource to search a feed or to get the feed elements for a specific feed, including another user’s feed. To use this resource to get the feed elements for a group, specify the group ID as the recordId.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resource_feeds_record.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/feeds/record/:RECORD_GROUP_ID/feed-elements"
+method: GET
+pathVariables:
+  RECORD_GROUP_ID: ""
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Record Feed Elements.resources/examples
+order: 3000

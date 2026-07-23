@@ -1,0 +1,47 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Authorization
+    value: "{{_accessToken}}"
+    description: Only used for Postman Notebooks. Auth is defined at collection-level and inherited down.
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: Lead
+    description: SObject API name
+body:
+  type: text
+  content: |-
+    {
+        "FirstName": "{{lead_firstName}}",
+        "LastName": "{{lead_lastName}}",
+        "Company": "{{lead_company}}",
+        "Email": "{{lead_email}}",
+        "Interest_Level1__c": {{lead_interest_level}}
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      const firstNames = ['James', 'Emma', 'Liam', 'Olivia', 'Noah', 'Ava', 'William', 'Sophia', 'Benjamin', 'Isabella', 'Lucas', 'Mia', 'Henry', 'Charlotte', 'Alexander', 'Amelia', 'Mason', 'Harper', 'Ethan', 'Evelyn'];
+      const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Martinez', 'Wilson', 'Anderson', 'Taylor', 'Thomas', 'Moore', 'Jackson', 'Martin', 'Lee', 'Thompson', 'White', 'Harris'];
+      const companies = ['Acme Corp', 'Globex Industries', 'Initech Solutions', 'Umbrella Ltd', 'Stark Enterprises', 'Wayne Industries', 'Oscorp Technologies', 'Hooli Inc', 'Pied Piper', 'Dunder Mifflin', 'Vandelay Industries', 'Prestige Worldwide', 'Bluth Company', 'Sterling Cooper', 'Massive Dynamic'];
+
+      const randomItem = arr => arr[Math.floor(Math.random() * arr.length)];
+      const uniqueSuffix = Math.floor(Math.random() * 9000) + 1000;
+
+      const firstName = randomItem(firstNames);
+      const lastName = randomItem(lastNames);
+      const company = randomItem(companies);
+      const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${uniqueSuffix}@example.com`;
+
+      pm.variables.set('lead_firstName', firstName);
+      pm.variables.set('lead_lastName', lastName);
+      pm.variables.set('lead_company', company);
+      pm.variables.set('lead_email', email);
+      pm.variables.set('lead_interest_level', Math.floor(Math.random() * 5) + 1);
+    language: text/javascript
+settings: {}
+examples: ./.resources/SObject Create.resources/examples
+order: 4000

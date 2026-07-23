@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  Get, create, update, and delete your commerce data. Work with carts, orders, products, promotions, wishlists, and search settings.
+
+  This feature requires a [specific license](https://help.salesforce.com/s/articleView?id=sf.b2b_commerce_license.htm&type=5).
+
+  📚 [B2B Commerce on Lightning Experience Resources in the Connect REST API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_commerce.htm)
+order: 2000

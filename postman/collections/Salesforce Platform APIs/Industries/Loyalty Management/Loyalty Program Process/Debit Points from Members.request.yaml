@@ -1,0 +1,45 @@
+$kind: http-request
+description: |-
+  [Debit Points from Members](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_debit_points_from_members.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+  processName: ""
+body:
+  type: json
+  content: |-
+    {
+      "processParameters": [
+        {
+          "TransactionJournal": {
+            "ActivityDate": "2023-08-27T00:00:00Z",
+            "ExternalTransactionNumber": "1",
+            "InvoiceDate": "2023-08-23",
+            "JournalTypeName": "Redemption",
+            "MembershipNumber":"Member123",
+            "TransactionAmount": "45.0",
+            "CurrencyIsoCode":"EUR",
+            "Status":"Processed"
+          },
+          "PointsToDebit": 6.0
+        }
+      ]
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','DebitPointsFromMembers');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Debit Points from Members.resources/examples
+order: 3000

@@ -1,0 +1,58 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/einstein/ai-evaluations/runs/:runId"
+  method: GET
+  pathVariables:
+    - key: runId
+      value: 4KBAU0000002oK54AI
+      description: Evaluation ID
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Wed, 10 Sep 2025 13:46:26 GMT
+    - key: Content-Type
+      value: application/json
+      description: ""
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Cache-Control
+      value: no-cache,must-revalidate,max-age=0,no-store,private
+    - key: Set-Cookie
+      value: CookieConsentPolicy=0:1; path=/; expires=Thu, 10-Sep-2026 13:46:26 GMT; Max-Age=31536000; secure
+    - key: Set-Cookie
+      value: LSKey-c$CookieConsentPolicy=0:1; path=/; expires=Thu, 10-Sep-2026 13:46:26 GMT; Max-Age=31536000; secure
+    - key: Set-Cookie
+      value: BrowserId=i6chMI5MEfCjGPkElbnd3Q; domain=.salesforce.com; path=/; expires=Thu, 10-Sep-2026 13:46:26 GMT; Max-Age=31536000; secure; SameSite=None
+    - key: Content-Encoding
+      value: gzip
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: X-Robots-Tag
+      value: none
+    - key: Sforce-Limit-Info
+      value: api-usage=183/5000000
+    - key: Vary
+      value: Accept-Encoding
+    - key: Server
+      value: sfdcedge
+    - key: X-SFDC-Request-Id
+      value: 9c6b1b17f16e5e4b538e836eb8def249
+    - key: X-Request-Id
+      value: 9c6b1b17f16e5e4b538e836eb8def249
+    - key: X-SFDC-Edge-Cache
+      value: MISS
+  body:
+    type: json
+    content: |-
+      {
+          "startTime": "2025-09-10T13:46:14.000Z",
+          "status": "IN_PROGRESS"
+      }
+order: 1000

@@ -1,0 +1,12 @@
+$kind: http-request
+description: |-
+  Returns feed elements created when a user changes records that can be tracked in a feed, feed elements whose parent is the user, and feed elements that mention the user. This feed is different than the news feed, which returns more feed items, including group updates. You can post feed items to the user-profile feed. You can get another user’s user profile feed.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resource_feeds_user_profile.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/feeds/user-profile/:USER_ID/feed-elements"
+method: GET
+pathVariables:
+  USER_ID: ""
+settings: {}
+examples: ./.resources/User Profile Feed Elements.resources/examples
+order: 2000

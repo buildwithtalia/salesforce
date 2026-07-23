@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/data/v{{version}}/apps/oauth/usage/{{_appId}}/{{_userId}}/tokens"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "currentPageUrl": "/services/data/<version>/apps/oauth/usage/<identifier>/<userIdentifier>/tokens",
+        "tokens": [
+          {
+            "accessTokenFormat": "<accessTokenFormat>",
+            "appDeveloperName": "<appDeveloperName>",
+            "appIdentifier": "<identifier>",
+            "initialConnectionAt": "<timestamp>",
+            "lastUsedAt": "<timestamp>",
+            "revocationUrl": "/services/data/<version>/apps/oauth/usage/tokens/<tokenIdentifier>",
+            "useCount": integer,
+            "userIdentifier": "<userIdentifier>",
+            "username": "<username>"
+          }
+        ]
+      }
+order: 1000

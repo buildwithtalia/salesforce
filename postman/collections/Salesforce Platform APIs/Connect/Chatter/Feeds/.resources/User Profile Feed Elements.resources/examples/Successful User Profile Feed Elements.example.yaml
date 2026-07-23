@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/feeds/user-profile/:USER_ID/feed-elements"
+  method: GET
+  pathVariables:
+    USER_ID: 005...
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 Nov 2023 11:04:39 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageToken": null,
+          "currentPageUrl": "/services/data/v58.0/chatter/feeds/user-profile/005.../feed-elements",
+          "elements": [],
+          "isModifiedToken": null,
+          "isModifiedUrl": null,
+          "nextPageToken": null,
+          "nextPageUrl": null,
+          "updatesToken": null,
+          "updatesUrl": null
+      }
+order: 1000

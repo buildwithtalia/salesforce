@@ -1,0 +1,16 @@
+$kind: http-request
+description: Executes Apex code anonymously. Available from API version 29.0 or later.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/executeAnonymous/?anonymousBody=System.Debug('awesome');"
+method: GET
+headers:
+  - key: Content-Type
+    value: application/json
+    disabled: true
+queryParams:
+  anonymousBody: System.Debug('awesome');
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Tooling ExecuteAnonymous.resources/examples
+order: 3000

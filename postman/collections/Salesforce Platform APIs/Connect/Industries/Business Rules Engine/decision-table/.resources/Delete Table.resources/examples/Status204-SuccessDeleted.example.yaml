@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-table/definitions/:decisionTableId"
+  method: DELETE
+  pathVariables:
+    - key: decisionTableId
+      value: 0lDHo0000008Pnt
+      description: Decision Table Id
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Tue, 19 Sep 2023 13:36:22 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+  body:
+    type: text
+    content: ""
+order: 1000

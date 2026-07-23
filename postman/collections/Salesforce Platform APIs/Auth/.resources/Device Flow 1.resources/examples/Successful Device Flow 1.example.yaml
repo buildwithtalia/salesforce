@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/token"
+  method: POST
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: response_type
+        value: device_code
+      - type: text
+        key: client_id
+        value: "{{clientId}}"
+      - type: text
+        key: format
+        value: json
+      - type: text
+        key: scope
+        value: full refresh_token
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:29:39 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    X-ReadOnlyMode: "false"
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "user_code": "<user_code>",
+          "device_code": "<device_code",
+          "interval": integer,
+          "verification_uri": "https://<my_domain>/setup/connect"
+      }
+order: 1000

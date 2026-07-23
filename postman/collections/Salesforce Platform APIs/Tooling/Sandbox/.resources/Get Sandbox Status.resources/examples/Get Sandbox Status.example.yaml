@@ -1,0 +1,60 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT SandboxName, Status, StartDate FROM SandboxProcess WHERE SandboxInfoId='0GQ4H000000CxSzWAK' ORDER BY StartDate DESC LIMIT 200"
+  method: GET
+  headers:
+    - key: Content-Type
+      value: application/json
+      disabled: true
+  queryParams:
+    - key: q
+      value: SELECT SandboxName, Status, StartDate FROM SandboxProcess WHERE SandboxInfoId='0GQ4H000000CxSzWAK' ORDER BY StartDate DESC LIMIT 200
+      description: SOQL Query
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 13 Dec 2023 12:34:55 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=6/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "size": 2,
+          "totalSize": 2,
+          "done": true,
+          "queryLocator": null,
+          "entityTypeName": "SandboxProcess",
+          "records": [
+              {
+                  "attributes": {
+                      "type": "SandboxProcess",
+                      "url": "/services/data/v59.0/tooling/sobjects/SandboxProcess/0GR4H000000D2pCWAS"
+                  },
+                  "SandboxName": "devSandbox",
+                  "Status": "Processing",
+                  "StartDate": "2023-12-13T12:33:56.000+0000"
+              },
+              {
+                  "attributes": {
+                      "type": "SandboxProcess",
+                      "url": "/services/data/v59.0/tooling/sobjects/SandboxProcess/0GR4H000000D2p7WAC"
+                  },
+                  "SandboxName": "devSandbox",
+                  "Status": "Completed",
+                  "StartDate": "2023-12-11T10:44:58.000+0000"
+              }
+          ]
+      }
+order: 1000

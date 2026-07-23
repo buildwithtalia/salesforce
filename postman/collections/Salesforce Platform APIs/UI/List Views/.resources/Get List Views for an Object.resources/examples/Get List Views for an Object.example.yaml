@@ -1,0 +1,97 @@
+$kind: http-example
+request:
+  url: /services/data/v{{version}}/ui-api/list-info/:SOBJECT_API_NAME
+  method: GET
+  queryParams:
+    - key: pageSize
+      value: null
+      disabled: true
+      description: The number of list records viewed at one time. The default value is 20. Value can be 1–2000.
+    - key: pageToken
+      value: null
+      disabled: true
+      description: A token that represents the page offset. To indicate where the page starts, use this value with the pageSize parameter. The maximum offset is 2000 and the default is 0.
+    - key: q
+      value: null
+      disabled: true
+      description: Search term to filter the results. Wildcards are supported.
+    - key: recentListsOnly
+      value: "true"
+      disabled: true
+      description: Show only recently viewed lists.
+  pathVariables:
+    - key: SOBJECT_API_NAME
+      value: Account
+      description: API name of a UI API supported object.
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:49:33 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"7a9cf6dc597cbc985bab8a26df2f1752--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "count": 6,
+          "currentPageToken": "0",
+          "currentPageUrl": "/services/data/v62.0/ui-api/list-info/Account?pageSize=20&pageToken=0",
+          "lists": [
+              {
+                  "apiName": "AllAccounts",
+                  "id": "00B58000002ssinEAA",
+                  "label": "All Accounts",
+                  "url": "/services/data/v62.0/ui-api/list-info/Account/AllAccounts"
+              },
+              {
+                  "apiName": "MyAccounts",
+                  "id": "00B58000002ssivEAA",
+                  "label": "My Accounts",
+                  "url": "/services/data/v62.0/ui-api/list-info/Account/MyAccounts"
+              },
+              {
+                  "apiName": "NewLastWeek",
+                  "id": "00B58000002ssiHEAQ",
+                  "label": "New Last Week",
+                  "url": "/services/data/v62.0/ui-api/list-info/Account/NewLastWeek"
+              },
+              {
+                  "apiName": "NewThisWeek",
+                  "id": "00B58000002ssi6EAA",
+                  "label": "New This Week",
+                  "url": "/services/data/v62.0/ui-api/list-info/Account/NewThisWeek"
+              },
+              {
+                  "apiName": "PlatinumandGoldSLACustomers",
+                  "id": "00B58000002ssiXEAQ",
+                  "label": "Platinum and Gold SLA Customers",
+                  "url": "/services/data/v62.0/ui-api/list-info/Account/PlatinumandGoldSLACustomers"
+              },
+              {
+                  "apiName": "RecentlyViewedAccounts",
+                  "id": "00B58000002ssimEAA",
+                  "label": "Recently Viewed Accounts",
+                  "url": "/services/data/v62.0/ui-api/list-info/Account/RecentlyViewedAccounts"
+              }
+          ],
+          "nextPageToken": null,
+          "nextPageUrl": null,
+          "objectApiName": "Account",
+          "pageSize": 20,
+          "previousPageToken": null,
+          "previousPageUrl": null,
+          "queryString": null,
+          "recentListsOnly": false
+      }
+order: 1000

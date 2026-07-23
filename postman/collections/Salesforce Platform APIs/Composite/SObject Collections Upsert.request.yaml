@@ -1,0 +1,28 @@
+$kind: http-request
+description: |-
+  Use a PATCH request with sObject Collections to either create or update (upsert) up to 200 records based on an external ID field. This method returns a list of UpsertResult objects. You can choose whether to roll back the entire request when an error occurs. This request is available in API version 46 and later.
+
+  [https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_upsert.htm](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_upsert.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/composite/sobjects/:SOBJECT_API_NAME/:FIELD_NAME"
+method: PATCH
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: Account
+  FIELD_NAME: Id
+body:
+  type: text
+  content: |+
+    {
+        "allOrNone" : false,
+        "records" : [{
+            "attributes" : {"type" : "Account"},
+            "Name" : "Test Upsert",
+            "Id" : "0012o00003OBzVSAA1"
+        }]
+    }
+
+
+settings: {}
+examples: ./.resources/SObject Collections Upsert.resources/examples
+order: 8000

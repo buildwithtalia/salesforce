@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannelMember"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Carbon_ComparisonChannel_chn_Carbon_Comparison_e",
+        "Metadata": {
+            "eventChannel": "Carbon_ComparisonChannel__chn",
+            "selectedEntity": "Carbon_Comparison__e",
+            "urls": null
+        }
+    }
+settings:
+  strictSSL: false
+order: 3000

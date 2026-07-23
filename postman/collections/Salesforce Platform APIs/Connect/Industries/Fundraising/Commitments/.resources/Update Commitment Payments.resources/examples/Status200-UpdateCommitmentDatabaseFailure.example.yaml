@@ -1,0 +1,79 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/payment-updates"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "updates": [
+          {
+            "giftCommitmentId": "<SFDC_GIFT_COMMITMENT_ID>",
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "classy",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            }
+          },
+              {
+            "giftCommitmentId": "<SFDC_GIFT_COMMITMENT_ID>",
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "google pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            }
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      // This is a scenario where there is a validation rule on the Payment Instrument object requiring that the digitalWalletProvider cannot be "Apple Pay". One database error occurs for the 10.50 cover amount, causing the other two to be rolled back with success of false and no record links.
+      {
+        "successes": 0,
+        "failures": 1,
+        "notProcessed": 1,
+        "details": [
+          {
+              "success": false,
+              "errors": {
+                  "message": "<validation_rule_error_message>"
+              }
+          },
+          {
+            "success": false
+          }
+        ]
+      }
+order: 3000

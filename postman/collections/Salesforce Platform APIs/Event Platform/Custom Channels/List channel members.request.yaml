@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT Id, DeveloperName, EventChannel, FilterExpression, SelectedEntity FROM PlatformEventChannelMember"
+method: GET
+queryParams:
+  q: SELECT Id, DeveloperName, EventChannel, FilterExpression, SelectedEntity FROM PlatformEventChannelMember
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+examples: ./.resources/List channel members.resources/examples
+order: 7000

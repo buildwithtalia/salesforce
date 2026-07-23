@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/token"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      grant_type: urn:ietf:params:oauth:grant-type:token-exchange
+      subject_token_type: urn:ietf:params:oauth:token-type:access_token
+      subject_token: "{{_accessToken}}"
+      actor_token_type: urn:ietf:params:oauth:token-type:jwt
+      actor_token: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:52:11 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    X-ReadOnlyMode: "false"
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "access_token": "<access_token>",
+          "issued_token_type": "urn:ietf:params:oauth:token-type:jwt",
+          "token_type": "Bearer",
+          "expires_in": 60
+      }
+order: 1000

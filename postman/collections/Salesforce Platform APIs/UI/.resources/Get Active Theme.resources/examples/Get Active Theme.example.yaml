@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/themes/active"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:24:07 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "brandColor": "#0176D3",
+          "brandImage": {
+              "largeUrl": "/_slds/images/themes/lightning_blue/lightning_blue_logo_3x.png",
+              "mediumUrl": "/_slds/images/themes/lightning_blue/lightning_blue_logo_2x.png",
+              "smallUrl": "/_slds/images/themes/lightning_blue/lightning_blue_logo_1x.png"
+          },
+          "defaultGroupBanner": {
+              "fullSizeUrl": "/_slds/images/themes/lightning_blue/lightning_blue_group.png"
+          },
+          "defaultGroupImage": {
+              "largeUrl": "/_slds/images/themes/lightning_blue/lightning_blue_group_icon_200.png",
+              "mediumUrl": "/_slds/images/themes/lightning_blue/lightning_blue_group_icon_160.png",
+              "smallUrl": "/_slds/images/themes/lightning_blue/lightning_blue_group_icon_96.png"
+          },
+          "defaultPageBanner": {
+              "fullSizeUrl": "/_slds/images/themes/lightning_blue/lightning_blue_background.png"
+          },
+          "defaultUserBanner": {
+              "fullSizeUrl": "/_slds/images/themes/lightning_blue/lightning_blue_profile.png"
+          },
+          "defaultUserImage": {
+              "largeUrl": "/_slds/images/themes/lightning_blue/lightning_blue_profile_avatar_200.png",
+              "mediumUrl": "/_slds/images/themes/lightning_blue/lightning_blue_profile_avatar_160.png",
+              "smallUrl": "/_slds/images/themes/lightning_blue/lightning_blue_profile_avatar_96.png"
+          },
+          "density": "ViewOne",
+          "headerColor": "#FFFFFF",
+          "linkColor": "#0176D3",
+          "pageColor": "#B0C4DF"
+      }
+order: 1000

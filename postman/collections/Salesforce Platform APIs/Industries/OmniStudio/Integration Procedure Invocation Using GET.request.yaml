@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{_endpoint}}/services/apexrest/:NAMESPACE/v1/integrationprocedure/:TYPE_SUBTYPE/"
+method: GET
+pathVariables:
+  - key: NAMESPACE
+    value: ""
+    description: "The namespace: `omnistudio`, `vlocity_ins`, `vlocity_cmt`, or `vlocity_ps`"
+  - key: TYPE_SUBTYPE
+    value: ""
+    description: Type and SubType of the Integration Procedure separated by an underscore.
+settings: {}
+order: 1000

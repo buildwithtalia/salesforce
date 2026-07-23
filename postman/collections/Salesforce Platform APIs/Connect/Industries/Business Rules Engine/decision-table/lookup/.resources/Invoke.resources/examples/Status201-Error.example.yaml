@@ -1,0 +1,80 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-table/lookup/:decisionTableId"
+  method: POST
+  pathVariables:
+    - key: decisionTableId
+      value: 0lDHo0000008Po3
+      description: Decision Table Id
+  body:
+    type: json
+    content: |-
+      {
+          "datasetLinkName": "transactionMapping",
+          "conditions": [
+              {
+                  "conditionsList": [
+                      {
+                          "fieldName": "Product__c",
+                          "value": "Nike",
+                          "operator": "Matches" //Operator is optional
+                      },
+                      {
+                          "fieldName": "Price__c",
+                          "value": 1000,
+                          "operator": "GreaterThan"
+                      }
+                  ]
+              },
+              {
+                  "conditionsList": [
+                      {
+                          "fieldName": "Product__c",
+                          "value": "Adidas",
+                          "operator": "Matches" //Operator is optional
+                      },
+                      {
+                          "fieldName": "Price__c",
+                          "value": 1500,
+                          "operator": "GreaterThan"
+                      }
+                  ]
+              }
+          ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Tue, 19 Sep 2023 14:17:24 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "outputs": [
+              {
+                  "errorCode": 400,
+                  "errorMessage": "Specify valid name for Data set Link",
+                  "outcomeList": [],
+                  "outcomeType": null,
+                  "successStatus": false
+              },
+              {
+                  "errorCode": 400,
+                  "errorMessage": "Specify valid name for Data set Link",
+                  "outcomeList": [],
+                  "outcomeType": null,
+                  "successStatus": false
+              }
+          ]
+      }
+order: 3000

@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  f a survey field can be translated or is already translated into a particular language, you can add or change the translated value of the survey field.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/request_survey_translate_add_change.htm
+url: "{{_endpoint}}/services/data/v{{version}}/tabs"
+method: GET
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Tabs.resources/examples
+order: 21000

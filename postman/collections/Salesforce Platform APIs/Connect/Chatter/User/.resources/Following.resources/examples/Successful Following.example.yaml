@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/users/:USER_ID/following"
+  method: GET
+  queryParams:
+    - key: filterType
+      value: ""
+      disabled: true
+      description: Specifies the key prefix to filter the type of objects returned. The key prefix is the three-character prefix code in the object ID. Object IDs are prefixed with three-character codes that specify the type of the object. For example, User objects have a prefix of 005 and Group objects have a prefix of 0F9.
+    - key: page
+      value: ""
+      disabled: true
+      description: Specifies the page number to return. The default value is 0, which returns the first page.
+    - key: pageSize
+      value: ""
+      disabled: true
+      description: |
+        Specifies the number of items per page. Valid values are between 1 and 1000. If you don't specify a size, the default is 25.
+  pathVariables:
+    USER_ID: 0052o00000DKQasAAH
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 16:25:01 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageUrl": "/services/data/v58.0/chatter/users/0052o00000DKQasAAH/following",
+          "following": [],
+          "nextPageUrl": null,
+          "previousPageUrl": null,
+          "total": 0
+      }
+order: 1000

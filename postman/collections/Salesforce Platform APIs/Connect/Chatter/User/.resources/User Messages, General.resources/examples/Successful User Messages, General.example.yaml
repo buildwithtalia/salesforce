@@ -1,0 +1,161 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/users/me/messages?text=This is a private message&recipients=0052o00000DKQasAAH"
+  method: POST
+  queryParams:
+    - key: text
+      value: This is a private message
+    - key: inReplyTo
+      value: <MESSAGE_ID>
+      disabled: true
+      description: ID of an existing message that identifies which conversation this message is part of. Specify either recipients or inReplyTo. Specify one or the other, not both.
+    - key: recipients
+      value: 0052o00000DKQasAAH
+      description: Comma-separated list of User IDs
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 20 Nov 2023 16:22:22 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "body": {
+              "isRichText": null,
+              "messageSegments": [],
+              "text": "This is a private message"
+          },
+          "conversationId": "03M...",
+          "conversationUrl": "/services/data/v58.0/chatter/users/me/conversations/03M...",
+          "id": "03J...",
+          "recipients": [
+              {
+                  "additionalLabel": null,
+                  "communityNickname": "automatedprocess",
+                  "companyName": "Salesforce",
+                  "displayName": "Automated Process",
+                  "firstName": "Automated",
+                  "id": "005...",
+                  "isActive": true,
+                  "isInThisCommunity": true,
+                  "lastName": "Process",
+                  "motif": {
+                      "color": "1B96FF",
+                      "largeIconUrl": "/img/icon/profile64.png",
+                      "mediumIconUrl": "/img/icon/profile32.png",
+                      "smallIconUrl": "/img/icon/profile16.png",
+                      "svgIconUrl": null
+                  },
+                  "mySubscription": null,
+                  "name": "Automated Process",
+                  "outOfOffice": {
+                      "message": ""
+                  },
+                  "photo": {
+                      "fullEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_200_v2.png?fromEmail=1",
+                      "largePhotoUrl": "https://<my_domain>/profilephoto/005/F",
+                      "mediumPhotoUrl": "https://<my_domain>/profilephoto/005/M",
+                      "photoVersionId": null,
+                      "smallPhotoUrl": "https://<my_domain>/profilephoto/005/T",
+                      "standardEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_45_v2.png?fromEmail=1",
+                      "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+                  },
+                  "reputation": null,
+                  "title": null,
+                  "type": "User",
+                  "url": "/services/data/v58.0/chatter/users/005...",
+                  "userType": "System"
+              },
+              {
+                  "additionalLabel": null,
+                  "communityNickname": "User1696423780773910041",
+                  "companyName": "Salesforce",
+                  "displayName": "Name",
+                  "firstName": "FirstName",
+                  "id": "005...",
+                  "isActive": true,
+                  "isInThisCommunity": true,
+                  "lastName": "Name",
+                  "motif": {
+                      "color": "1B96FF",
+                      "largeIconUrl": "/img/icon/profile64.png",
+                      "mediumIconUrl": "/img/icon/profile32.png",
+                      "smallIconUrl": "/img/icon/profile16.png",
+                      "svgIconUrl": null
+                  },
+                  "mySubscription": null,
+                  "name": "Name",
+                  "outOfOffice": {
+                      "message": ""
+                  },
+                  "photo": {
+                      "fullEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0IogXzXAXaYKJnuWCNQmXymRq?fromEmail=1",
+                      "largePhotoUrl": "https://<my_domain>/profilephoto/729.../F",
+                      "mediumPhotoUrl": "https://<my_domain>/profilephoto/729.../M",
+                      "photoVersionId": "729...",
+                      "smallPhotoUrl": "https://<my_domain>/profilephoto/729.../T",
+                      "standardEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0Ioi-dtynkoFWsl46as__TDFU?fromEmail=1",
+                      "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+                  },
+                  "reputation": null,
+                  "title": null,
+                  "type": "User",
+                  "url": "/services/data/v58.0/chatter/users/005...",
+                  "userType": "Internal"
+              }
+          ],
+          "sender": {
+              "additionalLabel": null,
+              "communityNickname": "User1696423780773910041",
+              "companyName": "Salesforce",
+              "displayName": "Name",
+              "firstName": "Firstname",
+              "id": "005...",
+              "isActive": true,
+              "isInThisCommunity": true,
+              "lastName": "Name",
+              "motif": {
+                  "color": "1B96FF",
+                  "largeIconUrl": "/img/icon/profile64.png",
+                  "mediumIconUrl": "/img/icon/profile32.png",
+                  "smallIconUrl": "/img/icon/profile16.png",
+                  "svgIconUrl": null
+              },
+              "mySubscription": null,
+              "name": "Name",
+              "outOfOffice": {
+                  "message": ""
+              },
+              "photo": {
+                  "fullEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0IogXzXAXaYKJnuWCNQmXymRq?fromEmail=1",
+                  "largePhotoUrl": "https://<my_domain>/profilephoto/729.../F",
+                  "mediumPhotoUrl": "https://<my_domain>/profilephoto/729.../M",
+                  "photoVersionId": "729...",
+                  "smallPhotoUrl": "https://<my_domain>/profilephoto/729.../T",
+                  "standardEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0Ioi-dtynkoFWsl46as__TDFU?fromEmail=1",
+                  "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+              },
+              "reputation": null,
+              "title": null,
+              "type": "User",
+              "url": "/services/data/v58.0/chatter/users/005...",
+              "userType": "Internal"
+          },
+          "sendingCommunity": null,
+          "sentDate": "<datetime>",
+          "url": "/services/data/v58.0/chatter/users/me/messages/03J..."
+      }
+order: 1000

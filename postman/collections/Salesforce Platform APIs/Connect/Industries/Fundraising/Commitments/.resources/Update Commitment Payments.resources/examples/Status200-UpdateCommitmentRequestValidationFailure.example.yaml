@@ -1,0 +1,89 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/payment-updates"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "updates": [
+          {
+            "giftCommitmentId": "INVALID COMMITMENT ID",
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor 1",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "classy",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            }
+          },
+          {
+            "giftCommitmentId": "<SFDC_GIFT_COMMITMENT_ID>",
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor 2",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            }
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "successes": 1,
+        "failures": 1,
+        "notProcessed": 0,
+        "details": [
+          {
+              "success": false,
+              "errors": {
+                  "field": "id",
+                  "message": "<invalid id message>"
+              }
+          },
+          {
+            "success": true,
+            "links": {
+              "giftcommitment": {
+                "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                "id": "<SFDC_GIFT_COMMITMENT_ID>"
+              },
+              "paymentinstrument": {
+                "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_PAYMENT_INSTRUMENT_ID>",
+                "id": "<SFDC_PAYMENT_INSTRUMENT_ID>"
+              }
+            }
+          }
+        ]
+      }
+order: 2000

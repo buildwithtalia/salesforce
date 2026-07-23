@@ -1,0 +1,20 @@
+$kind: http-request
+description: |-
+  Executes actions on multiple records in one request. Use SObject Collections to reduce the number of round-trips between the client and server. This resource is available in API version 42.0 and later.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections.htm
+url: "{{_endpoint}}/services/data/v{{version}}/composite/sobjects/:SOBJECT_API_NAME?ids=&fields="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  ids: ""
+  fields: ""
+pathVariables:
+  SOBJECT_API_NAME: ""
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/SObject Collections Retrieve.resources/examples
+order: 6000

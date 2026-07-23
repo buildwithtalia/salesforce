@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  These API Section (Resources) come from Standard Loyalty Management Developer Guide.
+
+  📚 [Standard Loyalty Management Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/loyalty_management_apis_resources.htm).
+order: 2000

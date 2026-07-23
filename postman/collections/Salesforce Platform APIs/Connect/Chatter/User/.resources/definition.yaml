@@ -1,0 +1,3 @@
+$kind: collection
+description: Create user photos and user messages. Get user subscription information.
+order: 5000

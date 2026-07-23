@@ -1,0 +1,53 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT Id, DeveloperName, MasterLabel, ChannelType FROM PlatformEventChannel"
+  method: GET
+  queryParams:
+    q: SELECT Id, DeveloperName, MasterLabel, ChannelType FROM PlatformEventChannel
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 03 Jul 2023 13:15:17 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=7/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "size": 2,
+          "totalSize": 2,
+          "done": true,
+          "queryLocator": null,
+          "entityTypeName": "PlatformEventChannel",
+          "records": [
+              {
+                  "attributes": {
+                      "type": "PlatformEventChannel",
+                      "url": "/services/data/v58.0/tooling/sobjects/PlatformEventChannel/0YL4H0000004C93WAE"
+                  },
+                  "Id": "0YL4H0000004C93WAE",
+                  "DeveloperName": "HREvents",
+                  "MasterLabel": "Custom Channel for the HR App",
+                  "ChannelType": "data"
+              },
+              {
+                  "attributes": {
+                      "type": "PlatformEventChannel",
+                      "url": "/services/data/v58.0/tooling/sobjects/PlatformEventChannel/0YL4H0000004C98WAE"
+                  },
+                  "Id": "0YL4H0000004C98WAE",
+                  "DeveloperName": "AdvocateEvents",
+                  "MasterLabel": "Custom Channel for the HR App",
+                  "ChannelType": "data"
+              }
+          ]
+      }
+order: 1000

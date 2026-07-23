@@ -1,0 +1,49 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/jobs/query"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: |-
+      {
+        "operation" : "query",
+        "query" : "SELECT Id FROM Account",
+        "contentType" : "CSV",
+        "columnDelimiter" : "COMMA",
+        "lineEnding" : "LF"
+      } 
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 15:06:06 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=18/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "id": "750...",
+          "operation": "query",
+          "object": "Account",
+          "createdById": "005...",
+          "createdDate": "<datetime>",
+          "systemModstamp": "<datetime>",
+          "state": "UploadComplete",
+          "concurrencyMode": "Parallel",
+          "contentType": "CSV",
+          "apiVersion": 58,
+          "lineEnding": "LF",
+          "columnDelimiter": "COMMA"
+      }
+order: 1000

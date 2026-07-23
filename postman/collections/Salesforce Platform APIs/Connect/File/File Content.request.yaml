@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Returns the binary content of the file, including references to external files. The content is streamed as the body of the response.
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_files_content.htm
+url: "{{_endpoint}}/services/data/v{{version}}/connect/files/:FILE_ID/content"
+method: GET
+pathVariables:
+  FILE_ID: ""
+settings:
+  disabledSystemHeaders: []
+order: 3000

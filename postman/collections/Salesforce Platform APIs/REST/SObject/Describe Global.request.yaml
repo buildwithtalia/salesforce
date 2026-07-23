@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Lists the available objects and their metadata for your organization’s data. In addition, it provides the organization encoding, as well as the maximum batch size permitted in queries.
+
+  You can use the If-Modified-Since header with this resource, with the date format EEE, dd MMM yyyy HH:mm:ss z. When using this header, if no available object’s metadata has changed since the provided date, a 304 Not Modified status code is returned with no response body.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 1000

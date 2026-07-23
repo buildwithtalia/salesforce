@@ -1,0 +1,31 @@
+$kind: http-request
+description: Get list views associated with an object.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/list-info/:SOBJECT_API_NAME"
+method: GET
+queryParams:
+  - key: pageSize
+    value: ""
+    disabled: true
+    description: The number of list records viewed at one time. The default value is 20. Value can be 1–2000.
+  - key: pageToken
+    value: ""
+    disabled: true
+    description: A token that represents the page offset. To indicate where the page starts, use this value with the pageSize parameter. The maximum offset is 2000 and the default is 0.
+  - key: q
+    value: ""
+    disabled: true
+    description: Search term to filter the results. Wildcards are supported.
+  - key: recentListsOnly
+    value: "true"
+    disabled: true
+    description: Show only recently viewed lists.
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: Account
+    description: API name of a UI API supported object.
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get List Views for an Object.resources/examples
+order: 1000

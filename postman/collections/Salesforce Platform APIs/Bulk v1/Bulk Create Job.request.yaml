@@ -1,0 +1,55 @@
+$kind: http-request
+url: "{{_endpoint}}/services/async/{{version}}/job"
+method: POST
+headers:
+  - key: X-SFDC-Session
+    value: "{{_accessToken}}"
+  - key: Content-Type
+    value: application/json
+  - key: charset
+    value: UTF-8
+  - key: Sforce-Disable-Batch-Retry
+    value: "FALSE"
+    disabled: true
+  - key: Sforce-Line-Ending
+    value: CRLF
+    disabled: true
+  - key: Sforce-Enable-PKChunking
+    value: "FALSE"
+    disabled: true
+  - key: chunkSize
+    value: "10000"
+    disabled: true
+  - key: Accept-Encoding
+    value: gzip
+    disabled: true
+  - key: Content-Encoding
+    value: gzip
+    disabled: true
+body:
+  type: text
+  content: |-
+    {
+        "operation": "insert",
+        "object": "Account",
+        "contentType": "CSV"
+    }
+scripts:
+  - type: afterResponse
+    code: |+
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+
+      const contentType = pm.response.headers.get("Content-Type");
+      if (contentType.indexOf("xml") !== -1) {
+          const jsonData = xml2Json(pm.response.text());
+          context.set("_jobId", jsonData['jobInfo']['id']);    
+      }
+      else if (contentType.indexOf("json") !== -1) {
+          const jsonData = pm.response.json();
+          context.set("_jobId", jsonData.id);
+      }
+
+    language: text/javascript
+settings: {}
+examples: ./.resources/Bulk Create Job.resources/examples
+order: 2000

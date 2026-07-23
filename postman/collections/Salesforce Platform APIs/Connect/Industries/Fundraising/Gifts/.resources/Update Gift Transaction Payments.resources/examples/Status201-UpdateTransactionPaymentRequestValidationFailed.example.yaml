@@ -1,0 +1,67 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/transactions/payment-updates"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "updates": [
+          {
+            "giftTransactionId": "INVALID GIFT TRANSACTION ID",
+            "transactionStatus": "Paid",
+            "processorReference": "string",
+            "gatewayReference": "string",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "processorTransactionFee": 0.5,
+            "gatewayTransactionFee": 0.25,
+            "donorCoverAmount": 10.5
+          },
+          {
+            "giftTransactionId": "<SFDC_GIFT_TRANSACTION_ID>",
+            "transactionStatus": "Paid",
+            "processorReference": "string",
+            "gatewayReference": "string",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "processorTransactionFee": 1.00,
+            "gatewayTransactionFee": 0.45,
+            "donorCoverAmount": 20.00
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "successes": 1,
+          "failures": 1,
+          "notProcessed": 0,
+          "details": [
+              {
+                  "success": false,
+                  "errors": {
+                      "field": "id",
+                      "message": "<invalid id message>"
+                  }
+              },
+              {
+                  "success": true,
+                  "links": {
+                      "gifttransaction": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_TRANSACTION_ID>",
+                          "id": "<SFDC_GIFT_TRANSACTION_ID>"
+                      }
+                  }
+              }
+          ]
+      }
+order: 2000

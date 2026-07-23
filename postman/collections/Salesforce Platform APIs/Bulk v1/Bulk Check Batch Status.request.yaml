@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/batch"
+method: GET
+headers:
+  X-SFDC-Session: "{{_accessToken}}"
+  Accept-Encoding: gzip
+  Content-Encoding: gzip
+settings: {}
+examples: ./.resources/Bulk Check Batch Status.resources/examples
+order: 6000

@@ -1,0 +1,95 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query opportunitiesClosingSoonExplicitAND($month: Long) {
+          uiapi {
+            query {
+              Opportunity(
+                where: {
+                  and: [
+                    { StageName: { eq: "Negotiation/Review" } }
+                    { CloseDate: { CALENDAR_MONTH: { value: { eq: $month } } } }
+                  ]
+                }
+              ) {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                    StageName {
+                      value
+                    }
+                    CloseDate {
+                      value
+                      displayValue
+                    }
+                    Description {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      variables: |-
+        {
+            "month": 10
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:20:51 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Opportunity": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "00658000003ceg9AAA",
+                                      "Name": {
+                                          "value": "United Oil Refinery Generators"
+                                      },
+                                      "StageName": {
+                                          "value": "Negotiation/Review"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2023-10-25",
+                                          "displayValue": "25/10/2023"
+                                      },
+                                      "Description": {
+                                          "value": "This is a sample opportunity."
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

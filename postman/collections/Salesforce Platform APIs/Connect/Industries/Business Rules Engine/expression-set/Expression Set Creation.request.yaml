@@ -1,0 +1,150 @@
+$kind: http-request
+description: |-
+  [https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_create_expression_set.htm](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_create_expression_set.htm)
+
+  # Expression Set Creation (POST)
+
+  Creates an expression set in Business Rules Engine. An expression set performs a series of calculations by using lookup tables and user-defined variables and constants.Resource
+
+  ```
+  /connect/business-rules/expression-set
+
+   ```
+
+  Resource Example
+
+  ```
+  https://yourInstance.salesforce.com/services/data/v59.0/connect
+  /business-rules/expression-set
+
+   ```
+
+  Available version
+
+  58.0
+
+  Requires Chatter
+
+  No
+
+  HTTP methods
+
+  POST
+
+  Request body for POST
+
+  Root XML tag
+
+  JSON example
+
+  ```
+  {
+    "name": "CTX Mapping ES",
+    "apiName": "CTX_Mapping_ES_1",
+    "description": "...",
+    "usageType": "Bre",
+    "contextDefinitions": [
+      {
+        "id": "11Oxx0000006PcLEAU"
+      }
+    ],
+    "versions": [
+      {
+        "name": "CTX_Mapping_ES_1 V1",
+        "apiName": "CTX_Mapping_ES_1_V1",
+        "description": "Sample CTX Mapping",
+        "startDate": "2022-11-14T20:31:47.000+0000",
+        "endDate": "2022-11-14T20:31:47.000+0000",
+        "versionNumber": 1,
+        "rank": 1,
+        "enabled": true,
+        "showExplExternally": false,
+        "steps": [
+          {
+            "name": "Condition1",
+            "description": "Condition step for conditions w.r.t product",
+            "sequenceNumber": 1,
+            "resultIncluded": true,
+            "stepType": "Condition",
+            "conditionExpression": {
+              "expression": "productName == 'iPhone' && productColor == 'Red'",
+              "resultParameter": "condition_output__1"
+            }
+          }
+        ],
+        "variables": [
+          {
+            "name": "productName",
+            "collection": false,
+            "dataType": "Text",
+            "description": "productName",
+            "input": true,
+            "output": false,
+            "type": "Variable"
+          },
+          {
+            "name": "productColor",
+            "collection": false,
+            "dataType": "Text",
+            "description": "productColor",
+            "input": true,
+            "output": false,
+            "type": "Variable"
+          },
+          {
+            "name": "condition_output__1",
+            "dataType": "Boolean",
+            "description": "condition_output__1",
+            "input": false,
+            "output": true,
+            "resultStep": "Condition1",
+            "type": "Variable"
+          }
+        ]
+      }
+    ]
+  }
+
+   ```
+
+  Properties
+
+  | Name | Type | Description | Required or Optional | Available Version |
+  | --- | --- | --- | --- | --- |
+  | apiName | String | Unique name of the expression set. | Required | 58.0 |
+  | context​Definitions | [Context Definition Input](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_requests_context_definition_input.htm) | List of context definitions in an expression set. | Optional | 58.0 |
+  | description | String | Description of the expression set. | Optional | 58.0 |
+  | name | String | Name of the expression set. | Required | 58.0 |
+  | usage​Type | String | Usage type of the expression set.<br><br>Valid values are:<br><br>- AiAccelerator​SubscriberChurn​Prediction—Used for Industries Einstein<br>    <br>- Bre—Used for Business Rules Engine<br>    <br>- CustomLoyalty—Used for Loyalty Management<br>    <br>- DefaultPricing—Used for Pricing Plans in Enterprise Product Catalog (EPC) by Communications Cloud<br>    <br>- Qualification—Used for Industries Communications, Media, and Energy (CME)<br>    <br>- RecordAlert—Used for Financial Services Cloud<br>    <br>- ShipAndDebit—Used for Manufacturing Cloud<br>    <br>- TierProcessing—Used for Loyalty Management<br>    <br>- TransactionJournal—Used for Loyalty Management<br>    <br>- WarrantyClaim—Used for Manufacturing Cloud | Required | 58.0 |
+  | versions | [Expression Set Version Input](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_requests_expression_set_version.htm)\[\] | List of the expression set versions. | Optional | 58.0 |
+
+  Response body for POST
+
+  [Expression Set Output](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_responses_expression_set_output.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/expression-set"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "apiName": "myExpressionSet2",
+        "contextDefinitions": [],
+        "name": "myExpressionSet3",
+        "usageType": "Bre",
+        "versions": [
+            {
+                "apiName": "myExpressionSet_V1",
+                "enabled": false,
+                "id": "9QMHo000000LBjOOAW",
+                "name": "myExpressionSet V1",
+                "showExplExternally": false,
+                "startDate": "2023-09-06T10:35:11.000Z",
+                "steps": [],
+                "variables": [],
+                "versionNumber": 1
+            }
+        ]
+    }
+settings: {}
+examples: ./.resources/Expression Set Creation.resources/examples
+order: 2000

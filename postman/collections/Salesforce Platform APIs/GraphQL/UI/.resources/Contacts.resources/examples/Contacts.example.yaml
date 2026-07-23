@@ -1,0 +1,136 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query contacts {
+          uiapi {
+            query {
+              Contact {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:06:52 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Contact": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "0034H000029oY0FQAU",
+                                      "Name": {
+                                          "value": "Contact One"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0034H000029oY0GQAU",
+                                      "Name": {
+                                          "value": "Contact Two"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0034H000029oY0HQAU",
+                                      "Name": {
+                                          "value": "Contact Three"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0034H000029oXu7QAE",
+                                      "Name": {
+                                          "value": "Sample Contact"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0034H00002JsInQQAV",
+                                      "Name": {
+                                          "value": "John Doe"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0kdAAA",
+                                      "Name": {
+                                          "value": "John Dodge"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0keAAA",
+                                      "Name": {
+                                          "value": "Sarah Smith"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0kfAAA",
+                                      "Name": {
+                                          "value": "George Dapper"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0kgAAA",
+                                      "Name": {
+                                          "value": "Jack Dodge 2"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0msAAA",
+                                      "Name": {
+                                          "value": "Jessica Jones"
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

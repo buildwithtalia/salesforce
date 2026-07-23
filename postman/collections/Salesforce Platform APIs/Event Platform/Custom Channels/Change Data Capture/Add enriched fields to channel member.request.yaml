@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannelMember/:PLATFORM_EVENT_CHANNEL_MEMBER_ID"
+method: PATCH
+pathVariables:
+  PLATFORM_EVENT_CHANNEL_MEMBER_ID: ""
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Account_Channel_chn_AccountChangeEvent",
+        "Metadata": {
+            "enrichedFields": [
+                {
+                    "name": "External_Account_ID__c"
+                }
+            ],
+            "eventChannel": "Account_Channel__chn",
+            "selectedEntity": "AccountChangeEvent"
+        }
+    }
+settings:
+  strictSSL: false
+order: 3000

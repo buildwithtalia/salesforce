@@ -1,0 +1,20 @@
+$kind: http-request
+description: Lists all users for the external client app indicated by the app ID. See [OAuth Users by App ID](https://developer.salesforce.com/docs/atlas.en-us.246.0.chatterapi.meta/chatterapi/connect_resources_usage_app_id_users.htm).
+url: "{{url}}{{site}}/services/data/v{{version}}/apps/oauth/usage/{{_appId}}/users?page=0&pageSize=100"
+method: GET
+headers:
+  - key: Authorization
+    value: Bearer <token>
+    description: Replace <token> with your access token
+queryParams:
+  - key: page
+    value: "0"
+    description: Page number for the usage information. Defaults to 0.
+  - key: pageSize
+    value: "100"
+    description: Number of usage entries per page. Defaults to 100.
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/OAuth App Users.resources/examples
+order: 2000

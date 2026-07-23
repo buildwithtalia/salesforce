@@ -1,0 +1,19 @@
+$kind: http-request
+description: |-
+  Returns a list of actions and their details. This resource is available in REST API version 28.0 and later. When working with actions, also refer to Quick Actions.
+
+  To return a specific object’s actions as well as global actions, use: /vXX.X/sobjects/object/quickActions/
+  To return a specific action, use /vXX.X/sobjects/object/quickActions/{action name}
+  To return a specific action’s descriptive detail, use /vXX.X/sobjects/object/quickActions/{action name}/describe/
+  To return a specific action’s default values, including default field values, use services/data/vXX.X/sobjects/object/quickActions/{action name}/defaultValues/
+  In API version 28.0, to evaluate the default values for an action, use vXX.X/sobjects/object/quickActions/{action name}/defaultValues/{parent id}
+  In API version 29.0 and greater, to evaluate the default values for an action, use vXX.X/sobjects/object/quickActions/{action name}/defaultValues/{context id}
+  This returns the default values specific to the {context id} object.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/quickActions/"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+order: 20000

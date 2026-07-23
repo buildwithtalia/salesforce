@@ -1,0 +1,19 @@
+$kind: http-request
+description: Request information for a single bundle product and all it's bundle components. See [Request Product Information](https://developer.salesforce.com/docs/revenue/subscription-management/references/products?meta=Request+Product+Information).
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/catalog-products/actions/get-products"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "productContexts": [
+        {
+          "product2Id": "{{WorkAnywhereBundleProduct}}"
+        }
+      ],
+      "retrievalType": "IncludeChildComponents"
+    }
+settings: {}
+order: 3000

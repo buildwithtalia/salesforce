@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest/{{_jobId}}"
+method: GET
+headers:
+  - key: Content-Type
+    value: application/json
+    disabled: true
+settings: {}
+examples: ./.resources/Get Job Info.resources/examples
+order: 6000

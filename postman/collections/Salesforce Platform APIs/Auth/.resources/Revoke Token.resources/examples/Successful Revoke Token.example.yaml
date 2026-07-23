@@ -1,0 +1,46 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/revoke"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{_accessToken}}"
+        description: If an access token is included, Salesforce invalidates it and revokes the token. If a refresh token is included, Salesforce revokes it and any associated access tokens.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 16 Nov 2023 15:53:04 GMT
+    - key: Strict-Transport-Security
+      value: max-age=63072000; includeSubDomains
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: X-XSS-Protection
+      value: 1; mode=block
+    - key: Content-Security-Policy
+      value: upgrade-insecure-requests
+    - key: X-Robots-Tag
+      value: none
+    - key: Cache-Control
+      value: no-cache,must-revalidate,max-age=0,no-store,private
+    - key: Set-Cookie
+      value: sdtsvalid=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0; secure
+    - key: Set-Cookie
+      value: setupprofileobjectsandtabsgt=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0; secure
+    - key: Set-Cookie
+      value: unifiedsearchgt=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0; secure
+    - key: Vary
+      value: Accept-Encoding
+    - key: Content-Encoding
+      value: gzip
+    - key: Transfer-Encoding
+      value: chunked
+  body:
+    type: text
+    content: ""
+order: 1000

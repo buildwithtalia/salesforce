@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/payments/payment-methods"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "paymentGatewayId" : "{{defaultPaymentGatewayId}}",
+        "cardPaymentMethod": {
+        "cardHolderName": "{{_userFullName}}",
+        "expiryMonth": "11",
+        "expiryYear": "2222",
+        "cardNumber": "4111111111111111",
+        "cvv": "111", 
+        "cardCategory": "CreditCard",
+        "cardType": "VISA",
+        "startYear": "2013",
+        "startMonth": "7",
+        "nickName": "Default Payment Method",
+        "accountId": "{{defaultAccountId}}"
+        },
+      "phone": "4155551212",
+      "email": "{{_userEmail}}",
+      "additionalData":{
+          "key1":"value1",
+          "key2":"value2"
+        }
+    }
+settings: {}
+order: 12000

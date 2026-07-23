@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/asset-management/assets/collection/actions/initiate-cancellation"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "assetIds": {
+        "assetIdArray": [
+          "{{assetID}}"
+        ]
+      },
+      "cancellationDate": "2023-08-21T00:00:00",
+      "cancellationOutputType": "order"
+    }
+settings: {}
+order: 2000

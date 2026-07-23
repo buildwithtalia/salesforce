@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  A description of a file shared as a link. Create, access, and delete a file’s share link.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_files_shares_link.htm
+url: "{{_endpoint}}/services/data/v{{version}}/connect/files/:FILE_ID/file-shares/link"
+method: PUT
+pathVariables:
+  FILE_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Files Shares Link.resources/examples
+order: 6000

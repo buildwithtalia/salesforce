@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannelMember"
+method: POST
+body:
+  type: json
+  content: |
+    {
+        "FullName": "Account_Channel_chn_AccountChangeEvent",
+        "Metadata": {
+            "eventChannel": "Account_Channel__chn",
+            "selectedEntity": "AccountChangeEvent"
+        }
+    }
+settings: {}
+order: 4000

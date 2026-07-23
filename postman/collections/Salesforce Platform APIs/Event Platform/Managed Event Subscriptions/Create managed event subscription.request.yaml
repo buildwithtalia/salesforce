@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/ManagedEventSubscription"
+method: POST
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+  - key: ""
+    value: ""
+    disabled: true
+  - key: ""
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Managed_Sub_OpportunityChangeEvent",
+        "Metadata": {
+            "label": "Managed Sub OpportunityChangeEvent",
+            "topicName": "/data/OpportunityChangeEvent",
+            "defaultReplay": "LATEST",
+            "state": "RUN",
+            "errorRecoveryReplay": "LATEST"
+        }
+    }
+settings:
+  strictSSL: false
+order: 1000

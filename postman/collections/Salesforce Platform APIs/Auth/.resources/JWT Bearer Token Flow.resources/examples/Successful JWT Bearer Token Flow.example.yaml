@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/token"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      grant_type: urn:ietf:params:oauth:grant-type:jwt-bearer
+      assertion: <token>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 05 Oct 2023 12:17:02 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "access_token": "<access_token>",
+          "scope": "web openid api full",
+          "instance_url": "https://<my_domain>",
+          "id": "https://login.salesforce.com/id/00D.../005...",
+          "token_type": "Bearer"
+      }
+order: 1000

@@ -1,0 +1,62 @@
+$kind: collection
+description: |-
+  Use [Subscription Management API](https://developer.salesforce.com/docs/revenue/subscription-management/overview?_ga=2.87750811.2015639846.1688494637-2111347203.1688046721) to build a product-to-cash solution for your recurring business.
+
+  You can use this collection on its own or authenticate to a provisioned Trailhead playground org. If you authenticate to a playground org, use the Postman runner to populate object IDs in the Subscription Management environment variables. Then, you can make successful requests against your org.
+
+  ### Sign Up for a Trailhead Playground Org
+
+  Sign up for your org [here](https://trailhead.salesforce.com/promo/orgs/poc-revenue-cloud). When you receive the verification email, follow the instructions to verify your org.
+
+  ### Authenticate to Your Trailhead Playground Org
+
+  Use the Salesforce Platform APIs authentication mechanism to authenticate to your Trailhead Playground org.
+
+  1. Ensure the only org you're logged in to is your Subscription Management Trailhead Playground org.
+  2. In Postman, ensure the **Subscription Management** environment is selected.
+  3. Select the Collections tab then select the **Salesforce Platform APIs** folder.
+  4. Open the **Authorization** tab.
+  5. Ensure the **Type** is `OAuth 2.0`
+  6. Click **Get New Access** Token.
+  7. A success message appears briefly, and then you're redirected to the Manage Access Tokens dialog.
+  8. Copy the instance_url to use later. Be sure to copy only the URL with no extra characters.
+  9. Click **Use Token**.
+  10. Open the Subscription Management environment, then open the **Variables** tab.
+  11. In the **_endpoint** row, CURRENT VALUE column, paste the instance_url value that you copied in a previous step.
+  12. Click **Save**.
+      
+
+  Your Postman collection is now authenticated to the demo Subscription Management org.
+
+  ## Test Your Connection
+
+  Let's verify that the connection is working.
+
+  1. In **Collections**, select the **Salesforce Platform APIs** collection.
+  2. Select the **Subscription Management** folder to expand it.
+  2. Select the **Products** folder to expand it.
+  3. Select **Query Eligible** Products to open the request in the main panel.
+  4. Click **Send**.
+      
+
+  Postman queries the active products in the demo org. Verify the success response.
+
+  **NOTE:** You may need to turn **Follow Authorization header configuration** ON to retain the authorization header when a redirect happens to a different hostname.
+
+  You've successfully authenticated with your Trailhead Playground. To make further requests against this org, populate the environment variables with object IDs using the [Postman Collection Runner](postmanRunner.md).
+
+  ### Query Your Org IDs with the Postman Collection Runner
+
+  Use the Postman Collection Runner to populate the environment variables with the IDs of important objects from your Trailhead Playground org.
+
+  1. Ensure your environment is set to **Subscription Management.**
+  2. Hover over the **Query Org \[Postman Runner\]** folder, select the three dots, then select **Run collection**.
+  3. Ensure all the requests are checked and **Run manually** is selected. Select **Run \[name of your collection\]**.
+      
+
+  <img src="https://resources.docs.salesforce.com/rel1/doc/en-us/static/misc/postman/post-runner.png">
+
+  Postman runs the queries in the Set Variables folder and populates the environment variables with the object IDs from your Trailhead Playground org.
+
+  To verify these steps, expand the Pricing folder and make a **Calculate Price (New Sale)** request. Verify the 201 Created response.
+order: 13000

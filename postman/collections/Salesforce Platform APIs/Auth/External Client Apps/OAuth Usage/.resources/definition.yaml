@@ -1,0 +1,3 @@
+$kind: collection
+description: "> Get External Client App OAuth usage information and revoke tokens. These Connect API endpoints return information about the external client apps that users in your org are connecting to, a list of all OAuth users for an app, or the tokens for a given app and user. If you want to revoke access to an external client app, use the OAuth usage resources to revoke a specific token, all tokens associated with an app, or the tokens associated with a specific user. [External Client App OAuth Usage](https://help.salesforce.com/s/articleView?id=sf.external_client_app_oauth_usage.htm&type=5)"
+order: 1000

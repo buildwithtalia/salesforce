@@ -1,0 +1,43 @@
+$kind: http-request
+description: Runs one or more methods within one or more Apex classes, using the asynchronous test execution mechanism. In the request body, you can specify test class names and IDs, suite names and IDs, the maximum number of failed tests to allow, and the test level, as comma-separated lists or as an array. You can also indicate whether to opt out of collecting code coverage information during the test run (available in API version 43.0 and later).
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/runTestsSynchronous"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |
+    [
+        {
+            "className": "YourClassName",
+            "testMethods": [
+                "testMethod1",
+                "testMethod2",
+                "testMethod3"
+            ]
+        },
+        {
+            "maxFailedTests": "2"
+        }
+    ]
+
+    or
+
+    {
+        "tests": [
+            {
+                "className": "YourClassName",
+                "testMethods": [
+                    "testMethod1",
+                    "testMethod2",
+                    "testMethod3"
+                ]
+            }
+        ],
+        "maxFailedTests": "integer value",
+        "testLevel": "TestLevel enum value",
+        "skipCodeCoverage": "boolean value"
+    }
+settings: {}
+examples: ./.resources/Tooling Run Tests Sync.resources/examples
+order: 6000

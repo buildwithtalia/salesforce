@@ -1,0 +1,3 @@
+$kind: collection
+description: The [promotion APIs](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/loyalty_promotion_apis_reference.htm) allow you to set eligibility rules and limits for a promotion, choose a promotion template, and create a promotion. You can also get the details of a specific promotion, and view a list of eligible promotions for a customer’s cart.
+order: 4000

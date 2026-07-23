@@ -1,0 +1,58 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/loyalty-programs/:loyaltyProgramName/corporate-member-enrollments"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+  body:
+    type: json
+    content: |-
+      {
+          "enrollmentDate" : "2021-01-01T05:05:05",
+          "membershipNumber" : "Member123",
+          "associatedAccountDetails" : {
+              "name" : "Name1",
+              "phone" : "908989898",
+              "website" : "www.ab.com",
+              "allowDuplicateRecords" : "false"
+          },
+          "memberStatus" : "Active",
+          "createTransactionJournals" : "true"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Wed, 22 May 2024 15:35:25 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "accountId": "001J8000003MaJL",
+          "loyaltyProgramMemberId": "0lMJ8000000CaRH",
+          "loyaltyProgramName": "NTO Insider",
+          "membershipNumber": "Member123",
+          "transactionJournals": [
+              {
+                  "activityDate": "2021-01-01T04:05:05.000Z",
+                  "journalSubType": "Member Enrollment",
+                  "journalType": "Accrual",
+                  "loyaltyProgram": "NTO Insider",
+                  "loyaltyProgramMember": "Member123",
+                  "referredMember": null,
+                  "status": "Processed",
+                  "transactionJournalId": "0lVJ8000000GmaE"
+              }
+          ]
+      }
+order: 1000

@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Gets the most recently accessed items that were viewed or referenced by the current user. Salesforce stores information about record views in the interface and uses it to generate a list of recently viewed and referenced records, such as in the sidebar and for the auto-complete options in search.
+
+  This resource only accesses most recently used item information. If you want to modify the list of recently viewed items, you’ll need to update recently viewed information directly by using a SOQL Query with a FOR VIEW or FOR REFERENCE clause.
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_recent_items.htm
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/listviews/recent?limit="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  limit: ""
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+order: 4000

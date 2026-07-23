@@ -1,0 +1,73 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/userinfo"
+  method: GET
+  headers:
+    Content-Type: application/json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:35:50 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "sub": "https://login.salesforce.com/id/00D.../005...",
+          "user_id": "005...",
+          "organization_id": "00D...",
+          "preferred_username": "<username>",
+          "nickname": "<nickname>",
+          "name": "<name>",
+          "email": "<email>",
+          "email_verified": true,
+          "given_name": "<name>",
+          "family_name": "<name>",
+          "zoneinfo": "Europe/Paris",
+          "photos": {
+              "picture": "https://<file_domain>/profilephoto/005/F",
+              "thumbnail": "https://<file_domain>/profilephoto/005/T"
+          },
+          "profile": "https://<my_domain>/005",
+          "picture": "https://<file_domain>/profilephoto/005/F",
+          "address": {
+              "country": "FR"
+          },
+          "is_salesforce_integration_user": false,
+          "urls": {
+              "enterprise": "https://<my_domain>/services/Soap/c/{version}/00D...",
+              "metadata": "https://<my_domain>/services/Soap/m/{version}/00D...",
+              "partner": "https://<my_domain>/services/Soap/u/{version}/00D...",
+              "rest": "https://<my_domain>/services/data/v{version}/",
+              "sobjects": "https://<my_domain>/services/data/v{version}/sobjects/",
+              "search": "https://<my_domain>/services/data/v{version}/search/",
+              "query": "https://<my_domain>/services/data/v{version}/query/",
+              "recent": "https://<my_domain>/services/data/v{version}/recent/",
+              "tooling_soap": "https://<my_domain>/services/Soap/T/{version}/00D...",
+              "tooling_rest": "https://<my_domain>/services/data/v{version}/tooling/",
+              "profile": "https://<my_domain>/0052o00000DOJ1PAAX",
+              "feeds": "https://<my_domain>/services/data/v{version}/chatter/feeds",
+              "groups": "https://<my_domain>/services/data/v{version}/chatter/groups",
+              "users": "https://<my_domain>/services/data/v{version}/chatter/users",
+              "feed_items": "https://<my_domain>/services/data/v{version}/chatter/feed-items",
+              "feed_elements": "https://<my_domain>/services/data/v{version}/chatter/feed-elements",
+              "custom_domain": "https://<my_domain>"
+          },
+          "active": true,
+          "user_type": "STANDARD",
+          "language": "en_US",
+          "locale": "fr_FR_EURO",
+          "utcOffset": 3600000,
+          "updated_at": "<datetime>",
+          "is_app_installed": true
+      }
+order: 1000

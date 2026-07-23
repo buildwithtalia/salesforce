@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Who doesn’t like to play a game? Engage your customers more by gamifying customer activities, such as placing an order, or events, such as birthdays and anniversaries.
+
+  Assign eligible games to a customer, let the customer play the game, and then win a reward on an external system using the [gamification REST APIs](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/loyalty_gamification_apis_reference.htm).
+order: 3000

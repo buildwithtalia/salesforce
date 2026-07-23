@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/actions/standard/createOrderFromQuote"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "inputs": [
+            {
+                "quoteRecordId": "{{currentQuote}}"
+            }
+        ]
+    }
+settings: {}
+order: 4000

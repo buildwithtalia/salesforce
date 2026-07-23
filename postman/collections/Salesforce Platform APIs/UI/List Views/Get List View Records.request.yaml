@@ -1,0 +1,24 @@
+$kind: http-request
+description: Get record data for a list view using a request body.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/list-records/:SOBJECT_API_NAME/:LIST_VIEW_API_NAME"
+method: POST
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: ""
+    description: API name of the UI API supported object.
+  - key: LIST_VIEW_API_NAME
+    value: ""
+    description: API name of a list view.
+body:
+  type: json
+  content: |-
+    {
+      "fields": ["Name", "Type", "AnnualRevenue", "CreatedDate"],
+      "pageSize" : 10,
+      "sortBy": ["CreatedDate"],
+      "searchTerm" : "United",
+      "where": "{AnnualRevenue: { gt: 1000000}}"
+    }
+settings: {}
+examples: ./.resources/Get List View Records.resources/examples
+order: 4000

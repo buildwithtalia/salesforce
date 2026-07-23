@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/files/:FILE_ID/file-shares/link"
+  method: PUT
+  pathVariables:
+    FILE_ID: 0692o00000woaRkAAI
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 16:38:31 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "expirationDate": null,
+          "fileViewUrl": "https://<my_domain>/sfc/p/2o000000i6mB/a/2o00000022S3/y2zsu9pHtEVIa49w6ElaXdjXz_GxBSzRVwe645_Z.dw",
+          "isPasswordRequired": false,
+          "password": null,
+          "sharingType": "V"
+      }
+order: 1000

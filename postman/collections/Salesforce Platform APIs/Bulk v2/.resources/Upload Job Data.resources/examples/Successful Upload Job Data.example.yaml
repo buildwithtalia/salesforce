@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest/{{_jobId}}/batches"
+  method: PUT
+  headers:
+    Content-Type: text/csv
+  body:
+    type: file
+    content:
+      src: /Users/username/Downloads/account.csv
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 20 Nov 2023 14:59:59 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=2/15000
+    Transfer-Encoding: chunked
+  body:
+    type: text
+    content: ""
+order: 1000

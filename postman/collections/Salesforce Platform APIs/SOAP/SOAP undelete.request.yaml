@@ -1,0 +1,26 @@
+$kind: http-request
+description: Undeletes records from the Recycle Bin.
+url: "{{url}}{{site}}/services/Soap/c/{{version}}"
+method: POST
+headers:
+  Content-Type: text/xml; charset=UTF-8
+  Accept: text/xml
+  SOAPAction: undelete
+body:
+  type: xml
+  content: |-
+    <?xml version="1.0" encoding="utf-8"?>
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:enterprise.soap.sforce.com">
+      <soapenv:Header>
+         <urn:SessionHeader>
+            <urn:sessionId>{{_accessToken}}</urn:sessionId>
+         </urn:SessionHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+         <urn:undelete>
+            <urn:ids></urn:ids>
+         </urn:undelete>
+      </soapenv:Body>
+    </soapenv:Envelope>
+settings: {}
+order: 1000

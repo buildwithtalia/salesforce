@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT Id, SandboxName, LicenseType, AutoActivate FROM SandboxInfo"
+  method: GET
+  headers:
+    - key: Content-Type
+      value: application/json
+      disabled: true
+  queryParams:
+    - key: q
+      value: SELECT Id, SandboxName, LicenseType, AutoActivate FROM SandboxInfo
+      description: SOQL Query
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 11 Dec 2023 10:45:22 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=312/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "size": 1,
+          "totalSize": 1,
+          "done": true,
+          "queryLocator": null,
+          "entityTypeName": "SandboxInfo",
+          "records": [
+              {
+                  "attributes": {
+                      "type": "SandboxInfo",
+                      "url": "/services/data/v59.0/tooling/sobjects/SandboxInfo/0GQ4H000000CxSzWAK"
+                  },
+                  "Id": "0GQ4H000000CxSzWAK",
+                  "SandboxName": "devSandbox",
+                  "LicenseType": "DEVELOPER",
+                  "AutoActivate": false
+              }
+          ]
+      }
+order: 1000

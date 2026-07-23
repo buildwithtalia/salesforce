@@ -1,0 +1,69 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/loyalty-programs/:loyaltyProgramName/individual-member-enrollments"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: ""
+      value: null
+      disabled: true
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+  body:
+    type: json
+    content: |-
+      {
+        "enrollmentDate" : "2021-01-01T00:00:00",
+        "membershipNumber" : "Member1",
+        "associatedContactDetails" : {
+          "firstName" : "Name1",
+          "lastName" : "Name2",
+          "email" : "ab@email.com",
+          "allowDuplicateRecords" : "false"
+        },
+
+        "memberStatus" : "Active",
+        "createTransactionJournals" : "true",
+        "transactionJournalStatementFrequency" : "Monthly",
+        "transactionJournalStatementMethod" : "Mail",
+        "enrollmentChannel" : "Email",
+        "canReceivePromotions": "true",
+        "canReceivePartnerPromotions" : "true",
+        "membershipEndDate" : "2022-01-01T00:00:00"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Wed, 22 May 2024 15:39:01 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "contactId": "003J8000002Yu0Z",
+          "loyaltyProgramMemberId": "0lMJ8000000CaRM",
+          "loyaltyProgramName": "NTO Insider",
+          "membershipNumber": "Member1",
+          "transactionJournals": [
+              {
+                  "activityDate": "2020-12-31T23:00:00.000Z",
+                  "journalSubType": "Member Enrollment",
+                  "journalType": "Accrual",
+                  "loyaltyProgram": "NTO Insider",
+                  "loyaltyProgramMember": "Member1",
+                  "referredMember": null,
+                  "status": "Processed",
+                  "transactionJournalId": "0lVJ8000000GmaJ"
+              }
+          ]
+      }
+order: 1000

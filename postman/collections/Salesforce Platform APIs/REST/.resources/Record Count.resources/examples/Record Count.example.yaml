@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/limits/recordCount?sObjects=Account,Contact,Lead"
+  method: GET
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: sObjects
+      value: Account,Contact,Lead
+      description: |-
+        A comma-delimited list of object names. If a listed object is not found in the org, it is ignored and not returned in the response.
+        This parameter is optional. If this parameter is not provided, the resource returns record counts for all objects in the org.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 27 Sep 2023 15:28:16 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=3/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "sObjects": [
+              {
+                  "count": 12,
+                  "name": "Account"
+              },
+              {
+                  "count": 20,
+                  "name": "Contact"
+              },
+              {
+                  "count": 22,
+                  "name": "Lead"
+              }
+          ]
+      }
+order: 1000

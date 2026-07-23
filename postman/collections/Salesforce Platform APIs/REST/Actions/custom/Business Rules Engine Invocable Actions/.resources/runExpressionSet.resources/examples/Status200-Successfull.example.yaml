@@ -1,0 +1,48 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/actions/custom/runExpressionSet/:expressionSetAPIName"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: expressionSetAPIName
+      value: myExpressionSet
+      description: The API name of an expression set is unique within your Salesforce instance.
+  body:
+    type: text
+    content: |-
+      {
+          "inputs": [
+              {}
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 07 Sep 2023 09:08:00 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=5/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "actionName": "myExpressionSet",
+              "errors": null,
+              "isSuccess": true,
+              "outputValues": {
+                  "output": 1
+              },
+              "version": 1
+          }
+      ]
+order: 5000

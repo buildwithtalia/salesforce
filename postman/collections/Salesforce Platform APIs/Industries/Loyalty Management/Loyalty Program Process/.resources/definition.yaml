@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  Run a loyalty process created from a loyalty program process template.
+
+  Out-of-the-box loyalty program process templates come with a default set of process parameters. You can configure new parameters or remove the default ones by simply cloning a template and running the configured parameters as a customized loyalty process using the [loyalty program process API](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_process_name.htm). For example, when using the CreditPointsToMembers process template to credit points to a loyalty member, you can configure the currency value so that the credited points can be redeemed in the currency you’ve specified.
+
+  The request and response parameters for the loyalty program process API vary depending on the input and output parameters configured for a loyalty program process in a Salesforce org
+order: 2000

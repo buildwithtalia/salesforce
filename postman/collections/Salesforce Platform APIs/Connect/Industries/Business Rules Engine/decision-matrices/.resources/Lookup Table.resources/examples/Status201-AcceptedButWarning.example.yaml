@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-matrices/:matrixAPIName"
+  method: POST
+  pathVariables:
+    - key: matrixAPIName
+      value: myDecisionMatrix
+      description: Matrix API Name
+  body:
+    type: json
+    content: |
+      {
+        "inputs": [
+          {
+            "input": [
+              {
+                "name": "myColumnInput",
+                "value": "One"
+              }
+            ]
+          }
+        ],
+        "options": {
+          "effectiveDate": "2022-12-03T10:15:30Z"
+        }
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Thu, 07 Sep 2023 12:12:26 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "outputs": [
+              {
+                  "error": "Looks like there isn’t any output for the specified input parameters in the lookup table.",
+                  "results": []
+              }
+          ]
+      }
+order: 4000

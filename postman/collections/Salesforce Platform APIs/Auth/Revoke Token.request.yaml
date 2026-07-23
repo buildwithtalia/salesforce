@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/revoke"
+method: POST
+headers:
+  Content-Type: application/x-www-form-urlencoded
+body:
+  type: urlencoded
+  content:
+    - key: token
+      value: "{{_accessToken}}"
+      description: If an access token is included, Salesforce invalidates it and revokes the token. If a refresh token is included, Salesforce revokes it and any associated access tokens.
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/Revoke Token.resources/examples
+order: 14000

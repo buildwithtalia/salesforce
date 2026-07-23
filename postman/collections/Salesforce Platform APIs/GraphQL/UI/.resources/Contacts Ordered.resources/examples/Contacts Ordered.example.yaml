@@ -1,0 +1,136 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query contactsOrderBy {
+          uiapi {
+            query {
+              Contact(orderBy: { Name: { order: ASC }}) {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:06:30 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Contact": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0n7AAA",
+                                      "Name": {
+                                          "value": "Alice Black"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0035800000iXli3AAC",
+                                      "Name": {
+                                          "value": "Amanda Smith"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woxyAAA",
+                                      "Name": {
+                                          "value": "Andy Young"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy6AAA",
+                                      "Name": {
+                                          "value": "Arthur Song"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy7AAA",
+                                      "Name": {
+                                          "value": "Ashley James"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woyBAAQ",
+                                      "Name": {
+                                          "value": "Avi Green"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006woy3AAA",
+                                      "Name": {
+                                          "value": "Babara Levy"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00358000006c0n6AAA",
+                                      "Name": {
+                                          "value": "Basil Wenceslas"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0034H000029oY0FQAU",
+                                      "Name": {
+                                          "value": "Contact One"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0034H000029oY0HQAU",
+                                      "Name": {
+                                          "value": "Contact Three"
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

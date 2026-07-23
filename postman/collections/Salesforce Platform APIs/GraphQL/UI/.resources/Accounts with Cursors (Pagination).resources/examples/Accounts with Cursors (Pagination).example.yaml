@@ -1,0 +1,99 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query accountsWithCursors($first: Int, $after: String) {
+          uiapi {
+            query {
+              Account(first: $first, after: $after) {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                  }
+                }
+                totalCount
+                pageInfo {
+                  hasNextPage
+                  hasPreviousPage
+                  startCursor
+                  endCursor
+                }
+              }
+            }
+          }
+        }
+      variables: |-
+        {
+            "first": 3,
+            "after": null
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:05:20 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Account": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "0014H00004CXfY8QAL",
+                                      "Name": {
+                                          "value": "An Account"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0014H00002E6wi6QAB",
+                                      "Name": {
+                                          "value": "Sample Account"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0014H00002x6HUhQAM",
+                                      "Name": {
+                                          "value": "ACME Inc."
+                                      }
+                                  }
+                              }
+                          ],
+                          "totalCount": 524,
+                          "pageInfo": {
+                              "hasNextPage": true,
+                              "hasPreviousPage": false,
+                              "startCursor": "djE6MA==",
+                              "endCursor": "djE6Mg=="
+                          }
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

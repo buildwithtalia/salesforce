@@ -1,0 +1,74 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/group-membership-requests/:CHATTER_GROUP_REQUEST_ID?status=Accepted&responseMessage=Welcome to the group!"
+  method: PATCH
+  queryParams:
+    status: Accepted
+    responseMessage: Welcome to the group!
+  pathVariables:
+    CHATTER_GROUP_REQUEST_ID: 0I5...
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 Nov 2023 11:50:19 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "createdDate": "2023-11-22T11:46:32.000Z",
+          "id": "0I5...",
+          "lastUpdateDate": "2023-11-22T11:50:19.000Z",
+          "requestedGroup": {
+              "id": "0F9...",
+              "url": "/services/data/v58.0/chatter/groups/0F9..."
+          },
+          "responseMessage": null,
+          "status": "Accepted",
+          "url": "/services/data/v58.0/chatter/group-membership-requests/0I5...",
+          "user": {
+              "additionalLabel": null,
+              "communityNickname": "User1700653511864742682",
+              "companyName": null,
+              "displayName": "User Sample",
+              "firstName": "User",
+              "id": "005...",
+              "isActive": true,
+              "isInThisCommunity": true,
+              "lastName": "Sample",
+              "motif": {
+                  "color": "1B96FF",
+                  "largeIconUrl": "/img/icon/profile64.png",
+                  "mediumIconUrl": "/img/icon/profile32.png",
+                  "smallIconUrl": "/img/icon/profile16.png",
+                  "svgIconUrl": null
+              },
+              "mySubscription": null,
+              "name": "User Sample",
+              "outOfOffice": {
+                  "message": ""
+              },
+              "photo": {
+                  "fullEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_200_v2.png?fromEmail=1",
+                  "largePhotoUrl": "https://<my_domain>/profilephoto/005/F",
+                  "mediumPhotoUrl": "https://<my_domain>/profilephoto/005/M",
+                  "photoVersionId": null,
+                  "smallPhotoUrl": "https://<my_domain>/profilephoto/005/T",
+                  "standardEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_45_v2.png?fromEmail=1",
+                  "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+              },
+              "reputation": null,
+              "title": null,
+              "type": "User",
+              "url": "/services/data/v58.0/chatter/users/005...",
+              "userType": "Internal"
+          }
+      }
+order: 1000

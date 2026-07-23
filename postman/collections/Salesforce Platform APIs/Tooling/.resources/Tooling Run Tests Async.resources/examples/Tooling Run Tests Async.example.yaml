@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/runTestsAsynchronous"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "tests": [
+              {
+                  "className": "PrepareSandboxTest",
+                  "testMethods": [
+                      "runApexClass_should_work"
+                  ]
+              }
+          ],
+          "maxFailedTests": "1"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 11 Dec 2023 10:04:34 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=250/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: '"7074H0000DCt2IZ"'
+order: 1000

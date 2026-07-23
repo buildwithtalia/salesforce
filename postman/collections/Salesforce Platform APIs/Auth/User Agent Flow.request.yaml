@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/authorize?response_type=token&client_id={{clientId}}&redirect_uri={{redirectUrl}}&display=touch&login_hint=&nonce=awesome"
+method: GET
+queryParams:
+  response_type: token
+  client_id: "{{clientId}}"
+  redirect_uri: "{{redirectUrl}}"
+  display: touch
+  login_hint: ""
+  nonce: awesome
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: |-
+      const jsonData = pm.response.json();
+      const id = jsonData.id.split('/');
+
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      context.set("_accessToken", jsonData.access_token);
+      context.set("_refreshToken", jsonData.refresh_token);
+      context.set("_endpoint", jsonData.instance_url);
+      context.set("_userId", id.pop());
+      context.set("_orgId", id.pop());
+    language: text/javascript
+settings: {}
+examples: ./.resources/User Agent Flow.resources/examples
+order: 5000

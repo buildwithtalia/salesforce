@@ -1,0 +1,85 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/expression-set/:expressionSetId"
+  method: GET
+  pathVariables:
+    - key: expressionSetId
+      value: 9QLHo000000LBjEOAW
+      description: "Expression Set Id: For Example 9QLHo000000LBjEOAW"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 06 Sep 2023 09:34:42 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "apiName": "myExpressionSet",
+          "contextDefinitions": [],
+          "id": "9QLHo000000LBjEOAW",
+          "name": "myExpressionSet",
+          "usageType": "Bre",
+          "versions": [
+              {
+                  "apiName": "myExpressionSet_V1",
+                  "description": "myExpressionSet V1 Description",
+                  "enabled": true,
+                  "id": "9QMHo000000LBjJOAW",
+                  "name": "myExpressionSet V1",
+                  "rank": 1,
+                  "showExplExternally": true,
+                  "startDate": "2023-09-06T09:27:06.000Z",
+                  "steps": [
+                      {
+                          "actionType": "AssignParameterValues",
+                          "assignment": {
+                              "assignedParameter": "condition_output__1",
+                              "expression": "true"
+                          },
+                          "description": "my Description",
+                          "name": "myCalculation",
+                          "resultIncluded": true,
+                          "sequenceNumber": 1,
+                          "shouldExposeConditionDetails": false,
+                          "shouldExposeExecPathMsgOnly": true,
+                          "shouldShowExplExternally": false,
+                          "stepType": "BusinessKnowledgeModel"
+                      }
+                  ],
+                  "variables": [
+                      {
+                          "collection": false,
+                          "dataType": "Boolean",
+                          "description": "condition_output__1",
+                          "input": false,
+                          "name": "condition_output__1",
+                          "output": true,
+                          "type": "Variable",
+                          "value": "False"
+                      },
+                      {
+                          "collection": false,
+                          "dataType": "Boolean",
+                          "description": "condition_output__2",
+                          "input": false,
+                          "name": "condition_output__2",
+                          "output": false,
+                          "type": "Variable",
+                          "value": "False"
+                      }
+                  ],
+                  "versionNumber": 1
+              }
+          ]
+      }
+order: 1000

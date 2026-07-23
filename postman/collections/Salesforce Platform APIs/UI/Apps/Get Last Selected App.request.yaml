@@ -1,0 +1,14 @@
+$kind: http-request
+description: Retrieves the app the current user last selected or the app the user sees by default.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/apps/selected?formFactor=Large"
+method: GET
+queryParams:
+  - key: formFactor
+    value: Large
+    description: The form factor for each app that the user has access to (`Large`, `Medium` or `Small`)
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get Last Selected App.resources/examples
+order: 4000

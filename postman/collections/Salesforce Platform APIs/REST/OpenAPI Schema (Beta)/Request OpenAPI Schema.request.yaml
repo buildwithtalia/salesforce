@@ -1,0 +1,15 @@
+$kind: http-request
+description: Requests an Open API document for the selected SObject REST API resources.
+url: "{{_endpoint}}/services/data/v{{version}}/async/specifications/oas3"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "resources": [
+            YOUR_SOBJECT_SELECTORS
+        ]
+    }
+settings: {}
+examples: ./.resources/Request OpenAPI Schema.resources/examples
+order: 1000

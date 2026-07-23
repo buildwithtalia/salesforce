@@ -1,0 +1,14 @@
+$kind: http-request
+description: This requests uses an access token to get user information from Salesforce using the standard `/userinfo` endpoint.
+url: "{{url}}{{site}}/services/oauth2/userinfo"
+method: GET
+headers:
+  - key: Authorization
+    value: Bearer <Token>
+    description: Replace <token> with your access token
+  - key: Content-Type
+    value: application/json
+auth:
+  type: noauth
+settings: {}
+order: 11000

@@ -1,0 +1,30 @@
+$kind: http-request
+description: Generates a response based on the specified prompt template and input parameters ([documentation](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_prompt_template.htm)).
+url: "{{_endpoint}}/services/data/v{{version}}/einstein/prompt-templates/:PROMPT_TEMPLATE_API_NAME/generations"
+method: POST
+pathVariables:
+  - key: PROMPT_TEMPLATE_API_NAME
+    value: ""
+    description: API name of the prompt template to invoke
+body:
+  type: json
+  content: |-
+    {
+      "isPreview": "false",
+      "inputParams": {
+        "valueMap": {
+          <INPUT_PARAMS>
+        }
+      },
+      "additionalConfig": {
+          "numGenerations": 1,
+          "temperature": 0,
+          "frequencyPenalty": 0.0,
+          "presencePenalty": 0.0,
+          "additionalParameters": {},
+          "applicationName": "PromptBuilderPreview"
+      }
+    }
+settings: {}
+examples: ./.resources/Generate Response Based on Prompt Template.resources/examples
+order: 1000

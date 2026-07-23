@@ -1,0 +1,38 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_enroll_individual_member.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_enroll_individual_member.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/loyalty-programs/:loyaltyProgramName/individual-member-enrollments"
+method: POST
+queryParams:
+  - key: ""
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+body:
+  type: json
+  content: |-
+    {
+      "enrollmentDate" : "2021-01-01T00:00:00",
+      "membershipNumber" : "Member1",
+      "associatedContactDetails" : {
+        "firstName" : "Name1",
+        "lastName" : "Name2",
+        "email" : "ab@email.com",
+        "allowDuplicateRecords" : "false"
+      },
+
+      "memberStatus" : "Active",
+      "createTransactionJournals" : "true",
+      "transactionJournalStatementFrequency" : "Monthly",
+      "transactionJournalStatementMethod" : "Mail",
+      "enrollmentChannel" : "Email",
+      "canReceivePromotions": "true",
+      "canReceivePartnerPromotions" : "true",
+      "membershipEndDate" : "2022-01-01T00:00:00"
+    }
+settings: {}
+examples: ./.resources/Individual Member Enrollments.resources/examples
+order: 2000

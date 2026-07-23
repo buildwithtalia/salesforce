@@ -1,0 +1,10 @@
+$kind: http-request
+description: Retrieves a set of up to 5 job results pages for parallel download.
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/query/{{_jobId}}/resultPages"
+method: GET
+headers:
+  Content-Type: application/json
+  Accept: application/json
+settings: {}
+examples: ./.resources/Get Parallel Results for a Query Job.resources/examples
+order: 6000

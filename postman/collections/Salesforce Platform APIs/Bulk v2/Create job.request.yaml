@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "object": "Asset",
+        "operation": "update"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+
+      const response = JSON.parse(pm.response.text())
+      context.set("_jobId", response.id);
+    language: text/javascript
+settings: {}
+examples: ./.resources/Create job.resources/examples
+order: 2000

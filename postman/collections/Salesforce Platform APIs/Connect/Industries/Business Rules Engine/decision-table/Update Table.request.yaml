@@ -1,0 +1,163 @@
+$kind: http-request
+description: |-
+  # Decision Table Definitions ( DELETE)
+
+  Delete a decision table definition associated with a decision table.
+
+  Resource
+
+  ```
+  /connect/business-rules/decision-table/definitions/${decisionTableId}
+
+   ```
+
+  Resource Example
+
+  ```
+  https://yourInstance.salesforce.com/services/data/v59.0/connect/business-rules/decision-table/definitions/0lDxx00000002Ur
+
+   ```
+
+  Available version
+
+  58.0
+
+  Requires Chatter
+
+  No
+
+  HTTP methods
+
+  DELETE
+
+  Response body for DELETE
+
+  [Decision Table Output](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_responses_decision_table_output.htm)
+
+  # Decision Table Output
+
+  Output representation of the decision table details.JSON example for GET, POST, and PATCH
+
+  ```
+  {
+     "code":"200",
+     "decisionTable":{
+        "collectOperator":"Count",
+        "conditionCriteria":"1 OR 2 OR 3",
+        "conditionType":"Any",
+        "decisionResultPolicy":"UniqueValues",
+        "description":"Eligiblity of Products using Qualification Rules",
+        "id":"0lDxx00000000BJ",
+        "parameters":[
+           {
+              "fieldName":"IsDeleted",
+              "isGroupByField":false,
+              "isPriority":false,
+              "operator":"Equals",
+              "sequence":1,
+              "usage":"Input"
+           },
+           {
+              "fieldName":"CreatedById",
+              "isGroupByField":false,
+              "isPriority":false,
+              "usage":"Output"
+           },
+           {
+              "fieldName":"Title",
+              "isGroupByField":false,
+              "isPriority":false,
+              "operator":"Equals",
+              "sequence":3,
+              "usage":"Input"
+           },
+           {
+              "fieldName":"Id",
+              "isGroupByField":false,
+              "isPriority":false,
+              "operator":"Equals",
+              "sequence":2,
+              "usage":"Input"
+           }
+        ],
+        "setupName":"Product Qualificiation eligibility3",
+        "sourceCriteria":[
+           
+        ],
+        "sourceObject":"AccountFeed",
+        "sourceType":"SingleSobject",
+        "sourceconditionLogic":"1 AND 2 AND 3",
+        "status":"Draft"
+     },
+     "isSuccess":true,
+     "message":""
+  }
+
+   ```
+
+  JSON example for DELETE
+
+  ```
+  {
+     "code":"200",
+     "isSuccess":true,
+     "message":""
+  }
+
+   ```
+
+  | Property Name | Type | Description | Filter Group and Version | Available Version |
+  | --- | --- | --- | --- | --- |
+  | code | String | Response code from the API request. | Small, 58.0 | 58.0 |
+  | decisionTable | [Decision Table Definition Output](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_responses_decision_table_definition_output.htm) | Details of the decision table definition associated with the decision table. | Small, 58.0 | 58.0 |
+  | isSuccess | Boolean | Indicates whether the API request is successful (true) or not (false). | Small, 58.0 | 58.0 |
+  | message | String | Error message when the API request fails. | Small, 58.0 | 58.0 |
+url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-table/definitions/:decisionTableId"
+method: PATCH
+pathVariables:
+  - key: decisionTableId
+    value: 0lDHo0000008Po3
+    description: Decision Table Id
+body:
+  type: json
+  content: |-
+    {
+       "setupName":"Product Qualificiation eligibility",
+       "fullName":"ProductQualificationEligibility",
+       "description":"Eligiblity of Products using Qualification Rules",
+       "usageType":"ProductEligibility",
+       "sourceType":"SingleSobject",
+       "sourceObject":"AccountFeed",
+       "status":"Draft",
+       "decisionResultPolicy":"UniqueValues",
+       "collectOperator":"Count",
+       "conditionType":"Any",
+       "conditionCriteria":"1 OR 2 OR 3",
+       "parameters":[
+          {
+             "fieldName":"IsDeleted",
+             "usage":"INPUT",
+             "operator":"Equals",
+             "sequence":"1"
+          },
+          {
+             "fieldName":"Id",
+             "usage":"INPUT",
+             "operator":"Equals",
+             "sequence":"2"
+          },
+          {
+             "fieldName":"Title",
+             "usage":"INPUT",
+             "operator":"Equals",
+             "sequence":"3"
+          },
+          {
+             "fieldName":"CreatedById",
+             "usage":"OUTPUT"
+          }
+       ]
+    }
+settings: {}
+examples: ./.resources/Update Table.resources/examples
+order: 5000

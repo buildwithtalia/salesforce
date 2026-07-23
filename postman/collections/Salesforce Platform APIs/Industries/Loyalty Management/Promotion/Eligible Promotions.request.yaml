@@ -1,0 +1,45 @@
+$kind: http-request
+description: |-
+  [Eligible Promotions](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_eligible_promotions.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/global-promotions-management/eligible-promotions"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+       "cart":{
+          "cartDetails":[
+             {
+                "activityStartDate":"2023-06-14T12:45:19Z",
+                "contactId":"003xx000004WjzAAAS",
+                "transactionAmount":499,
+                "currencyISOCode":"INR",
+                "cartLineDetails":[
+                   {
+                      "cartLineProductId":"01txx0000006iTsAAI",
+                      "cartLineItemQuantity":3,
+                      "cartLineItemAmount":499,
+                      "cartLineProductCatalogId":"0ZSSB0000002d8X4AQ"
+                   }
+                ]
+             }
+          ]
+       }
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','TierProcessing');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Eligible Promotions.resources/examples
+order: 1000

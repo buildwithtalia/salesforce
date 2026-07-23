@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/query?q=Select Name, Id from Product2 Where NAME IN ('SLA_Bronze', 'Classroom Training', 'Virtual Router', 'Work Anywhere Software Bundle') order by Name ASC"
+method: GET
+queryParams:
+  q: Select Name, Id from Product2 Where NAME IN ('SLA_Bronze', 'Classroom Training', 'Virtual Router', 'Work Anywhere Software Bundle') order by Name ASC
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: |
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      const jsonData = JSON.parse(responseBody);
+
+      context.set("ClassTrainingProduct", jsonData.records[0].Id);
+      context.set("SLA_BronzeProduct", jsonData.records[1].Id);
+      context.set("VirtualRouterProduct", jsonData.records[2].Id);
+      context.set("WorkAnywhereBundleProduct", jsonData.records[3].Id);
+    language: text/javascript
+settings: {}
+order: 7000

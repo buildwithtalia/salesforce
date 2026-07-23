@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+method: POST
+headers:
+  X-Chatter-Entity-Encoding: "false"
+body:
+  type: graphql
+  content:
+    query: |-
+      mutation AccountDeleteExample{
+        uiapi {
+          AccountDelete(input: {
+            Id: "<Id>"
+          })
+            {
+               Id
+            }
+        }
+      }
+settings: {}
+examples: ./.resources/Delete Account.resources/examples
+order: 2000

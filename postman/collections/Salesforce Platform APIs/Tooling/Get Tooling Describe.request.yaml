@@ -1,0 +1,7 @@
+$kind: http-request
+description: Lists the available Tooling API objects and their metadata.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/"
+method: GET
+settings: {}
+examples: ./.resources/Get Tooling Describe.resources/examples
+order: 8000

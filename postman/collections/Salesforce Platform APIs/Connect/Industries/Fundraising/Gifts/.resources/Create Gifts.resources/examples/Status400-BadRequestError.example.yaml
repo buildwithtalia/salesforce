@@ -1,0 +1,185 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/gifts"
+  method: POST
+  body:
+    type: json
+    content: |-
+      // Even if the JSON request is valid, this is an example of a 400 error code that will be returned if duplicate matching rules are not active.
+      {
+        "processingOptions": {
+          "donorOptions": {
+            "defaultUpdateLogic": "update_all"
+          }
+        },
+        "gifts": [
+          {
+            "amount": 150.25,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Unpaid",
+            "commitmentId": "123456",
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "campaign": {
+              "id": "<SFDC_CAMPAIGN_ID>"
+            },
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "id": "<SFDC_PERSON_ACCOUNT_ID>",
+              "firstName": "Test",
+              "lastName": "Donor",
+              "phone": "510-434-8920",
+              "email": "test.user@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+                "percent": 10
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          {
+            "amount": 300.00,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Unpaid",
+            "commitmentId": "<SFDC_GIFT_COMMITMENT_ID>",
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "campaign": {
+              "id": "<SFDC_CAMPAIGN_ID>"
+            },
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "id": "<SFDC_PERSON_ACCOUNT_ID>",
+              "firstName": "Test",
+              "lastName": "Donor",
+              "phone": "510-434-8920",
+              "email": "test.user@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+                "percent": 10
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          }
+        ]
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |2-
+          // Even if the JSON request is valid, this is an example of a 400 error code that will be returned if duplicate matching rules are not active. Any non 200 error code would have a similar response structure.
+          {
+              "errorCode": "UNKNOWN_EXCEPTION",
+              "message": "Provide active duplicate matching rules on Account and Person Account for donor matching. -- industries.fundraisingops.connect.impl.validator.ValidatorUtil.validateMatchingMethod(ValidatorUtil.java:103)"
+          }
+order: 5000

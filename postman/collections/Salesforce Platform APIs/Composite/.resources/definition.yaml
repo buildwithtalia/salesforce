@@ -1,0 +1,9 @@
+$kind: collection
+description: |-
+  The Composite API executes a series of REST API requests in a single POST request, or retrieves a list of other composite resources with a GET request.
+
+  There are three types of Composite requests sometime referred to as APIs:
+  - [Composite](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_composite.htm) (the original)
+  - [Composite Batch](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_batch.htm)
+  - [Composite Graph](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_graph.htm) (the most recent)
+order: 4000

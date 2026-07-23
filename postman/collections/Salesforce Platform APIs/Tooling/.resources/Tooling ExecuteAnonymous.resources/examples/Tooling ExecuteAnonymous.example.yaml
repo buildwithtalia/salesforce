@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/executeAnonymous/?anonymousBody=System.Debug('awesome');"
+  method: GET
+  headers:
+    - key: Content-Type
+      value: application/json
+      disabled: true
+  queryParams:
+    anonymousBody: System.Debug('awesome');
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 11 Dec 2023 09:21:01 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=10/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "line": -1,
+          "column": -1,
+          "compiled": true,
+          "success": true,
+          "compileProblem": null,
+          "exceptionStackTrace": null,
+          "exceptionMessage": null
+      }
+order: 1000

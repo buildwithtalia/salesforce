@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest/{{_jobId}}"
+  method: DELETE
+  headers:
+    - key: Content-Type
+      value: application/json
+      disabled: true
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Mon, 20 Nov 2023 15:01:36 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=4/15000
+  body:
+    type: text
+    content: ""
+order: 1000

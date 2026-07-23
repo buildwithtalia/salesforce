@@ -1,0 +1,9 @@
+$kind: http-request
+description: Get available prediction definitions.
+url: "{{_endpoint}}/services/data/v{{version}}/smartdatadiscovery/predictionDefinitions/:PREDICTION_DEFINITION_ID"
+method: GET
+pathVariables:
+  PREDICTION_DEFINITION_ID: ""
+settings: {}
+examples: ./.resources/Prediction definition metadata.resources/examples
+order: 3000

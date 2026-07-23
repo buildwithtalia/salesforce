@@ -1,0 +1,10 @@
+$kind: http-request
+description: |-
+  PlatformAction is a virtual read-only object. It enables you to query for actions displayed in the UI, given a user, a context, device format, and a record ID. Examples include standard and custom buttons, quick actions, and productivity actions.
+  Returns the description of the PlatformAction.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/PlatformAction"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 19000

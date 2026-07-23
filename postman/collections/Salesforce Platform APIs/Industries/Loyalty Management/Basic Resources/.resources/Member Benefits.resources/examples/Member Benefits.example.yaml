@@ -1,0 +1,58 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/member/:memberId/memberbenefits"
+  method: GET
+  headers:
+    Authorization: Bearer {{accessToken}}
+  pathVariables:
+    memberId: 0lMJ8000000CaRMMA0
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 May 2024 16:11:06 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "memberBenefits": [
+              {
+                  "benefitId": "0jiJ80000008OIFIA2",
+                  "benefitName": "Free Shipping",
+                  "benefitTypeId": "0jhJ80000008OI5IAM",
+                  "benefitTypeName": "Shipping",
+                  "createdRecordId": null,
+                  "createdRecordName": null,
+                  "description": null,
+                  "endDate": null,
+                  "isActive": true,
+                  "memberBenefitStatus": null,
+                  "startDate": null
+              },
+              {
+                  "benefitId": "0jiJ80000008OI5IAM",
+                  "benefitName": "5% of Discount",
+                  "benefitTypeId": "0jhJ80000008OIAIA2",
+                  "benefitTypeName": "Discount Percentage",
+                  "createdRecordId": null,
+                  "createdRecordName": null,
+                  "description": null,
+                  "endDate": null,
+                  "isActive": true,
+                  "memberBenefitStatus": null,
+                  "startDate": null
+              }
+          ]
+      }
+order: 1000

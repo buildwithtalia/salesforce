@@ -1,0 +1,75 @@
+$kind: http-request
+description: |-
+  Post a batch of up to 500 feed elements.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_feed_element_batch_post.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/feed-elements/batch"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+        "inputs": [
+            {
+                "richInput": {
+                    "subjectId": "<USER_GROUP_RECORD_ID>",
+                    "body": {
+                        "messageSegments": [
+                            {
+                                "type": "Text",
+                                "text": "Post Number 1"
+                            }
+                        ]
+                    },
+                    "capabilities": {
+                        "files": {
+                            "items": [
+                                {
+                                    "id": "<FILE_ID>"
+                                }
+                            ]
+                        }
+                    },
+                    "feedElementType": "FeedItem"
+                }
+            },
+            {
+                "richInput": {
+                    "subjectId": "<USER_GROUP_RECORD_ID>",
+                    "body": {
+                        "messageSegments": [
+                            {
+                                "type": "Text",
+                                "text": "Post Number 2"
+                            }
+                        ]
+                    },
+                    "feedElementType": "FeedItem"
+                }
+            },
+            {
+                "richInput": {
+                    "subjectId": "me",
+                    "body": {
+                        "messageSegments": [
+                            {
+                                "type": "Text",
+                                "text": "Post Number 3 with Inline"
+                            },
+                            {
+                                "type": "InlineImage",
+                                "fileId": "<FILE_ID>",
+                                "altText": "Test Inline"
+                            }
+                        ]
+                    },
+                    "feedElementType": "FeedItem"
+                }
+            }
+        ]
+    }
+settings: {}
+examples: ./.resources/Feed Elements, Batch Post.resources/examples
+order: 3000

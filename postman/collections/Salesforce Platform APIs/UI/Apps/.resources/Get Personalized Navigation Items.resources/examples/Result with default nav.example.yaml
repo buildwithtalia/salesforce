@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/apps/:APP_ID/user-nav-items"
+  method: GET
+  queryParams:
+    - key: formFactor
+      value: Large
+      disabled: true
+      description: The form factor for each app that the user has access to (`Large`, `Medium` or `Small`)
+  pathVariables:
+    - key: APP_ID
+      value: 06m58000000fBK2AAM
+      description: Application ID
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:42:53 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"88abcfe07e0b66040d6498a1624a45b7--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageUrl": "/services/data/v58.0/ui-api/apps/06m58000000fBK2AAM/user-nav-items?formFactor=large",
+          "eTag": "88abcfe07e0b66040d6498a1624a45b7",
+          "navItems": [],
+          "nextPageUrl": null
+      }
+order: 2000

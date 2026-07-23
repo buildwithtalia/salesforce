@@ -1,0 +1,45 @@
+$kind: http-request
+description: |-
+  Composite graphs provide an enhanced way to perform composite requests, which execute a series of REST API requests in a single call.
+  Regular composite requests allow you to execute a series of REST API requests in a single call. And you can use the output of one request as the input to a subsequent request.
+
+  Composite graphs extend this by allowing you to assemble a more complicated and complete series of related objects and records.
+
+  Composite graphs also enable you to ensure that the steps in a given set of operations are either all completed or all not completed. This avoids requiring you to check for a mix of successful and unsuccessful results.
+
+  Regular composite requests have a limit of 25 subrequests. Composite graphs increase this limit to 500. This gives a single API call much greater power.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_graph_introduction.htm
+url: "{{_endpoint}}/services/data/v{{version}}/composite/graph"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "graphs": [
+            {
+                "graphId": "graph1",
+                "compositeRequest": [
+                    {
+                        "method": "POST",
+                        "url": "/services/data/v{{version}}/sobjects/Account/",
+                        "referenceId": "newAccount",
+                        "body": {
+                            "Name": "ACME Inc.",
+                            "Custom__c": "Hello world"
+                        }
+                    },
+                    {
+                        "method": "GET",
+                        "url": "/services/data/v{{version}}/sobjects/Account/@{newAccount.id}",
+                        "referenceId": "newAccountInfo"
+                    }
+                ]
+            }
+        ]
+    }
+settings: {}
+examples: ./.resources/Composite Graph.resources/examples
+order: 2000

@@ -1,0 +1,122 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/queryAll/?q=SELECT+name+from+Account"
+  method: GET
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: q
+      value: SELECT+name+from+Account
+    - key: explain
+      value: ""
+      disabled: true
+      description: A SOQL query to get performance feedback on. Use explain instead of q to get a response that details how Salesforce will process your query. You can use this feedback to further optimize your queries. You can also use a report or list view ID in place of the query string to get feedback on how Salesforce will process your report or list view.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 27 Sep 2023 15:27:21 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=2/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "totalSize": 12,
+          "done": true,
+          "records": [
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ2vIAF"
+                  },
+                  "Name": "Edge Communications"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ2wIAF"
+                  },
+                  "Name": "Burlington Textiles Corp of America"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ2xIAF"
+                  },
+                  "Name": "Pyramid Construction Inc."
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ2yIAF"
+                  },
+                  "Name": "Dickenson plc"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ2zIAF"
+                  },
+                  "Name": "Grand Hotels & Resorts Ltd"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ30IAF"
+                  },
+                  "Name": "United Oil & Gas Corp."
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ31IAF"
+                  },
+                  "Name": "Express Logistics and Transport"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ32IAF"
+                  },
+                  "Name": "University of Arizona"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ33IAF"
+                  },
+                  "Name": "United Oil & Gas, UK"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ34IAF"
+                  },
+                  "Name": "United Oil & Gas, Singapore"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ35IAF"
+                  },
+                  "Name": "GenePoint"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v58.0/sobjects/Account/001B000000UnQ36IAF"
+                  },
+                  "Name": "sForce"
+              }
+          ]
+      }
+order: 1000

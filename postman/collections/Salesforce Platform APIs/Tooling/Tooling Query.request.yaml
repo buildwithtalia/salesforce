@@ -1,0 +1,20 @@
+$kind: http-request
+description: |-
+  Executes a query against an object and returns data that matches the specified criteria. Tooling API exposes objects like EntityDefinition and FieldDefinition that use the external object framework. That is, they don’t exist in the database but are constructed dynamically. Special query rules apply to virtual entities.
+  If the query result is too large, it’s broken up into batches. The response contains the first batch of results and a query identifier. The identifier can be used in a request to retrieve the next batch.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q="
+method: GET
+headers:
+  - key: Content-Type
+    value: application/json
+    disabled: true
+queryParams:
+  - key: q
+    value: ""
+    description: SOQL Query
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Tooling Query.resources/examples
+order: 4000

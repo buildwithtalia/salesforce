@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Returns a list of all active workflow rules. If a rule has actions, the actions will be listed under the rule. Can also be used to trigger all workflow rules that are associated with a specified record. The actions for a rule are only fired if the rule’s criteria is met. When using a POST request, if anything fails, the whole transaction is rolled back.
+
+  Cross-object workflow rules cannot be invoked using the REST API.
+
+  To get a list of the workflow rules or to trigger one or more workflow rules, the URI is: /vXX.X/process/rules/
+  To get the rules for a particular object: /vXX.X/process/rules/SObjectName
+  To get the metadata for a particular rule: /vXX.X/process/rules/SObjectName/workflowRuleId
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_process_rules.htm
+url: "{{_endpoint}}/services/data/v{{version}}/process/rules"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 3000

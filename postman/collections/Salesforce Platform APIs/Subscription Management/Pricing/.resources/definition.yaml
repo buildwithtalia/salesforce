@@ -1,0 +1,3 @@
+$kind: collection
+description: Use Subscription Management pricing to calculate the price of items in a subscription order, prorating the cost per period over the length of the subscription. System-level price adjustments, such as volume-based or term-based discounts, are calculated automatically. For more information see [Calculate Price](https://developer.salesforce.com/docs/revenue/subscription-management/references/prices?meta=Calculate+price) in Salesforce Developers.
+order: 3000

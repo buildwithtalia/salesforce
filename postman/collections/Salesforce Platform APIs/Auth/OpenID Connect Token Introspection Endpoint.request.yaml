@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/introspect"
+method: POST
+headers:
+  Content-Type: application/x-www-form-urlencoded
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    token: "{{_accessToken}}"
+    token_type_hint: access_token
+    client_id: "{{clientId}}"
+    client_secret: "{{clientSecret}}"
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/OpenID Connect Token Introspection Endpoint.resources/examples
+order: 18000

@@ -1,0 +1,35 @@
+$kind: http-request
+description: |-
+  Submits the registration data to the init/registration endpoint and returns a request identifier. At the same time, an OTP is sent out to the end users via email or sms. Registration data is passed in the request body, and is formatted with JSON, with 5 keys: `userdata`, `customdata`, `password`, `recaptcha`, and `verificationmethod`. The first two keys are JSON structures, and the last 3 keys are strings.
+
+  This request returns JSON, and includes an identifier (request identifier).
+url: "{{url}}{{site}}/services/auth/headless/init/registration"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "userdata": {
+            "firstName": "userFirstName",
+            "lastName": "userLastName",
+            "email": "<email>",
+            "username": "<username>"
+        },
+        "customdata": {
+            "mobilePhone": "+12035408967",
+            "streetAddress": "12 N Lands End Rd",
+            "city": "Lantana",
+            "state": "Florida",
+            "zip": "20537",
+            "privacyPolicy": true
+        },
+        "password": "Test123!",
+        "recaptcha": "<recaptcha-token>",
+        "verificationmethod": "email"
+    }
+auth:
+  type: noauth
+settings:
+  disabledSystemHeaders:
+    - content-type
+order: 1000

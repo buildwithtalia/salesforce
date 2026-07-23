@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannelMember/:PLATFORM_EVENT_CHANNEL_MEMBER_ID"
+method: GET
+pathVariables:
+  PLATFORM_EVENT_CHANNEL_MEMBER_ID: ""
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+examples: ./.resources/Get channel member.resources/examples
+order: 8000

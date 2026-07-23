@@ -1,0 +1,18 @@
+$kind: http-request
+description: Lists all sandboxes.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT SandboxName, Status, StartDate FROM SandboxProcess WHERE SandboxInfoId='<SANDBOX_INFO_ID>' ORDER BY StartDate DESC LIMIT 200"
+method: GET
+headers:
+  - key: Content-Type
+    value: application/json
+    disabled: true
+queryParams:
+  - key: q
+    value: SELECT SandboxName, Status, StartDate FROM SandboxProcess WHERE SandboxInfoId='<SANDBOX_INFO_ID>' ORDER BY StartDate DESC LIMIT 200
+    description: SOQL Query
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Sandbox Status.resources/examples
+order: 4000

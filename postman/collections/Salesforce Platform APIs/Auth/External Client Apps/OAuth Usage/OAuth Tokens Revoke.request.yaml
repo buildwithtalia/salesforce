@@ -1,0 +1,12 @@
+$kind: http-request
+description: Revokes all tokens available for the external client app. See [Refresh Token by App ID](https://developer.salesforce.com/docs/atlas.en-us.246.0.chatterapi.meta/chatterapi/connect_resources_usage_app_id_tokens.htm).
+url: "{{url}}{{site}}/services/data/v{{version}}/apps/oauth/usage/{{_appId}}/tokens"
+method: DELETE
+headers:
+  - key: Authorization
+    value: Bearer <token>
+    description: Replace <token> with your access token
+auth:
+  type: noauth
+settings: {}
+order: 5000

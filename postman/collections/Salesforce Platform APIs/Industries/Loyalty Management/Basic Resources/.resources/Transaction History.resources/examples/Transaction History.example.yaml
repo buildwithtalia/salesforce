@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/transaction-history?page=2"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    page: "2"
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+  body:
+    type: json
+    content: |-
+      {
+         "membershipNumber":"Member1",
+         "journalType":"Accrual",
+         "journalSubType":"Social",
+         "periodStartDate":"2022-01-27T00:00:00Z",
+         "periodEndDate":"2022-11-27T00:00:00Z"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Wed, 22 May 2024 16:22:05 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "message": null,
+          "status": true,
+          "totalCount": 0,
+          "transactionJournals": []
+      }
+order: 1000

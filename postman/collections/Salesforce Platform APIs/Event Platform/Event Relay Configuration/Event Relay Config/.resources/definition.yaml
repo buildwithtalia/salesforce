@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  This folder contains requests for creating and manipulating event relays.
+
+  For more information, see [Event Relay](https://desktop.postman.com/?desktopVersion=10.14.2&userId=1220894&teamId=0) in _Salesforce Help_.
+order: 2000

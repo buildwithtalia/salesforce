@@ -1,0 +1,14 @@
+$kind: http-request
+description: Returns the list of list views for the specified sObject, including the ID and other basic information about each list view. You can also get basic information for a specific list view by ID.
+url: "{{_endpoint}}/services/data/v{{version}}/support/dataCategoryGroups?sObjectName="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: topCategoriesOnly
+    value: ""
+    disabled: true
+  - key: sObjectName
+    value: ""
+settings: {}
+order: 2000

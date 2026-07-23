@@ -1,0 +1,35 @@
+$kind: http-request
+description: |-
+  [Get Member Promotions](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_get_member_promotions.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+  processName: ""
+body:
+  type: json
+  content: |-
+    {
+       "processParameters":[
+          {
+             "MemberId":"0lMRM0000004G5h2AE"
+          }
+       ]
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','GetMemberPromotions');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Get Member Promotions.resources/examples
+order: 5000

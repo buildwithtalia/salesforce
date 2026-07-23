@@ -1,0 +1,50 @@
+$kind: http-example
+name: "example of the details of a loyalty program member’s cart whose eligible loyalty program promotions are to be fetched:"
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalTypeId
+      value: null
+      disabled: true
+  pathVariables:
+    loyaltyProgramName: ""
+    processName: ""
+  body:
+    type: json
+    content: |-
+      {
+         "cart":{
+            "cartDetails":[
+               {
+                  "activityStartDate":"2023-06-14T12:45:19Z",
+                  "currencyISOCode":"INR",
+                  "transactionAmount":499,
+                  "membershipNumber":"Member-005",
+                  "cartLineDetails":[
+                     {
+                        "cartLineProductId":"01txx0000006iTsAAI",
+                        "cartLineItemQuantity":2,
+                        "cartLineItemAmount":99,
+                        "cartLineProductCatalogId":"0ZSSB0000002d8X4AQ"
+                     },
+                     {
+                        "cartLineProduct":"Coke",
+                        "cartLineItemQuantity":10,
+                        "cartLineItemAmount":400,
+                        "cartLineProductCatalog":"Beverages"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

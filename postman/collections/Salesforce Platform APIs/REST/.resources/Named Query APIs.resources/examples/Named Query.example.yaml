@@ -1,0 +1,63 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/named/query/:NQ_API_NAME?maxrecords=3&industry=Energy"
+  method: GET
+  queryParams:
+    - key: maxrecords
+      value: "3"
+      description: Maximum number of records returned by the query (all parameters defined as part of the named query metadata)
+    - key: industry
+      value: Energy
+      description: A value to filter on the Account.Industry field (all parameters defined as part of the named query metadata)
+  pathVariables:
+    - key: NQ_API_NAME
+      value: GetAccountsFromIndustry
+      description: The name of the Named Query API you want to call
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 Apr 2026 12:02:03 GMT
+    Vary: Accept-Encoding
+    X-Content-Type-Options: nosniff
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=2/15000
+    Content-Type: application/json;charset=UTF-8
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: text
+    content: |-
+      {
+          "totalSize": 3,
+          "done": true,
+          "records": [
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v66.0/sobjects/Account/00158000006QBOpAAO"
+                  },
+                  "Id": "00158000006QBOpAAO",
+                  "Name": "United Oil & Gas, Singapore"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v66.0/sobjects/Account/00158000006QBOoAAO"
+                  },
+                  "Id": "00158000006QBOoAAO",
+                  "Name": "United Oil & Gas, Belgium"
+              },
+              {
+                  "attributes": {
+                      "type": "Account",
+                      "url": "/services/data/v66.0/sobjects/Account/00158000006QBOlAAO"
+                  },
+                  "Id": "00158000006QBOlAAO",
+                  "Name": "United Oil & Gas Corp."
+              }
+          ]
+      }
+order: 1000

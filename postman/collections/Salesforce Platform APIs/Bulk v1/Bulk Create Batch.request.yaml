@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/batch"
+method: POST
+headers:
+  - key: X-SFDC-Session
+    value: "{{_accessToken}}"
+  - key: Content-Type
+    value: text/csv
+  - key: Content-Type
+    value: zip/csv
+    disabled: true
+  - key: charset
+    value: UTF-8
+  - key: Accept-Encoding
+    value: gzip
+    disabled: true
+  - key: Content-Encoding
+    value: gzip
+    disabled: true
+body:
+  type: file
+  content: {}
+scripts:
+  - type: afterResponse
+    code: |-
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+
+      var xmlTree = xml2Json(pm.response.text());
+      console.log(xmlTree);
+      context.set("_batchId", xmlTree['batchInfo']['id']);
+    language: text/javascript
+settings: {}
+examples: ./.resources/Bulk Create Batch.resources/examples
+order: 4000

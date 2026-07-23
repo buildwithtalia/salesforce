@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: https://login.salesforce.com/services/data/v59.0/apps/oauth/usage/?page=0&pageSize=100
+  method: GET
+  headers:
+    - key: Authorization
+      value: Bearer <token>
+      description: Replace <token> with your access token
+  queryParams:
+    - key: page
+      value: "0"
+      description: Number of the page you want returned. Starts at 0. If you don’t specify a value or if you specify 0, the first page is returned.
+    - key: pageSize
+      value: "100"
+      description: "Number of usage entries per page. Defaults to 100.\t"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "apps": [
+          {
+            "accessTokenFormat": "<accessTokenFormat>",
+            "availableActions": "disable, enable",
+            "description": "<description>",
+            "developerName": "<developerName>",
+            "identifier": "<identifier>",
+            "isFromPackage": bool,
+            "usageDetailsUrl": "/services/data/<version>/apps/oauth/usage/<identifier>/users"
+          }
+        ],
+        "currentPageUrl": "/services/data/<version>/apps/oauth/usage?page=0&pageSize=100",
+        "nextPageUrl": "/services/data/<version>/apps/oauth/usage?page=1&pageSize=100"
+      }
+order: 1000

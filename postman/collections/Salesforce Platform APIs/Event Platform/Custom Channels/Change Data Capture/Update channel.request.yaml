@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannel/:PLATFORM_EVENT_CHANNEL_ID"
+method: PATCH
+pathVariables:
+  PLATFORM_EVENT_CHANNEL_ID: 0YLRM0000004DlP4AU
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Account_Channel__chn",
+        "Metadata": {
+            "channelType": "data",
+            "label": "Account Channel 2",
+            "urls": null
+        }
+    }
+settings:
+  strictSSL: false
+order: 2000

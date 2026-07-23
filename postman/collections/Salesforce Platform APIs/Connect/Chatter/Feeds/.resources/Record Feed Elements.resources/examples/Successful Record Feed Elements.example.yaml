@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/feeds/record/:RECORD_GROUP_ID/feed-elements"
+  method: GET
+  pathVariables:
+    RECORD_GROUP_ID: 001...
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 Nov 2023 11:05:44 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageToken": null,
+          "currentPageUrl": "/services/data/v58.0/chatter/feeds/record/001.../feed-elements",
+          "elements": [],
+          "isModifiedToken": null,
+          "isModifiedUrl": null,
+          "nextPageToken": null,
+          "nextPageUrl": null,
+          "updatesToken": "2:1700651144000",
+          "updatesUrl": "/services/data/v58.0/chatter/feeds/record/001.../feed-elements?updatedSince=2%3A1700651144000"
+      }
+order: 1000

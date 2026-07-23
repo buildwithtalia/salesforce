@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{url}}{{site}}/.well-known/openid-configuration"
+method: GET
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/OpenID Connect Discovery Endpoint.resources/examples
+order: 16000

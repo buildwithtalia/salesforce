@@ -1,0 +1,17 @@
+$kind: http-request
+description: |-
+  Receive a CPQ quote, product collection, and quote group key in a request, and return a Quote model with all provided products added as quote lines.
+  Available in: Salesforce CPQ Summer ’16 and later
+
+  https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_api_add_products.htm
+url: "{{_endpoint}}/services/apexrest/SBQQ/ServiceRouter?loader=SBQQ.QuoteAPI.QuoteProductAdder"
+method: PATCH
+headers:
+  Content-Type: application/json
+queryParams:
+  loader: SBQQ.QuoteAPI.QuoteProductAdder
+body:
+  type: json
+  content: ""
+settings: {}
+order: 5000

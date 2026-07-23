@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannel"
+method: POST
+headers:
+  Content-Type: application/json
+  SOAPAction: '""'
+  Authorization: Bearer {{_accessToken}}
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Carbon_Comparison_Channel__chn",
+        "Metadata": {
+            "channelType": "event",
+            "label": "Carbon Comparison Channel",
+            "urls": null
+        }
+    }
+settings:
+  strictSSL: false
+order: 1000

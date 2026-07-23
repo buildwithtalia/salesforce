@@ -1,0 +1,12 @@
+$kind: http-request
+description: Executes a simple RESTful search using parameters instead of a SOSL clause. Indicate parameters in a URL in the GET method. Or, use POST for more complex JSON searches.
+url: "{{_endpoint}}/services/data/v{{version}}/parameterizedSearch/?q="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: ""
+    description: A search string that is properly URL-encoded
+settings: {}
+order: 7000

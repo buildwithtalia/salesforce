@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-models/export"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "decisionModelEntityIds": [
+              "0lNRO00000004f72AA",
+              "0lNRO000000rfn27AA"
+          ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Tue, 19 Sep 2023 12:01:33 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "errors": [
+              {
+                  "errorCode": "BAD_REQUEST",
+                  "errorMessage": "We couldn’t find this record. Specify a valid ID for decisionModelEntityIds parameter.",
+                  "recordId": "0lNRO00000004f72AA"
+              },
+              {
+                  "errorCode": "BAD_REQUEST",
+                  "errorMessage": "We couldn’t find this record. Specify a valid ID for decisionModelEntityIds parameter.",
+                  "recordId": "0lNRO000000rfn27AA"
+              }
+          ],
+          "message": "OK",
+          "success": true
+      }
+order: 1000

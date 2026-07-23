@@ -1,0 +1,109 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query opportunitiesClosed {
+          uiapi {
+            query {
+              Opportunity(
+                where: {
+                  or: [
+                    { StageName: { eq: "Prospecting" } }
+                    { StageName: { eq: "Needs Analysis" } }
+                  ]
+                }
+              ) {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                    CloseDate {
+                      value
+                      displayValue
+                    }
+                    Description {
+                      value
+                    }
+                    StageName {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:22:21 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Opportunity": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegEAAQ",
+                                      "Name": {
+                                          "value": "Pyramid Emergency Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "Description": {
+                                          "value": "This is a sample description"
+                                      },
+                                      "StageName": {
+                                          "value": "Prospecting"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00658000003cegXAAQ",
+                                      "Name": {
+                                          "value": "United Oil Plant Standby Generators"
+                                      },
+                                      "CloseDate": {
+                                          "value": "2014-04-19",
+                                          "displayValue": "19/04/2014"
+                                      },
+                                      "Description": {
+                                          "value": "00658000003cegXAAQ"
+                                      },
+                                      "StageName": {
+                                          "value": "Needs Analysis"
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000
