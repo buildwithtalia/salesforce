@@ -1,0 +1,67 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/smartdatadiscovery/predict"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "predictionDefinition": "1OR5Y0000010ws8WAA",
+          "type": "RawData",
+          "columnNames": [
+              "Quantity",
+              "Category",
+              "Sub_Category",
+              "Sales",
+              "Profit_per_Order"
+          ],
+          "rows": [
+              [
+                  "2",
+                  "Furniture",
+                  "Chairs",
+                  "300",
+                  "10"
+              ]
+          ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Thu, 04 Mar 2021 13:53:39 GMT
+    Strict-Transport-Security: max-age=31536002; includeSubDomains
+    Expect-CT: max-age=86400, report-uri="https://a.forcesslreports.com/Expect-CT-report/00D5Y000001crJvm"
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "predictionDefinition": "1OR5Y0000010ws8",
+          "predictions": [
+              {
+                  "model": {
+                      "id": "1Ot5Y0000010wzNSAQ"
+                  },
+                  "prediction": {
+                      "middleValues": [],
+                      "total": 88.52494255547592
+                  },
+                  "prescriptions": [],
+                  "status": "Success"
+              }
+          ],
+          "settings": {
+              "maxMiddleValues": 0,
+              "maxPrescriptions": 0,
+              "prescriptionImpactPercentage": 0
+          }
+      }
+order: 1000

@@ -1,0 +1,18 @@
+$kind: http-request
+description: Create a Favorite
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/favorites"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+        "name": "Favorite Name",
+        "sortOrder": 1,
+        "target": "API Name or ID",
+        "targetType": "ListView | ObjectHome | Record | Tab"
+    }
+settings: {}
+examples: ./.resources/Create a Favorite.resources/examples
+order: 1000

@@ -1,0 +1,29 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_redeem_voucher.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_redeem_voucher.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/loyalty/programs/:loyaltyProgramName/members/:membershipNumber/vouchers/:voucherCode/redeem?voucherNumber="
+method: POST
+queryParams:
+  voucherNumber: ""
+pathVariables:
+  - key: loyaltyProgramName
+    value: ""
+    description: The loyalty program name.
+  - key: membershipNumber
+    value: ""
+    description: The loyalty program membership number.
+  - key: voucherCode
+    value: ""
+    description: The voucher code to be redeemed.
+body:
+  type: json
+  content: |-
+    {
+       "currencyIsoCode" : "EUR",
+       "redeemAmount" : 1.5
+    }
+settings: {}
+examples: ./.resources/Redeem Voucher.resources/examples
+order: 5000

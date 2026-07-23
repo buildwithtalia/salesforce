@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/EventLogFile/:id/LogFile"
+method: GET
+pathVariables:
+  - key: id
+    value: ""
+    description: Log event Id
+scripts:
+  - type: afterResponse
+    code: |-
+      const template = `
+      <script src="https://unpkg.com/csv-visualizer@latest/dist/csv-visualizer.min.js"></script>
+      <script>
+      pm.getData((err, data) => {
+          CsvVisualizer.visualize(data.csvString, document.body, { parserOptions: { skipEmptyLines: true }});
+      });
+      </script>`;
+      const csvString = pm.response.text();
+      pm.visualizer.set(template, { csvString });
+    language: text/javascript
+settings: {}
+order: 2000

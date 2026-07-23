@@ -1,0 +1,46 @@
+$kind: http-request
+description: Get record data for a list view by list view API name using URL parameters.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/list-records/:SOBJECT_API_NAME/:LIST_VIEW_API_NAME"
+method: GET
+queryParams:
+  - key: fields
+    value: ""
+    disabled: true
+    description: Additional fields queried for the records returned. These fields don’t create visible columns. If the field isn't available to the user, an error occurs.
+  - key: optionalFields
+    value: ""
+    disabled: true
+    description: Additional fields queried for the records returned. These fields don’t create visible columns. If the field isn't available to the user, no error occurs and the field isn’t included in the records.
+  - key: pageSize
+    value: ""
+    disabled: true
+    description: The number of list records viewed at one time. The default value is 50. Value can be 1–2000.
+  - key: pageToken
+    value: ""
+    disabled: true
+    description: A token that represents the page offset. To indicate where the page starts, use this value with the `pageSize` parameter. The maximum offset is 2000 and the default is 0.
+  - key: searchTerm
+    value: ""
+    disabled: true
+    description: Search term to filter the results. Wildcards are supported.
+  - key: sortBy
+    value: ""
+    disabled: true
+    description: The API names of the fields the list view is sorted by. If the name is preceded with `-`, the sort order is descending. For example, `Name` sorts by name in ascending order. `-CreatedDate` sorts by created date in descending order. In API version 63.0 and later, you can sort by up to five fields.
+  - key: where
+    value: ""
+    disabled: true
+    description: 'The filter applied to returned records, in GraphQL syntax. For example, { and: [ { StageName: { eq: \"Prospecting\" } }, { Account: { Name: { eq: \"Dickenson plc\" } } } ] } filters an Opportunity related list to show only opportunities in the Prospecting stage that are linked to the “Dickenson plc” account.'
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: ""
+    description: API name of a UI API supported object.
+  - key: LIST_VIEW_API_NAME
+    value: ""
+    description: API name of a list view, such as AllAccounts, __Recent, or __SearchResult.
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get List View Records by API Name.resources/examples
+order: 3000

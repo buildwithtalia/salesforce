@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the actions on Lightning pages (FlexiPages).
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/flexipage/:FLEXIPAGE_NAMES"
+method: GET
+pathVariables:
+  - key: FLEXIPAGE_NAMES
+    value: ""
+    description: A Lightning page name, or a comma-delimited list of Lightning page names.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Lightning Page Actions.resources/examples
+order: 9000

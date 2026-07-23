@@ -1,0 +1,32 @@
+$kind: http-request
+description: |-
+  Get, post, and crop a user photo.
+  To use an image from the Files page as a user photo, pass the file ID in the fileId property of the request body or in the fileId request parameter. Images uploaded on the User page don’t have a file ID and can’t be used as the fileId.
+
+  To upload a binary file as the user photo, you must send it in a multipart/form-data message. For information about how to create the multipart/form-data message, see Uploading Binary Files.
+
+  To display user profile photos in a feed, cache the user photos. Then use the photoVersionId property of the Photo response body to determine when you need to update a photo. This technique helps you avoid running over limits and may improve mobile client performance.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/user-profiles/me/photo"
+method: POST
+headers:
+  - key: Content-Type
+    value: multipart/form-data
+    disabled: true
+  - key: Content-Disposition
+    value: form-data; name="photo"
+    disabled: true
+  - key: Content-Type
+    value: application/json; charset=UTF-8
+    disabled: true
+body:
+  type: formdata
+  content:
+    - type: text
+      key: json
+      value: '{"cropY":"0","cropX":"0","cropSize":"200"}'
+    - type: file
+      key: fileUpload
+      src: ""
+settings: {}
+examples: ./.resources/User Photo.resources/examples
+order: 1000

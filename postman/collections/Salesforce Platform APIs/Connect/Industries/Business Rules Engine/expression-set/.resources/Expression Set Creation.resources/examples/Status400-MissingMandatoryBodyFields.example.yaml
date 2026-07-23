@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/expression-set"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Wed, 06 Sep 2023 10:31:10 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "errorCode": "INVALID_INPUT",
+              "message": "Specify a value for name parameter and try again."
+          }
+      ]
+order: 2000

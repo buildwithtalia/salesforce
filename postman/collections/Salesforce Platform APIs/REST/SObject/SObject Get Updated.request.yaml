@@ -1,0 +1,19 @@
+$kind: http-request
+description: |-
+  Retrieves the list of individual records that have been updated (added or changed) within the given timespan for the specified object. SObject Get Updated is available in API version 29.0 and later.
+
+  This resource is commonly used in data replication applications. Note the following considerations:
+  Results are returned for no more than 30 days previous to the day the call is executed.
+  Your client application can replicate any objects to which it has sufficient permissions. For example, to replicate all data for your organization, your client application must be logged in with “View All Data” access rights to the specified object. Similarly, the objects must be within your sharing rules.
+  There is a limit of 600,000 IDs returned from this resource. If more than 600,000 IDs would be returned, EXCEEDED_ID_LIMIT is returned. You can correct the error by choosing start and end dates that are closer together.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/updated/?start=&end="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  start: ""
+  end: ""
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+order: 7000

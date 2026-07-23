@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the record actions on list views.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/list-view-chart/:SOBJECT_API_NAME"
+method: GET
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: ListViewChartInstance
+    description: Currently, only `ListViewChartInstance` is valid.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get List View Chart Actions.resources/examples
+order: 8000

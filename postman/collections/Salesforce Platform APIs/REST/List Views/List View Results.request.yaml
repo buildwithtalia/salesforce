@@ -1,0 +1,20 @@
+$kind: http-request
+description: Returns detailed information about a list view, including the ID, the columns, and the SOQL query.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/listviews/:LIST_VIEW_ID/results"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: limit
+    value: ""
+    disabled: true
+    description: The maximum number of records to return, between 1-2000. The default value is 25.
+  - key: offset
+    value: ""
+    disabled: true
+    description: The first record to return. Use this parameter to paginate the results. The default value is 1.
+pathVariables:
+  SOBJECT_API_NAME: ""
+  LIST_VIEW_ID: ""
+settings: {}
+order: 3000

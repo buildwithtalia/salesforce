@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/async/specifications/oas3"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "resources": [
+              "/services/data/v60.0/sobjects/Contact"
+          ]
+      }
+response:
+  statusCode: 202
+  statusText: Accepted
+  headers:
+    Date: Mon, 26 Feb 2024 13:50:18 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=9/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "href": "/v59.0/async/specifications/oas3/NTByNEgwMDAwMDAwMDAx"
+      }
+order: 1000

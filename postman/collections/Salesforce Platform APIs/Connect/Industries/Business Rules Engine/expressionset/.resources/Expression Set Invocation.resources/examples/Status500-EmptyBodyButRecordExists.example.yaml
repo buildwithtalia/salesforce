@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/expressionset/:expressionSetAPIName"
+  method: POST
+  pathVariables:
+    - key: expressionSetAPIName
+      value: myExpressionSet
+      description: The API name of an expression set is unique within your Salesforce instance.
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 500
+  statusText: Server Error
+  headers:
+    Date: Thu, 07 Sep 2023 07:48:43 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "message": "An unexpected error occurred. Please include this ErrorId if you contact support: 597330588-4312 (-1669188241)",
+              "errorCode": "UNKNOWN_EXCEPTION"
+          }
+      ]
+order: 1000

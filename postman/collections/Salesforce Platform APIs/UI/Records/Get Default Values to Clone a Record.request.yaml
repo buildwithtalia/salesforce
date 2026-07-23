@@ -1,0 +1,39 @@
+$kind: http-request
+description: |-
+  Get the default layout information, object information, and data for cloning a record. After getting the default values, make a request to POST /ui-api/records to create the record.
+  The response contains the default field values for a record cloned from the record specified in <RECORD_ID>, optionally of the specified recordTypeId.
+
+  It also contains the corresponding layout information for edit mode. In the Salesforce user interface, an admin with “Customize Application” permission can mark a field as required in a layout. When you’re building UI, to determine which fields to mark as required in a layout for edit mode, use the RecordLayoutItem.required property.
+
+  The response contains object metadata for the object type of the record specified in <RECORD_ID> and for any nested objects. For example, /ui-api/record-defaults/clone/001d000000AtfRIAAZ is a request to clone an Account record. It returns object metadata for Account and User, because the OwnerId field on the Account object contains a reference to the User object.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/record-defaults/clone/:RECORD_ID"
+method: GET
+queryParams:
+  - key: formFactor
+    value: ""
+    disabled: true
+    description: |-
+      The layout display size for the record. One of these values:
+      Large—(Default) Use this value to get a layout for desktop display size.
+      Medium—Use this value to get a layout for tablet display size.
+      Small—Use this value to get a layout for phone display size.
+  - key: optionalFields
+    value: ""
+    disabled: true
+    description: |-
+      A collection of optional field names. If a field is accessible to the context user, it’s included in the response. If a field isn’t accessible to the context user, it isn’t included in the response, but it doesn’t cause an error.
+      Specify names in the format ObjectApiName.FieldName. You can get any field that has a named relationship to this record. There is no limit to the number of fields you can specify.
+  - key: recordTypeId
+    value: ""
+    disabled: true
+    description: The ID of the record type (RecordType object) for the new record. If not provided, the default record type is used.
+pathVariables:
+  - key: RECORD_ID
+    value: ""
+    description: Record ID
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Default Values to Clone a Record.resources/examples
+order: 11000

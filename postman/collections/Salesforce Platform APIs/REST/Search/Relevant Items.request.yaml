@@ -1,0 +1,32 @@
+$kind: http-request
+description: |-
+  Gets the current user’s most relevant items. Relevant items include records for objects in the user’s global search scope and also most recently used (MRU) objects.
+  Relevant items include up to 50 of the most recently viewed or updated records for each object in the user’s global search scope.
+  Note
+  The user’s global search scope includes the objects the user interacted with most in the last 30 days, including objects the user pinned from the search results page in the Salesforce Classic.
+
+  Then, the resource finds more recent records for each most recently used (MRU) object until the maximum number of records, which is 2,000, is returned.
+  This resource only accesses the relevant item information. Modifying the list of relevant items is not currently supported
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_relevant_items.htm
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/relevantItems"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: lastUpdatedId
+    value: ""
+    disabled: true
+    description: Optional. Compares the entire current list of relevant items to a previous version, if available. Specify the lastUpdatedId value returned in a previous response.
+  - key: sobjects
+    value: ""
+    disabled: true
+    description: Optional. To scope the results to a particular object or set of objects, specify the name for one or more sObjects.
+  - key: sobject.lastUpdatedId
+    value: ""
+    disabled: true
+    description: |-
+      Optional. Compares the current list of relevant items for this particular object to a previous version, if available. Specify the lastUpdatedId value returned in a previous response.
+      Note
+      You can only specify this parameter for the sObjects specified in the sobjects parameter.
+settings: {}
+order: 8000

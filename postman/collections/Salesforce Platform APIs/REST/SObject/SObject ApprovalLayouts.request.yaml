@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Returns a list of approval layouts for a specified object. Specify a particular approval process name to limit the return value to one specific approval layout. This resource is available in REST API version 30.0 and later.
+
+  approvalProcessName parameter is optional
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/describe/approvalLayouts/:APPROVAL_PROCESS_NAME"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+  APPROVAL_PROCESS_NAME: ""
+settings: {}
+order: 14000

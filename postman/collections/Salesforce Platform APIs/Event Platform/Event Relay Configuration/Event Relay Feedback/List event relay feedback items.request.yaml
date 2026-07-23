@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/query/?q=SELECT FIELDS(ALL) FROM EventRelayFeedback LIMIT 200"
+method: GET
+queryParams:
+  q: SELECT FIELDS(ALL) FROM EventRelayFeedback LIMIT 200
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+order: 1000

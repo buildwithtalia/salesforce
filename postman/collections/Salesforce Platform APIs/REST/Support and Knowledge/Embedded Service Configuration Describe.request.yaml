@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  Retrieves the values for your Embedded Service deployment configuration, including the branding colors, font, and site URL.
+
+  You must be logged in to the account that owns the EmbeddedServiceConfigDeveloperName you are querying.
+url: "{{_endpoint}}/services/data/v{{version}}/support/embeddedservice/configuration/:EMBEDDED_SERVICE_CONFIG_DEVELOPERNAME"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  EMBEDDED_SERVICE_CONFIG_DEVELOPERNAME: ""
+settings: {}
+order: 1000

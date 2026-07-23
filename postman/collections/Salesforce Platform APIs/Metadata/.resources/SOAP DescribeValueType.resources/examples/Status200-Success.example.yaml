@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/Soap/m/{{version}}"
+  method: POST
+  headers:
+    Content-Type: text/xml
+    charset: UTF-8
+    SOAPAction: login
+    Accept: text/xml
+  body:
+    type: text
+    content: |-
+      <?xml version="1.0" encoding="utf-8"?>
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://soap.sforce.com/2006/04/metadata">
+      	<soapenv:Header>
+      	<tns:SessionHeader>
+      		<tns:sessionId>{{_accessToken}}</tns:sessionId>
+      	</tns:SessionHeader>
+      	</soapenv:Header>
+      	<soapenv:Body>
+      		<tns:describeValueType>
+      			<type>{http://soap.sforce.com/2006/04/metadata}INSERT_METADATA_TYPE_NAME</type>
+      		</tns:describeValueType>
+      	</soapenv:Body>
+      </soapenv:Envelope>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 07 Sep 2023 09:25:45 GMT
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: text/xml; charset=utf-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://soap.sforce.com/2006/04/metadata">
+          <soapenv:Body>
+              <describeValueTypeResponse>
+                  <result>
+                      <apiCreatable>false</apiCreatable>
+                      <apiDeletable>false</apiDeletable>
+                      <apiReadable>false</apiReadable>
+                      <apiUpdatable>false</apiUpdatable>
+                  </result>
+              </describeValueTypeResponse>
+          </soapenv:Body>
+      </soapenv:Envelope>
+order: 1000

@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/batch/{{_batchId}}/result"
+  method: GET
+  headers:
+    X-SFDC-Session: "{{_accessToken}}"
+    Accept-Encoding: gzip
+    Content-Encoding: gzip
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 16:20:11 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: text/csv
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: text
+    content: |
+      "Id","Success","Created","Error"
+      "001...","true","true",""
+order: 1000

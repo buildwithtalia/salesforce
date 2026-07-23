@@ -1,0 +1,18 @@
+$kind: http-request
+description: |-
+  The Configuration Load Rule Executor API invokes all the load event product rules for the specified product. When configuring a nested bundle, set the parentProduct property to the parent product to inherit configuration attributes on the nested bundle.
+  Available in: Salesforce CPQ Spring ’17 and later
+
+  https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_api_config_loadruleexecutor.htm
+url: "{{_endpoint}}/services/apexrest/SBQQ/ServiceRouter?loader=SBQQ.ConfigAPI.LoadRuleExecutor&uid="
+method: PATCH
+headers:
+  Content-Type: application/json
+queryParams:
+  loader: SBQQ.ConfigAPI.LoadRuleExecutor
+  uid: ""
+body:
+  type: json
+  content: ""
+settings: {}
+order: 2000

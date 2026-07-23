@@ -1,0 +1,3 @@
+$kind: collection
+description: Get groups and group members. Create groups, invites, and members.
+order: 4000

@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT%20Id,IsDeleted,DeveloperName,Language,MasterLabel,NamespacePrefix,ManageableState,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Version%20FROM%20ManagedEventSubscription"
+method: GET
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+  - key: ""
+    value: ""
+    disabled: true
+  - key: ""
+    value: ""
+    disabled: true
+queryParams:
+  q: SELECT%20Id,IsDeleted,DeveloperName,Language,MasterLabel,NamespacePrefix,ManageableState,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Version%20FROM%20ManagedEventSubscription
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+examples: ./.resources/Get all managed event subscriptions.resources/examples
+order: 3000

@@ -1,0 +1,119 @@
+$kind: http-request
+description: Creates a Subscription Management order for a product bundle.
+url: "{{_endpoint}}/services/data/v{{version}}/composite"
+method: POST
+body:
+  type: json
+  content: |
+    {
+        "allOrNone": true,
+        "compositeRequest": [
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/Order",
+                "referenceId": "refOrder",
+                "body": {
+                    "AccountId": "{{defaultAccount}}",
+                    "EffectiveDate": "2023-01-01",
+                    "Pricebook2Id": "{{standardPricebook}}",
+                    "BillToContactId": "{{defaultBillToContact}}",
+                    "Status": "Draft"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/AppUsageAssignment",
+                "referenceId": "refAppTag",
+                "body": {
+                    "AppUsageType": "SubscriptionManagement",
+                    "RecordId": "@{refOrder.id}"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/OrderAction",
+                "referenceId": "refOrderAction",
+                "body": {
+                    "OrderId": "@{refOrder.id}",
+                    "Type": "New Sale"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/OrderItem",
+                "referenceId": "refWorkAnywhereBundle",
+                "body": {
+                    "OrderId": "@{refOrder.id}",
+                    "OrderActionId": "@{refOrderAction.id}",
+                    "PricebookEntryId": "{{WorkAnywhereBundlePBE}}",
+                    "ServiceDate": "2023-01-01",
+                    "Quantity": 1,
+                    "UnitPrice": 10000,
+                    "NetUnitPrice": 10000,
+                    "TotalLineAmount": 10000,
+                    "PeriodBoundary": "AlignToCalendar",
+                    "BillingFrequency2": "Monthly"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/OrderItem",
+                "referenceId": "refVirtualRouter",
+                "body": {
+                    "OrderId": "@{refOrder.id}",
+                    "OrderActionId": "@{refOrderAction.id}",
+                    "PricebookEntryId": "{{VirtualRouterEvergrnPBE}}",
+                    "ServiceDate": "2023-01-01",
+                    "Quantity": 100,
+                    "UnitPrice": 0,
+                    "NetUnitPrice": 0,
+                    "TotalLineAmount": 0,
+                    "PeriodBoundary": "AlignToCalendar",
+                    "BillingFrequency2": "Monthly"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/OrderItem",
+                "referenceId": "refBronzeSLA",
+                "body": {
+                    "OrderId": "@{refOrder.id}",
+                    "OrderActionId": "@{refOrderAction.id}",
+                    "PricebookEntryId": "{{SLABronzeEvergrnMonthPBE}}",
+                    "ServiceDate": "2023-01-01",
+                    "Quantity": 3,
+                    "UnitPrice": 0,
+                    "NetUnitPrice": 0,
+                    "TotalLineAmount": 0,
+                    "PeriodBoundary": "AlignToCalendar",
+                    "BillingFrequency2": "Monthly"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/OrderItemRelationship",
+                "referenceId": "refOrderItemRelationship1",
+                "body": {
+                    "ProductRelationshipTypeId": "{{BundleProductRelationshipType}}",
+                    "MainOrderItemId": "@{refWorkAnywhereBundle.id}",
+                    "AssociatedOrderItemId": "@{refVirtualRouter.id}",
+                    "AssociatedOrderItemPricing": "IncludedInBundlePrice",
+                    "AssociatedQuantScaleMethod": "Proportional"
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v57.0/sobjects/OrderItemRelationship",
+                "referenceId": "refOrderItemRelationship2",
+                "body": {
+                    "ProductRelationshipTypeId": "{{BundleProductRelationshipType}}",
+                    "MainOrderItemId": "@{refWorkAnywhereBundle.id}",
+                    "AssociatedOrderItemId": "@{refBronzeSLA.id}",
+                    "AssociatedOrderItemPricing": "IncludedInBundlePrice",
+                    "AssociatedQuantScaleMethod": "Constant"
+                }
+            }
+        ]
+    }
+settings: {}
+order: 2000

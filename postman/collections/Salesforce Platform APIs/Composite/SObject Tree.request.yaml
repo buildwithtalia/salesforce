@@ -1,0 +1,79 @@
+$kind: http-request
+description: |-
+  Creates one or more sObject trees with root records of the specified type. An sObject tree is a collection of nested, parent-child records with a single root record.
+  In the request data, you supply the record hierarchies, required and optional field values, each record’s type, and a reference ID for each record. Upon success, the response contains the IDs of the created records. If an error occurs while creating a record, the entire request fails. In this case, the response contains only the reference ID of the record that caused the error and the error information.
+
+  The request can contain the following:
+  Up to a total of 200 records across all trees
+  Up to five records of different types
+  SObject trees up to five levels deep
+  Because an sObject tree can contain a single record, you can use this resource to create up to 200 unrelated records of the same type.
+
+  When the request is processed and records are created, triggers, processes, and workflow rules fire separately for each of the following groups of records.
+  Root records across all sObject trees in the request
+  All second-level records of the same type—for example, second-level Contacts across all sObject trees in the request
+  All third-level records of the same type
+  All fourth-level records of the same type
+  All fifth-level records of the same type
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm
+url: "{{_endpoint}}/services/data/v{{version}}/composite/tree/:SOBJECT_API_NAME"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: Account
+body:
+  type: text
+  content: |-
+    {
+    "records" :[{
+        "attributes" : {"type" : "Account", "referenceId" : "ref1"},
+        "name" : "SampleAccount1",
+        "phone" : "1234567890",
+        "website" : "www.salesforce.com",
+        "numberOfEmployees" : "100",
+        "industry" : "Banking",
+        "Contacts" : {
+          "records" : [{
+             "attributes" : {"type" : "Contact", "referenceId" : "ref2"},
+             "lastname" : "Smith",
+             "Title" : "President",
+             "email" : "sample@salesforce.com"
+             },{
+             "attributes" : {"type" : "Contact", "referenceId" : "ref3"},
+             "lastname" : "Evans",
+             "title" : "Vice President",
+             "email" : "sample@salesforce.com"
+             }]
+          }
+        },{
+        "attributes" : {"type" : "Account", "referenceId" : "ref4"},
+        "name" : "SampleAccount2",
+        "phone" : "1234567890",
+        "website" : "www.salesforce.com",
+        "numberOfEmployees" : "52000",
+        "industry" : "Banking",
+        "childAccounts" : {
+          "records" : [{
+            "attributes" : {"type" : "Account", "referenceId" : "ref5"},
+            "name" : "SampleChildAccount1",
+            "phone" : "1234567890",
+            "website" : "www.salesforce.com",
+            "numberOfEmployees" : "100",
+            "industry" : "Banking"
+            }]
+          },
+        "Contacts" : {
+          "records" : [{
+            "attributes" : {"type" : "Contact", "referenceId" : "ref6"},
+            "lastname" : "Jones",
+            "title" : "President",
+            "email" : "sample@salesforce.com"
+            }]
+          }
+      }]
+    }
+settings: {}
+examples: ./.resources/SObject Tree.resources/examples
+order: 4000

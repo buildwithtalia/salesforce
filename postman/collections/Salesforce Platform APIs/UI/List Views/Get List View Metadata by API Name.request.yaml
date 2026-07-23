@@ -1,0 +1,17 @@
+$kind: http-request
+description: Get list view metadata by list view API name using URL parameters.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/list-info/:SOBJECT_API_NAME/:LIST_VIEW_API_NAME"
+method: GET
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: ""
+    description: API name of the UI API supported object.
+  - key: LIST_VIEW_API_NAME
+    value: ""
+    description: API name of a list view, such as AllAccounts, __Recent, or __SearchResult.
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get List View Metadata by API Name.resources/examples
+order: 6000

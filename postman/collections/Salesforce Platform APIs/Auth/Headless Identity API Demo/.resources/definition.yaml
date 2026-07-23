@@ -1,0 +1,12 @@
+$kind: collection
+description: |-
+  Salesforce Headless Identity gives you the ability to separate back-end authentication processes from front-end identity experiences. By calling Headless Identity APIs, you can use the power of Customer Identity for authentication while maintaining complete control over the user experience in an off-platform or third-party app.
+
+  Salesforce offers three Headless Identity features: login with Headless Login API, registration with Headless Registration API, and password reset with Headless Forgot Password API. You can also link a single sign-on (SSO) provider to your headless app to create a native SSO experience.
+
+  📚 [Headless Identity Implementation Guide](https://resources.docs.salesforce.com/244/latest/en-us/sfdc/pdf/headless_identity_impl_guide.pdf)
+auth:
+  - id: ""
+    type: noauth
+    name: No Auth
+order: 1000

@@ -1,0 +1,56 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/batch"
+  method: POST
+  headers:
+    - key: X-SFDC-Session
+      value: "{{_accessToken}}"
+    - key: Content-Type
+      value: text/csv
+    - key: Content-Type
+      value: zip/csv
+      disabled: true
+    - key: charset
+      value: UTF-8
+    - key: Accept-Encoding
+      value: gzip
+      disabled: true
+    - key: Content-Encoding
+      value: gzip
+      disabled: true
+  body:
+    type: file
+    content:
+      src: /Users/username/Downloads/account.csv
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Thu, 16 Nov 2023 16:16:10 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Location: /services/async/58.0/job/7502o00000kjNCsAAM/batch/7512o00001DSJWnAAP
+    Content-Type: application/xml
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <batchInfo
+         xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+          <id>751...</id>
+          <jobId>750...</jobId>
+          <state>Queued</state>
+          <createdDate>datetime</createdDate>
+          <systemModstamp>datetime</systemModstamp>
+          <numberRecordsProcessed>0</numberRecordsProcessed>
+          <numberRecordsFailed>0</numberRecordsFailed>
+          <totalProcessingTime>0</totalProcessingTime>
+          <apiActiveProcessingTime>0</apiActiveProcessingTime>
+          <apexProcessingTime>0</apexProcessingTime>
+      </batchInfo>
+order: 1000

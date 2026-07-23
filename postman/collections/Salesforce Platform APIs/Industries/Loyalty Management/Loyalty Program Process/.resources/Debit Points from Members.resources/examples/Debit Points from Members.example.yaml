@@ -1,0 +1,64 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalTypeId
+      value: null
+      disabled: true
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+    processName: debitPoints
+  body:
+    type: json
+    content: |-
+      {
+        "processParameters": [
+          {
+            "TransactionJournal": {
+              "ActivityDate": "2023-08-27T00:00:00Z",
+              "ExternalTransactionNumber": "1",
+              "InvoiceDate": "2023-08-23",
+              "JournalTypeName": "Redemption",
+              "MembershipNumber":"Member123",
+              "TransactionAmount": "45.0",
+              "CurrencyIsoCode":"EUR",
+              "Status":"Processed"
+            },
+            "PointsToDebit": 6.0
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 27 May 2024 20:21:45 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "message": null,
+          "outputParameters": {
+              "outputParameters": {
+                  "results": [
+                      {
+                          "PointsDebited": 6
+                      }
+                  ]
+              }
+          },
+          "simulationDetails": {},
+          "status": true
+      }
+order: 1000

@@ -1,0 +1,12 @@
+$kind: http-request
+description: Single composite API call that creates an Account, then an Opportunity linked to that Account, then a Quote linked to the Opportunity, and finally an Order linked to both the Account and Opportunity — all in one request using Salesforce reference IDs. The allOrNone flag ensures all 4 records are created atomically.
+url: "{{_endpoint}}/services/data/v{{version}}/composite/"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{_accessToken}}"
+body:
+  type: json
+  content: '{"allOrNone":true,"compositeRequest":[{"method":"POST","url":"/services/data/v{{version}}/sobjects/Account","referenceId":"refAccount","body":{"Name":"Composite Account","BillingCity":"San Francisco","BillingState":"CA","BillingCountry":"US"}},{"method":"POST","url":"/services/data/v{{version}}/sobjects/Opportunity","referenceId":"refOpportunity","body":{"Name":"Composite Opportunity","AccountId":"@{refAccount.id}","StageName":"Prospecting","CloseDate":"2026-12-31","Amount":50000}},{"method":"POST","url":"/services/data/v{{version}}/sobjects/Quote","referenceId":"refQuote","body":{"Name":"Composite Quote","OpportunityId":"@{refOpportunity.id}","Status":"Draft","ExpirationDate":"2026-12-31"}},{"method":"POST","url":"/services/data/v{{version}}/sobjects/Order","referenceId":"refOrder","body":{"AccountId":"@{refAccount.id}","OpportunityId":"@{refOpportunity.id}","EffectiveDate":"2026-07-20","Status":"Draft","Pricebook2Id":"{{_pricebook2Id}}"}}]}'
+settings: {}
+order: 16000

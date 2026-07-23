@@ -1,0 +1,46 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-table/:decisionTableId"
+  method: POST
+  pathVariables:
+    - key: decisionTableId
+      value: 0lDHo0000008Pnt
+      description: Decision Table Id
+  body:
+    type: json
+    content: |-
+      {
+          "conditions": {
+              "conditionsList": [
+                  {
+                      "fieldName": "IsDeleted",
+                      "value": true
+                  }
+              ]
+          }
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Tue, 19 Sep 2023 13:22:05 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "errorCode": null,
+          "errorMessage": null,
+          "outcomeList": [],
+          "outcomeType": "No Match",
+          "successStatus": true
+      }
+order: 3000

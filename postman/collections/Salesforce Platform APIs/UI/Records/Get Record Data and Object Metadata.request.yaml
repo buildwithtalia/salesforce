@@ -1,0 +1,61 @@
+$kind: http-request
+description: |-
+  Get layout information, metadata, and data to build UI for a single record or for a collection of records.
+  The response contains layout information for whichever layout types are specified in the layoutTypes parameter.
+
+  It contains data for the records specified in the recordIds parameter.
+
+  The response contains object metadata for the object types of the records specified in the recordIds parameter, and for any nested objects. For example, a request to /ui-api/record-ui/001RM000003RsOHYA0, which is an Account, returns object metadata for Account and User, because the OwnerId field on the Account object contains a reference to the User object.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/record-ui/:RECORD_IDS"
+method: GET
+queryParams:
+  - key: childRelationships
+    value: ""
+    disabled: true
+    description: |
+      A collection of child relationship names. The records with those child relationship names are included in the response. Specify names in the format ObjectApiName.ChildRelationshipName or ObjectApiName.ChildRelationshipName.FieldApiName. For example, to specify the Contacts relationship on an Account, use Account.Contacts. You can get child relationships one level deep.
+      To get a relationship name, look in the Object Info response body.
+  - key: formFactor
+    value: ""
+    disabled: true
+    description: |-
+      The layout display size for the record. One of these values:
+      Large—(Default) Use this value to get a layout for desktop display size.
+      Medium—Use this value to get a layout for tablet display size.
+      Small—Use this value to get a layout for phone display size.
+  - key: layoutTypes
+    value: ""
+    disabled: true
+    description: |-
+      The layout type for the record. A collection of any of these values:
+      Compact—Use this value to get a layout that contains a record’s key fields.
+      Full—(Default) Use this value to get a full layout.
+  - key: modes
+    value: ""
+    disabled: true
+    description: |-
+      The access mode for the record. This value determines which fields to get from a layout. Layouts have different fields for create, edit, and view modes. For example, formula fields are rendered in view mode, but not in create mode because they’re calculated at run time, like formulas in a spreadsheet. A collection of any of these values:
+      Create—Use this mode if you intend to build UI that lets a user create a record. This mode is used by the /ui-api/record-defaults/create/<SOBJECT_API_NAME> resource.
+      Edit—Use this mode if you intend to build UI that lets a user edit a record. This mode is used by the /ui-api/record-defaults/clone/<RECORD_ID> resource.
+      View—(Default) Use this mode if you intend to build UI that displays a record.
+  - key: optionalFields
+    value: ""
+    disabled: true
+    description: |-
+      A collection of optional field names. If a field is accessible to the context user, it’s included in the response. If a field isn’t accessible to the context user, it isn’t included in the response, but it doesn’t cause an error.
+      Specify names in the format ObjectApiName.FieldName. You can get any field that has a named relationship to this record. There is no limit to the number of fields you can specify.
+  - key: pageSize
+    value: ""
+    disabled: true
+    description: The maximum number of child records to return on a page.
+  - key: updateMru
+    value: ""
+    disabled: true
+    description: To add to the most recently used (MRU) list view, set to true. The default value is false.
+pathVariables:
+  - key: RECORD_IDS
+    value: ""
+    description: Comma-separated list of record IDs
+settings: {}
+examples: ./.resources/Get Record Data and Object Metadata.resources/examples
+order: 1000

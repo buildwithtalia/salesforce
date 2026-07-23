@@ -1,0 +1,14 @@
+$kind: collection
+description: |-
+  A Subscription management Order must be related to an OrderAction and an AppUsageAssignment.
+
+  - **OrderAction** - specifies whether the order is a new sale, a renewal, a cancellation, an amendment, or another type of order.
+  - **AppUsageAssignment** - specifies that this order has the app usage type `SubscriptionManagement`.
+      
+
+  **Use Price Book Entry, Not Product**
+
+  Notice that you don't pass in the ID of the product that is ordered, because a product can have multiple Selling Model Options. For example, a product can be sold one time, on a monthly termed subscription, and as an evergreen subscription. Instead of passing in the product ID, you pass in the Price Book Entry that is related to the Product Selling Model Option.
+
+  To learn more about creating orders, see [Create an order](https://developer.salesforce.com/docs/revenue/subscription-management/references/orders?meta=Create+an+order) in Salesforce Developers.
+order: 5000

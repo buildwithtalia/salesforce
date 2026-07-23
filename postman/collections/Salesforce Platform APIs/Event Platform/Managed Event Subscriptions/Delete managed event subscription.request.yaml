@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/ManagedEventSubscription/:managedEventSubscriptionId"
+method: DELETE
+pathVariables:
+  managedEventSubscriptionId: ""
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+order: 6000

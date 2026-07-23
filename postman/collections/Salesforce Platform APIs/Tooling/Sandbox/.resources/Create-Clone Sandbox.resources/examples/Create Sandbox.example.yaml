@@ -1,0 +1,46 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/SandboxInfo"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "SandboxName": "devSandbox",
+          "LicenseType": "DEVELOPER",
+          "TemplateId": null,
+          "HistoryDays": 0,
+          "CopyChatter": false,
+          "AutoActivate": false,
+          "ApexClassId": null,
+          "Description": "My new fresh sandbox",
+          "SourceId": null
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Mon, 11 Dec 2023 10:44:57 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=312/15000
+    Location: /services/data/v59.0/tooling/sobjects/SandboxInfo/0GQ4H000000CxSzWAK
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "id": "0GQ4H000000CxSzWAK",
+          "success": true,
+          "errors": [],
+          "warnings": [],
+          "infos": []
+      }
+order: 1000

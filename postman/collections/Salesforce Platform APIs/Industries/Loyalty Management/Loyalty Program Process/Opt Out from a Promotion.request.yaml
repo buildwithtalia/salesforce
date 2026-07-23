@@ -1,0 +1,36 @@
+$kind: http-request
+description: |-
+  [Opt Out from a Promotion](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_unenroll_promotion.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+  processName: ""
+body:
+  type: json
+  content: |-
+    {
+       "processParameters":[
+          {
+             "MembershipNumber":"M1",
+             "PromotionName":"Promo1"
+          }
+       ]
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','LeavePromotion');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Opt Out from a Promotion.resources/examples
+order: 8000

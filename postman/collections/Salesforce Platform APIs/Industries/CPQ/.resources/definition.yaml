@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Start working with Salesforce CPQ APIs.
+
+  📚 [Salesforce CPQ Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_developer_guide_intro.htm)
+order: 1000

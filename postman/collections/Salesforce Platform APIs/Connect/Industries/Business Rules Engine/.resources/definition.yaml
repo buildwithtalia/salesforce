@@ -1,0 +1,42 @@
+$kind: collection
+description: |-
+  Business Rules Engine is a suite of services, components, and objects that can be used to create business rules that perform complex lookups and calculations. The key components of Business Rules Engine are expression sets, decision matrices, and decision tables.
+
+  <img src="https://content.pstmn.io/c5600a2e-eabd-480f-ab49-a89e4721683f/U2NyZWVuc2hvdCAyMDIzLTA5LTA1IGF0IDEzLjAxLjMyLnBuZw==" alt="">
+
+  See Developers Salesforce Help Docs: [Business Rules Engine](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/business_rules_engine.htm)
+
+  See Salesforce Help Docs: [Business Rules Engine](https://help.salesforce.com/s/articleView?id=sf.business_rules_engine.htm)
+
+  # Business Rules Engine Business APIs
+
+  Business Rules Engine Connect REST APIs help customers, partners, and ISVs integrate with Salesforce software and UIs.
+
+  The runtime service for Business Rules Engine components is exposed through Connect APIs.
+
+  ## Sign Up for a Developer Edition Org with Business Rules Engine
+
+  If you want to practice and try out the steps, you need a special Developer Edition org that contains Business Rules Engine and our sample data. Here’s how to get the free Developer Edition now.
+
+  1. Sign up for a free Developer Edition org with [<u>Business Rules Engine</u>](https://trailhead.salesforce.com/promo/orgs/business-rules-engine).
+      
+  2. Fill out the form.
+      
+      1. For Email, enter an active email address.
+          
+      2. For Username, enter a username that looks like an email address and is unique. It doesn’t need to be a valid email account (for example, [yourname@hc4evah.com](https://mailto:yourname@hc4evah.com) is fine).
+          
+  3. Click **Sign me up**. A confirmation message appears.
+      
+  4. When you receive the activation email (this might take a few minutes), open it and click **Verify Account**.
+      
+  5. Complete your registration by setting your password and challenge question.  
+      **Tip:** Write down your username, password, and login URL for easy access later.
+      
+
+  You are logged into your trial org. For more information on setting up Business Rules Engine and configuring your users, see [<u>Set Up Business Rules Engine</u>](https://help.salesforce.com/s/articleView?id=sf.set_up_business_rules_engine.htm&type=5).
+
+  Specfially this collection is designed to [answer](https://help.salesforce.com/s/articleView?id=sf.third_party_workflows.htm):
+
+  <img src="https://content.pstmn.io/2ef103a8-6fd7-472a-af82-49402d9c63ae/U2NyZWVuc2hvdCAyMDIzLTA5LTA1IGF0IDEzLjEzLjExLnBuZw==" alt="">
+order: 1000

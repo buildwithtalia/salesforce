@@ -1,0 +1,116 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 Nov 2023 11:25:52 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageUrl": "/services/data/v58.0/chatter/groups",
+          "groups": [
+              {
+                  "additionalLabel": null,
+                  "announcement": null,
+                  "bannerPhoto": {
+                      "bannerPhotoUrl": "https://<my_domain>/profilephoto/0F9/B",
+                      "bannerPhotoVersionId": null,
+                      "url": "/services/data/v58.0/chatter/groups/0F9.../banner-photo"
+                  },
+                  "canHaveChatterGuests": false,
+                  "community": null,
+                  "description": "Test group",
+                  "emailToChatterAddress": "0F9...@post.2o-i6mbeaq.eu25.chatter.salesforce.com",
+                  "fileCount": 0,
+                  "id": "0F9...",
+                  "information": {
+                      "text": null,
+                      "title": null
+                  },
+                  "isArchived": false,
+                  "isAutoArchiveDisabled": false,
+                  "isBroadcast": false,
+                  "lastFeedElementPostDate": "2023-11-22T11:25:37.000Z",
+                  "memberCount": 1,
+                  "motif": {
+                      "color": "1B96FF",
+                      "largeIconUrl": "/img/icon/groups64.png",
+                      "mediumIconUrl": "/img/icon/groups32.png",
+                      "smallIconUrl": "/img/icon/groups16.png",
+                      "svgIconUrl": null
+                  },
+                  "myRole": "GroupOwner",
+                  "mySubscription": {
+                      "id": "0FB...",
+                      "url": "/services/data/v58.0/chatter/group-memberships/0FB..."
+                  },
+                  "name": "Test",
+                  "owner": {
+                      "additionalLabel": null,
+                      "communityNickname": "User1696423780773910041",
+                      "companyName": "Salesforce",
+                      "displayName": "Firstname",
+                      "firstName": "Firstname",
+                      "id": "005...",
+                      "isActive": true,
+                      "isInThisCommunity": true,
+                      "lastName": "Name",
+                      "motif": {
+                          "color": "1B96FF",
+                          "largeIconUrl": "/img/icon/profile64.png",
+                          "mediumIconUrl": "/img/icon/profile32.png",
+                          "smallIconUrl": "/img/icon/profile16.png",
+                          "svgIconUrl": null
+                      },
+                      "mySubscription": null,
+                      "name": "Firstname",
+                      "outOfOffice": {
+                          "message": ""
+                      },
+                      "photo": {
+                          "fullEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0IogXzXAXaYKJnuWCNQmXymRq?fromEmail=1",
+                          "largePhotoUrl": "https://<my_domain>/profilephoto/7292o000000oAgZ/F",
+                          "mediumPhotoUrl": "https://<my_domain>/profilephoto/7292o000000oAgZ/M",
+                          "photoVersionId": "729...",
+                          "smallPhotoUrl": "https://<my_domain>/profilephoto/7292o000000oAgZ/T",
+                          "standardEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0Ioi-dtynkoFWsl46as__TDFU?fromEmail=1",
+                          "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+                      },
+                      "reputation": null,
+                      "title": null,
+                      "type": "User",
+                      "url": "/services/data/v58.0/chatter/users/005...",
+                      "userType": "Internal"
+                  },
+                  "pendingRequests": null,
+                  "photo": {
+                      "fullEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_group_profile_200_v2.png?fromEmail=1",
+                      "largePhotoUrl": "https://<my_domain>/profilephoto/0F9/F",
+                      "mediumPhotoUrl": "https://<my_domain>/profilephoto/0F9/M",
+                      "photoVersionId": null,
+                      "smallPhotoUrl": "https://<my_domain>/profilephoto/0F9/T",
+                      "standardEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_group_profile_45_v2.png?fromEmail=1",
+                      "url": "/services/data/v58.0/chatter/groups/0F9.../photo"
+                  },
+                  "type": "CollaborationGroup",
+                  "url": "/services/data/v58.0/chatter/groups/0F9...",
+                  "visibility": "PublicAccess"
+              }
+          ],
+          "nextPageUrl": null,
+          "previousPageUrl": null
+      }
+order: 1000

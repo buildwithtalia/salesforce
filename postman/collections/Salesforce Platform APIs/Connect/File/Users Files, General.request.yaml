@@ -1,0 +1,19 @@
+$kind: http-request
+description: |-
+  Upload a file, including references to external files, to the Files home or get information about files a user owns. These files don’t include files shared with a user, files a user follows, or general organization files.
+  When you upload a file to the Files home, it is private and available only to the file owner.
+
+  To upload a file, send it in a multipart/form-data request. You can include the description and title of the file in the multipart/form-data request as a JSON or XML request body. You can also send the information as request parameters. For information about how to create the multipart/form-data message, see Uploading Binary Files.
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_users_files_general.htm
+url: "{{_endpoint}}/services/data/v{{version}}/connect/files/users/me"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: fileData
+      src: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Users Files, General.resources/examples
+order: 1000

@@ -1,0 +1,84 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/query/?q=SELECT%20Id,IsDeleted,DeveloperName,Language,MasterLabel,NamespacePrefix,ManageableState,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Version%20FROM%20ManagedEventSubscription"
+  method: GET
+  headers:
+    - key: ""
+      value: ""
+      disabled: true
+    - key: ""
+      value: ""
+      disabled: true
+    - key: ""
+      value: ""
+      disabled: true
+  queryParams:
+    q: SELECT%20Id,IsDeleted,DeveloperName,Language,MasterLabel,NamespacePrefix,ManageableState,CreatedDate,CreatedById,LastModifiedDate,LastModifiedById,SystemModstamp,Version%20FROM%20ManagedEventSubscription
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 05 Dec 2024 09:18:26 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=79/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "size": 2,
+          "totalSize": 2,
+          "done": true,
+          "queryLocator": null,
+          "entityTypeName": "ManagedEventSubscription",
+          "records": [
+              {
+                  "attributes": {
+                      "type": "ManagedEventSubscription",
+                      "url": "/services/data/v62.0/tooling/sobjects/ManagedEventSubscription/18xJ80000000001IAA"
+                  },
+                  "Id": "18xJ80000000001IAA",
+                  "IsDeleted": false,
+                  "DeveloperName": "Managed_Sample_PE",
+                  "Language": "en_US",
+                  "MasterLabel": "Managed Sub Sample Platform Event",
+                  "NamespacePrefix": null,
+                  "ManageableState": "unmanaged",
+                  "CreatedDate": "2024-11-28T17:15:30.000+0000",
+                  "CreatedById": "00558000000yFyDAAU",
+                  "LastModifiedDate": "2024-11-28T21:08:18.000+0000",
+                  "LastModifiedById": "00558000000yFyDAAU",
+                  "SystemModstamp": "2024-11-28T21:08:18.000+0000",
+                  "Version": "3"
+              },
+              {
+                  "attributes": {
+                      "type": "ManagedEventSubscription",
+                      "url": "/services/data/v62.0/tooling/sobjects/ManagedEventSubscription/18xJ80000000006IAA"
+                  },
+                  "Id": "18xJ80000000006IAA",
+                  "IsDeleted": false,
+                  "DeveloperName": "Managed_Inactive_Sample_PE",
+                  "Language": "en_US",
+                  "MasterLabel": "Managed Inactive Sample PE",
+                  "NamespacePrefix": null,
+                  "ManageableState": "unmanaged",
+                  "CreatedDate": "2024-12-05T07:56:20.000+0000",
+                  "CreatedById": "00558000000yFyDAAU",
+                  "LastModifiedDate": "2024-12-05T07:56:20.000+0000",
+                  "LastModifiedById": "00558000000yFyDAAU",
+                  "SystemModstamp": "2024-12-05T07:56:20.000+0000",
+                  "Version": "1"
+              }
+          ]
+      }
+order: 1000

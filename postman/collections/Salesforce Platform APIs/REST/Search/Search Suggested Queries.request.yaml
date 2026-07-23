@@ -1,0 +1,43 @@
+$kind: http-request
+description: |-
+  Returns a list of suggested searches based on the user’s query string text matching searches that other users have performed in Salesforce Knowledge. Provides a way to improve search effectiveness, before the user performs a search.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_suggest_queries.htm
+url: "{{_endpoint}}/services/data/v{{version}}/search/suggestSearchQueries?q=&language="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: channel
+    value: ""
+    disabled: true
+    description: |-
+      Optional. Specifies the Salesforce Knowledge channel where the article can be viewed. Valid values:
+      AllChannels–Visible in all channels the user has access to
+      App–Visible in the internal Salesforce Knowledge application
+      Pkb–Visible in the public knowledge base
+      Csp–Visible in the Customer Portal
+      Prm–Visible in the Partner Portal
+      If channel isn’t specified, the default value is determined by the type of user.
+      Pkb for a guest user
+      Csp for a Customer Portal user
+      Prm for a Partner Portal user
+      App for any other type of user
+      If channel is specified, the specified value may not be the actual value requested, because of certain requirements.
+      For guest, Customer Portal, and Partner Portal users, the specified value must match the default value for each user type. If the values don’t match or AllChannels is specified, then App replaces the specified value.
+      For all users other than guest, Customer Portal, and Partner Portal users:
+      If Pkb, Csp, Prm, or App are specified, then the specified value is used.
+      If AllChannels is specified, then App replaces the specified value.
+  - key: limit
+    value: ""
+    disabled: true
+    description: Optional. Specifies the maximum number of suggested searches to return. If there are more suggested queries than the limit specified, the response body’s hasMoreResults property is true.
+  - key: q
+    value: ""
+  - key: language
+    value: ""
+body:
+  type: text
+  content: ""
+settings: {}
+order: 6000

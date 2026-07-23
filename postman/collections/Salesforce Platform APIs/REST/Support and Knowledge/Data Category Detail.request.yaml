@@ -1,0 +1,15 @@
+$kind: http-request
+description: Get data category details and the child categories by a given category.
+url: "{{_endpoint}}/services/data/v{{version}}/support/dataCategoryGroups/:GROUP/dataCategories/:CATEGORY"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: sObjectName
+    value: ""
+    disabled: true
+pathVariables:
+  GROUP: ""
+  CATEGORY: ""
+settings: {}
+order: 3000

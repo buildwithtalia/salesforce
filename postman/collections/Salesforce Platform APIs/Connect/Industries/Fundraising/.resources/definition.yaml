@@ -1,0 +1,14 @@
+$kind: collection
+description: |-
+  The Fundraising Business Process APIs empower teams to build robust integrations through industry standard tools. Instead of making multiple calls using multiple APIs to multiple objects, use our composite Fundraising BP API to send over a single, complex payload - and let us do the rest. Developer-friendly APIs do not require a detailed and complete understanding of the NPC data model, which greatly simplifies integrations. Automatic record matching, batch processing of fields, bulk support, and dynamic mapping of data to custom fields enables scalability and flexibility for customers and partners alike. Five robust endpoints are currently available to:
+
+  - Create bulk gift transactions with related donor and designations
+  - Create bulk gift commitments with related donor, schedule, and default designations
+  - Modify the future recurring schedule on a gift commitment
+  - Apply payment update metadata to gift transactions and future gift commitment installments
+      
+
+  The Fundraising Business Process APIs are available as a standard Salesforce Connect API REST endpoint as well as through Apex.
+
+  📚 [Fundraising Business APIs](https://developer.salesforce.com/docs/atlas.en-us.nonprofit_cloud.meta/nonprofit_cloud/npc_fundraising_business_api_rest_reference.htm)
+order: 3000

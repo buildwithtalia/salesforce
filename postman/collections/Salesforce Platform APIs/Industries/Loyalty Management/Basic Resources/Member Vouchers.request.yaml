@@ -1,0 +1,24 @@
+$kind: http-request
+description: |-
+  [Member Vouchers](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_member_vouchers.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/loyalty/programs/:loyaltyProgramName/members/:membershipNumber/vouchers"
+method: GET
+pathVariables:
+  loyaltyProgramName: ""
+  membershipNumber: ""
+body:
+  type: json
+  content: ""
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','Nuotare');
+      //pm.variables.set('membershipNumber','xyz');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Member Vouchers.resources/examples
+order: 10000

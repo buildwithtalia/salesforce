@@ -1,0 +1,19 @@
+$kind: http-request
+description: |-
+  The Read Product API takes the request’s product ID, pricebook ID, and currency code and returns a Product model. The Product model loads the product from your catalog when the user requests it.
+  Available in: Salesforce CPQ Summer ’16 and later
+  Special Access Rules: Users must have read access to the product2 object.
+
+  https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_api_read_product.htm
+url: "{{_endpoint}}/services/apexrest/SBQQ/ServiceRouter?loader=SBQQ.ProductAPI.ProductLoader&uid="
+method: PATCH
+headers:
+  Content-Type: application/json
+queryParams:
+  loader: SBQQ.ProductAPI.ProductLoader
+  uid: ""
+body:
+  type: json
+  content: '{"context" : {"pricebookId": "01sA0000000wuhg", "currencyCode":"USD"}}'
+settings: {}
+order: 6000

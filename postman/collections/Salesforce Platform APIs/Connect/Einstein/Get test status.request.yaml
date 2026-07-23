@@ -1,0 +1,11 @@
+$kind: http-request
+description: Generates a response based on the specified prompt template and input parameters ([documentation](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_prompt_template.htm)).
+url: "{{_endpoint}}/services/data/v{{version}}/einstein/ai-evaluations/runs/:runId"
+method: GET
+pathVariables:
+  - key: runId
+    value: ""
+    description: Evaluation ID
+settings: {}
+examples: ./.resources/Get test status.resources/examples
+order: 3000

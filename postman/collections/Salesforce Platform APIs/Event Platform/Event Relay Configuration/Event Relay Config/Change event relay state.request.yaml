@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/EventRelayConfig/:EVENT_RELAY_CONFIG_ID"
+method: PATCH
+headers:
+  Content-Type: application/json
+  SOAPAction: '""'
+  Authorization: Bearer {{_accessToken}}
+pathVariables:
+  EVENT_RELAY_CONFIG_ID: ""
+body:
+  type: json
+  content: |-
+    {
+        "Metadata": {
+            "state": "RUN"
+        }
+    }
+settings:
+  strictSSL: false
+order: 6000

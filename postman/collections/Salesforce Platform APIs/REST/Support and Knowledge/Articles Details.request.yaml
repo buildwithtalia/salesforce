@@ -1,0 +1,28 @@
+$kind: http-request
+description: Get all online article fields, accessible to the user.
+url: "{{_endpoint}}/services/data/v{{version}}/support/knowledgeArticles/:ARTICLE_ID"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: channel
+    value: ""
+    disabled: true
+    description: |-
+      Optional, defaults to user’s context. For information on channel values, see Valid channel Values.
+      App: Visible in the internal Salesforce Knowledge application
+      Pkb: Visible in the public knowledge base
+      Csp: Visible in the Customer Portal
+      Prm: Visible in the Partner Portal
+  - key: updateViewStat
+    value: ""
+    disabled: true
+    description: Optional, defaults to true. If true, API updates the view count in the given channel as well as the total view count.
+  - key: isUrlName
+    value: ""
+    disabled: true
+    description: Optional, defaults to false. If true, indicates that the last portion of the endpoint is a URL name instead of an article ID. Available in API v44.0 and later
+pathVariables:
+  ARTICLE_ID: ""
+settings: {}
+order: 5000

@@ -1,0 +1,63 @@
+$kind: http-request
+description: |-
+  Update the future payment instrument metadata for active gift commitments.
+
+  ## Required Attributes:
+
+  - giftCommitmentId
+      
+  - paymentInstrument.type
+url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/payment-updates"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "updates": [
+        {
+          "giftCommitmentId": "<SFDC_GIFT_COMMITMENT_ID>",
+          "paymentInstrument": {
+            "type": "credit card",
+            "accountHolderName": "test donor 1",
+            "expiryMonth": "10",
+            "expiryYear": "2026",
+            "last4": "4585",
+            "cardBrand": "visa",
+            "bankName": "chase",
+            "digitalWalletProvider": "apple pay",
+            "bankAccountHolderType": "primary",
+            "bankAccountType": "checking",
+            "bankAccountNumber": "123456",
+            "bankCode": "HBUK",
+            "gatewayName": "stripe",
+            "processorName": "classy",
+            "processorPaymentReference": "string",
+            "gatewayReference": "string"
+          }
+        },
+        {
+          "giftCommitmentId": "<SFDC_GIFT_COMMITMENT_ID>",
+          "paymentInstrument": {
+            "type": "credit card",
+            "accountHolderName": "test donor 2",
+            "expiryMonth": "10",
+            "expiryYear": "2026",
+            "last4": "4585",
+            "cardBrand": "visa",
+            "bankName": "chase",
+            "digitalWalletProvider": "apple pay",
+            "bankAccountHolderType": "primary",
+            "bankAccountType": "checking",
+            "bankAccountNumber": "123456",
+            "bankCode": "HBUK",
+            "gatewayName": "stripe",
+            "processorName": "test processor",
+            "processorPaymentReference": "string",
+            "gatewayReference": "string"
+          }
+        }
+      ]
+    }
+settings: {}
+examples: ./.resources/Update Commitment Payments.resources/examples
+order: 4000

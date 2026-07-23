@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/actions/custom/runExpressionSet/:expressionSetAPIName"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: expressionSetAPIName
+      value: ghfgh
+      description: The API name of an expression set is unique within your Salesforce instance.
+  body:
+    type: text
+    content: |-
+      {
+          "inputs": [
+              {}
+          ]
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Thu, 07 Sep 2023 09:05:16 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=1/15000
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "actionName": "ghfgh",
+              "errors": [
+                  {
+                      "statusCode": "MISSING_RECORD",
+                      "message": "Action name not found: ghfgh",
+                      "fields": []
+                  }
+              ],
+              "isSuccess": false,
+              "outputValues": null,
+              "version": 1
+          }
+      ]
+order: 2000

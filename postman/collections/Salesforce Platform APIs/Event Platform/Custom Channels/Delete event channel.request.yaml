@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannel/:PLATFORM_EVENT_CHANNEL_ID"
+method: DELETE
+pathVariables:
+  PLATFORM_EVENT_CHANNEL_ID: ""
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+examples: ./.resources/Delete event channel.resources/examples
+order: 5000

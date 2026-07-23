@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/actions/standard/createOrUpdateAssetFromOrder"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "inputs": [
+            {
+                "orderId": "{{currentOrder}}"
+            }
+        ]
+    }
+settings: {}
+order: 1000

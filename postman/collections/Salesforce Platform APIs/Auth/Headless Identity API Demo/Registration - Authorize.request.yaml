@@ -1,0 +1,33 @@
+$kind: http-request
+description: |-
+  After you send your registration data to initialize, this request allows you to process that registration data, and as a part of this request you also verify the users email or sms number. The request itself is a authorization call for the Code and Credential flow. It includes 3 specific headers: `Auth-Request-Type` which is set to `user-registration`, `Auth-Verification-Type` which is set to email or sms, and an Authorization Basic header, which is the base 64 encoded result of `identifier:otp` where `identifier` is the value returned in your initialize registration call, and `otp` is the value sent to the end user via email or sms.
+
+  The response from this API is the Auth Code, which is then exchanged for the Access Token.
+url: "{{url}}{{site}}/services/oauth2/authorize"
+method: POST
+headers:
+  - key: Auth-Request-Type
+    value: user-registration
+    description: Required for User Registration
+  - key: Auth-Verification-Type
+    value: email
+    description: Must match init/registration, email or sms
+  - key: Authorization
+    value: Basic <base64Encoded identifier:otp>
+    description: Base64 encoded <Identifier:OTP>
+body:
+  type: urlencoded
+  content:
+    - key: response_type
+      value: code_credentials
+    - key: client_id
+      value: "{{clientId}}"
+    - key: redirect_uri
+      value: "{{redirectUrl}}"
+    - key: scope
+      value: ""
+      description: Comma seperated list of scopes, optional
+auth:
+  type: noauth
+settings: {}
+order: 2000

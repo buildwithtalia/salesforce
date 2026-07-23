@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/files/:FILE_ID"
+  method: DELETE
+  pathVariables:
+    FILE_ID: 0692o00000woaRkAAI
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Mon, 20 Nov 2023 16:39:05 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+  body:
+    type: text
+    content: ""
+order: 1000

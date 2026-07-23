@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/query?q=Select Id, Name from Pricebook2 Where name='Standard Price Book' and IsActive = true"
+method: GET
+queryParams:
+  q: Select Id, Name from Pricebook2 Where name='Standard Price Book' and IsActive = true
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: |-
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      const jsonData = JSON.parse(responseBody);
+
+      context.set("standardPricebook", jsonData.records[0].Id);
+    language: text/javascript
+settings: {}
+order: 5000

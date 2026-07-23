@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Update the status of a request by a user to join a private group or get information about a request to join a private group.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_group_membership_requests.htm?search_text=group-membership-requests
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/group-membership-requests/:CHATTER_GROUP_REQUEST_ID?status=Accepted&responseMessage=Welcome to the group!"
+method: PATCH
+queryParams:
+  status: Accepted
+  responseMessage: Welcome to the group!
+pathVariables:
+  CHATTER_GROUP_REQUEST_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Group Membership Requests—Private.resources/examples
+order: 7000

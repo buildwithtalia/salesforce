@@ -1,0 +1,166 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/nav-items?formFactor=Small&page=1&pageSize=5"
+  method: GET
+  queryParams:
+    - key: formFactor
+      value: Small
+      description: The form factor for each app that the user has access to (`Large`, `Medium` or `Small`)
+    - key: navItemNames
+      value: null
+      disabled: true
+      description: A comma delimited list of TabDefinition name values to include in the response.
+    - key: page
+      value: "1"
+      description: The page offset form which to begin returning nav items. The default value is 0, which returns nav items from the first page. For example, for `page=2` and `pageSize=10`, the first nav item returned is the 21st nav item in the list.
+    - key: pageSize
+      value: "5"
+      description: The maximum number of nav items to return on a page. The default value is 25.
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:45:07 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"425dfe9232c5bd0e9c6e4b94771c91b8--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "currentPageUrl": "/services/data/v58.0/ui-api/nav-items?formFactor=Small&page=1&pageSize=5",
+          "eTag": "425dfe9232c5bd0e9c6e4b94771c91b8",
+          "navItems": [
+              {
+                  "availableInClassic": true,
+                  "availableInLightning": true,
+                  "color": null,
+                  "content": "https://pozil-dev-ed.my.salesforce.com/4nK/o",
+                  "custom": false,
+                  "developerName": "standard-AssetStatePeriod",
+                  "iconUrl": null,
+                  "id": null,
+                  "itemType": "Entity",
+                  "label": "Asset State Periods",
+                  "objectApiName": "AssetStatePeriod",
+                  "objectLabel": "Asset State Period",
+                  "objectLabelPlural": "Asset State Periods",
+                  "pageReference": {
+                      "attributes": {
+                          "objectApiName": "AssetStatePeriod",
+                          "actionName": "home"
+                      },
+                      "state": {},
+                      "type": "standard__objectPage"
+                  },
+                  "standardType": null
+              },
+              {
+                  "availableInClassic": true,
+                  "availableInLightning": true,
+                  "color": null,
+                  "content": "https://pozil-dev-ed.my.salesforce.com/02i/o",
+                  "custom": false,
+                  "developerName": "standard-Asset",
+                  "iconUrl": null,
+                  "id": null,
+                  "itemType": "Entity",
+                  "label": "Assets",
+                  "objectApiName": "Asset",
+                  "objectLabel": "Asset",
+                  "objectLabelPlural": "Assets",
+                  "pageReference": {
+                      "attributes": {
+                          "objectApiName": "Asset",
+                          "actionName": "home"
+                      },
+                      "state": {},
+                      "type": "standard__objectPage"
+                  },
+                  "standardType": null
+              },
+              {
+                  "availableInClassic": true,
+                  "availableInLightning": true,
+                  "color": null,
+                  "content": "https://pozil-dev-ed.my.salesforce.com/0cI/o",
+                  "custom": false,
+                  "developerName": "standard-AuthorizationForm",
+                  "iconUrl": null,
+                  "id": null,
+                  "itemType": "Entity",
+                  "label": "Authorization Form",
+                  "objectApiName": "AuthorizationForm",
+                  "objectLabel": "Authorization Form",
+                  "objectLabelPlural": "Authorization Forms",
+                  "pageReference": {
+                      "attributes": {
+                          "objectApiName": "AuthorizationForm",
+                          "actionName": "home"
+                      },
+                      "state": {},
+                      "type": "standard__objectPage"
+                  },
+                  "standardType": null
+              },
+              {
+                  "availableInClassic": true,
+                  "availableInLightning": true,
+                  "color": null,
+                  "content": "https://pozil-dev-ed.my.salesforce.com/0cK/o",
+                  "custom": false,
+                  "developerName": "standard-AuthorizationFormConsent",
+                  "iconUrl": null,
+                  "id": null,
+                  "itemType": "Entity",
+                  "label": "Authorization Form Consent",
+                  "objectApiName": "AuthorizationFormConsent",
+                  "objectLabel": "Authorization Form Consent",
+                  "objectLabelPlural": "Authorization Form Consents",
+                  "pageReference": {
+                      "attributes": {
+                          "objectApiName": "AuthorizationFormConsent",
+                          "actionName": "home"
+                      },
+                      "state": {},
+                      "type": "standard__objectPage"
+                  },
+                  "standardType": null
+              },
+              {
+                  "availableInClassic": true,
+                  "availableInLightning": true,
+                  "color": null,
+                  "content": "https://pozil-dev-ed.my.salesforce.com/0cM/o",
+                  "custom": false,
+                  "developerName": "standard-AuthorizationFormDataUse",
+                  "iconUrl": null,
+                  "id": null,
+                  "itemType": "Entity",
+                  "label": "Authorization Form Data Use",
+                  "objectApiName": "AuthorizationFormDataUse",
+                  "objectLabel": "Authorization Form Data Use",
+                  "objectLabelPlural": "Authorization Form Data Uses",
+                  "pageReference": {
+                      "attributes": {
+                          "objectApiName": "AuthorizationFormDataUse",
+                          "actionName": "home"
+                      },
+                      "state": {},
+                      "type": "standard__objectPage"
+                  },
+                  "standardType": null
+              }
+          ],
+          "nextPageUrl": "/services/data/v58.0/ui-api/nav-items?formFactor=Small&page=2&pageSize=5"
+      }
+order: 1000

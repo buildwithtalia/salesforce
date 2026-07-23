@@ -1,0 +1,3 @@
+$kind: collection
+description: Get information about files, including content and sharing. Post files, update files shares link.
+order: 1000

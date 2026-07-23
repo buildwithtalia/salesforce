@@ -1,0 +1,45 @@
+$kind: http-request
+description: Runs one or more methods within one or more Apex classes, using the asynchronous test execution mechanism. In the request body, you can specify test class names and IDs, suite names and IDs, the maximum number of failed tests to allow, and the test level, as comma-separated lists or as an array. You can also indicate whether to opt out of collecting code coverage information during the test run (available in API version 43.0 and later).
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/search?q="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: ""
+    description: SOSL search statement
+body:
+  type: json
+  content: |-
+    [
+        {
+            "className": "YourClassName",
+            "testMethods": [
+                "testMethod1",
+                "testMethod2",
+                "testMethod3"
+            ]
+        },
+        {
+            "maxFailedTests": "2"
+        }
+    ]
+
+    or
+
+    [
+        {
+            "classId": "01pD0000000Fhy9IAC",
+            "testMethods": [
+                "testMethod1",
+                "testMethod2",
+                "testMethod3"
+            ]
+        },
+        {
+            "maxFailedTests": "2"
+        }
+    ]
+settings: {}
+examples: ./.resources/Tooling Search.resources/examples
+order: 7000

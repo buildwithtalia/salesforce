@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/webstores/{{webstoreId}}/carts/:webCartId/cart-items?effectiveAccountId=<EFFECTiVE_ACCOUNT_ID>"
+method: POST
+headers:
+  Content-Type: application/json
+queryParams:
+  effectiveAccountId: <EFFECTiVE_ACCOUNT_ID>
+pathVariables:
+  webCartId: ""
+body:
+  type: text
+  content: |-
+    {
+        "productId":"<PRODUCT-ID>",
+        "quantity":3,
+        "type":"Product"
+    }
+settings: {}
+order: 1000

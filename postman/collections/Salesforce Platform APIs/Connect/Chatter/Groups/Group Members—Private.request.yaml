@@ -1,0 +1,22 @@
+$kind: http-request
+description: |-
+  Request membership in a private group or get the status of requests to a join a private group.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_groups_GroupMembersRequests.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups/:GROUP_ID/members/requests"
+method: GET
+queryParams:
+  - key: status
+    value: Accepted
+    disabled: true
+    description: |-
+      Optional. If you include this parameter, results are filtered to include those that match the specified status. Valid values:
+      Accepted
+      Declined
+      Pending
+pathVariables:
+  GROUP_ID: 0F9...
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Group Members—Private.resources/examples
+order: 2000

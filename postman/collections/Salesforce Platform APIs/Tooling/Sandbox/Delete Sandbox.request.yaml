@@ -1,0 +1,9 @@
+$kind: http-request
+description: Deletes a sandbox.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/SandboxInfo/:SANDBOX_INFO_ID"
+method: DELETE
+pathVariables:
+  SANDBOX_INFO_ID: ""
+settings: {}
+examples: ./.resources/Delete Sandbox.resources/examples
+order: 6000

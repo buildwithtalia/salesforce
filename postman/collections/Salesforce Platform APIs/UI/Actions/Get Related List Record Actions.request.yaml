@@ -1,0 +1,17 @@
+$kind: http-request
+description: Get the actions on records in related lists.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/record/:RECORD_ID/related-list-record/:RELATED_LIST_RECORD_IDS"
+method: GET
+pathVariables:
+  - key: RECORD_ID
+    value: ""
+    description: Record ID
+  - key: RELATED_LIST_RECORD_IDS
+    value: ""
+    description: A related list record ID, or a comma-delimited list of related list record IDs.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get Related List Record Actions.resources/examples
+order: 5000

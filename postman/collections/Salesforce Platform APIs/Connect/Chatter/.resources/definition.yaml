@@ -1,0 +1,3 @@
+$kind: collection
+description: Get feeds, post and delete feed elements. Get, update, and delete comments. Get groups and group members. Create groups, invites, and members. Create user photos and user messages. Get user subscription information. Delete a subscription.
+order: 3000

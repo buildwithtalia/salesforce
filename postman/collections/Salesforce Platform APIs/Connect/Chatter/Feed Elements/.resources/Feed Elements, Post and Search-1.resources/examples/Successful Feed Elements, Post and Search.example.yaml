@@ -1,0 +1,415 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/feed-elements"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: |-
+      {
+         "body": {
+            "messageSegments": [
+               {
+                  "type": "Text",
+                  "text": "Chatter Feed Item Created via API: "
+               },
+               {
+                  "markupType" : "Paragraph",
+                  "type" : "MarkupBegin"
+               },
+               {
+                  "markupType" : "Bold",
+                  "type" : "MarkupBegin"
+               },
+               {
+                   "text" : "First line of text.",
+                   "type" : "Text"
+               },
+               {
+                  "markupType" : "Bold",
+                  "type" : "MarkupEnd"
+               },
+               {
+                  "markupType" : "Paragraph",
+                  "type" : "MarkupEnd"
+               },
+               {
+                  "markupType" : "Paragraph",
+                  "type" : "MarkupBegin"
+               },
+               {
+                  "text" : "&nbsp;",
+                  "type" : "Text"
+               },
+               {
+                  "markupType" : "Paragraph",
+                  "type" : "MarkupEnd"
+               },
+               {
+                  "markupType" : "Paragraph",
+                  "type" : "MarkupBegin"
+               },
+               {
+                  "text" : "Second line of text.",
+                  "type" : "Text"
+               },
+               {
+                  "markupType" : "Paragraph",
+                  "type" : "MarkupEnd"
+               },
+               {
+                  "markupType" : "Code",
+                  "type" : "MarkupBegin"
+               },
+               {
+                   "text" : "<script>\nvar i, t = 0;\nfor (i = 0; i < 5; i++) {\n   t += i;\n}\n</script>",
+                   "type" : "Text"
+               },
+               {
+                  "markupType" : "Code",
+                  "type" : "MarkupEnd"
+               },
+               {
+                  "type": "Mention",
+                  "id": "0052o00000DOJ1PAAX"
+               }
+            ]
+         },
+         "subjectId": "0012o00003PK8DSAA1",
+         "feedElementType": "FeedItem"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Wed, 22 Nov 2023 11:08:36 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "actor": {
+              "additionalLabel": null,
+              "communityNickname": "User1696423780773910041",
+              "companyName": "Salesforce",
+              "displayName": "Name",
+              "firstName": "Firstname",
+              "id": "005...",
+              "isActive": true,
+              "isInThisCommunity": true,
+              "lastName": "Name",
+              "motif": {
+                  "color": "1B96FF",
+                  "largeIconUrl": "/img/icon/profile64.png",
+                  "mediumIconUrl": "/img/icon/profile32.png",
+                  "smallIconUrl": "/img/icon/profile16.png",
+                  "svgIconUrl": null
+              },
+              "mySubscription": null,
+              "name": "Name",
+              "outOfOffice": {
+                  "message": ""
+              },
+              "photo": {
+                  "fullEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0IogXzXAXaYKJnuWCNQmXymRq?fromEmail=1",
+                  "largePhotoUrl": "https://<my_domain>/profilephoto/729.../F",
+                  "mediumPhotoUrl": "https://<my_domain>/profilephoto/729.../M",
+                  "photoVersionId": "729...",
+                  "smallPhotoUrl": "https://<my_domain>/profilephoto/729.../T",
+                  "standardEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0Ioi-dtynkoFWsl46as__TDFU?fromEmail=1",
+                  "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+              },
+              "reputation": null,
+              "title": null,
+              "type": "User",
+              "url": "/services/data/v58.0/chatter/users/005...",
+              "userType": "Internal"
+          },
+          "body": {
+              "isRichText": true,
+              "messageSegments": [
+                  {
+                      "text": "Chatter Feed Item Created via API: ",
+                      "type": "Text"
+                  },
+                  {
+                      "altText": null,
+                      "htmlTag": "p",
+                      "markupType": "Paragraph",
+                      "text": "",
+                      "type": "MarkupBegin",
+                      "url": null
+                  },
+                  {
+                      "altText": null,
+                      "htmlTag": "b",
+                      "markupType": "Bold",
+                      "text": "",
+                      "type": "MarkupBegin",
+                      "url": null
+                  },
+                  {
+                      "text": "First line of text.",
+                      "type": "Text"
+                  },
+                  {
+                      "htmlTag": "b",
+                      "markupType": "Bold",
+                      "text": "",
+                      "type": "MarkupEnd"
+                  },
+                  {
+                      "htmlTag": "p",
+                      "markupType": "Paragraph",
+                      "text": "\n",
+                      "type": "MarkupEnd"
+                  },
+                  {
+                      "altText": null,
+                      "htmlTag": "p",
+                      "markupType": "Paragraph",
+                      "text": "",
+                      "type": "MarkupBegin",
+                      "url": null
+                  },
+                  {
+                      "text": " ",
+                      "type": "Text"
+                  },
+                  {
+                      "htmlTag": "p",
+                      "markupType": "Paragraph",
+                      "text": "\n",
+                      "type": "MarkupEnd"
+                  },
+                  {
+                      "altText": null,
+                      "htmlTag": "p",
+                      "markupType": "Paragraph",
+                      "text": "",
+                      "type": "MarkupBegin",
+                      "url": null
+                  },
+                  {
+                      "text": "Second line of text.",
+                      "type": "Text"
+                  },
+                  {
+                      "htmlTag": "p",
+                      "markupType": "Paragraph",
+                      "text": "\n",
+                      "type": "MarkupEnd"
+                  },
+                  {
+                      "altText": null,
+                      "htmlTag": "code",
+                      "markupType": "Code",
+                      "text": "[Start code block]\n",
+                      "type": "MarkupBegin",
+                      "url": null
+                  },
+                  {
+                      "text": "&lt;script&gt;\nvar i, t = 0;\nfor (i = 0; i &lt; 5; i++) {\n   t += i;\n}\n&lt;/script&gt;",
+                      "type": "Text"
+                  },
+                  {
+                      "htmlTag": "code",
+                      "markupType": "Code",
+                      "text": "\n[End code block]",
+                      "type": "MarkupEnd"
+                  },
+                  {
+                      "accessible": true,
+                      "name": "Name",
+                      "record": {
+                          "additionalLabel": null,
+                          "communityNickname": "User1696423780773910041",
+                          "companyName": "Salesforce",
+                          "displayName": "Name",
+                          "firstName": "Firstname",
+                          "id": "005...",
+                          "isActive": true,
+                          "isInThisCommunity": true,
+                          "lastName": "Name",
+                          "motif": {
+                              "color": "1B96FF",
+                              "largeIconUrl": "/img/icon/profile64.png",
+                              "mediumIconUrl": "/img/icon/profile32.png",
+                              "smallIconUrl": "/img/icon/profile16.png",
+                              "svgIconUrl": null
+                          },
+                          "mySubscription": null,
+                          "name": "Name",
+                          "outOfOffice": {
+                              "message": ""
+                          },
+                          "photo": {
+                              "fullEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0IogXzXAXaYKJnuWCNQmXymRq?fromEmail=1",
+                              "largePhotoUrl": "https://<my_domain>/profilephoto/729.../F",
+                              "mediumPhotoUrl": "https://<my_domain>/profilephoto/729.../M",
+                              "photoVersionId": "729...",
+                              "smallPhotoUrl": "https://<my_domain>/profilephoto/729.../T",
+                              "standardEmailPhotoUrl": "https://<my_domain>/ncsphoto/1wsMlOd3tVC7boygqBO8wMT9KzA0D6tqzpbs-Uw0Ioi-dtynkoFWsl46as__TDFU?fromEmail=1",
+                              "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+                          },
+                          "reputation": null,
+                          "title": null,
+                          "type": "User",
+                          "url": "/services/data/v58.0/chatter/users/005...",
+                          "userType": "Internal"
+                      },
+                      "text": "@Name",
+                      "type": "Mention"
+                  }
+              ],
+              "text": "Chatter Feed Item Created via API: First line of text.\n \nSecond line of text.\n[Start code block]\n&lt;script&gt;\nvar i, t = 0;\nfor (i = 0; i &lt; 5; i++) {\n   t += i;\n}\n&lt;/script&gt;\n[End code block]@Name"
+          },
+          "capabilities": {
+              "associatedActions": {
+                  "platformActionGroups": []
+              },
+              "bookmarks": {
+                  "isBookmarkedByCurrentUser": false
+              },
+              "chatterLikes": {
+                  "isLikedByCurrentUser": false,
+                  "likesMessage": null,
+                  "myLike": null,
+                  "page": {
+                      "currentPageToken": 0,
+                      "currentPageUrl": "/services/data/v58.0/chatter/feed-elements/0D5.../capabilities/chatter-likes/items",
+                      "items": [],
+                      "nextPageToken": null,
+                      "nextPageUrl": null,
+                      "previousPageToken": null,
+                      "previousPageUrl": null,
+                      "total": 0
+                  }
+              },
+              "close": {
+                  "canContextUserUpdateIsClosed": true,
+                  "isClosed": false
+              },
+              "comments": {
+                  "page": {
+                      "currentPageToken": null,
+                      "currentPageUrl": "/services/data/v58.0/chatter/feed-elements/0D5.../capabilities/comments/items",
+                      "items": [],
+                      "nextPageToken": null,
+                      "nextPageUrl": null,
+                      "previousPageToken": null,
+                      "previousPageUrl": null,
+                      "total": 0
+                  }
+              },
+              "edit": {
+                  "isEditRestricted": false,
+                  "isEditableByMeUrl": "/services/data/v58.0/chatter/feed-elements/0D5.../capabilities/edit/is-editable-by-me",
+                  "lastEditedBy": null,
+                  "lastEditedDate": null,
+                  "latestRevision": 1,
+                  "relativeLastEditedDate": null
+              },
+              "interactions": {
+                  "count": 0
+              },
+              "mute": {
+                  "isMutedByMe": false
+              },
+              "readBy": {
+                  "isReadByMe": true,
+                  "lastReadDateByMe": "2023-11-22T11:08:37.000Z",
+                  "page": {
+                      "currentPageToken": null,
+                      "currentPageUrl": "/services/data/v58.0/chatter/feed-elements/0D5.../capabilities/read-by/items?pageSize=3",
+                      "items": [],
+                      "nextPageToken": null,
+                      "nextPageUrl": null,
+                      "previousPageToken": null,
+                      "previousPageUrl": null,
+                      "total": 0
+                  }
+              },
+              "status": {
+                  "feedEntityStatus": "Published",
+                  "isApprovableByMe": true
+              },
+              "topics": {
+                  "canAssignTopics": true,
+                  "items": []
+              },
+              "upDownVote": {
+                  "downVoteCount": 0,
+                  "myVote": "None",
+                  "upVoteCount": 0
+              }
+          },
+          "clientInfo": {
+              "applicationName": "Postman Playground",
+              "applicationUrl": null
+          },
+          "createdDate": "2023-11-22T11:08:37.000Z",
+          "event": false,
+          "feedElementType": "FeedItem",
+          "hasVerifiedComment": false,
+          "header": {
+              "isRichText": null,
+              "messageSegments": [
+                  {
+                      "motif": {
+                          "color": "1B96FF",
+                          "largeIconUrl": "/img/icon/profile64.png",
+                          "mediumIconUrl": "/img/icon/profile32.png",
+                          "smallIconUrl": "/img/icon/profile16.png",
+                          "svgIconUrl": null
+                      },
+                      "reference": {
+                          "id": "005...",
+                          "url": "/services/data/v58.0/chatter/users/005..."
+                      },
+                      "text": "Name",
+                      "type": "EntityLink"
+                  }
+              ],
+              "text": "Name"
+          },
+          "id": "0D5...",
+          "isDeleteRestricted": false,
+          "isSharable": false,
+          "modifiedDate": "2023-11-22T11:08:37.000Z",
+          "originalFeedItem": null,
+          "originalFeedItemActor": null,
+          "parent": {
+              "entityLabel": {
+                  "label": "Account",
+                  "labelPlural": "Accounts"
+              },
+              "id": "001...",
+              "motif": {
+                  "color": "5867E8",
+                  "largeIconUrl": "/img/icon/accounts64.png",
+                  "mediumIconUrl": "/img/icon/accounts32.png",
+                  "smallIconUrl": "/img/icon/accounts16.png",
+                  "svgIconUrl": null
+              },
+              "mySubscription": null,
+              "name": "Burlington Textiles Corp of America",
+              "type": "Account",
+              "url": "/services/data/v58.0/chatter/records/001..."
+          },
+          "photoUrl": "https://<my_domain>/profilephoto/729.../T",
+          "relativeCreatedDate": "Just now",
+          "type": "TextPost",
+          "url": "/services/data/v58.0/chatter/feed-elements/0D5...",
+          "visibility": "InternalUsers"
+      }
+order: 1000

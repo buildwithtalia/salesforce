@@ -1,0 +1,21 @@
+$kind: http-request
+description: |-
+  Returns all the messages for all the private conversations for the context user. Also used to search across all messages and post a message.
+  To return all private conversations for the context user, see User Conversations, General.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_users_messages_general.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/users/me/messages?text=This is a private message&recipients=<USER1_ID>,<USER2_ID>"
+method: POST
+queryParams:
+  - key: text
+    value: This is a private message
+  - key: inReplyTo
+    value: <MESSAGE_ID>
+    disabled: true
+    description: ID of an existing message that identifies which conversation this message is part of. Specify either recipients or inReplyTo. Specify one or the other, not both.
+  - key: recipients
+    value: <USER1_ID>,<USER2_ID>
+    description: Comma-separated list of User IDs
+settings: {}
+examples: ./.resources/User Messages, General.resources/examples
+order: 2000

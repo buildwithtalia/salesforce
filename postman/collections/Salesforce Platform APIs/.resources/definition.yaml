@@ -1,0 +1,168 @@
+$kind: collection
+name: Salesforce Platform APIs
+description: |-
+  The Salesforce Platform APIs collection contains 250+ requests and example responses for the following APIs:
+
+  <table><tbody><tr><td><div>Auth<br>Bulk (v1 &amp; v2)<br>Composite<br>Connect<br>CPQ<br>Einstein Prediction Service<br>Event Platform</div><div contenteditable="false"><div><div><div></div></div></div><div></div></div></td><td><div>GraphQL<br>Loyalty Management<br>Metadata<br>REST<br>Subscription Management<br>Tooling<br>UI</div><div contenteditable="false"><div><div><div></div></div></div><div></div></div></td></tr></tbody></table>
+
+  **⚠️ Disclaimer:** this collection is not covered by Salesforce support and SLAs.
+
+  ## Get Started
+
+  Click the button below and follow the instructions from the following sections:  
+  [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman">](https://god.gw.postman.com/run-collection/12721794-67cb9baa-e0da-4986-957e-88d8734647e2?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D12721794-67cb9baa-e0da-4986-957e-88d8734647e2%26entityType%3Dcollection%26workspaceId%3D34382471-0c97-40e5-a206-f947271665c4)
+
+  ### New Salesforce Users
+
+  If you are new to Salesforce, start by obtaining a free [Developer Edition Org](https://developer.salesforce.com/signup) then, follow the rest of the instructions from this documentation.
+
+  You can also watch our [Beginner's Mind YouTube series](https://www.youtube.com/playlist?list=PLgIMQe2PKPSKJ33M6CX-VLvgax7Xptcmz) for a tour of the Salesforce Platform (the last episode focuses on APIs).
+
+  ### New Postman Users
+
+  <table><tbody><tr><td><div><p>If you are new to Postman, complete this Trailhead project to setup the collection: <a rel="noreferrer noopener nofollow" href="https://trailhead.salesforce.com/content/learn/projects/quick-start-connect-postman-to-salesforce" target="_blank" url="https://trailhead.salesforce.com/content/learn/projects/quick-start-connect-postman-to-salesforce">Quick Start: Connect Postman to Salesforce</a>.<br></p><figure editor="[object Object]"><div contenteditable="false"><div><img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/quick-start-connect-postman-to-salesforce/d281185a04fbccaf4f1d37e51a3b0049_badge.png" alt=""><div><div></div><div><div></div></div><div></div><div><div></div></div><div></div><div></div><div></div><div></div></div></div></div></figure></div><div contenteditable="false"><div><div><div></div></div></div><div></div></div></td><td><div><p>If you want to learn more about Postman in general, you can also complete this optional Trailhead badge: <a rel="noreferrer noopener nofollow" href="https://trailhead.salesforce.com/content/learn/modules/postman-api-client" target="_blank" url="https://trailhead.salesforce.com/content/learn/modules/postman-api-client">Postman API Client</a>.<br></p><figure editor="[object Object]"><div contenteditable="false"><div><img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/postman-api-client/c4f5ce5df16040d22df5f1cfb77af5a6_badge.png" alt=""><div><div></div><div><div></div></div><div></div><div><div></div></div><div></div><div></div><div></div><div></div></div></div></div></figure></div><div contenteditable="false"><div><div><div></div></div></div><div></div></div></td></tr></tbody></table>
+
+  ### Regular Postman Users
+
+  If you are already familiar with Postman, here are the minimal getting started steps:
+
+  1. If using Postman Web UI, follow these [steps to set up CORS](https://github.com/forcedotcom/postman-salesforce-apis/blob/master/install-with-web.md#enable-cors-in-salesforce) in your Salesforce Org. This is not required when working with the Postman Desktop app.
+
+  2. Assign a value to the `url` collection variable based on your Salesforce Org type:
+      
+      | URL | Org Type |
+      | --- | --- |
+      | `https://test.salesforce.com` | Sandboxes or Scratch orgs. |
+      | `https://login.salesforce.com` | Production, Trailhead Playground and Developer Edition orgs. |
+      | Custom My Domain base URL | Org with a custom domain. |
+      
+  3. Click **Get New Access Token** from the collection's **Authorization** tab.
+      
+  4. When prompted to do so, log in to your Salesforce org and allow access to "Salesforce APIs Collection for Postman".
+      
+  5. Copy the value of the `instance_url` field from the token details view.
+      
+  6. Click **Use Token**.
+      
+  7. Save the value that you copied in the `_endpoint` variable.
+      
+  8. Click **Save** and you're good to go!
+      
+
+  ## Resources
+
+  Check out [the documentation](https://github.com/forcedotcom/postman-salesforce-apis) for videos and extra information on how to install, update and contribute to the collection.
+
+  We also have an [demo video](https://www.youtube.com/watch?v=W-IwW6RM4F0) on how to setup the collection.
+
+  <img src="https://i3.ytimg.com/vi/W-IwW6RM4F0/maxresdefault.jpg" width="80%">
+
+  Report issues and ask questions [here](https://github.com/forcedotcom/postman-salesforce-apis/issues).
+
+  ## Variables Reference
+
+  The collection relies on the following variables:
+
+  | Variable | Description |
+  | --- | --- |
+  | `_endpoint` | Your Salesforce Org's instance URL. |
+  | `url` | The URL used for logging in. Either:  <br>\- `https://test.salesforce.com` for sandboxes or Scratch orgs  <br>\- `https://login.salesforce.com` for production, Trailhead Playground and Developer Edition orgs  <br>\- your custom My Domain base URL. |
+  | `version` | The Salesforce API version (e.g.: 50.0). |
+  | `username` | Your username. |
+  | `password` | Your password. |
+  | `secretToken` | Your personal [security token](https://help.salesforce.com/articleView?id=user_security_token.htm). |
+  | `clientId` | Connected App client Id. |
+  | `clientSecret` | Connected App client secret. |
+  | `redirectUrl` | Connected App redirect URL for OAuth 2.0. |
+  | `initAccessToken` | Initial access token for dynamic Connected App registration. |
+  | `site` | Community suffix when connecting with an Experience Cloud user. |
+
+  Only a few of these variables are mandatory. The authentication requests will automatically register and set extra "private" variables identified with a `_` prefix (e.g.: `_accessToken`, `_orgId`, `_userId`...).
+variables:
+  - key: url
+    value: https://login.salesforce.com
+    secret: false
+  - key: version
+    value: "66.0"
+    secret: false
+  - key: username
+    value: ""
+    secret: false
+  - key: password
+    value: ""
+    secret: false
+  - key: secretToken
+    value: ""
+    secret: false
+  - key: clientId
+    secret: true
+  - key: clientSecret
+    value: ""
+    secret: false
+  - key: redirectUrl
+    value: ""
+    secret: false
+  - key: initAccessToken
+    value: ""
+    secret: false
+  - key: site
+    value: ""
+    secret: false
+  - key: _accessToken
+    value: ""
+    secret: false
+  - key: _endpoint
+    value: ""
+    secret: false
+  - key: _userId
+    value: ""
+    secret: false
+  - key: _appId
+    value: ""
+    secret: false
+  - key: _consumerId
+    value: ""
+    secret: false
+  - key: _tokenId
+    value: ""
+    secret: false
+  - key: _orgId
+    value: ""
+    secret: false
+  - key: _jobId
+    value: ""
+    secret: false
+  - key: webstoreId
+    value: ""
+    secret: false
+  - key: _deviceCode
+    value: ""
+    secret: false
+  - key: auth_secret_12ya
+    secret: true
+  - key: salesforce_consumer_key_0bm0
+    secret: true
+scripts:
+  - type: http:beforeRequest
+    code: |
+      // Specifying Postman as the client for Salesforce logs 
+      pm.request.headers.add({key: 'Sforce-Call-Options', value: 'client=postman' });
+    language: text/javascript
+auth:
+  - id: 11f63a81-e2f1-4bee-8372-dd096322f8b0
+    type: oauth2
+    name: oauth2 auth
+    credentials:
+      clientId: "{{salesforce_consumer_key_0bm0}}"
+      accessTokenUrl: https://login.salesforce.com/services/oauth2/token
+      authUrl: https://login.salesforce.com/services/oauth2/authorize
+      tokenName: access_token
+      addTokenTo: header
+      challengeAlgorithm: S256
+      clientSecret: "{{auth_secret_12ya}}"
+      scope: api
+      client_authentication: body
+      grant_type: authorization_code
+      useBrowser: true
+      username: "{{username}}"
+      password: "{{password}}"

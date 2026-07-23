@@ -1,0 +1,23 @@
+$kind: http-request
+description: Lists all the external client apps for the current org. See [OAuth Usage](https://developer.salesforce.com/docs/atlas.en-us.246.0.chatterapi.meta/chatterapi/connect_resources_usage.htm).
+url: "{{url}}{{site}}/services/data/v{{version}}/apps/oauth/usage?page=0&pageSize=100"
+method: GET
+headers:
+  - key: Authorization
+    value: Bearer <token>
+    description: Replace <token> with your access token
+queryParams:
+  - key: page
+    value: "0"
+    description: Number of the page you want returned. Starts at 0. If you don’t specify a value or if you specify 0, the first page is returned.
+  - key: pageSize
+    value: "100"
+    description: "Number of usage entries per page. Defaults to 100.\t"
+auth:
+  type: noauth
+settings:
+  followOriginalHttpMethod: false
+  disableUrlEncoding: false
+  disabledSystemHeaders: []
+examples: ./.resources/OAuth Usage.resources/examples
+order: 1000

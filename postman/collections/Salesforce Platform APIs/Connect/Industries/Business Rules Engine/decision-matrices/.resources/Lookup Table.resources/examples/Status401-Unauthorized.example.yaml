@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-matrices/:matrixUniqueName"
+  method: POST
+  pathVariables:
+    - key: matrixUniqueName
+      value: blah
+      description: Matrix Unique Name
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  headers:
+    Date: Thu, 07 Sep 2023 11:49:04 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    WWW-Authenticate: Token
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "message": "Session expired or invalid",
+              "errorCode": "INVALID_SESSION_ID"
+          }
+      ]
+order: 1000

@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:EventApiName/"
+method: POST
+pathVariables:
+  EventApiName: Carbon_Comparison__e
+body:
+  type: json
+  content: |-
+    {
+        "Annual_Mileage__c": 12000,
+        "Current_Vehicle__c": "Fast car",
+        "Model_Year__c": 2019
+    }
+settings: {}
+examples: ./.resources/Publish single event.resources/examples
+order: 1000

@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  Integrate mobile apps, intranet sites, and third-party web applications with Salesforce using Connect REST API. Responses are localized, structured for presentation, and can be filtered to contain only what the app needs.
+
+  Connect REST API provides programmatic access to B2B Commerce, CMS managed content, Experience Cloud sites, files, notifications, topics, and more. Use Connect REST API to display Chatter feeds, users, and groups, especially in mobile applications.
+
+  📚 [Connect REST API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
+order: 5000

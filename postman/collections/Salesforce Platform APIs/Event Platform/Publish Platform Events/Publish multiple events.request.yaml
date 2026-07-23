@@ -1,0 +1,33 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/composite/"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "allOrNone": true,
+        "compositeRequest": [
+            {
+                "method": "POST",
+                "url": "/services/data/v{{version}}/sobjects/Carbon_Comparison__e",
+                "referenceId": "event1",
+                "body": {
+                    "Annual_Mileage__c": 12000,
+                    "Current_Vehicle__c": "Fast car 1",
+                    "Model_Year__c": 2019
+                }
+            },
+            {
+                "method": "POST",
+                "url": "/services/data/v{{version}}/sobjects/Carbon_Comparison__e",
+                "referenceId": "event2",
+                "body": {
+                    "Annual_Mileage__c": 12000,
+                    "Current_Vehicle__c": "Fast car 2",
+                    "Model_Year__c": 2019
+                }
+            }
+        ]
+    }
+settings: {}
+order: 2000

@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/actions/custom/runExpressionSet/:expressionSetAPIName"
+  method: POST
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: expressionSetAPIName
+      value: myExpressionSet
+      description: The API name of an expression set is unique within your Salesforce instance.
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Thu, 07 Sep 2023 09:06:44 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=3/15000
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "message": "The HTTP entity body is required, but this request has no entity body.",
+              "errorCode": "JSON_PARSER_ERROR"
+          }
+      ]
+order: 3000

@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  Request membership in a private group or get the status of requests to a join a private group.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_groups_GroupMembersRequests.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups/:GROUP_ID/members/requests"
+method: POST
+pathVariables:
+  GROUP_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Group Members—Private - POST.resources/examples
+order: 6000

@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/EventRelayConfig/:EVENT_RELAY_CONFIG_ID"
+method: GET
+pathVariables:
+  EVENT_RELAY_CONFIG_ID: 7k2RM000000008ZYAQ
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+order: 5000

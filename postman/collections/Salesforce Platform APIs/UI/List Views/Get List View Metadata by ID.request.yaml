@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get list view metadata by list view ID using URL parameters.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/list-info/:LIST_VIEW_ID"
+method: GET
+pathVariables:
+  - key: LIST_VIEW_ID
+    value: ""
+    description: The ID of a list view.
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get List View Metadata by ID.resources/examples
+order: 5000

@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/ManagedEventSubscription/:managedEventSubscriptionId"
+method: PATCH
+pathVariables:
+  managedEventSubscriptionId: ""
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Managed_Sub_OpportunityChangeEvent",
+        "Metadata": {
+            "state": "STOP"
+        }
+    }
+settings:
+  strictSSL: false
+order: 5000

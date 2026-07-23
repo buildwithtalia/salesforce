@@ -1,0 +1,36 @@
+owner: "48916573"
+team: "1339093"
+lastUpdatedBy: "48916573"
+lastRevision: 1784570649000
+name: salesforce_prod
+color: null
+values:
+  - key: _endpoint
+    value: ""
+    enabled: true
+  - key: _accessToken
+    value: ""
+    enabled: true
+  - key: url
+    value: ""
+    enabled: true
+  - key: site
+    value: ""
+    enabled: true
+  - key: clientId
+    enabled: true
+    secret: true
+  - key: username
+    value: ""
+    enabled: true
+  - key: clientSecret
+    value: ""
+    enabled: true
+  - key: password
+    value: ""
+    enabled: true
+  - key: secretToken
+    value: ""
+    enabled: true
+createdAt: 2026-07-20T17:34:55.000Z
+updatedAt: 2026-07-20T18:04:09.000Z

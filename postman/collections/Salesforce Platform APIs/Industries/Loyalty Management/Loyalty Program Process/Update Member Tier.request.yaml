@@ -1,0 +1,37 @@
+$kind: http-request
+description: |-
+  [Update Member Tier](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_update_tier.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+method: POST
+queryParams:
+  - key: journalTypeId
+    value: ""
+    disabled: true
+pathVariables:
+  loyaltyProgramName: ""
+  processName: ""
+body:
+  type: json
+  content: |-
+    {
+       "processParameters":[
+          {
+             "MemberId":"0lMRM0000004GBs2AM",
+             "NewTier":"Gold",
+             "ReasonForChange":"update tier"
+          }
+       ]
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      //pm.variables.set('loyaltyProgramName','xyz');
+      pm.variables.set('processName','TierProcessing');
+    language: text/javascript
+settings: {}
+examples: ./.resources/Update Member Tier.resources/examples
+order: 10000

@@ -1,0 +1,36 @@
+$kind: http-request
+description: |-
+  A list of all the groups in the organization. Get information about groups or create a group.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_groups_ListOfGroups.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups?name=New Chatter Group  (Private Access)&visibility=PrivateAccess&description=Created via API&information=Private Information&isArchived=false&isAutoArchiveDisabled=false&isBroadcast=false&canHaveChatterGuests\t=true"
+method: POST
+queryParams:
+  - key: name
+    value: New Chatter Group  (Private Access)
+  - key: visibility
+    value: PrivateAccess
+    description: |-
+      PrivateAccess—Only members of the group can see posts to this group.
+      PublicAccess—All users within the community can see posts to this group.
+      Unlisted—Reserved for future use.
+  - key: description
+    value: Created via API
+  - key: information
+    value: Private Information
+    description: If the group is private, the “Information” section is visible only to members.
+  - key: isArchived
+    value: "false"
+  - key: isAutoArchiveDisabled
+    value: "false"
+    description: true if automatic archiving is turned off for the group, false otherwise. Defaults to false. If true, if there are no posts or comments for 90 days the group is archived.
+  - key: isBroadcast
+    value: "false"
+    description: true if only group owners and managers can create posts in the group, false otherwise.
+  - key: "canHaveChatterGuests\t"
+    value: "true"
+    description: true if this group allows Chatter customers, false otherwise. After this property is set to true, it cannot be set to false.
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/List of Groups - POST.resources/examples
+order: 3000

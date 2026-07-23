@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/:SOBJECT_API_NAME"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+body:
+  type: json
+  content: |-
+    {
+    	"Name":"test"
+    }
+settings: {}
+order: 11000

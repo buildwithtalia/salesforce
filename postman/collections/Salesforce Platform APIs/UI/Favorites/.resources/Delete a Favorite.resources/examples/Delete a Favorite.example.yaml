@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/favorites/:FAVORITE_ID"
+  method: DELETE
+  pathVariables:
+    - key: FAVORITE_ID
+      value: 0MV4H0000004qIeWAI
+      description: The ID of a favorite
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Fri, 06 Oct 2023 10:09:14 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+  body:
+    type: text
+    content: ""
+order: 1000

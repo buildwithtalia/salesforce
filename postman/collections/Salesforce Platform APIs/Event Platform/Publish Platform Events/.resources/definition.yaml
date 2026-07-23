@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  This folder contains requests to publish platform event messages using REST, the REST composite resource, and SOAP API.
+
+  To learn more about platform events, see the [Platform Events Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).
+order: 2000

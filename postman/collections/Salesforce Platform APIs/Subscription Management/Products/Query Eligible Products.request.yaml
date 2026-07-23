@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  This query returns all the products that have a related Product Selling Model Option. To price a product with Subscription Management, the product must have a related Product Selling Model Option.
+
+  For more information, see [Set Up Products and Pricing in Subscription Management](https://help.salesforce.com/s/articleView?id=sf.subscription_mgmt_products_and_pricing_setup.htm).
+url: "{{_endpoint}}/services/data/v{{version}}/query/?q=SELECT Product2.Name, ProductSellingModelId, Product2.Id FROM ProductSellingModelOption Group By Product2.Name, Product2.Id, ProductSellingModelId "
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  q: "SELECT Product2.Name, ProductSellingModelId, Product2.Id FROM ProductSellingModelOption Group By Product2.Name, Product2.Id, ProductSellingModelId "
+settings: {}
+order: 1000

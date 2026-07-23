@@ -1,0 +1,89 @@
+$kind: http-request
+description: |-
+  # Decision Matrix (Lookup Table)
+
+  Performs a lookup on decision matrix rows based on the input values provided, and returns the row’s output.Resource
+
+  ```
+  /connect/business-rules/decision-matrices/${matrixName}
+
+   ```
+
+  Resource Example
+
+  ```
+  https://yourInstance.salesforce.com/services/data/vXX.X/connect
+  /business-rules/decision-matrices/InsurancePremium
+
+   ```
+
+  Available version
+
+  55.0
+
+  Requires Chatter
+
+  No
+
+  HTTP methods
+
+  POST
+
+  Request body for POST
+
+  JSON example
+
+  ```
+  {
+    "inputs": [
+      {
+        "input": [
+          {
+            "name": "premium",
+            "value": "2400"
+          }
+        ]
+      }
+    ],
+    "options": {
+      "effectiveDate": "2022-12-03T10:15:30Z"
+    }
+  }
+
+   ```
+
+  Here, premium is a column header in the matrix, and 2400 is a value of a cell in the column.Properties
+
+  | Name | Type | Description | Required or Optional | Available Version |
+  | --- | --- | --- | --- | --- |
+  | inputs | [Decision Matrix Input](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_requests_decision_matrix_input.htm) | List of inputs passed to a decision matrix. An input may contain multiple variables. | Required | 55.0 |
+  | options | [Decision Matrix Options Input](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_requests_decision_matrix_options.htm) | The lookup options for a decision matrix. | Optional | 55.0 |
+
+  Response body for POST
+
+  [Decision Matrix Lookup Result](https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/connect_responses_bre_decision_matrix_lookup_result.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-matrices/:matrixUniqueName"
+method: POST
+pathVariables:
+  - key: matrixUniqueName
+    value: myDecisionMatrix
+    description: The value of Unique Name is the unique identifier of the record, which is sourced from the name of a decision matrix.
+body:
+  type: json
+  content: |-
+    {
+        "inputs": [
+            {
+                "input": [
+                    {
+                        "name": "myColumnInput",
+                        "value": "One"
+                    }
+                ]
+            }
+        ],
+        "options": {}
+    }
+settings: {}
+examples: ./.resources/Lookup Table.resources/examples
+order: 1000

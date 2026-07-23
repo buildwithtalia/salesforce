@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  Returns information about the objects with which the specified file has been shared. Objects can be users, groups, or records.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_files_shares.htm
+url: "{{_endpoint}}/services/data/v{{version}}/connect/files/:FILE_ID/file-shares"
+method: GET
+pathVariables:
+  FILE_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/File Shares.resources/examples
+order: 5000

@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  To learn about channels and features for Change Data Capture, check out these resources in the _Change Data Capture Developer Guide._
+
+  - [Compose Streams of Change Data Capture Notifications with Custom Channels](https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_custom_channel.htm)
+  - [Enrich Change Events with Extra Fields](https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_enrich_intro.htm)
+  - [Filter Your Stream of Change Events with Channels](https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_filter_section.htm)
+order: 1000

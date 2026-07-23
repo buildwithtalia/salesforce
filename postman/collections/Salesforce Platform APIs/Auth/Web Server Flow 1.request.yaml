@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/authorize?response_type=code&client_id={{clientId}}&redirect_uri={{redirectUrl}}&scope=full refresh_token"
+method: GET
+queryParams:
+  response_type: code
+  client_id: "{{clientId}}"
+  redirect_uri: "{{redirectUrl}}"
+  scope: full refresh_token
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/Web Server Flow 1.resources/examples
+order: 6000

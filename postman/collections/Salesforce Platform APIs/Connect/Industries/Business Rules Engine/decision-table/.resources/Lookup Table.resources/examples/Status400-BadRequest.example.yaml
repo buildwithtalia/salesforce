@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/business-rules/decision-table/:decisionTableId"
+  method: POST
+  pathVariables:
+    - key: decisionTableId
+      value: 0lIHo000000LFC6MAO
+      description: Decision Table Id
+  body:
+    type: json
+    content: |-
+      {
+          "conditions": {
+              "conditionsList": [
+                  {
+                      "fieldName": "state__c",
+                      "value": "MH"
+                  },
+                  {
+                      "fieldName": "validity__c",
+                      "value": 30
+                  }
+              ]
+          }
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Tue, 19 Sep 2023 12:16:33 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "errorCode": "INVALID_ID_FIELD",
+              "message": "Invalid identifier: 0lIHo000000LFC6MAO"
+          }
+      ]
+order: 1000

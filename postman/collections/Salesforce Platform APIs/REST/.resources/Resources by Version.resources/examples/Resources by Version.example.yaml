@@ -1,0 +1,78 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/"
+  method: GET
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 26 Sep 2023 13:29:43 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=3/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "tooling": "/services/data/v58.0/tooling",
+          "metadata": "/services/data/v58.0/metadata",
+          "eclair": "/services/data/v58.0/eclair",
+          "folders": "/services/data/v58.0/folders",
+          "prechatForms": "/services/data/v58.0/prechatForms",
+          "contact-tracing": "/services/data/v58.0/contact-tracing",
+          "jsonxform": "/services/data/v58.0/jsonxform",
+          "chatter": "/services/data/v58.0/chatter",
+          "payments": "/services/data/v58.0/payments",
+          "tabs": "/services/data/v58.0/tabs",
+          "appMenu": "/services/data/v58.0/appMenu",
+          "quickActions": "/services/data/v58.0/quickActions",
+          "queryAll": "/services/data/v58.0/queryAll",
+          "commerce": "/services/data/v58.0/commerce",
+          "wave": "/services/data/v58.0/wave",
+          "iot": "/services/data/v58.0/iot",
+          "analytics": "/services/data/v58.0/analytics",
+          "search": "/services/data/v58.0/search",
+          "smartdatadiscovery": "/services/data/v58.0/smartdatadiscovery",
+          "identity": "https://login.salesforce.com/id/00DB0000000DFgjMAG/005B0000003TOI6IAO",
+          "composite": "/services/data/v58.0/composite",
+          "parameterizedSearch": "/services/data/v58.0/parameterizedSearch",
+          "fingerprint": "/services/data/v58.0/fingerprint",
+          "theme": "/services/data/v58.0/theme",
+          "nouns": "/services/data/v58.0/nouns",
+          "domino": "/services/data/v58.0/domino",
+          "event": "/services/data/v58.0/event",
+          "serviceTemplates": "/services/data/v58.0/serviceTemplates",
+          "recent": "/services/data/v58.0/recent",
+          "connect": "/services/data/v58.0/connect",
+          "licensing": "/services/data/v58.0/licensing",
+          "limits": "/services/data/v58.0/limits",
+          "process": "/services/data/v58.0/process",
+          "dedupe": "/services/data/v58.0/dedupe",
+          "async-queries": "/services/data/v58.0/async-queries",
+          "query": "/services/data/v58.0/query",
+          "jobs": "/services/data/v58.0/jobs",
+          "match": "/services/data/v58.0/match",
+          "localizedvalue": "/services/data/v58.0/localizedvalue",
+          "mobile": "/services/data/v58.0/mobile",
+          "emailConnect": "/services/data/v58.0/emailConnect",
+          "consent": "/services/data/v58.0/consent",
+          "tokenizer": "/services/data/v58.0/tokenizer",
+          "compactLayouts": "/services/data/v58.0/compactLayouts",
+          "knowledgeManagement": "/services/data/v58.0/knowledgeManagement",
+          "sobjects": "/services/data/v58.0/sobjects",
+          "actions": "/services/data/v58.0/actions",
+          "support": "/services/data/v58.0/support"
+      }
+order: 1000

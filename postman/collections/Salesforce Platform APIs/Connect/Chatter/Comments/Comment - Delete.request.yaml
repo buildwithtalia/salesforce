@@ -1,0 +1,12 @@
+$kind: http-request
+description: |-
+  Get information about, edit, or delete a comment.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_comments_specific.htm#connect_resources_comments_specific
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/comments/:COMMENT_ID"
+method: DELETE
+pathVariables:
+  COMMENT_ID: ""
+settings: {}
+examples: ./.resources/Comment - Delete.resources/examples
+order: 3000

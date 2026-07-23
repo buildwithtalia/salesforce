@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/asset-management/assets/collection/actions/initiate-amend-quantity"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "assetIds": {
+        "assetIdArray": [
+          "{{assetID}}"
+        ]
+      },
+      "startDate": "2023-08-18T00:00:00",
+      "quantityChange": 5,
+      "amendmentOutputType": "order"
+    }
+settings: {}
+order: 4000

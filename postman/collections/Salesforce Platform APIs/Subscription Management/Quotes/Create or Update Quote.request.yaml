@@ -1,0 +1,74 @@
+$kind: http-request
+description: |-
+  This example creates a quote for the following products.
+
+  - 5 Virtual Routers sold on a 1-year termed subscription at $35/item
+  - 1 Bronze Service Level Agreement sold on an evergreen subscription at $10/month
+      
+
+  See [place quote](https://developer.salesforce.com/docs/revenue/subscription-management/references/quotes?meta=Create+or+update+a+quote+with+place+quote).
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/quotes/actions/place"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "pricingPref": "skip",
+        "graph": {
+            "graphId": "refQuoteGraph",
+            "records": [
+                {
+                    "referenceId": "refQuote",
+                    "record": {
+                        "attributes": {
+                            "type": "Quote",
+                            "method": "POST"
+                        },
+                        "Name": "Quote_{{$randomCompanyName}}",
+                        "Pricebook2Id": "{{standardPricebook}}"                    
+                    }
+                },
+                {
+                    "referenceId": "refQuoteLineItem1",
+                    "record": {
+                        "attributes": {
+                            "type": "QuoteLineItem",
+                            "method": "POST"
+                        },
+                        "QuoteId": "@{refQuote.id}",
+                        "PricebookEntryId": "{{VirtualRouterTermedPBE}}",
+                        "Product2Id": "{{VirtualRouterProduct}}",
+                        "Quantity": 5.0,
+                        "UnitPrice": 35.0,
+                        "PeriodBoundary": "Anniversary",
+                        "BillingFrequency": "Monthly",
+                        "StartDate": "2023-01-01",
+                        "EndDate": "2024-01-01"                    
+                    }
+                },
+                {
+                    "referenceId": "refQuoteLineItem2",
+                    "record": {
+                        "attributes": {
+                            "type": "QuoteLineItem",
+                            "method": "POST"
+                        },
+                        "QuoteId": "@{refQuote.id}",
+                        "PricebookEntryId": "{{SLABronzeEvergrnMonthPBE}}",
+                        "Product2Id": "{{SLA_BronzeProduct}}",
+                        "Quantity": 1.0,
+                        "UnitPrice": 10.0,
+                        "PeriodBoundary": "DayOfPeriod",
+                        "PeriodBoundaryDay": 4,
+                        "BillingFrequency": "Monthly",
+                        "StartDate": "2023-01-01"
+                    }
+                }
+
+            ]
+        }
+    }
+settings: {}
+order: 1000

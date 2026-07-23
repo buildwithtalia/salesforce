@@ -1,0 +1,19 @@
+$kind: http-request
+description: Returns the list of list views for the specified sObject, including the ID and other basic information about each list view. You can also get basic information for a specific list view by ID.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/listviews/"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: limit
+    value: ""
+    disabled: true
+    description: The maximum number of records to return, between 1-2000. The default value is 25.
+  - key: offset
+    value: ""
+    disabled: true
+    description: The first record to return. Use this parameter to paginate the results. The default value is 1.
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+order: 1000

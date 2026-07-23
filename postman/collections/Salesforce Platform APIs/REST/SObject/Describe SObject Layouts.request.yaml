@@ -1,0 +1,10 @@
+$kind: http-request
+description: Returns a list of layouts and descriptions. The list of fields and the layout name are returned.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/describe/layouts/"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+order: 17000

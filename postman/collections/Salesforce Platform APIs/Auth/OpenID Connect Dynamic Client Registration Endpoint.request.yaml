@@ -1,0 +1,36 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/register"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer {{init_access_token}}
+body:
+  type: text
+  content: |-
+    {
+        "redirect_uris": [
+            "http://localhost"
+        ],
+        "response_types": [
+            "code",
+            "token",
+            "id_token"
+        ],
+        "grant_types": [
+            "authorization_code",
+            "implicit",
+            "refresh_token"
+        ],
+        "application_type": "web",
+        "contacts": [
+            "abc@sf.com",
+            "ve7jtb@example.org"
+        ],
+        "client_name": "Example Olivier"
+    }
+auth:
+  type: noauth
+settings: {}
+examples: ./.resources/OpenID Connect Dynamic Client Registration Endpoint.resources/examples
+order: 19000

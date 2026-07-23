@@ -1,0 +1,21 @@
+$kind: http-request
+description: |-
+  [Game Reward](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_game_result.htm)
+
+  NOTE:
+
+  In the Pre-request. Script Tab, make changes in the variables value accordingly with the real Process Name to invoke.
+url: "{{_endpoint}}/services/data/v{{version}}/game/gameparticipantreward/:gameParticipantRewardId/game-reward"
+method: GET
+pathVariables:
+  gameParticipantRewardId: ""
+body:
+  type: json
+  content: ""
+scripts:
+  - type: beforeRequest
+    code: |
+      pm.variables.set('gameParticipantRewardId','12345');
+    language: text/javascript
+settings: {}
+order: 2000

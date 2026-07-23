@@ -1,0 +1,27 @@
+$kind: collection
+description: |-
+  # [Decision Matrices for Developers](https://help.salesforce.com/s/articleView?id=sf.decision_matrices_for_developers.htm)
+
+  Developers in your Salesforce org can employ decision matrix developer resources to use and extend decision matrices.
+
+  ### REQUIRED EDITIONS
+
+  | Available in: Lightning Experience |
+  | Available in: **Enterprise**, **Unlimited**, and **Developer** Editions for Industries clouds that have Business Rules Engine enabled |
+
+  ## Connect REST API
+
+  - [Look up decision matrices](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_decision_matrix.htm)
+      
+  - [Export decision matrix versions to DMN files](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/connect_resources_bre_decision_model_entity.htm)
+      
+
+  ## Metadata API
+
+  - [Create decision matrices](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/meta_decisionmatrixdefinition.htm)
+      
+
+  ## Invocable Actions
+
+  - [Invoke a decision matrix in a flow using the decision matrix action](https://developer.salesforce.com/docs/atlas.en-us.246.0.industries_reference.meta/industries_reference/actions_obj_decision_matrix.htm)
+order: 3000

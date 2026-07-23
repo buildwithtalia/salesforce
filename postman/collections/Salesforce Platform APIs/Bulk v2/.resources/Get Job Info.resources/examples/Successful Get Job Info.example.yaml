@@ -1,0 +1,48 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest/{{_jobId}}"
+  method: GET
+  headers:
+    - key: Content-Type
+      value: application/json
+      disabled: true
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Nov 2023 15:03:34 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=8/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "id": "750...",
+          "operation": "insert",
+          "object": "Asset",
+          "createdById": "005...",
+          "createdDate": "<datetime>",
+          "systemModstamp": "<datetime>",
+          "state": "JobComplete",
+          "concurrencyMode": "Parallel",
+          "contentType": "CSV",
+          "apiVersion": 58,
+          "jobType": "V2Ingest",
+          "lineEnding": "LF",
+          "columnDelimiter": "COMMA",
+          "numberRecordsProcessed": 1,
+          "numberRecordsFailed": 1,
+          "retries": 0,
+          "totalProcessingTime": 100,
+          "apiActiveProcessingTime": 43,
+          "apexProcessingTime": 0
+      }
+order: 1000

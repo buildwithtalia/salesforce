@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/:SOBJECT_API_NAME"
+method: GET
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+examples: ./.resources/Get Tooling Metadata SObject.resources/examples
+order: 9000

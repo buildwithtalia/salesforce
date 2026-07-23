@@ -1,0 +1,122 @@
+$kind: http-request
+description: |-
+  Modify the schedule or payment instrument metadata on an existing active gift commitment.
+
+  ## Required Attributes:
+
+  - {commitmentId}
+      
+  - amount
+      
+  - transactionPeriod (Monthly, Weekly, Yearly, etc.)
+      
+  - startDate
+      
+  - paymentInstrument.type
+      
+
+  All other attributes are optional can be left as an empty string or just removed from the request body entirely. The only exceptions to this are:
+
+  - CustomFields collections - These cannot be left in the request body as an empty collection or with an empty string for the FieldName.
+      
+
+  ## Validated Property Formats (an empty string is considered valid)
+
+  - DateTime - YYYY-MM-DDTHH:MM:SSZ
+      
+  - Date - YYYY-MM-DD
+      
+  - Email - a valid formatted email address
+      
+
+  ### Other Attributes
+
+  - OutreachSource -- This is optional. Be sure to create the OutreachSourceCode record in the system if passing a value
+      
+  - Will accept either an OutreachSourceCode.id (SalesforceId) or an OutreachSourceCode.Code.
+      
+
+  ### Custom Fields
+
+  - The field_value can be a text string (inc. for a date data-type) or a numeric value (without quotes)
+      
+  - Do not include an empty collection or an empty fieldName in the request body
+url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/:commitmentId"
+method: PATCH
+pathVariables:
+  commitmentId: ""
+body:
+  type: json
+  content: |-
+    {
+    "amount": 150.25,
+      "transactionPeriod": "monthly",
+      "transactionInterval": 3,
+      "transactionDay": "5",
+      "startDate": "2024-07-06",
+      "endDate": "2024-07-06",
+      "campaign": {
+        "id": "<CAMPAIGN_ID>"
+      },
+      "outreachSourceCode": {
+        "id": "<SOURCE_CODE_ID>",
+        "sourceCode": "AnimalEmailCampaign2023"
+      },
+      "donor": {
+        "donorType": "individual",
+        "organizationName": "mini cat town",
+        "firstName": "David",
+        "lastName": "Taylor",
+        "phone": "510-434-8920",
+        "email": "davidtaylor@salesforce.com",
+        "address": [
+          {
+            "addressType": "mailing",
+            "street": "123 Main Street",
+            "city": "Oakland",
+            "state": "CA",
+            "postalCode": "94610",
+            "country": "US"
+          }
+        ],
+        "accountCustomFields": [
+          {
+            "fieldName": "string",
+            "fieldValue": "string"
+          }
+        ]
+      },
+      "paymentInstrument": {
+        "type": "credit card",
+        "accountHolderName": "david taylor",
+        "expiryMonth": "10",
+        "expiryYear": "2026",
+        "last4": "4585",
+        "cardBrand": "visa",
+        "bankName": "chase",
+        "digitalWalletProvider": "apple pay",
+        "bankAccountHolderType": "primary",
+        "bankAccountType": "checking",
+        "bankAccountNumber": "123456",
+        "bankCode": "HBUK",
+        "gatewayName": "stripe",
+        "processorName": "classy",
+        "processorPaymentReference": "string",
+        "gatewayReference": "string"
+      },
+      "giftCommitmentCustomFields": [
+        {
+          "fieldName": "string",
+          "fieldValue": "string"
+        }
+      ],
+      "giftCommitmentScheduleCustomFields": [
+        {
+          "fieldName": "string",
+          "fieldValue": "string"
+        }
+      ]
+    }
+settings: {}
+examples: ./.resources/Update Commitments.resources/examples
+order: 3000

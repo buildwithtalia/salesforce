@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/query?isPkChunkingEnabled=false&jobType=&concurrencyMode=&queryLocator="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: isPkChunkingEnabled
+    value: "false"
+    description: If set to true, the request only returns information about jobs where PK Chunking is enabled
+  - key: jobType
+    value: ""
+    description: BigObjectIngest Classic V2Query
+  - key: concurrencyMode
+    value: ""
+    description: serial parallel
+  - key: queryLocator
+    value: ""
+    description: use the value from the nextRecordsUrl from the previous set
+settings: {}
+examples: ./.resources/Get All Query Jobs.resources/examples
+order: 3000

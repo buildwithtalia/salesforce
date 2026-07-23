@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/asset-management/assets/collection/actions/initiate-renewal"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "assetIds": {
+        "assetIdArray": [
+          "{{assetID}}"
+        ]
+      }
+    }
+settings: {}
+order: 3000

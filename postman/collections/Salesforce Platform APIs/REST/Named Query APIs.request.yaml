@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Use Named Query APIs to create custom Salesforce Object Query Language (SOQL) queries that you can expose in REST API calls.
+
+  Follow [these instructions](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_named_query_setup.htm) to create your first Named Query API and call it in Postman with this request template.
+url: "{{_endpoint}}/services/data/v{{version}}/named/query/:NQ_API_NAME"
+method: GET
+pathVariables:
+  - key: NQ_API_NAME
+    value: ""
+    description: The name of the Named Query API you want to call.
+settings: {}
+examples: ./.resources/Named Query APIs.resources/examples
+order: 23000

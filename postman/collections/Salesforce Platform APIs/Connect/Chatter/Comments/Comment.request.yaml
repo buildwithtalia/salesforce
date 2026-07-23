@@ -1,0 +1,29 @@
+$kind: http-request
+description: |-
+  Get information about, edit, or delete a comment.
+  To post a comment, use Feed Elements Capability, Comments Items.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_comments_specific.htm#connect_resources_comments_specific
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/comments/:COMMENT_ID"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  COMMENT_ID: 0D7...
+body:
+  type: json
+  content: |-
+    {
+        "body": {
+            "messageSegments": [
+                {
+                    "type": "Text",
+                    "text": "Editing a comment"
+                }
+            ]
+        }
+    }
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Comment.resources/examples
+order: 1000

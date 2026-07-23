@@ -1,0 +1,82 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/composite/graph"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "graphs": [
+              {
+                  "graphId": "graph1",
+                  "compositeRequest": [
+                      {
+                          "method": "POST",
+                          "url": "/services/data/v{{version}}/sobjects/Account/",
+                          "referenceId": "newAccount",
+                          "body": {
+                              "Name": "ACME Inc."
+                          }
+                      },
+                      {
+                          "method": "POST",
+                          "url": "/services/data/v{{version}}/sobjects/Contact/",
+                          "referenceId": "newContact",
+                          "body": {
+                              "FirstName": "John",
+                              "LastName": "Doe",
+                              "AccountId": "@{newAccount.id}"
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    cache-control: no-cache,must-revalidate,max-age=0,no-store,private
+    content-type: application/json;charset=UTF-8
+  body:
+    type: json
+    content: |-
+      {
+          "graphs": [
+              {
+                  "graphId": "graph1",
+                  "graphResponse": {
+                      "compositeResponse": [
+                          {
+                              "body": {
+                                  "id": "0014H00002x6HUhQAM",
+                                  "success": true,
+                                  "errors": []
+                              },
+                              "httpHeaders": {
+                                  "Location": "/services/data/v50.0/sobjects/Account/0014H00002x6HUhQAM"
+                              },
+                              "httpStatusCode": 201,
+                              "referenceId": "newAccount"
+                          },
+                          {
+                              "body": {
+                                  "id": "0034H00002JsInQQAV",
+                                  "success": true,
+                                  "errors": []
+                              },
+                              "httpHeaders": {
+                                  "Location": "/services/data/v50.0/sobjects/Contact/0034H00002JsInQQAV"
+                              },
+                              "httpStatusCode": 201,
+                              "referenceId": "newContact"
+                          }
+                      ]
+                  },
+                  "isSuccessful": true
+              }
+          ]
+      }
+order: 1000

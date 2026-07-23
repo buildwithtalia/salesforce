@@ -1,0 +1,10 @@
+$kind: collection
+description: |-
+  Generate an OpenAPI 3.0 Schema (OAS) document for selected sObjects REST API resources. The generated schema is specific to your Salesforce Org and reflects your customizations.
+
+  This is a [Beta feature](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/openapi_beta.htm) that requires an activation step before it can be used.
+
+  Once the feature is enabled, run these requests to generate an OpenAPI schema:
+  1. Request OpenAPI schema
+  1. Retrieve OpenAPI schema
+order: 3000

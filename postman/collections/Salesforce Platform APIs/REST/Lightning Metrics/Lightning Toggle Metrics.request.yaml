@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Return details about users who switched between Salesforce Classic and Lightning Experience.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_lightning_togglemetrics.htm
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/LightningToggleMetrics"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 1000

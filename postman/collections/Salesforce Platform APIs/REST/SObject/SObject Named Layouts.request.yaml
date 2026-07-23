@@ -1,0 +1,11 @@
+$kind: http-request
+description: Retrieves information about alternate named layouts for a given object.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/describe/namedLayouts/:LAYOUT_NAME"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+  LAYOUT_NAME: ""
+settings: {}
+order: 8000

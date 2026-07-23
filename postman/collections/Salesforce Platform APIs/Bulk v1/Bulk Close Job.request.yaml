@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}"
+method: POST
+headers:
+  - key: X-SFDC-Session
+    value: "{{_accessToken}}"
+  - key: Content-Type
+    value: application/json
+  - key: charset
+    value: UTF-8
+  - key: Accept-Encoding
+    value: gzip
+    disabled: true
+  - key: Content-Encoding
+    value: gzip
+    disabled: true
+body:
+  type: text
+  content: |-
+    {
+       "state" : "Closed"
+    }
+settings: {}
+examples: ./.resources/Bulk Close Job.resources/examples
+order: 5000

@@ -1,0 +1,51 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        mutation AccountDeleteExample{
+          uiapi {
+            AccountDelete(input: {
+              Id: "001d2000007svGbAAI"
+            })
+              {
+                 Id
+              }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 25 Sep 2024 10:19:44 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=29/15000
+    Vary: Accept-Encoding
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    Content-Encoding: gzip
+    Server: sfdcedge
+    X-SFDC-Request-Id: d78d961d21e6478c84b6be0e9a95e2b4
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "AccountDelete": {
+                      "Id": "<Id>"
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

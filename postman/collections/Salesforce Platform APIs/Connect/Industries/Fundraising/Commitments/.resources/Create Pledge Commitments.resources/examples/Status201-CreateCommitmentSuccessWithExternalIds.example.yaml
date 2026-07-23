@@ -1,0 +1,269 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "processingOptions": {
+          "donorOptions": {
+            "defaultUpdateLogic": "update_all"
+          }
+        },
+        "commitments": [
+          {
+            "amount": 2500,
+            "currencyIsoCode": "USD",
+            "transactionPeriod": "monthly",
+            "transactionInterval": 3,
+            "transactionDay": "5",
+            "startDate": "2024-07-06",
+            "endDate": "2024-08-06",
+            "campaign": {
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              }
+            },
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              },
+              "firstName": "Luke",
+              "lastName": "Smith",
+              "phone": "510-434-8920",
+              "email": "l.smith@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "david chavez",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              },
+                "percent": 10
+              }
+            ],
+            "firstTransaction": {
+              "amount": 150.25,
+              "receivedDate": "2024-07-06",
+              "donorCoverAmount": 0.25,
+              "transactionStatus": "Unpaid",
+              "gatewayTransactionFee": 0.75,
+              "processorTransactionFee": 0.45,
+              "processorReference": "cls-1247586928747",
+              "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+              "lastGatewayResponseCode": "invalid_cvc",
+              "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+              "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z"
+            },
+            "giftCommitmentCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ],
+            "giftCommitmentScheduleCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          {
+            "amount": 150.25,
+            "currencyIsoCode": "USD",
+            "transactionPeriod": "monthly",
+            "transactionInterval": 3,
+            "transactionDay": "5",
+            "startDate": "2024-07-06",
+            "endDate": "2024-08-06",
+            "campaign": {
+              "id": "<SFDC_CAMPAIGN_ID>"
+            },
+            "outreachSourceCode": {
+              "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              },
+              "firstName": "David",
+              "lastName": "Chavez",
+              "phone": "510-434-8920",
+              "email": "d.chavez@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "david chavez",
+              "expiryMonth": "10",
+              "expiryYear": "2026",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "externalId": {
+                  "fieldName": "<EXTERNAL_ID_FIELD_NAME>",
+                  "fieldValue": "<EXTERNAL_ID_FIELD_VALUE>"
+              },
+                "percent": 10
+              }
+            ],
+            "firstTransaction": {
+              "amount": 150.25,
+              "receivedDate": "2024-07-06",
+              "donorCoverAmount": 0.25,
+              "transactionStatus": "Unpaid",
+              "gatewayTransactionFee": 0.75,
+              "processorTransactionFee": 0.45,
+              "processorReference": "cls-1247586928747",
+              "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+              "lastGatewayResponseCode": "invalid_cvc",
+              "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+              "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z"
+            },
+            "giftCommitmentCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ],
+            "giftCommitmentScheduleCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          }
+        ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+          "successes": 2,
+          "failures": 0,
+          "notProcessed": 0,
+          "details": [
+              {
+                  "success": true,
+                  "links": {
+                      "giftcommitment": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                          "id": "<SFDC_GIFT_COMMITMENT_ID>"
+                      },
+                      "giftcommitmentschedule": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_SCHEDULE_ID>",
+                          "id": "<SFDC_GIFT_COMMITMENT_SCHEDULE_ID>"
+                      },
+                      "giftdefaultdesignation": [
+                          {
+                              "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_DEFAULT_DESIGNATION_ID>",
+                              "id": "<SFDC_GIFT_DEFAULT_DESIGNATION_ID>"
+                          }
+                      ],
+                      "account": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_ACCOUNT_ID>",
+                          "id": "<SFDC_ACCOUNT_ID>"
+                      }
+                  }
+              },
+              {
+                  "success": true,
+                  "links": {
+                      "giftcommitment": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_ID>",
+                          "id": "<SFDC_GIFT_COMMITMENT_ID>"
+                      },
+                      "giftcommitmentschedule": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_COMMITMENT_SCHEDULE_ID>",
+                          "id": "<SFDC_GIFT_COMMITMENT_SCHEDULE_ID>"
+                      },
+                      "giftdefaultdesignation": [
+                          {
+                              "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_GIFT_DEFAULT_DESIGNATION_ID>",
+                              "id": "<SFDC_GIFT_DEFAULT_DESIGNATION_ID>"
+                          }
+                      ],
+                      "account": {
+                          "href": "/services/data/vXX.X/sobjects/sObject/<SFDC_ACCOUNT_ID>",
+                          "id": "<SFDC_ACCOUNT_ID>"
+                      }
+                  }
+              }
+          ]
+      }
+order: 4000

@@ -1,0 +1,136 @@
+$kind: http-request
+description: |-
+  Calculate the price of the Work Anywhere software bundle plus all it's bundle components for the pricing period of 1 month. Because this bundle is sold on an evergreen subscription rather than a termed subscription, the price is calculated per month rather than for the length of the subscription.
+
+  Add one RelationShape for each bundle component. Note that the classroom training product is not included in the bundle price, while the other two bundle components are.
+
+  See [Calculate Price](https://desktop.postman.com/?desktopVersion=10.13.6&webVersion=10.13.7-ui-230522-1730&userId=10709048&teamId=0).
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/pricing/salestransaction/actions/calculate-price"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "listPricebookId": "{{standardPricebook}}",
+        "candidatePricebookIds": [
+            "{{standardPricebook}}"
+        ],
+        "pricingFlow": "GET_PRICE_USING_CONTEXT",
+        "graph": {
+            "graphId": "1",
+            "records": [
+                {
+                    "referenceId": "ref_sales_txn",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionShape"
+                        },
+                    "CurrencyIsoCode": "USD"                    
+                    }
+                },
+                {
+                    "referenceId": "ref_sales_txn_item1",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2022-01-01",
+                        "ProductId": "{{WorkAnywhereBundleProduct}}",
+                        "ProductSellingModelId": "{{EvergreenMonthlyPSM}}",
+                        "Quantity": 10.0,
+                        "PricingTransactionType": "NewSale",
+                    "CurrencyIsoCode": "USD"                     
+                    }
+                },
+                {
+                    "referenceId": "ref_sales_txn_item2",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "ProductId": "{{VirtualRouterProduct}}",
+                        "ProductSellingModelId": "{{EvergreenMonthlyPSM}}",
+                        "Quantity": 10.0,
+                        "PricingTransactionType": "NewSale",
+                        "CurrencyIsoCode": "USD"                     
+                    }
+                },            
+                {
+                    "referenceId": "ref_sales_txn_item3",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "ProductId": "{{SLA_BronzeProduct}}",
+                        "ProductSellingModelId": "{{EvergreenMonthlyPSM}}",
+                        "Quantity": 10.0,
+                        "PricingTransactionType": "NewSale",
+                        "CurrencyIsoCode": "USD"                     
+                    }
+                },
+                {
+                    "referenceId": "ref_sales_txn_item4",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "ProductId": "{{ClassTrainingProduct}}",
+                        "ProductSellingModelId": "{{OneTimePSM}}",
+                        "Quantity": 50.0,
+                        "PricingTransactionType": "NewSale",
+                    "CurrencyIsoCode": "USD"                     
+                    }
+                },            
+                {
+                    "referenceId": "ref_rel1",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTrxnItemRelationShape"
+                        },
+                        "MainSalesTrxnItemShapeId": "@{ref_sales_txn_item1.Id}",
+                        "AssocSalesTrxnItemShapeId": "@{ref_sales_txn_item2.Id}",
+                        "MainSalesTrxnItemShapeRole": "Bundle",
+                        "AssocSalesTrxnItemShapeRole": "BundleComponent",
+                        "AssociatedItemShapePricing": "IncludedInBundlePrice"
+                    }
+                },
+                {
+                    "referenceId": "ref_rel2",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTrxnItemRelationShape"
+                        },
+                        "MainSalesTrxnItemShapeId": "@{ref_sales_txn_item1.Id}",
+                        "AssocSalesTrxnItemShapeId": "@{ref_sales_txn_item3.Id}",
+                        "MainSalesTrxnItemShapeRole": "Bundle",
+                        "AssocSalesTrxnItemShapeRole": "BundleComponent",
+                        "AssociatedItemShapePricing": "IncludedInBundlePrice"
+                    }
+                },
+                {
+                    "referenceId": "ref_rel3",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTrxnItemRelationShape"
+                        },
+                        "MainSalesTrxnItemShapeId": "@{ref_sales_txn_item1.Id}",
+                        "AssocSalesTrxnItemShapeId": "@{ref_sales_txn_item4.Id}",
+                        "MainSalesTrxnItemShapeRole": "Bundle",
+                        "AssocSalesTrxnItemShapeRole": "BundleComponent",
+                        "AssociatedItemShapePricing": "NotIncludedInBundlePrice"
+                    }
+                }                                        
+            ]
+        }
+    }
+settings: {}
+order: 2000

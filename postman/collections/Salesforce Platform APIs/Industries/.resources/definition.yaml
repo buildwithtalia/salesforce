@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  This folder regroups API request for products under the **Industries** umbrella.
+
+  ⚠️ Industries products require specific licenses.
+
+  📚 [Industries documentation](https://help.salesforce.com/s/articleView?id=release-notes.rn_industries.htm&release=244&type=5).
+order: 8000

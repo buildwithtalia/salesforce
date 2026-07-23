@@ -1,0 +1,258 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/gifts"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+        "processingOptions": {
+          "donorOptions": {
+            "defaultUpdateLogic": "update_all"
+          }
+        },
+        "gifts": [
+          {
+            "amount": 5.00,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Paid",
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "outreachSourceCode": {
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "firstName": "Test",
+              "lastName": "Donor",
+              "phone": "510-434-8920",
+              "email": "test.user@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+                "percent": 10
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          {
+            "amount": 300.00,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Paid",
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "outreachSourceCode": {
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "firstName": "Test",
+              "lastName": "Donor",
+              "phone": "510-434-8920",
+              "email": "test.user@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+                "percent": 10
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          {
+            "amount": 300.00,
+            "currencyIsoCode": "USD",
+            "receivedDate": "2024-07-06",
+            "donorCoverAmount": 0.25,
+            "transactionStatus": "Paid",
+            "paymentIdentifier": "1234",
+            "gatewayTransactionFee": 0.75,
+            "processorTransactionFee": 0.45,
+            "processorReference": "cls-1247586928747",
+            "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+            "lastGatewayResponseCode": "invalid_cvc",
+            "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+            "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+            "outreachSourceCode": {
+              "sourceCode": "AnimalEmailCampaign2023"
+            },
+            "donor": {
+              "donorType": "individual",
+              "firstName": "Test",
+              "lastName": "Donor",
+              "phone": "510-434-8920",
+              "email": "test.user@example.com",
+              "address": [
+                {
+                  "addressType": "mailing",
+                  "street": "123 Main Street",
+                  "city": "Oakland",
+                  "state": "CA",
+                  "postalCode": "94610",
+                  "country": "US"
+                }
+              ],
+              "accountCustomFields": [
+                {
+                  "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                  "fieldValue": "string"
+                }
+              ]
+            },
+            "paymentInstrument": {
+              "type": "credit card",
+              "accountHolderName": "test donor",
+              "expiryMonth": "10",
+              "expiryYear": "2027",
+              "last4": "4585",
+              "cardBrand": "visa",
+              "bankName": "chase",
+              "digitalWalletProvider": "apple pay",
+              "bankAccountHolderType": "primary",
+              "bankAccountType": "checking",
+              "bankAccountNumber": "123456",
+              "bankCode": "HBUK",
+              "gatewayName": "stripe",
+              "processorName": "test processor",
+              "processorPaymentReference": "string",
+              "gatewayReference": "string"
+            },
+            "designations": [
+              {
+                "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+                "percent": 10
+              }
+            ],
+            "giftTransactionCustomFields": [
+              {
+                "fieldName": "<VALID_CUSTOM_FIELD_API_NAME>",
+                "fieldValue": "string"
+              }
+            ]
+          }
+        ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      // This is a scenario where there is a validation rule on the Gift Transaction object requiring the amount to be greater than 10.00. One database error occurs for the 5.00 transaction, causing the other two to be rolled back with success of false and no record links.
+      {
+          "successes": 0,
+          "failures": 1,
+          "notProcessed": 2,
+          "details": [
+              {
+                  "success": false,
+                  "errors": {
+                      "message": "Amount must be greater than 10.00"
+                  }
+              },
+              {
+                  "success": false
+              },
+              {
+                  "success": false
+              }
+          ]
+      }
+order: 3000

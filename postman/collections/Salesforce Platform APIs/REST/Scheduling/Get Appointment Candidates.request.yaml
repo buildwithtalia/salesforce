@@ -1,0 +1,25 @@
+$kind: http-request
+description: |-
+  Returns a list of available service resources (appointment candidates) based on work type group and service territories.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/requests_ls_getappointmentcandidates.htm
+url: "{{_endpoint}}/services/data/v{{version}}/scheduling/getAppointmentCandidates"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+    	"startTime": "string",
+    	"endTime": "string",
+    	"workTypeGroupId": "string",
+    	"workType": "Work Type",
+    	"accountId": "string",
+    	"territoryIds": "string[]",
+    	"requiredResourceIds": "string[]",
+    	"schedulingPolicyId": "string",
+    	"allowConcurrentScheduling": "boolean",
+    }
+settings: {}
+order: 3000

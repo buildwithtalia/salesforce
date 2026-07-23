@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/query?q=Select ID, Name from productrelationshiptype where Name IN ('Bundle PRT') "
+method: GET
+queryParams:
+  q: "Select ID, Name from productrelationshiptype where Name IN ('Bundle PRT') "
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: |
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      const jsonData = JSON.parse(responseBody);
+
+      context.set("BundleProductRelationshipType", jsonData.records[0].Id);
+    language: text/javascript
+settings: {}
+order: 11000

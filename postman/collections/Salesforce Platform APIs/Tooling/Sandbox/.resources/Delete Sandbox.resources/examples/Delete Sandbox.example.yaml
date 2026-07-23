@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/SandboxInfo/:SANDBOX_INFO_ID"
+  method: DELETE
+  pathVariables:
+    SANDBOX_INFO_ID: 0GQ4H000000CxSzWAK
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Fri, 15 Dec 2023 13:34:29 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=2/15000
+  body:
+    type: text
+    content: ""
+order: 1000

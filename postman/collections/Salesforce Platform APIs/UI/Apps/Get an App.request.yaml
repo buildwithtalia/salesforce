@@ -1,0 +1,22 @@
+$kind: http-request
+description: Get metadata about an app.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/apps/:APP_ID?formFactor=Small"
+method: GET
+queryParams:
+  - key: formFactor
+    value: Small
+    description: The form factor for each app that the user has access to (`Large`, `Medium` or `Small`)
+  - key: userCustomizations
+    value: "true"
+    disabled: true
+    description: If true, gets custom and standard navigation tabs. If false, gets only standard navigation tabs.
+pathVariables:
+  - key: APP_ID
+    value: ""
+    description: Application ID
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get an App.resources/examples
+order: 2000

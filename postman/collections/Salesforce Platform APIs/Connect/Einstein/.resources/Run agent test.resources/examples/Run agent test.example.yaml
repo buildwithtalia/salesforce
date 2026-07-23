@@ -1,0 +1,55 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/einstein/ai-evaluations/runs"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "aiEvaluationDefinitionName": "Employee_agent_tests"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    - key: Date
+      value: Wed, 10 Sep 2025 13:46:14 GMT
+    - key: Content-Type
+      value: application/json
+      description: ""
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Content-Encoding
+      value: gzip
+    - key: Sforce-Limit-Info
+      value: api-usage=183/5000000
+    - key: Set-Cookie
+      value: CookieConsentPolicy=0:1; path=/; expires=Thu, 10-Sep-2026 13:46:14 GMT; Max-Age=31536000; secure
+    - key: Set-Cookie
+      value: LSKey-c$CookieConsentPolicy=0:1; path=/; expires=Thu, 10-Sep-2026 13:46:14 GMT; Max-Age=31536000; secure
+    - key: Set-Cookie
+      value: BrowserId=hIZ7eo5MEfCnxfmijQif_g; domain=.salesforce.com; path=/; expires=Thu, 10-Sep-2026 13:46:14 GMT; Max-Age=31536000; secure; SameSite=None
+    - key: X-Robots-Tag
+      value: none
+    - key: Cache-Control
+      value: no-cache,must-revalidate,max-age=0,no-store,private
+    - key: Server
+      value: sfdcedge
+    - key: X-SFDC-Request-Id
+      value: 543c8913aa732b136328d39c8546b5ac
+    - key: X-Request-Id
+      value: 543c8913aa732b136328d39c8546b5ac
+  body:
+    type: json
+    content: |-
+      {
+          "runId": "4KBAU0000002oK54AI",
+          "status": "NEW"
+      }
+order: 1000

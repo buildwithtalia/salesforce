@@ -1,0 +1,13 @@
+$kind: http-request
+description: Updates the order of a user’s personalized navigation items (tabs) and adds a navigation item to the list in the order specified.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/apps/:APP_ID/user-nav-items"
+method: PUT
+pathVariables:
+  - key: APP_ID
+    value: ""
+    description: Application ID
+body:
+  type: json
+  content: ""
+settings: {}
+order: 7000

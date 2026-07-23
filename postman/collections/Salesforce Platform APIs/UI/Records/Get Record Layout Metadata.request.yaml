@@ -1,0 +1,37 @@
+$kind: http-request
+description: Get metadata about page layouts for the specified object type.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/layout/:SOBJECT_API_NAME"
+method: GET
+queryParams:
+  - key: formFactor
+    value: ""
+    disabled: true
+    description: |-
+      The layout display size for the record. One of these values:
+      Large—(Default) Use this value to get a layout for desktop display size.
+      Medium—Use this value to get a layout for tablet display size.
+      Small—Use this value to get a layout for phone display size.
+  - key: layoutTypes
+    value: ""
+    disabled: true
+    description: |-
+      The layout type for the record. A collection of any of these values:
+      Compact—Use this value to get a layout that contains a record’s key fields.
+      Full—(Default) Use this value to get a full layout.
+  - key: modes
+    value: ""
+    disabled: true
+    description: |-
+      The access mode for the record. This value determines which fields to get from a layout. Layouts have different fields for create, edit, and view modes. For example, formula fields are rendered in view mode, but not in create mode because they’re calculated at run time, like formulas in a spreadsheet. A collection of any of these values:
+      Create—Use this mode if you intend to build UI that lets a user create a record. This mode is used by the /ui-api/record-defaults/create/<SOBJECT_API_NAME> resource.
+      Edit—Use this mode if you intend to build UI that lets a user edit a record. This mode is used by the /ui-api/record-defaults/clone/<RECORD_ID> resource.
+      View—(Default) Use this mode if you intend to build UI that displays a record.
+  - key: recordTypeId
+    value: ""
+    disabled: true
+    description: The ID of the record type (RecordType object) for the new record. If not provided, the default record type is used.
+pathVariables:
+  SOBJECT_API_NAME: ""
+settings: {}
+examples: ./.resources/Get Record Layout Metadata.resources/examples
+order: 2000

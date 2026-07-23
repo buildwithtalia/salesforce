@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Access, edit, or delete a feed element. Feed items are the only type of feed element that can be edited.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_feed_element_specific.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/feed-elements/:FEED_ELEMENT_ID"
+method: DELETE
+pathVariables:
+  FEED_ELEMENT_ID: ""
+settings:
+  disabledSystemHeaders:
+    - content-type
+examples: ./.resources/Feed Element - Delete.resources/examples
+order: 4000

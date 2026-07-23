@@ -1,0 +1,69 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/chatter/groups/:GROUP_ID/members?userId=005..."
+  method: POST
+  queryParams:
+    userId: 005...
+  pathVariables:
+    GROUP_ID: 0F9...
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Wed, 22 Nov 2023 11:31:07 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "id": "0FB...",
+          "lastFeedAccessDate": null,
+          "role": "StandardMember",
+          "url": "/services/data/v58.0/chatter/group-memberships/0FB...",
+          "user": {
+              "additionalLabel": null,
+              "communityNickname": "integration1.4407085834085586E12",
+              "companyName": "Salesforce",
+              "displayName": "Integration User",
+              "firstName": "Integration",
+              "id": "005...",
+              "isActive": true,
+              "isInThisCommunity": true,
+              "lastName": "User",
+              "motif": {
+                  "color": "1B96FF",
+                  "largeIconUrl": "/img/icon/profile64.png",
+                  "mediumIconUrl": "/img/icon/profile32.png",
+                  "smallIconUrl": "/img/icon/profile16.png",
+                  "svgIconUrl": null
+              },
+              "mySubscription": null,
+              "name": "Integration User",
+              "outOfOffice": {
+                  "message": ""
+              },
+              "photo": {
+                  "fullEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_200_v2.png?fromEmail=1",
+                  "largePhotoUrl": "https://<my_domain>/profilephoto/005/F",
+                  "mediumPhotoUrl": "https://<my_domain>/profilephoto/005/M",
+                  "photoVersionId": null,
+                  "smallPhotoUrl": "https://<my_domain>/profilephoto/005/T",
+                  "standardEmailPhotoUrl": "https://<my_domain>/img/userprofile/default_profile_45_v2.png?fromEmail=1",
+                  "url": "/services/data/v58.0/connect/user-profiles/005.../photo"
+              },
+              "reputation": null,
+              "title": null,
+              "type": "User",
+              "url": "/services/data/v58.0/chatter/users/005...",
+              "userType": "Internal"
+          }
+      }
+order: 1000

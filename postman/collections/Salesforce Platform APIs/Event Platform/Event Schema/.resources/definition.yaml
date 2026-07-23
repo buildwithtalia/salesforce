@@ -1,0 +1,9 @@
+$kind: collection
+description: |-
+  This folder contains API requests for getting the event schema for platform events and change data capture events.
+
+  For more information, see these resources in the REST API Developer Guide.
+
+  - [Platform Event Schema by Schema ID](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_event_eventschema.htm)
+  - [Platform Event Schema by Event Name](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_sobject_eventschema.htm)
+order: 4000

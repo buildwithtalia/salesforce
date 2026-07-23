@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the actions on records in related lists.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/list-view/:LIST_VIEW_IDS"
+method: GET
+pathVariables:
+  - key: LIST_VIEW_IDS
+    value: ""
+    description: A single list view ID, or a comma-delimited list of list view IDs.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get List View Header Actions.resources/examples
+order: 6000

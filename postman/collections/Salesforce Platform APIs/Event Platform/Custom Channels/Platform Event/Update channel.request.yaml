@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannel/:PLATFORM_EVENT_CHANNEL_ID"
+method: PATCH
+pathVariables:
+  PLATFORM_EVENT_CHANNEL_ID: ""
+body:
+  type: json
+  content: |-
+    {
+        "FullName": "Carbon_Comparison_Channel__chn",
+        "Metadata": {
+            "channelType": "event",
+            "label": "Carbon Comparison Channel 2",
+            "urls": null
+        }
+    }
+settings:
+  strictSSL: false
+order: 2000

@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalTypeId
+      value: null
+      disabled: true
+  pathVariables:
+    loyaltyProgramName: ""
+    processName: ""
+  body:
+    type: json
+    content: |-
+      {
+         "processParameters":[
+            {
+               "MemberId":"0lMRM0000004F152AE",
+               "PromotionId":"1lpxx00000000CvAAI"
+            }
+         ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

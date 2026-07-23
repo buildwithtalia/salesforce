@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannel/describe/"
+method: GET
+body:
+  type: json
+  content: ""
+settings:
+  strictSSL: false
+examples: ./.resources/Describe event channel.resources/examples
+order: 6000

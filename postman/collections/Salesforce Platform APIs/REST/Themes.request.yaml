@@ -1,0 +1,17 @@
+$kind: http-request
+description: |-
+  Gets the list of icons and colors used by themes in the Salesforce application. Theme information is provided for objects in your organization that use icons and colors in the Salesforce UI.
+
+  The If-Modified-Since header can be used with this resource, with a date format of EEE, dd MMM yyyy HH:mm:ss z. When this header is used, if the object metadata has not changed since the provided date, a 304 Not Modified status code is returned, with no response body.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_themes.htm
+url: "{{_endpoint}}/services/data/v{{version}}/theme"
+method: GET
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Themes.resources/examples
+order: 22000

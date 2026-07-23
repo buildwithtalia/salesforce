@@ -1,0 +1,111 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/loyalty-programs/:loyaltyProgramName/members?memberId=0lMJ8000000CaRMMA0&membershipNumber=Member1&programCurrencyName=NTO Qualifying Points"
+  method: GET
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: memberId
+      value: 0lMJ8000000CaRMMA0
+      description: The ID of the loyalty program member.
+    - key: membershipNumber
+      value: Member1
+      description: The membership number of the loyalty program member.
+    - key: programCurrencyName
+      value: NTO Qualifying Points
+      description: |-
+        The name of the loyalty program currency associated with the member.
+        Use this parameter to get the details of the member’s points-related information for a specific currency.
+  pathVariables:
+    loyaltyProgramName: NTO Insider
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 22 May 2024 16:16:23 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "additionalLoyaltyProgramMemberFields": {},
+          "associatedAccount": null,
+          "associatedContact": {
+              "contactId": "003J8000002Yu0ZIAS",
+              "email": "ab@email.com",
+              "firstName": "Name1",
+              "lastName": "Name2"
+          },
+          "canReceivePartnerPromotions": true,
+          "canReceivePromotions": true,
+          "enrollmentChannel": "Email",
+          "enrollmentDate": "2021-01-01",
+          "groupCreatedByMember": null,
+          "groupName": null,
+          "lastActivityDate": null,
+          "loyaltyProgramMemberId": "0lMJ8000000CaRMMA0",
+          "loyaltyProgramName": "NTO Insider",
+          "memberCurrencies": [
+              {
+                  "additionalLoyaltyMemberCurrencyFields": {
+                      "Level_Before_Reset__c": null
+                  },
+                  "escrowPointsBalance": 0,
+                  "expirablePoints": 0,
+                  "lastAccrualProcessedDate": null,
+                  "lastEscrowProcessedDate": null,
+                  "lastExpirationProcessRunDate": null,
+                  "lastPointsAggregationDate": null,
+                  "lastPointsResetDate": null,
+                  "loyaltyMemberCurrencyName": "NTO Qualifying Points",
+                  "loyaltyProgramCurrencyId": "0lcJ8000000CaR7IAK",
+                  "loyaltyProgramCurrencyName": null,
+                  "memberCurrencyId": "0lzJ8000000CaRMIA0",
+                  "nextQualifyingPointsResetDate": "2024-12-31",
+                  "pointsBalance": 0,
+                  "qualifyingPointsBalanceBeforeReset": 0,
+                  "totalEscrowPointsAccrued": 0,
+                  "totalEscrowRolloverPoints": 0,
+                  "totalPointsAccrued": 0,
+                  "totalPointsExpired": 0,
+                  "totalPointsRedeemed": 0
+              }
+          ],
+          "memberStatus": "Active",
+          "memberTiers": [
+              {
+                  "additionalLoyaltyMemberTierFields": {},
+                  "areTierBenefitsAssigned": false,
+                  "loyaltyMemberTierId": "0lyJ8000000CaRMIA0",
+                  "loyaltyMemberTierName": "Bronze",
+                  "tierChangeReason": null,
+                  "tierChangeReasonType": null,
+                  "tierEffectiveDate": "2021-01-01",
+                  "tierExpirationDate": null,
+                  "tierGroupId": "0ltJ8000000CaR8IAK",
+                  "tierGroupName": null,
+                  "tierId": "0lgJ80000008OI5IAM",
+                  "tierSequenceNumber": 10
+              }
+          ],
+          "memberType": "Individual",
+          "membershipEndDate": "2022-01-01",
+          "membershipLastRenewalDate": null,
+          "membershipNumber": "Member1",
+          "referredBy": null,
+          "relatedCorporateMembershipNumber": null,
+          "transactionJournalStatementFrequency": "Monthly",
+          "transactionJournalStatementLastGeneratedDate": null,
+          "transactionJournalStatementMethod": "Mail"
+      }
+order: 1000

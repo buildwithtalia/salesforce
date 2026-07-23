@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Use requests from this folder to obtain an Access Token.
+
+  The authentication requests automatically fill the endpoint URL and access token environment variables for subsequent API calls.
+order: 1000

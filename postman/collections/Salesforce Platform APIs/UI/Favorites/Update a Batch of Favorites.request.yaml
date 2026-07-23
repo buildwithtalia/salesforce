@@ -1,0 +1,18 @@
+$kind: http-request
+description: Update all favorites at once. The sort order is updated to the given relative ordering. Any favorites missing from the request body are deleted.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/favorites/batch"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+        "favorites": [
+            {
+                "id": "0MVR00000004DhnOAE",
+                "name": "Q4 Perf"
+            }
+        ]
+    }
+settings: {}
+examples: ./.resources/Update a Batch of Favorites.resources/examples
+order: 5000

@@ -1,0 +1,7 @@
+$kind: collection
+description: |-
+  To learn about channels and features for platform events, check out these resources in the _Platform Events Developer Guide._
+
+  - [Group Platform Events into One Stream with a Custom Channel](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_subscribe_custom_channels.htm)
+  - [Filter Your Stream of Platform Events with Custom Channels](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_filter_section.htm)
+order: 2000

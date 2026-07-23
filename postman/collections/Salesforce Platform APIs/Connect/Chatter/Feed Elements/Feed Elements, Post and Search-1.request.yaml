@@ -1,0 +1,99 @@
+$kind: http-request
+name: Feed Elements, Post and Search
+description: |-
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_feed_element.htm
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_feed_element.htm
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/feed-elements"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+       "body": {
+          "messageSegments": [
+             {
+                "type": "Text",
+                "text": "Chatter Feed Item Created via API: "
+             },
+             {
+                "markupType" : "Paragraph",
+                "type" : "MarkupBegin"
+             },
+             {
+                "markupType" : "Bold",
+                "type" : "MarkupBegin"
+             },
+             {
+                 "text" : "First line of text.",
+                 "type" : "Text"
+             },
+             {
+                "markupType" : "Bold",
+                "type" : "MarkupEnd"
+             },
+             {
+                "markupType" : "Paragraph",
+                "type" : "MarkupEnd"
+             },
+             {
+                "markupType" : "Paragraph",
+                "type" : "MarkupBegin"
+             },
+             {
+                "text" : "&nbsp;",
+                "type" : "Text"
+             },
+             {
+                "markupType" : "Paragraph",
+                "type" : "MarkupEnd"
+             },
+             {
+                "markupType" : "Paragraph",
+                "type" : "MarkupBegin"
+             },
+             {
+                "text" : "Second line of text.",
+                "type" : "Text"
+             },
+             {
+                "markupType" : "Paragraph",
+                "type" : "MarkupEnd"
+             },
+             {
+                "markupType" : "Code",
+                "type" : "MarkupBegin"
+             },
+             {
+                 "text" : "<script>\nvar i, t = 0;\nfor (i = 0; i < 5; i++) {\n   t += i;\n}\n</script>",
+                 "type" : "Text"
+             },
+             {
+                "markupType" : "Code",
+                "type" : "MarkupEnd"
+             },
+             {
+                "type": "Mention",
+                "id": "<USER_GROUP_ID>"
+             }
+          ]
+       },
+       "capabilities": {
+          "files": {
+             "items": [
+                {
+                   "id": "<FILE_ID>"
+                }
+             ]
+          }
+       },
+       "subjectId": "<USER_RECORD_GROUP_ID>",
+       "feedElementType": "FeedItem"
+    }
+settings:
+  disabledSystemHeaders:
+    - content-type
+examples: ./.resources/Feed Elements, Post and Search-1.resources/examples
+order: 2000

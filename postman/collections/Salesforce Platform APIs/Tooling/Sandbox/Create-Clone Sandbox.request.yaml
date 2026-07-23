@@ -1,0 +1,24 @@
+$kind: http-request
+name: Create/Clone Sandbox
+description: Creates or clones a sandbox. If you wish to clone, fill the SourceId body field with the org Id of the source sandbox.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/SandboxInfo"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+        "SandboxName": "devSandbox",
+        "LicenseType": "DEVELOPER",
+        "TemplateId": null,
+        "HistoryDays": 0,
+        "CopyChatter": false,
+        "AutoActivate": false,
+        "ApexClassId": null,
+        "Description": "My new fresh sandbox",
+        "SourceId": null
+    }
+settings: {}
+examples: ./.resources/Create-Clone Sandbox.resources/examples
+order: 2000

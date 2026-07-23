@@ -1,0 +1,61 @@
+$kind: http-example
+request:
+  url: "{{url}}/id/keys"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:55:30 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Access-Control-Allow-Credentials: "false"
+    Access-Control-Allow-Origin: "*"
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "keys": [
+              {
+                  "kty": "RSA",
+                  "n": "<token>",
+                  "e": "AQAB",
+                  "alg": "RS256",
+                  "use": "sig",
+                  "kid": "248"
+              },
+              {
+                  "kty": "RSA",
+                  "n": "<token>",
+                  "e": "AQAB",
+                  "alg": "RS256",
+                  "use": "sig",
+                  "kid": "244"
+              },
+              {
+                  "kty": "RSA",
+                  "n": "<token>",
+                  "e": "AQAB",
+                  "alg": "RS256",
+                  "use": "sig",
+                  "kid": "246"
+              },
+              {
+                  "kty": "RSA",
+                  "n": "<token>",
+                  "e": "AQAB",
+                  "alg": "RS256",
+                  "use": "sig",
+                  "kid": "asset"
+              }
+          ]
+      }
+order: 1000

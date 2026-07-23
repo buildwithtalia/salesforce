@@ -1,0 +1,66 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}"
+  method: POST
+  headers:
+    - key: X-SFDC-Session
+      value: "{{_accessToken}}"
+    - key: Content-Type
+      value: application/json
+    - key: charset
+      value: UTF-8
+    - key: Accept-Encoding
+      value: gzip
+      disabled: true
+    - key: Content-Encoding
+      value: gzip
+      disabled: true
+  body:
+    type: text
+    content: |-
+      {
+         "state" : "Closed"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 16:23:52 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "apexProcessingTime": 64,
+          "apiActiveProcessingTime": 225,
+          "apiVersion": 58,
+          "assignmentRuleId": null,
+          "concurrencyMode": "Parallel",
+          "contentType": "CSV",
+          "createdById": "005...",
+          "createdDate": "<date_time>",
+          "externalIdFieldName": null,
+          "fastPathEnabled": false,
+          "id": "750...",
+          "numberBatchesCompleted": 1,
+          "numberBatchesFailed": 0,
+          "numberBatchesInProgress": 0,
+          "numberBatchesQueued": 0,
+          "numberBatchesTotal": 1,
+          "numberRecordsFailed": 0,
+          "numberRecordsProcessed": 1,
+          "numberRetries": 0,
+          "object": "<Object>",
+          "operation": "insert",
+          "state": "Closed",
+          "systemModstamp": "<date_time>",
+          "totalProcessingTime": 403
+      }
+order: 1000

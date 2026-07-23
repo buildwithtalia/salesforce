@@ -1,0 +1,46 @@
+$kind: http-request
+description: Get a page of online articles for the given language and category through either search or query.
+url: "{{_endpoint}}/services/data/v{{version}}/support/knowledgeArticles"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: ""
+    disabled: true
+    description: Optional, Performs an SOSL search. If the query string is null, empty, or not given, an SOQL query runs.
+  - key: channel
+    value: ""
+    disabled: true
+    description: |-
+      Optional, defaults to user’s context. For information on channel values, see Valid channel values.
+      App: Visible in the internal Salesforce Knowledge application
+      Pkb: Visible in the public knowledge base
+      Csp: Visible in the Customer Portal
+      Prm: Visible in the Partner Portal
+  - key: categories
+    value: ""
+    disabled: true
+    description: Optional, defaults to None. Category group must be unique in each group:category pair, otherwise you get ARGUMENT_OBJECT_PARSE_ERROR
+  - key: queryMethod
+    value: ""
+    disabled: true
+    description: "values are: AT, BELOW, ABOVE, ABOVE_OR_BELOW. Only valid when categories are specified, defaults to ABOVE_OR_BELOW"
+  - key: sort
+    value: ""
+    disabled: true
+    description: Optional, a sortable field name LastPublishedDate, CreatedDate, Title, ViewScore. Defaults to LastPublishedDate for query and relevance for search.
+  - key: order
+    value: ""
+    disabled: true
+    description: Optional, either ASC or DESC, defaults to DESC. Valid only when sort is valid
+  - key: pageSize
+    value: ""
+    disabled: true
+    description: Optional, defaults to 20. Valid range 1 to 100
+  - key: pageNumber
+    value: ""
+    disabled: true
+    description: Optional, defaults to 1
+settings: {}
+order: 4000

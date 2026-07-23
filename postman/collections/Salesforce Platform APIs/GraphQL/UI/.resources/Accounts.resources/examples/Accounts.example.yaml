@@ -1,0 +1,112 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        query accounts {
+          uiapi {
+            query {
+              Account {
+                edges {
+                  node {
+                    Id
+                    Name {
+                      value
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:03:56 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "query": {
+                      "Account": {
+                          "edges": [
+                              {
+                                  "node": {
+                                      "Id": "0014H00002x6HUhQAM",
+                                      "Name": {
+                                          "value": "ACME Inc."
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "0014H00002LbR7QQAV",
+                                      "Name": {
+                                          "value": "ABC Computing"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00158000006QBOqAAO",
+                                      "Name": {
+                                          "value": "GenePoint"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00158000006QBOoAAO",
+                                      "Name": {
+                                          "value": "United Oil & Gas, Belgium"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00158000006QBOpAAO",
+                                      "Name": {
+                                          "value": "United Oil & Gas, Singapore"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00158000006QBOgAAO",
+                                      "Name": {
+                                          "value": "Edge Communications"
+                                      }
+                                  }
+                              },
+                              {
+                                  "node": {
+                                      "Id": "00158000006QBOhAAO",
+                                      "Name": {
+                                          "value": "Burlington Textiles Corp of America"
+                                      }
+                                  }
+                              }
+                          ]
+                      }
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

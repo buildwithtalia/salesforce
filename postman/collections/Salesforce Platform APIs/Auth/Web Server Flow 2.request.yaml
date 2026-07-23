@@ -1,0 +1,42 @@
+$kind: http-request
+url: "{{url}}{{site}}/services/oauth2/token"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: code
+      value: ""
+    - type: text
+      key: grant_type
+      value: authorization_code
+    - type: text
+      key: client_id
+      value: "{{clientId}}"
+    - type: text
+      key: client_secret
+      value: "{{clientSecret}}"
+    - type: text
+      key: redirect_uri
+      value: "{{redirectUrl}}"
+    - type: text
+      key: format
+      value: json
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: |-
+      const jsonData = pm.response.json();
+      const id = jsonData.id.split('/');
+
+      const context = pm.environment.name ? pm.environment : pm.collectionVariables;
+      context.set("_accessToken", jsonData.access_token);
+      context.set("_refreshToken", jsonData.refresh_token);
+      context.set("_endpoint", jsonData.instance_url);
+      context.set("_userId", id.pop());
+      context.set("_orgId", id.pop());
+    language: text/javascript
+settings: {}
+examples: ./.resources/Web Server Flow 2.resources/examples
+order: 7000

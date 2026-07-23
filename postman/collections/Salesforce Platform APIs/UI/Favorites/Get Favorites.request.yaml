@@ -1,0 +1,10 @@
+$kind: http-request
+description: Get all of a user’s favorites.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/favorites"
+method: GET
+body:
+  type: json
+  content: ""
+settings: {}
+examples: ./.resources/Get Favorites.resources/examples
+order: 3000

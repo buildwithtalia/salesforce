@@ -1,0 +1,18 @@
+$kind: http-request
+description: Refreshes a sandbox.
+url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/SandboxInfo/:SANDBOX_INFO_ID"
+method: PATCH
+headers:
+  Content-Type: application/json
+pathVariables:
+  SANDBOX_INFO_ID: ""
+body:
+  type: json
+  content: |-
+    {
+        "LicenseType": "DEVELOPER",
+        "AutoActivate": true
+    }
+settings: {}
+examples: ./.resources/Refresh Sandbox.resources/examples
+order: 5000

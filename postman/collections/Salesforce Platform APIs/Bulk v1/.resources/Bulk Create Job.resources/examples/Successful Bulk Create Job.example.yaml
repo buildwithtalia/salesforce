@@ -1,0 +1,81 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/async/{{version}}/job"
+  method: POST
+  headers:
+    - key: X-SFDC-Session
+      value: "{{_accessToken}}"
+    - key: Content-Type
+      value: application/json
+    - key: charset
+      value: UTF-8
+    - key: Sforce-Disable-Batch-Retry
+      value: "FALSE"
+      disabled: true
+    - key: Sforce-Line-Ending
+      value: CRLF
+      disabled: true
+    - key: Sforce-Enable-PKChunking
+      value: "FALSE"
+      disabled: true
+    - key: chunkSize
+      value: "10000"
+      disabled: true
+    - key: Accept-Encoding
+      value: gzip
+      disabled: true
+    - key: Content-Encoding
+      value: gzip
+      disabled: true
+  body:
+    type: text
+    content: |-
+      {
+        "operation" : "insert",
+        "object" : "Account",
+        "contentType" : "CSV"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Date: Thu, 16 Nov 2023 16:07:11 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Location: /services/async/58.0/job/7502o00000kjNCsAAM
+    Content-Type: application/json
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "apexProcessingTime": 0,
+          "apiActiveProcessingTime": 0,
+          "apiVersion": 58,
+          "assignmentRuleId": null,
+          "concurrencyMode": "Parallel",
+          "contentType": "CSV",
+          "createdById": "005...",
+          "createdDate": "<date_time>",
+          "externalIdFieldName": null,
+          "fastPathEnabled": false,
+          "id": "750...",
+          "numberBatchesCompleted": 0,
+          "numberBatchesFailed": 0,
+          "numberBatchesInProgress": 0,
+          "numberBatchesQueued": 0,
+          "numberBatchesTotal": 0,
+          "numberRecordsFailed": 0,
+          "numberRecordsProcessed": 0,
+          "numberRetries": 0,
+          "object": "<Object>",
+          "operation": "insert",
+          "state": "Open",
+          "systemModstamp": "<date_time>",
+          "totalProcessingTime": 0
+      }
+order: 1000

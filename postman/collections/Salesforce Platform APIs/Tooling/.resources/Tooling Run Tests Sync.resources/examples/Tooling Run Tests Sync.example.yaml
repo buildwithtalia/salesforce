@@ -1,0 +1,138 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/runTestsSynchronous"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "tests": [
+              {
+                  "className": "PrepareSandboxTest",
+                  "testMethods": [
+                      "runApexClass_should_work"
+                  ]
+              }
+          ],
+          "maxFailedTests": "1"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 11 Dec 2023 09:59:37 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=246/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "apexLogId": "07L4H00000SpGroUAF",
+          "codeCoverage": [
+              {
+                  "id": "01q4H000000WjD8QAK",
+                  "locationsNotCovered": [
+                      {},
+                      {}
+                  ],
+                  "name": "StateTrigger",
+                  "namespace": null,
+                  "numLocations": 2,
+                  "numLocationsNotCovered": 2,
+                  "type": "Trigger"
+              },
+              {
+                  "id": "01q58000000RLTyAAO",
+                  "locationsNotCovered": [
+                      {},
+                      {},
+                      {}
+                  ],
+                  "name": "RestrictContactByName",
+                  "namespace": null,
+                  "numLocations": 3,
+                  "numLocationsNotCovered": 3,
+                  "type": "Trigger"
+              },
+              {
+                  "id": "01q58000000RLBhAAO",
+                  "locationsNotCovered": [
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                  ],
+                  "name": "ClosedOpportunityTrigger",
+                  "namespace": null,
+                  "numLocations": 6,
+                  "numLocationsNotCovered": 6,
+                  "type": "Trigger"
+              },
+              {
+                  "id": "01p4H000009PEFIQA4",
+                  "locationsNotCovered": [
+                      {},
+                      {}
+                  ],
+                  "name": "PrepareSandbox",
+                  "namespace": null,
+                  "numLocations": 22,
+                  "numLocationsNotCovered": 2,
+                  "type": "Class"
+              }
+          ],
+          "codeCoverageWarnings": [
+              {
+                  "id": "01q4H000000WjD8QAK",
+                  "message": "Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required",
+                  "name": "StateTrigger",
+                  "namespace": null
+              },
+              {
+                  "id": "01q58000000RLTyAAO",
+                  "message": "Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required",
+                  "name": "RestrictContactByName",
+                  "namespace": null
+              },
+              {
+                  "id": "01q58000000RLBhAAO",
+                  "message": "Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required",
+                  "name": "ClosedOpportunityTrigger",
+                  "namespace": null
+              },
+              {
+                  "id": "01q4H000000WjD8QAK",
+                  "message": "Average test coverage across all Apex Classes and Triggers is 60%, at least 75% test coverage is required.",
+                  "name": null,
+                  "namespace": ""
+              }
+          ],
+          "failures": [],
+          "flowCoverage": [],
+          "flowCoverageWarnings": [],
+          "numFailures": 0,
+          "numTestsRun": 1,
+          "successes": [
+              {
+                  "id": "01p4H00000A0zYxQAJ",
+                  "methodName": "runApexClass_should_work",
+                  "name": "PrepareSandboxTest",
+                  "namespace": null,
+                  "seeAllData": false,
+                  "time": 1088
+              }
+          ],
+          "totalTime": 1261
+      }
+order: 1000

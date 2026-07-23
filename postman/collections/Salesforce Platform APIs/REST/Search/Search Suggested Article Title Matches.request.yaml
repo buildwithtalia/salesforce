@@ -1,0 +1,62 @@
+$kind: http-request
+description: |-
+  Returns a list of Salesforce Knowledge article titles that match the user’s search query string. Provides a shortcut to navigate directly to likely relevant articles before the user performs a search.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_suggest_title_matches.htm
+url: "{{_endpoint}}/services/data/v{{version}}/search/suggestions?q=&publishStatus=&language="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: articleTypes
+    value: ""
+    disabled: true
+    description: Optional. Three-character ID prefixes indicating the desired article types. You can specify multiple values for this parameter in a single REST call, by repeating the parameter name for each value. For example, articleTypes=ka0&articleTypes=ka1.
+  - key: categories
+    value: ""
+    disabled: true
+    description: |
+      Optional. The name of the data category group and name of the data category for desired articles, expressed as a JSON mapping. You can specify multiple data category group and data category pairs in this parameter. For example, categories={"Regions":"Asia","Products":"Laptops"}. Characters in the URL might need to be encoded. For this example, categories=%7B%22Regions%22%3A%22Asia​%22%2C%22Products%22%3A%22Laptops%22%7D.
+  - key: channel
+    value: ""
+    disabled: true
+    description: |-
+      Optional. The channel where the matching articles are visible. Valid values:
+      AllChannels–Visible in all channels the user has access to
+      App–Visible in the internal Salesforce Knowledge application
+      Pkb–Visible in the public knowledge base
+      Csp–Visible in the Customer Portal
+      Prm–Visible in the Partner Portal
+      If channel isn’t specified, the default value is determined by the type of user.
+      Pkb for a guest user
+      Csp for a Customer Portal user
+      Prm for a Partner Portal user
+      App for any other type of user
+      If channel is specified, the specified value may not be the actual value requested, because of certain requirements.
+      For guest, Customer Portal, and Partner Portal users, the specified value must match the default value for each user type. If the values don’t match or AllChannels is specified, then App replaces the specified value.
+      For all users other than guest, Customer Portal, and Partner Portal users:
+      If Pkb, Csp, Prm, or App are specified, then the specified value is used.
+      If AllChannels is specified, then App replaces the specified value.
+  - key: limit
+    value: ""
+    disabled: true
+    description: Optional. Specifies the maximum number of articles to return. If there are more suggested articles than the limit specified, the response body’s hasMoreResults property is true.
+  - key: topics
+    value: ""
+    disabled: true
+    description: "Optional. The topic of the returned articles. For example: topics=outlook&topics=email."
+  - key: validationStatus
+    value: ""
+    disabled: true
+    description: Optional. The validation status of returned articles.
+  - key: q
+    value: ""
+  - key: publishStatus
+    value: ""
+  - key: language
+    value: ""
+body:
+  type: text
+  content: ""
+settings: {}
+order: 5000

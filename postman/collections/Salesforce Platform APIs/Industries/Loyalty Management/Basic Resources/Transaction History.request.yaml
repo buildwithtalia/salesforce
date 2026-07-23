@@ -1,0 +1,24 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_transaction_history.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_transaction_history.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/transaction-history?page="
+method: POST
+queryParams:
+  page: ""
+pathVariables:
+  loyaltyProgramName: ""
+body:
+  type: json
+  content: |-
+    {
+       "membershipNumber":"Member1",
+       "journalType":"Accrual",
+       "journalSubType":"Social",
+       "periodStartDate":"2022-01-27T00:00:00Z",
+       "periodEndDate":"2022-11-27T00:00:00Z"
+    }
+settings: {}
+examples: ./.resources/Transaction History.resources/examples
+order: 6000

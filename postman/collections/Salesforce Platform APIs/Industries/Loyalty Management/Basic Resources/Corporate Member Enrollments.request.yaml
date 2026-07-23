@@ -1,0 +1,27 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_enroll_corporate_member.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_enroll_corporate_member.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/loyalty-programs/:loyaltyProgramName/corporate-member-enrollments"
+method: POST
+pathVariables:
+  loyaltyProgramName: ""
+body:
+  type: json
+  content: |-
+    {
+        "enrollmentDate" : "2021-01-01T05:05:05",
+        "membershipNumber" : "Member123",
+        "associatedAccountDetails" : {
+            "name" : "Name1",
+            "phone" : "908989898",
+            "website" : "www.ab.com",
+            "allowDuplicateRecords" : "false"
+        },
+        "memberStatus" : "Active",
+        "createTransactionJournals" : "true"
+    }
+settings: {}
+examples: ./.resources/Corporate Member Enrollments.resources/examples
+order: 1000

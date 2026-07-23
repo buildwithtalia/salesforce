@@ -1,0 +1,63 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/:SOBJECT_API_NAME"
+  method: GET
+  pathVariables:
+    SOBJECT_API_NAME: ApexClass
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 11 Dec 2023 10:36:20 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=298/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "objectDescribe": {
+              "activateable": false,
+              "associateEntityType": null,
+              "associateParentEntity": null,
+              "createable": true,
+              "custom": false,
+              "customSetting": false,
+              "deepCloneable": false,
+              "deletable": true,
+              "deprecatedAndHidden": false,
+              "feedEnabled": false,
+              "hasSubtypes": false,
+              "isInterface": false,
+              "isSubtype": false,
+              "keyPrefix": "01p",
+              "label": "Apex Class",
+              "labelPlural": "Apex Classes",
+              "layoutable": true,
+              "mergeable": false,
+              "mruEnabled": true,
+              "name": "ApexClass",
+              "queryable": true,
+              "replicateable": true,
+              "retrieveable": true,
+              "searchable": true,
+              "triggerable": false,
+              "undeletable": false,
+              "updateable": true,
+              "urls": {
+                  "compactLayouts": "/services/data/v59.0/tooling/sobjects/ApexClass/describe/compactLayouts",
+                  "rowTemplate": "/services/data/v59.0/tooling/sobjects/ApexClass/{ID}",
+                  "describe": "/services/data/v59.0/tooling/sobjects/ApexClass/describe",
+                  "layouts": "/services/data/v59.0/tooling/sobjects/ApexClass/describe/layouts",
+                  "sobject": "/services/data/v59.0/tooling/sobjects/ApexClass"
+              }
+          },
+          "recentItems": []
+      }
+order: 1000

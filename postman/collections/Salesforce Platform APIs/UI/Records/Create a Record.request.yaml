@@ -1,0 +1,21 @@
+$kind: http-request
+description: |-
+  Create a record. First, make a request to the Clone Record Default or Create Record Default resources to get the default metadata and data for the record.
+  As of API version 43.0, if you pass read-only fields in a request body, the response is an Error with Output.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/records"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "allowSaveOnDuplicate": false,
+        "apiName": "Object",
+        "fields": {
+            "FieldAPIName": "FieldValue"
+        }
+    }
+settings: {}
+examples: ./.resources/Create a Record.resources/examples
+order: 10000

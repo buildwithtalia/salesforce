@@ -1,0 +1,41 @@
+$kind: http-example
+name: example of the details of a customer’s cart whose eligible promotions are to be fetched
+request:
+  url: https://itab2c--devloyalty.sandbox.my.salesforce.com/services/data/v60.0/connect/loyalty/programs/Volare/program-processes/processName
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalTypeId
+      value: null
+      disabled: true
+  body:
+    type: json
+    content: |-
+      {
+         "cart":{
+            "cartDetails":[
+               {
+                  "activityStartDate":"2023-06-14T12:45:19Z",
+                  "contactId":"003xx000004WjzAAAS",
+                  "transactionAmount":499,
+                  "currencyISOCode":"INR",
+                  "cartLineDetails":[
+                     {
+                        "cartLineProductId":"01txx0000006iTsAAI",
+                        "cartLineItemQuantity":3,
+                        "cartLineItemAmount":499,
+                        "cartLineProductCatalogId":"0ZSSB0000002d8X4AQ"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

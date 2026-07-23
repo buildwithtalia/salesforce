@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Return Lightning Experience usage results grouped by browser instance.
+
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_lightning_usagebybrowsermetrics.htm
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/LightningUsageByBrowserMetrics"
+method: GET
+headers:
+  Content-Type: application/json
+settings: {}
+order: 3000

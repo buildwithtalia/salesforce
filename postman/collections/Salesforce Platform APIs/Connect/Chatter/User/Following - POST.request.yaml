@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Returns a list of people, groups, records, topics, and files that the specified user is following. Also used to follow records.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_users_FollowingUsers.htm?search_text=following
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/users/:USER_ID/following?subjectId=<RECORD_ID>"
+method: POST
+queryParams:
+  subjectId: <RECORD_ID>
+pathVariables:
+  USER_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Following - POST.resources/examples
+order: 4000

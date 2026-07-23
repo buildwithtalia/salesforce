@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{_endpoint}}/services/data/v{{version}}/jobs/ingest/{{_jobId}}/batches"
+method: PUT
+headers:
+  Content-Type: text/csv
+body:
+  type: file
+  content: {}
+settings: {}
+examples: ./.resources/Upload Job Data.resources/examples
+order: 3000

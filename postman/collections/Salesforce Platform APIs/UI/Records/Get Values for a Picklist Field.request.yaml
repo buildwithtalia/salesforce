@@ -1,0 +1,17 @@
+$kind: http-request
+description: Get metadata about a specific object. The response includes metadata describing fields, child relationships, record type, and theme.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/object-info/:SOBJECT_API_NAME/picklist-values/:RECORD_TYPE_ID/:FIELD_API_NAME"
+method: GET
+pathVariables:
+  - key: SOBJECT_API_NAME
+    value: Account
+    description: Object API Name
+  - key: RECORD_TYPE_ID
+    value: 012000000000000AAA
+    description: Record type Id. Use `012000000000000AAA` as default when there are no custom record types.
+  - key: FIELD_API_NAME
+    value: Industry
+    description: Field API Name (optional)
+settings: {}
+examples: ./.resources/Get Values for a Picklist Field.resources/examples
+order: 5000

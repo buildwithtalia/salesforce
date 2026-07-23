@@ -1,0 +1,18 @@
+$kind: http-request
+description: |-
+  The Read Quote API reads a quote from a CPQ quote ID.
+  Available in: Salesforce CPQ Summer ’16 and later
+
+  https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_api_read_quote.htm
+url: "{{_endpoint}}/services/apexrest/SBQQ/ServiceRouter?reader=SBQQ.QuoteAPI.QuoteReader&uid="
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  reader: SBQQ.QuoteAPI.QuoteReader
+  uid: ""
+body:
+  type: json
+  content: ""
+settings: {}
+order: 3000

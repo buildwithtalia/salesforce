@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Get, create, update, and delete a credential. Get the URL for the OAuth token flow for an external credential. Get external credentials.
+
+  📚 [Named Credentials Resources in the Connect REST API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_named_credentials_resources.htm)
+order: 2000

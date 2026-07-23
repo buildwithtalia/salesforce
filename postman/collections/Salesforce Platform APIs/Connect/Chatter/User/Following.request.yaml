@@ -1,0 +1,27 @@
+$kind: http-request
+description: |-
+  Returns a list of people, groups, records, topics, and files that the specified user is following. Also used to follow records.
+
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_users_FollowingUsers.htm?search_text=following
+url: "{{_endpoint}}/services/data/v{{version}}/chatter/users/:USER_ID/following"
+method: GET
+queryParams:
+  - key: filterType
+    value: ""
+    disabled: true
+    description: Specifies the key prefix to filter the type of objects returned. The key prefix is the three-character prefix code in the object ID. Object IDs are prefixed with three-character codes that specify the type of the object. For example, User objects have a prefix of 005 and Group objects have a prefix of 0F9.
+  - key: page
+    value: ""
+    disabled: true
+    description: Specifies the page number to return. The default value is 0, which returns the first page.
+  - key: pageSize
+    value: ""
+    disabled: true
+    description: |
+      Specifies the number of items per page. Valid values are between 1 and 1000. If you don't specify a size, the default is 25.
+pathVariables:
+  USER_ID: ""
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Following.resources/examples
+order: 3000

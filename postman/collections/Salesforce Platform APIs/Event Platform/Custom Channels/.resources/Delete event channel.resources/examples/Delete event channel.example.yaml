@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/tooling/sobjects/PlatformEventChannel/:PLATFORM_EVENT_CHANNEL_ID"
+  method: DELETE
+  pathVariables:
+    PLATFORM_EVENT_CHANNEL_ID: 0YL4H0000004C98WAE
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    Date: Wed, 06 Dec 2023 16:56:00 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    Content-Security-Policy: upgrade-insecure-requests
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=303/15000
+  body:
+    type: text
+    content: ""
+order: 1000

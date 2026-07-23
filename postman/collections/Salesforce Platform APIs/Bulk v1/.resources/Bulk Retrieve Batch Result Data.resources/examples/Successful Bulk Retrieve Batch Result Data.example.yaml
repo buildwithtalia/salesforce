@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/batch/{{_batchId}}/result/:batchResultId"
+  method: GET
+  headers:
+    X-SFDC-Session: "{{_accessToken}}"
+    Accept-Encoding: gzip
+    Content-Encoding: gzip
+  pathVariables:
+    batchResultId: 7522o00000PATNY
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 16:36:36 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: text/csv; charset=UTF-8
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: text
+    content: |
+      "Id","Name"
+      "001...","GenePoint"
+      "001...","United Oil & Gas, UK"
+      "001...","United Oil & Gas, Singapore"
+      "001...","Edge Communications"
+      "001...","Burlington Textiles Corp of America"
+      "001...","Pyramid Construction Inc."
+      "001...","Dickenson plc"
+      "001...","Grand Hotels & Resorts Ltd"
+      "001...","Express Logistics and Transport"
+      "001...","University of Arizona"
+      "001...","United Oil & Gas Corp."
+      "001...","sForce"
+      "001...","Exemple de comptes pour les autorisations"
+      "001...","Tom Jones"
+order: 1000

@@ -1,0 +1,88 @@
+$kind: http-request
+description: |-
+  Calculate the price of a sales transaction, including a top-level and a line-level discount. The top-level discount specifies 20% off the entire sales transaction, while the line-level discount specifies $10 off the sales transaction item.
+
+  In this example, the sales transaction is an order and the sales transaction item is an order item.
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/pricing/salestransaction/actions/calculate-price"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "listPricebookId": "{{standardPricebook}}",
+        "pricingFlow": "GET_PRICE_USING_CONTEXT",
+        "graph": {
+            "graphId": "1",
+            "records": [
+                {
+                    "referenceId": "ref_sales_txn",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionShape"
+                        },
+                        "CurrencyIsoCode": "USD"
+                    }
+                },
+                {
+                    "referenceId": "Item_1_Evergreen",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "ProductId": "{{SLA_BronzeProduct}}",
+                        "ProductSellingModelId": "{{EvergreenMonthlyPSM}}",
+                        "Quantity": 3.0,
+                        "PricingTransactionType": "NewSale",
+                        "CurrencyIsoCode": "USD"
+                    }
+                },
+                {
+                    "referenceId": "Item_2_Termed",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "EndDate": "2024-01-01",
+                        "ProductId": "{{VirtualRouterProduct}}",
+                        "ProductSellingModelId": "{{TermMonthlyPSM}}",
+                        "Quantity": 100.0,
+                        "PricingTransactionType": "NewSale",
+                        "CurrencyIsoCode": "USD"
+                    }
+                },
+                {
+                    "referenceId": "Order_Level_Discount",
+                    "record": {
+                        "attributes": {
+                            "type": "PriceAdjustmentGroupShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "AdjustmentType": "AdjustmentPercentage",
+                        "AdjustmentValue": -20,
+                        "AdjustmentSource": "Discretionary"
+                    }
+                },
+                {
+                    "referenceId": "Line_Level_Discount",
+                    "record": {
+                        "attributes": {
+                            "type": "PriceAdjustmentItemShape"
+                        },
+                        "SalesTransactionItemShapeId": "@{Item_1_Evergreen.Id}",
+                        "AdjustmentType": "AdjustmentAmount",
+                        "AdjustmentValue": -10,
+                        "AdjustmentSource": "Discretionary",
+                        "AdjustmentAmountScope": "Unit"
+                    }
+                }                        
+            ]
+        }
+    }
+settings: {}
+order: 3000

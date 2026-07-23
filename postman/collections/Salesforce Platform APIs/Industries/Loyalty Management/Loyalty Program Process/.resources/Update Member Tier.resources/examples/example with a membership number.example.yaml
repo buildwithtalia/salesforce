@@ -1,0 +1,32 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/loyalty/programs/:loyaltyProgramName/program-processes/:processName"
+  method: POST
+  headers:
+    Authorization: Bearer {{accessToken}}
+  queryParams:
+    - key: journalTypeId
+      value: null
+      disabled: true
+  pathVariables:
+    loyaltyProgramName: ""
+    processName: ""
+  body:
+    type: json
+    content: |-
+      {
+         "processParameters":[
+            {
+               "MembershipNumber":"M2_Chloe_Sun",
+               "NewTier":"Gold",
+               "ReasonForChange":"update tier"
+            }
+         ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,55 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/token"
+  method: POST
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: code
+        value: aPrx4y_KzscWzywk1LwqIbwyH4R7DKoV5gLaVF87dSTTysEc8e9pu1f5azVNSsws2MruIV4I0A==
+      - type: text
+        key: grant_type
+        value: authorization_code
+      - type: text
+        key: client_id
+        value: "{{clientId}}"
+      - type: text
+        key: client_secret
+        value: "{{clientSecret}}"
+      - type: text
+        key: redirect_uri
+        value: "{{redirectUrl}}"
+      - type: text
+        key: format
+        value: json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 04 Oct 2023 16:25:30 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "access_token": "<access_token>",
+          "refresh_token": "<refresh_token>",
+          "signature": "<base64>",
+          "scope": "refresh_token full",
+          "id_token": "<id_token>",
+          "instance_url": "<my_domain>",
+          "id": "https://login.salesforce.com/id/00D.../005...",
+          "token_type": "Bearer",
+          "issued_at": "<timestamp>"
+      }
+order: 1000

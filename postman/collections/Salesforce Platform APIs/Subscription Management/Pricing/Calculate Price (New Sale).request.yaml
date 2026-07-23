@@ -1,0 +1,63 @@
+$kind: http-request
+description: |-
+  Calculate the price of a new sale that contains two order items: a term-defined subscription order for a bronze-level SLA, and an evergreen subscription order for a virtual router. The payload for the term-defined order contains both a start date and an end date. Instead of an end date, you can also include a start date and a subscription term.
+
+  See [Calculate Price](https://developer.salesforce.com/docs/revenue/subscription-management/references/prices?meta=Summary).
+url: "{{_endpoint}}/services/data/v{{version}}/commerce/pricing/salestransaction/actions/calculate-price"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "listPricebookId": "{{standardPricebook}}",
+        "pricingFlow": "GET_PRICE_USING_CONTEXT",
+        "graph": {
+            "graphId": "1",
+            "records": [
+                {
+                    "referenceId": "ref_sales_txn",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionShape"
+                        },
+                        "CurrencyIsoCode": "USD"
+                    }
+                },
+                {
+                    "referenceId": "Item_1_Evergreen",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "ProductId": "{{SLA_BronzeProduct}}",
+                        "ProductSellingModelId": "{{EvergreenMonthlyPSM}}",
+                        "Quantity": 3.0,
+                        "PricingTransactionType": "NewSale",
+                        "CurrencyIsoCode": "USD"
+                    }
+                },
+                {
+                    "referenceId": "Item_2_Termed",
+                    "record": {
+                        "attributes": {
+                            "type": "SalesTransactionItemShape"
+                        },
+                        "SalesTransactionShapeId": "@{ref_sales_txn.Id}",
+                        "StartDate": "2023-01-01",
+                        "EndDate": "2023-12-31",
+                        "ProductId": "{{VirtualRouterProduct}}",
+                        "ProductSellingModelId": "{{TermMonthlyPSM}}",
+                        "Quantity": 100.0,
+                        "PricingTransactionType": "NewSale",
+                        "CurrencyIsoCode": "USD"
+                    }
+                }
+            ]
+        }
+    }
+settings: {}
+order: 1000

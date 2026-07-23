@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{url}}/id/keys"
+method: GET
+settings: {}
+examples: ./.resources/Salesforce Keys.resources/examples
+order: 20000

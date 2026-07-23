@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Gets in-app messaging conversation entries.
+  https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_conversation_entries.htm
+url: "{{_endpoint}}/services/data/v{{version}}/connect/conversation/:conversationIdentifier/entries"
+method: GET
+pathVariables:
+  - key: conversationIdentifier
+    value: ""
+    description: Conversation identifier UUID
+settings:
+  disabledSystemHeaders: []
+examples: ./.resources/Get conversation entries.resources/examples
+order: 1000

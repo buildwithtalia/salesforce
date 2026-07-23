@@ -1,0 +1,129 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/list-info/:SOBJECT_API_NAME/:LIST_VIEW_API_NAME"
+  method: GET
+  pathVariables:
+    - key: SOBJECT_API_NAME
+      value: Account
+      description: API name of the UI API supported object.
+    - key: LIST_VIEW_API_NAME
+      value: AllAccounts
+      description: API name of a list view, such as AllAccounts, __Recent, or __SearchResult.
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 06 Oct 2023 09:56:56 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    ETag: '"55ebdd0de6c2f1e17f63bf4581d64f76--gzip"'
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "cloneable": true,
+          "createable": true,
+          "deletable": true,
+          "displayColumns": [
+              {
+                  "fieldApiName": "Name",
+                  "inlineEditAttributes": {},
+                  "label": "Account Name",
+                  "lookupId": "Id",
+                  "searchable": true,
+                  "sortable": true
+              },
+              {
+                  "fieldApiName": "Site",
+                  "inlineEditAttributes": {},
+                  "label": "Account Site",
+                  "lookupId": null,
+                  "searchable": true,
+                  "sortable": true
+              },
+              {
+                  "fieldApiName": "Phone",
+                  "inlineEditAttributes": {},
+                  "label": "Phone",
+                  "lookupId": null,
+                  "searchable": true,
+                  "sortable": true
+              },
+              {
+                  "fieldApiName": "Type",
+                  "inlineEditAttributes": {},
+                  "label": "Type",
+                  "lookupId": null,
+                  "searchable": true,
+                  "sortable": true
+              },
+              {
+                  "fieldApiName": "BillingCountry",
+                  "inlineEditAttributes": {},
+                  "label": "Billing Country",
+                  "lookupId": null,
+                  "searchable": true,
+                  "sortable": true
+              },
+              {
+                  "fieldApiName": "Owner.Alias",
+                  "inlineEditAttributes": {},
+                  "label": "Account Owner Alias",
+                  "lookupId": "Owner.Id",
+                  "searchable": true,
+                  "sortable": true
+              }
+          ],
+          "filterLogicString": null,
+          "filteredByInfo": [],
+          "hasMassActions": true,
+          "inlineEditDetails": {},
+          "label": "All Accounts",
+          "listReference": {
+              "id": "00B58000002ssinEAA",
+              "listViewApiName": "AllAccounts",
+              "objectApiName": "Account",
+              "type": "listView"
+          },
+          "listShares": {},
+          "objectApiNames": [],
+          "orderedByInfo": [
+              {
+                  "fieldApiName": "BillingCountry",
+                  "isAscending": false,
+                  "label": "Billing Country"
+              }
+          ],
+          "scope": {},
+          "updateable": true,
+          "userPreferences": {
+              "columnWidths": {
+                  "Site": -1,
+                  "Type": -1,
+                  "BillingCountry": -1,
+                  "Owner.Alias": -1,
+                  "Phone": -1,
+                  "Name": -1
+              },
+              "columnWrap": {
+                  "Site": false,
+                  "Type": false,
+                  "BillingCountry": false,
+                  "Owner.Alias": false,
+                  "Phone": false,
+                  "Name": false
+              }
+          },
+          "visibility": "Public",
+          "visibilityEditable": true
+      }
+order: 1000

@@ -1,0 +1,51 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/smartdatadiscovery/predictionDefinitions/1OR5Y0000010ws8WAA"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 04 Mar 2021 13:45:58 GMT
+    Strict-Transport-Security: max-age=31536002; includeSubDomains
+    Expect-CT: max-age=86400, report-uri="https://a.forcesslreports.com/Expect-CT-report/00D5Y000001crJvm"
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "countOfActiveModels": 1,
+          "countOfModels": 1,
+          "createdBy": {
+              "id": "0055Y00000DWwAIQA1",
+              "name": "Philippe Ozil",
+              "profilePhotoUrl": "https://crm-analytics-deorg-dev-ed--c.documentforce.com/profilephoto/005/T"
+          },
+          "createdDate": "2021-03-04T13:37:02.000Z",
+          "id": "1OR5Y0000010ws8WAA",
+          "label": "Sales_per_Customer",
+          "lastModifiedBy": {
+              "id": "0055Y00000DWwAIQA1",
+              "name": "Philippe Ozil",
+              "profilePhotoUrl": "https://crm-analytics-deorg-dev-ed--c.documentforce.com/profilephoto/005/T"
+          },
+          "lastModifiedDate": "2021-03-04T13:37:02.000Z",
+          "modelsUrl": "/services/data/v51.0/smartdatadiscovery/predictiondefinitions/1OR5Y0000010ws8WAA/models",
+          "name": "Sales_per_Customer",
+          "outcome": {
+              "goal": "Maximize",
+              "label": "Sales per Customer",
+              "name": "Sales_per_Customer"
+          },
+          "predictionType": "Regression",
+          "status": "Enabled",
+          "url": "/services/data/v51.0/smartdatadiscovery/predictiondefinitions/1OR5Y0000010ws8WAA"
+      }
+order: 1000

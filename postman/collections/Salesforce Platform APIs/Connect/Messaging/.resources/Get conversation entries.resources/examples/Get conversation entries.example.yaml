@@ -1,0 +1,102 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/conversation/:conversationIdentifier/entries"
+  method: GET
+  pathVariables:
+    conversationIdentifier: bf94a5f1-5210-4227-b67b-125a994656ca
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 10 Jan 2025 11:40:26 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Encoding: gzip
+    Sforce-Limit-Info: api-usage=246/15000
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    Vary: Accept-Encoding
+    X-Robots-Tag: none
+    X-Content-Type-Options: nosniff
+    Server: sfdcedge
+    X-SFDC-Request-Id: 5a8f2802ad688ae208710a5df1950663
+    X-Request-Id: 5a8f2802ad688ae208710a5df1950663
+    X-SFDC-Edge-Cache: MISS
+  body:
+    type: json
+    content: |-
+      {
+          "conversationEntries": [
+              {
+                  "clientDuration": 0,
+                  "clientTimestamp": 1736508089610,
+                  "identifier": "06a1182e-d932-4178-9864-6de5b7b3d3fd",
+                  "messageText": "The Canyon Zip Line Excursion is an exhilarating adventure where you can soar over deep canyons and lush forest canopies. Here are some details:\n\n- Description: Soar over deep canyons and lush forest canopies on our thrilling zip line tour.\n- Activity Level: High\n- Type: Adventure Activities\n\nWould you like to know the available sessions for this excursion? If so, please provide the date you&#39;re interested in.",
+                  "relatedRecords": [],
+                  "sender": {
+                      "appType": "chatbot",
+                      "role": "Chatbot",
+                      "subject": "0XxKj000000xpJh"
+                  },
+                  "serverReceivedTimestamp": 1736508089657
+              },
+              {
+                  "clientDuration": 0,
+                  "clientTimestamp": 1736508081161,
+                  "identifier": "414e8b7b-af09-4349-beee-79806657495c",
+                  "messageText": "sofiarodriguez@example.com and 10008155",
+                  "relatedRecords": [
+                      "0MwKj000007sdiM"
+                  ],
+                  "sender": {
+                      "appType": "iamessage",
+                      "role": "EndUser",
+                      "subject": "v2/iamessage/UNAUTH/NA/uid:cee38146-34f1-41a2-a96c-a5c4c9b8b62b"
+                  },
+                  "serverReceivedTimestamp": 1736508081203
+              },
+              {
+                  "clientDuration": 0,
+                  "clientTimestamp": 1736508041619,
+                  "identifier": "981246f2-7be4-4fa4-a8ea-2bb134c7f6ff",
+                  "messageText": "Could you please provide your email address and membership number so I can look up your details and get the information for you?",
+                  "relatedRecords": [],
+                  "sender": {
+                      "appType": "chatbot",
+                      "role": "Chatbot",
+                      "subject": "0XxKj000000xpJh"
+                  },
+                  "serverReceivedTimestamp": 1736508041627
+              },
+              {
+                  "clientDuration": 0,
+                  "clientTimestamp": 1736508034543,
+                  "identifier": "7db791fe-1f23-46d7-b685-7ad7b3f56f9d",
+                  "messageText": "show me more information about the canyon zip line excursion",
+                  "relatedRecords": [
+                      "0MwKj000007sdiM"
+                  ],
+                  "sender": {
+                      "appType": "iamessage",
+                      "role": "EndUser",
+                      "subject": "v2/iamessage/UNAUTH/NA/uid:cee38146-34f1-41a2-a96c-a5c4c9b8b62b"
+                  },
+                  "serverReceivedTimestamp": 1736508034755
+              },
+              {
+                  "clientDuration": 0,
+                  "clientTimestamp": 1736508015523,
+                  "identifier": "e9762707-0b3c-4656-8b91-9f10d04aa313",
+                  "messageText": "Hi, I&#39;m an AI service assistant. How can I help you?",
+                  "relatedRecords": [],
+                  "sender": {
+                      "appType": "chatbot",
+                      "role": "Chatbot",
+                      "subject": "0XxKj000000xpJh"
+                  },
+                  "serverReceivedTimestamp": 1736508015579
+              }
+          ]
+      }
+order: 1000

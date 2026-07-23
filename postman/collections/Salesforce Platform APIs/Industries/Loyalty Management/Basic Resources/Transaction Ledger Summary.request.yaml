@@ -1,0 +1,54 @@
+$kind: http-request
+description: |-
+  Standard Documentation:
+
+  [https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_transaction_ledger.htm](https://developer.salesforce.com/docs/atlas.en-us.loyalty.meta/loyalty/connect_resources_transaction_ledger.htm)
+url: "{{_endpoint}}/services/data/v{{version}}/loyalty/programs/:loyaltyProgramName/members/:membershipNumber/transaction-ledger-summary"
+method: GET
+queryParams:
+  - key: journalSubTypeName
+    value: ""
+    disabled: true
+    description: Returns the transaction journals filtered by the specified journal subtype.
+  - key: additionalTransactionJournalAttributes
+    value: ""
+    disabled: true
+    description: Returns the list of transaction journal fields.
+  - key: journalTypeName
+    value: ""
+    disabled: true
+    description: Returns the transaction journals filtered by the specified journal type.
+  - key: pageNumber
+    value: ""
+    disabled: true
+    description: |
+      Returns the transaction journals for the specified page number.
+  - key: periodEndDate
+    value: ""
+    disabled: true
+    description: Returns the transaction journals filtered by the specified end date.
+  - key: periodStartDate
+    value: ""
+    disabled: true
+    description: Returns the transaction journals filtered by the specified start date.
+pathVariables:
+  loyaltyProgramName: ""
+  membershipNumber: ""
+body:
+  type: json
+  content: ""
+scripts:
+  - type: beforeRequest
+    code: |-
+      /*
+      pm.variables.set('journalSubTypeName','journalSubTypeName');
+      pm.variables.set('additionalTransactionJournalAttributes','additionalTransactionJournalAttributes');
+      pm.variables.set('journalTypeName','journalTypeName');
+      pm.variables.set('pageNumber','pageNumber');
+      pm.variables.set('periodEndDate','periodEndDate');
+      pm.variables.set('periodStartDate','periodStartDate');
+      */
+    language: text/javascript
+settings: {}
+examples: ./.resources/Transaction Ledger Summary.resources/examples
+order: 7000

@@ -1,0 +1,54 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/graphql"
+  method: POST
+  headers:
+    X-Chatter-Entity-Encoding: "false"
+  body:
+    type: graphql
+    content:
+      query: |-
+        mutation AccountUpdateExample{
+          uiapi {
+            AccountUpdate(input: {
+              Account: {
+                Name: "Smith"
+              }
+              Id: "<Id>"
+            })
+              {
+                success
+              }
+          }
+        }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 25 Sep 2024 10:18:33 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Sforce-Limit-Info: api-usage=21/15000
+    X-Content-Type-Options: nosniff
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Robots-Tag: none
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Server: sfdcedge
+    X-SFDC-Request-Id: d775c889db46c3df564d9650265dc948
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "uiapi": {
+                  "AccountUpdate": {
+                      "success": true
+                  }
+              }
+          },
+          "errors": []
+      }
+order: 1000

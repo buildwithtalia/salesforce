@@ -1,0 +1,59 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/commitments/:commitmentId"
+  method: POST
+  pathVariables:
+    commitmentId: ""
+  body:
+    type: json
+    content: |-
+      {
+        "amount": 150.25,
+        "transactionPeriod": "monthly",
+        "transactionInterval": 3,
+        "transactionDay": "5",
+        "startDate": "2024-07-06",
+        "endDate": "2024-07-06",
+        "campaign": {
+          "id": "<SFDC_CAMPAIGN_ID>"
+        },
+        "outreachSourceCode": {
+          "sourceCode": "AnimalEmailCampaign2023"
+        },
+        "paymentInstrument": {
+          "type": "credit card",
+          "accountHolderName": "test donor",
+          "expiryMonth": "10",
+          "expiryYear": "2026",
+          "last4": "4585",
+          "cardBrand": "visa",
+          "bankName": "chase",
+          "digitalWalletProvider": "apple pay",
+          "bankAccountHolderType": "primary",
+          "bankAccountType": "checking",
+          "bankAccountNumber": "123456",
+          "bankCode": "HBUK",
+          "gatewayName": "stripe",
+          "processorName": "test processor",
+          "processorPaymentReference": "string",
+          "gatewayReference": "string"
+        }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "errors": [
+              {
+                  "field": "donor.id",
+                  "message": "You cant include the donor ID in the request for the Gift Commitment Patch endpoint. Remove the ID from the Donor JSON request and try again."
+              }
+          ],
+          "success": false
+      }
+order: 2000

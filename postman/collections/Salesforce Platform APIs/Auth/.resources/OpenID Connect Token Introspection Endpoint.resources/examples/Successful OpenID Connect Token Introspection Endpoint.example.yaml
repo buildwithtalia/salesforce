@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{url}}{{site}}/services/oauth2/introspect"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+    Accept: application/json
+  body:
+    type: urlencoded
+    content:
+      token: "{{_accessToken}}"
+      token_type_hint: access_token
+      client_id: "{{clientId}}"
+      client_secret: "{{clientSecret}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 15:54:42 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "active": true,
+          "scope": "<scope_list>",
+          "client_id": "<client_id>",
+          "username": "<username>",
+          "sub": "https://login.salesforce.com/id/00D.../005...",
+          "token_type": "access_token",
+          "exp": <timestamp>,
+          "iat": <timestamp>,
+          "nbf": <timestamp>
+      }
+order: 1000

@@ -1,0 +1,11 @@
+$kind: http-request
+description: Returns detailed information about a list view, including the ID, the columns, and the SOQL query.
+url: "{{_endpoint}}/services/data/v{{version}}/sobjects/:SOBJECT_API_NAME/listviews/:QUERY_LOCATOR/describe"
+method: GET
+headers:
+  Content-Type: application/json
+pathVariables:
+  SOBJECT_API_NAME: ""
+  QUERY_LOCATOR: ""
+settings: {}
+order: 2000

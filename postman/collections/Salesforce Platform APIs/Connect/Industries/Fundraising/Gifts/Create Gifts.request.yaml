@@ -1,0 +1,221 @@
+$kind: http-request
+description: |-
+  Create gift transactions with related new or matched donor, optional transaction designations, and payment instrument metadata. Supports custom fields for the donor account and gift transaction.
+
+  ## Required Attributes:
+
+  - donor.donorType ("individual" or "organization")
+      
+  - donor.lastName || donor.organizationName
+      
+  - gift.amount
+      
+  - gift.receivedDate
+      
+  - git.status
+      
+  - paymentInstrument.type
+      
+
+  All other attributes are optional can be left as an empty string or just removed from the request body entirely. The only exceptions to this are:
+
+  - CustomFields collections - These cannot be left in the request body as an empty collection or with an empty string for the FieldName.
+      
+
+  ## Validated Property Formats (an empty string is considered valid)
+
+  - DateTime - YYYY-MM-DDTHH:MM:SSZ
+      
+  - Date - YYYY-MM-DD
+      
+  - Email - a valid formatted email address
+      
+
+  ### Other Attributes:
+
+  - OutreachSource -- This is optional. Be sure to create the OutreachSourceCode record in the system if passing a value
+      
+  - Will accept either an OutreachSourceCode.id (SalesforceId) or an OutreachSourceCode.Code.
+      
+
+  ### Custom Fields:
+
+  - The field_value can be a text string (inc. for a date data-type) or a numeric value (without quotes)
+      
+  - Do not include an empty collection or an empty fieldName in the request body
+url: "{{_endpoint}}/services/data/v{{version}}/connect/fundraising/gifts"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "processingOptions": {
+        "donorOptions": {
+          "defaultUpdateLogic": "update_all"
+        }
+      },
+      "gifts": [
+        {
+          "amount": 150.25,
+          "currencyIsoCode": "USD",
+          "receivedDate": "2024-07-06",
+          "donorCoverAmount": 0.25,
+          "transactionStatus": "Unpaid",
+          "commitmentId": "<SFDC_COMMITMENT_ID>",
+          "paymentIdentifier": "1234",
+          "gatewayTransactionFee": 0.75,
+          "processorTransactionFee": 0.45,
+          "processorReference": "cls-1247586928747",
+          "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+          "lastGatewayResponseCode": "invalid_cvc",
+          "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+          "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+          "campaign": {
+            "id": "<SFDC_CAMPAIGN_ID>"
+          },
+          "outreachSourceCode": {
+            "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+            "sourceCode": "AnimalEmailCampaign2023"
+          },
+          "donor": {
+            "donorType": "individual",
+            "id": "<SFDC_PERSON_ACCOUNT_ID>",
+            "organizationName": "<Organization_Name>",
+            "firstName": "Test",
+            "lastName": "Donor",
+            "phone": "510-434-8920",
+            "email": "test.user@example.com",
+            "address": [
+              {
+                "addressType": "mailing",
+                "street": "123 Main Street",
+                "city": "Oakland",
+                "state": "CA",
+                "postalCode": "94610",
+                "country": "US"
+              }
+            ],
+            "accountCustomFields": [
+              {
+                "fieldName": "string",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          "paymentInstrument": {
+            "type": "credit card",
+            "accountHolderName": "test donor",
+            "expiryMonth": "10",
+            "expiryYear": "2027",
+            "last4": "4585",
+            "cardBrand": "visa",
+            "bankName": "chase",
+            "digitalWalletProvider": "apple pay",
+            "bankAccountHolderType": "primary",
+            "bankAccountType": "checking",
+            "bankAccountNumber": "123456",
+            "bankCode": "HBUK",
+            "gatewayName": "stripe",
+            "processorName": "test processor",
+            "processorPaymentReference": "string",
+            "gatewayReference": "string"
+          },
+          "designations": [
+            {
+              "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+              "percent": 10,
+              "amount": 150.25
+            }
+          ],
+          "giftTransactionCustomFields": [
+            {
+              "fieldName": "string",
+              "fieldValue": "string"
+            }
+          ]
+        },
+        {
+          "amount": 250.00,
+          "currencyIsoCode": "USD",
+          "receivedDate": "2024-07-06",
+          "donorCoverAmount": 0.25,
+          "transactionStatus": "Unpaid",
+          "commitmentId": "<SFDC_COMMITMENT_ID>",
+          "paymentIdentifier": "1234",
+          "gatewayTransactionFee": 0.75,
+          "processorTransactionFee": 0.45,
+          "processorReference": "cls-1247586928747",
+          "gatewayReference": "102656693ac3ca6e0cdafbfe89ab99",
+          "lastGatewayResponseCode": "invalid_cvc",
+          "lastGatewayErrorMessage": "The card’s security code is invalid. Check the card’s security code or use a different card.",
+          "lastGatewayProcessedDateTime": "2023-07-06T21:57:51Z",
+          "campaign": {
+            "id": "<SFDC_CAMPAIGN_ID>"
+          },
+          "outreachSourceCode": {
+            "id": "<SFDC_OUTREACH_SOURCE_CODE_ID>",
+            "sourceCode": "AnimalEmailCampaign2023"
+          },
+          "donor": {
+            "donorType": "individual",
+            "id": "<SFDC_PERSON_ACCOUNT_ID>",
+            "organizationName": "<Organization_Name>",
+            "firstName": "Test",
+            "lastName": "Donor",
+            "phone": "510-434-8920",
+            "email": "test.user@example.com",
+            "address": [
+              {
+                "addressType": "mailing",
+                "street": "123 Main Street",
+                "city": "Oakland",
+                "state": "CA",
+                "postalCode": "94610",
+                "country": "US"
+              }
+            ],
+            "accountCustomFields": [
+              {
+                "fieldName": "string",
+                "fieldValue": "string"
+              }
+            ]
+          },
+          "paymentInstrument": {
+            "type": "credit card",
+            "accountHolderName": "test donor",
+            "expiryMonth": "10",
+            "expiryYear": "2027",
+            "last4": "4585",
+            "cardBrand": "visa",
+            "bankName": "chase",
+            "digitalWalletProvider": "apple pay",
+            "bankAccountHolderType": "primary",
+            "bankAccountType": "checking",
+            "bankAccountNumber": "123456",
+            "bankCode": "HBUK",
+            "gatewayName": "stripe",
+            "processorName": "test processor",
+            "processorPaymentReference": "string",
+            "gatewayReference": "string"
+          },
+          "designations": [
+            {
+              "designationId": "<SFDC_GIFT_DESIGNATION_ID>",
+              "percent": 10,
+              "amount": 150.25
+            }
+          ],
+          "giftTransactionCustomFields": [
+            {
+              "fieldName": "string",
+              "fieldValue": "string"
+            }
+          ]
+        }
+      ]
+    }
+settings:
+  followAuthorizationHeader: true
+examples: ./.resources/Create Gifts.resources/examples
+order: 1000

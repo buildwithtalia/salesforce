@@ -1,0 +1,97 @@
+$kind: http-request
+description: Lists information about limits in your org. For each limit, this resource returns the maximum allocation and the remaining allocation based on usage. This resource is available in REST API version 29.0 and later for API users with the View Setup and Configuration permission
+url: "{{_endpoint}}/services/data/v{{version}}/limits"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      // Visualizer that renders a Chart.js graph with the Salesforce API limits consumption
+      const template = `<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+      <canvas id="myChart" width="400" height="800"></canvas>
+      <script>
+      pm.getData((err, chartData) => {
+          const getTooltipFooter = (tooltipItems) => {
+              const index = tooltipItems[0].dataIndex;
+              return 'Consumed '+ chartData.consumed[index] +' out of '+ chartData.max[index];
+          };
+
+          const ctx = document.getElementById('myChart').getContext('2d');
+          const myChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: chartData.labels,
+                  datasets: [
+                      {
+                          label: '% Consumed',
+                          data: chartData.consumedPercent,
+                          backgroundColor: 'rgba(255, 99, 132, 1)',
+                          borderColor: 'rgba(255, 99, 132, 1)',
+                          borderWidth: 1
+                      }
+                  ]
+              },
+              options: {
+                  indexAxis: 'y',
+                  responsive: true,
+                  scales: {
+                      x: {
+                          beginAtZero: true,
+                          ticks: {
+                              callback: (value, index, values) => value + '%'
+                          },
+                          max: 100
+                      }
+                  },
+                  interaction: {
+                      intersect: false,
+                      mode: 'y'
+                  },
+                  plugins: {
+                      tooltip: {
+                          callbacks: {
+                              footer: getTooltipFooter,
+                              label: (tooltipItems) => tooltipItems.raw + '%'
+                          }
+                      },
+                      title: {
+                          display: true,
+                          text: 'API Limits Consumption'
+                      },
+                      legend: {
+                          display: false
+                      }
+                  }
+              }
+          });
+      });
+      </script>`;
+
+      // Format API response into chart data
+      const responseJson = pm.response.json();
+      const chartData = {
+          labels: [],
+          consumed: [],
+          consumedPercent: [],
+          max: []
+      };
+      Object.keys(responseJson).forEach((limitName) => {
+          const { Max, Remaining } = responseJson[limitName];
+          const consumed = Max - Remaining;
+          let percent = 0;
+          if (Max !== 0) {
+              percent = (consumed / Max) * 100;
+              percent = percent
+                  .toString()
+                  .match(/^-?\d+(?:\.\d{0,2})?/)[0];
+          }
+          chartData.labels.push(limitName);
+          chartData.consumed.push(consumed);
+          chartData.consumedPercent.push(percent);
+          chartData.max.push(Max);
+      });
+      // Render vizualizer
+      pm.visualizer.set(template, chartData);
+    language: text/javascript
+settings: {}
+examples: ./.resources/Limits.resources/examples
+order: 14000

@@ -1,0 +1,12 @@
+$kind: http-request
+description: Revokes one token. See [OAuth Refresh Token](https://developer.salesforce.com/docs/atlas.en-us.246.0.chatterapi.meta/chatterapi/connect_resources_usage_tokens_token_id.htm).
+url: "{{url}}{{site}}/services/data/v{{version}}/apps/oauth/usage/tokens/{{_tokenId}}"
+method: DELETE
+headers:
+  - key: Authorization
+    value: Bearer <token>
+    description: Replace <token> with your access token
+auth:
+  type: noauth
+settings: {}
+order: 6000

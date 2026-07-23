@@ -1,0 +1,142 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/ui-api/lookups/:SOBJECT_API_NAME/:FIELD_API_NAME"
+  method: GET
+  queryParams:
+    - key: dependentFieldBindings
+      value: ""
+      disabled: true
+      description: |-
+        The dependent field bindings for dependent lookups. These field bindings represent the lookup filter that restricts the valid values for the field.
+        Specify field bindings in a comma-separated list in the format dependentFieldBindings=<FIELD_API_NAME1>=<FIELD_VALUE1>,<FIELD_API_NAME2>=<FIELD_VALUE2>.
+
+        To know whether a field is a dependent lookup, check the Object Info response body for a non-null filteredLookupInfo property. Specify the name and a value for each field in the controllingFields property. Get the field values from the Record response body. Both responses are returned from the /ui-api/record-ui/<RECORD_IDS> resource.
+    - key: page
+      value: ""
+      disabled: true
+      description: The page number. The default value is 1.
+    - key: pageSize
+      value: ""
+      disabled: true
+      description: |
+        The number of items per page. The default value is 25.
+    - key: q
+      value: ""
+      disabled: true
+      description: |-
+        The term the user is searching for.
+        When searchType=Search, specify at least 2 characters. A wildcard at the end of the search term is implied. For example, q=ca returns Cat and Cats.
+
+        When searchType=TypeAhead, specify at least 3 characters. A wildcard at the end of the search term is implied. You can’t use a ?.
+    - key: searchType
+      value: ""
+      disabled: true
+      description: |-
+        The type of search to perform. One of these values:
+        Recent—Return most recently used matches.
+        Search—Search for records with searchable fields that match the query term.
+        TypeAhead—Search for records whose names start with the query term.
+        The default value is Recent.
+  pathVariables:
+    - key: SOBJECT_API_NAME
+      value: Contact
+      description: sObject API name
+    - key: FIELD_API_NAME
+      value: AccountId
+      description: Field API name
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 27 Sep 2023 16:07:13 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "lookupResults": {
+              "Account": {
+                  "count": 2,
+                  "currentPageToken": null,
+                  "currentPageUrl": "/services/data/v58.0/ui-api/lookups/Contact/AccountId/Account?searchType=Recent&page=1&pageSize=25",
+                  "nextPageToken": null,
+                  "nextPageUrl": null,
+                  "previousPageToken": null,
+                  "previousPageUrl": null,
+                  "records": [
+                      {
+                          "apiName": "Account",
+                          "childRelationships": {},
+                          "eTag": "610a250509b966f2eb376b3205824a8b",
+                          "fields": {
+                              "Id": {
+                                  "displayValue": null,
+                                  "value": "001B000000UnQ2yIAF"
+                              },
+                              "Name": {
+                                  "displayValue": null,
+                                  "value": "Dickenson plc"
+                              },
+                              "Site": {
+                                  "displayValue": null,
+                                  "value": null
+                              }
+                          },
+                          "id": "001B000000UnQ2yIAF",
+                          "lastModifiedById": "005B0000003TOI6IAO",
+                          "lastModifiedDate": "2017-08-18T14:46:22.000Z",
+                          "recordTypeId": "012000000000000AAA",
+                          "recordTypeInfo": null,
+                          "systemModstamp": "2017-08-18T14:46:22.000Z",
+                          "weakEtag": 1503067582000
+                      },
+                      {
+                          "apiName": "Account",
+                          "childRelationships": {},
+                          "eTag": "d0b7cec61a65e01f88b2596dea75cbd8",
+                          "fields": {
+                              "Id": {
+                                  "displayValue": null,
+                                  "value": "001B000000UnQ2wIAF"
+                              },
+                              "Name": {
+                                  "displayValue": null,
+                                  "value": "Burlington Textiles Corp of America"
+                              },
+                              "Site": {
+                                  "displayValue": null,
+                                  "value": null
+                              }
+                          },
+                          "id": "001B000000UnQ2wIAF",
+                          "lastModifiedById": "005B0000003TOI6IAO",
+                          "lastModifiedDate": "2017-08-18T14:46:22.000Z",
+                          "recordTypeId": "012000000000000AAA",
+                          "recordTypeInfo": null,
+                          "systemModstamp": "2017-08-18T14:46:22.000Z",
+                          "weakEtag": 1503067582000
+                      }
+                  ]
+              }
+          },
+          "metadata": {
+              "Account": {
+                  "fieldApiName": null,
+                  "objectApiName": null,
+                  "secondaryField": "Site",
+                  "targetInfo": {}
+              }
+          }
+      }
+order: 1000

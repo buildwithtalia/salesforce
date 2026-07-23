@@ -1,0 +1,57 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/data/v{{version}}/jobs/query?isPkChunkingEnabled=false&jobType&concurrencyMode&queryLocator"
+  method: GET
+  headers:
+    Content-Type: application/json
+  queryParams:
+    - key: isPkChunkingEnabled
+      value: "false"
+      description: If set to true, the request only returns information about jobs where PK Chunking is enabled
+    - key: jobType
+      value: null
+      description: BigObjectIngest Classic V2Query
+    - key: concurrencyMode
+      value: null
+      description: serial parallel
+    - key: queryLocator
+      value: null
+      description: use the value from the nextRecordsUrl from the previous set
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 17 Nov 2023 16:25:06 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Sforce-Limit-Info: api-usage=4/15000
+    Content-Type: application/json;charset=UTF-8
+    Vary: Accept-Encoding
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: json
+    content: |-
+      {
+          "done": true,
+          "nextRecordsUrl": null,
+          "records": [
+              {
+                  "id": "750...",
+                  "operation": "insert",
+                  "object": "Account",
+                  "createdById": "005...",
+                  "createdDate": "<datetime>",
+                  "systemModstamp": "<datetime>",
+                  "state": "Open",
+                  "concurrencyMode": "Parallel",
+                  "contentType": "CSV",
+                  "apiVersion": 58,
+                  "jobType": "Classic"
+              },...
+          ]
+      }
+order: 1000

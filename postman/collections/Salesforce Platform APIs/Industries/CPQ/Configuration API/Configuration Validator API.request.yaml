@@ -1,0 +1,18 @@
+$kind: http-request
+description: |-
+  The Configuration Validator API runs selection, validation, and alert product rules and configurator-scoped price rules against the input configuration model and returns an updated configuration model.
+  Available in: Salesforce CPQ Spring ’17 and later
+
+  https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_api_config_validator.htm
+url: "{{_endpoint}}/services/apexrest/SBQQ/ServiceRouter?loader=SBQQ.ConfigAPI.ConfigurationValidator&uid="
+method: PATCH
+headers:
+  Content-Type: application/json
+queryParams:
+  loader: SBQQ.ConfigAPI.ConfigurationValidator
+  uid: ""
+body:
+  type: json
+  content: ""
+settings: {}
+order: 3000

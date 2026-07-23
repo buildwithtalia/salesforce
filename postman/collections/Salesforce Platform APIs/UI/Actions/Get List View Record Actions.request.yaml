@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the record actions on list views.
+url: "{{_endpoint}}/services/data/v{{version}}/ui-api/actions/list-view-record/:RECORD_IDS"
+method: GET
+pathVariables:
+  - key: RECORD_IDS
+    value: ""
+    description: A single record ID, or a comma-delimited list of record IDs.
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get List View Record Actions.resources/examples
+order: 7000

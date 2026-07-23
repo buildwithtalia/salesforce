@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{_endpoint}}/services/async/{{version}}/job/{{_jobId}}/batch"
+  method: GET
+  headers:
+    X-SFDC-Session: "{{_accessToken}}"
+    Accept-Encoding: gzip
+    Content-Encoding: gzip
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 16 Nov 2023 16:19:29 GMT
+    Strict-Transport-Security: max-age=63072000; includeSubDomains
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    X-Robots-Tag: none
+    Cache-Control: no-cache,must-revalidate,max-age=0,no-store,private
+    Content-Type: application/xml
+    Content-Encoding: gzip
+    Transfer-Encoding: chunked
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <batchInfoList
+         xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+          <batchInfo>
+              <id>751...</id>
+              <jobId>750...</jobId>
+              <state>Completed</state>
+              <createdDate>datetime</createdDate>
+              <systemModstamp>datetime</systemModstamp>
+              <numberRecordsProcessed>1</numberRecordsProcessed>
+              <numberRecordsFailed>0</numberRecordsFailed>
+              <totalProcessingTime>403</totalProcessingTime>
+              <apiActiveProcessingTime>225</apiActiveProcessingTime>
+              <apexProcessingTime>64</apexProcessingTime>
+          </batchInfo>
+      </batchInfoList>
+order: 1000
