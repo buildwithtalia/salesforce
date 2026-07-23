@@ -155,19 +155,22 @@ async function testConnection() {
   }
 }
 
+// Salesforce Lead fields that must be sent as numbers rather than strings.
+const NUMERIC_FIELDS = new Set(["Interest_Level1__c"]);
+
 function formToPayload(form, fields) {
   const data = new FormData(form);
   const payload = {};
   for (const field of fields) {
     const value = (data.get(field) || "").toString().trim();
-    if (value) payload[field] = value;
+    if (value) payload[field] = NUMERIC_FIELDS.has(field) ? Number(value) : value;
   }
   return payload;
 }
 
 async function handleCreate(e) {
   e.preventDefault();
-  const fields = ["FirstName", "LastName", "Company", "Email", "Phone", "Title"];
+  const fields = ["FirstName", "LastName", "Company", "Email", "Phone", "Title", "Interest_Level1__c"];
   const payload = formToPayload(els.createForm, fields);
 
   if (!payload.LastName || !payload.Company) {
@@ -211,6 +214,7 @@ async function handleFetch() {
     $("updateEmail").value = lead.Email || "";
     $("updatePhone").value = lead.Phone || "";
     $("updateTitle").value = lead.Title || "";
+    $("updateInterestLevel").value = lead.Interest_Level1__c ?? "";
     showOutput("Lead loaded", lead, "success");
   } catch (e) {
     showOutput("Load failed", e.payload || e.message, "error");
@@ -228,7 +232,7 @@ async function handleUpdate(e) {
     return;
   }
 
-  const fields = ["FirstName", "LastName", "Company", "Email", "Phone", "Title"];
+  const fields = ["FirstName", "LastName", "Company", "Email", "Phone", "Title", "Interest_Level1__c"];
   const payload = formToPayload(els.updateForm, fields);
 
   if (Object.keys(payload).length === 0) {

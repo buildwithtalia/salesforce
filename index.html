@@ -59,6 +59,12 @@
             <input type="text" id="createTitle" name="Title" placeholder="Head of Growth" />
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="createInterestLevel">Interest Level</label>
+            <input type="number" id="createInterestLevel" name="Interest_Level1__c" min="1" max="5" step="1" placeholder="1 - 5" />
+          </div>
+        </div>
         <div class="form-actions">
           <button type="submit" class="btn primary">Create Lead</button>
           <button type="reset" class="btn ghost">Reset</button>
@@ -107,6 +113,12 @@
           <div class="form-group">
             <label for="updateTitle">Title</label>
             <input type="text" id="updateTitle" name="Title" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="updateInterestLevel">Interest Level</label>
+            <input type="number" id="updateInterestLevel" name="Interest_Level1__c" min="1" max="5" step="1" />
           </div>
         </div>
         <p class="hint">Only fields with values will be sent. Leave blank to keep unchanged.</p>
